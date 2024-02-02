@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Core\QuickFoodDelivery.Application\QuickFoodDelivery.Application.csproj" />
+    <ProjectReference Include="..\..\src\Infrastructure\QuickFoodDelivery.Infrastructure\QuickFoodDelivery.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\Infrastructure\QuickFoodDelivery.Persistence\QuickFoodDelivery.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
