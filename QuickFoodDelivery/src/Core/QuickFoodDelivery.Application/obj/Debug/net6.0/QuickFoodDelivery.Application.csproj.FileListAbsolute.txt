@@ -1,0 +1,15 @@
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\bin\Debug\net6.0\QuickFoodDelivery.Application.deps.json
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\bin\Debug\net6.0\QuickFoodDelivery.Application.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\bin\Debug\net6.0\QuickFoodDelivery.Application.pdb
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\bin\Debug\net6.0\QuickFoodDelivery.Domain.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\bin\Debug\net6.0\QuickFoodDelivery.Domain.pdb
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\obj\Debug\net6.0\QuickFoodDelivery.Application.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\obj\Debug\net6.0\QuickFoodDelivery.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\obj\Debug\net6.0\QuickFoodDelivery.Application.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\obj\Debug\net6.0\QuickFoodDelivery.Application.AssemblyInfo.cs
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\obj\Debug\net6.0\QuickFoodDelivery.Application.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\obj\Debug\net6.0\QuickFoodDelivery.Application.csproj.CopyComplete
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\obj\Debug\net6.0\QuickFoodDelivery.Application.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\obj\Debug\net6.0\refint\QuickFoodDelivery.Application.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\obj\Debug\net6.0\QuickFoodDelivery.Application.pdb
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Application\obj\Debug\net6.0\ref\QuickFoodDelivery.Application.dll

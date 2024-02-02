@@ -1,0 +1,12 @@
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\bin\Debug\net6.0\QuickFoodDelivery.Domain.deps.json
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\bin\Debug\net6.0\QuickFoodDelivery.Domain.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\bin\Debug\net6.0\QuickFoodDelivery.Domain.pdb
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\obj\Debug\net6.0\QuickFoodDelivery.Domain.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\obj\Debug\net6.0\QuickFoodDelivery.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\obj\Debug\net6.0\QuickFoodDelivery.Domain.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\obj\Debug\net6.0\QuickFoodDelivery.Domain.AssemblyInfo.cs
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\obj\Debug\net6.0\QuickFoodDelivery.Domain.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\obj\Debug\net6.0\QuickFoodDelivery.Domain.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\obj\Debug\net6.0\refint\QuickFoodDelivery.Domain.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\obj\Debug\net6.0\QuickFoodDelivery.Domain.pdb
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\obj\Debug\net6.0\ref\QuickFoodDelivery.Domain.dll

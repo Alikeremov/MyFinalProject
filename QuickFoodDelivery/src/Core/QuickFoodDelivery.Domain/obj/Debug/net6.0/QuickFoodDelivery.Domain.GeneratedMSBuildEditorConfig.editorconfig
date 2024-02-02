@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = QuickFoodDelivery.Domain
-build_property.ProjectDir = C:\Users\user\Desktop\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\
+build_property.ProjectDir = C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Core\QuickFoodDelivery.Domain\

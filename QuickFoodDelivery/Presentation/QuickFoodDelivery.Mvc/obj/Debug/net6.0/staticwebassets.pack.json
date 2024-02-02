@@ -1,0 +1,1689 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\QuickFoodDelivery.Mvc.bundle.scp.css",
+      "PackagePath": "staticwebassets\\QuickFoodDelivery.Mvc.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\admin.css",
+      "PackagePath": "staticwebassets\\assets\\css\\admin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\animate.css",
+      "PackagePath": "staticwebassets\\assets\\css\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\animate.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\animate.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\blog.css",
+      "PackagePath": "staticwebassets\\assets\\css\\blog.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\color_scheme.css",
+      "PackagePath": "staticwebassets\\assets\\css\\color_scheme.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\custom.css",
+      "PackagePath": "staticwebassets\\assets\\css\\custom.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\date_time_picker.css",
+      "PackagePath": "staticwebassets\\assets\\css\\date_time_picker.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\dropzone.css",
+      "PackagePath": "staticwebassets\\assets\\css\\dropzone.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\elegant_font\\elegant_font.css",
+      "PackagePath": "staticwebassets\\assets\\css\\elegant_font\\elegant_font.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\elegant_font\\elegant_font.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\elegant_font\\elegant_font.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\elegant_font\\fonts\\ElegantIcons.eot",
+      "PackagePath": "staticwebassets\\assets\\css\\elegant_font\\fonts\\ElegantIcons.eot"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\elegant_font\\fonts\\ElegantIcons.svg",
+      "PackagePath": "staticwebassets\\assets\\css\\elegant_font\\fonts\\ElegantIcons.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\elegant_font\\fonts\\ElegantIcons.ttf",
+      "PackagePath": "staticwebassets\\assets\\css\\elegant_font\\fonts\\ElegantIcons.ttf"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\elegant_font\\fonts\\ElegantIcons.woff",
+      "PackagePath": "staticwebassets\\assets\\css\\elegant_font\\fonts\\ElegantIcons.woff"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\elegant_font\\index.html",
+      "PackagePath": "staticwebassets\\assets\\css\\elegant_font\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\fontello\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\assets\\css\\fontello\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\fontello\\README.txt",
+      "PackagePath": "staticwebassets\\assets\\css\\fontello\\README.txt"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\fontello\\css\\fontello-codes.css",
+      "PackagePath": "staticwebassets\\assets\\css\\fontello\\css\\fontello-codes.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\fontello\\css\\fontello-embedded.css",
+      "PackagePath": "staticwebassets\\assets\\css\\fontello\\css\\fontello-embedded.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\fontello\\css\\fontello-ie7-codes.css",
+      "PackagePath": "staticwebassets\\assets\\css\\fontello\\css\\fontello-ie7-codes.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\fontello\\css\\fontello-ie7.css",
+      "PackagePath": "staticwebassets\\assets\\css\\fontello\\css\\fontello-ie7.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\fontello\\css\\fontello.css",
+      "PackagePath": "staticwebassets\\assets\\css\\fontello\\css\\fontello.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\fontello\\css\\fontello.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\fontello\\css\\fontello.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\fontello\\demo.html",
+      "PackagePath": "staticwebassets\\assets\\css\\fontello\\demo.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\fontello\\font\\fontello.eot",
+      "PackagePath": "staticwebassets\\assets\\css\\fontello\\font\\fontello.eot"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\fontello\\font\\fontello.svg",
+      "PackagePath": "staticwebassets\\assets\\css\\fontello\\font\\fontello.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\fontello\\font\\fontello.ttf",
+      "PackagePath": "staticwebassets\\assets\\css\\fontello\\font\\fontello.ttf"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\fontello\\font\\fontello.woff",
+      "PackagePath": "staticwebassets\\assets\\css\\fontello\\font\\fontello.woff"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\images\\blank.gif",
+      "PackagePath": "staticwebassets\\assets\\css\\images\\blank.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\images\\closedhand.cur",
+      "PackagePath": "staticwebassets\\assets\\css\\images\\closedhand.cur"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\images\\openhand.cur",
+      "PackagePath": "staticwebassets\\assets\\css\\images\\openhand.cur"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\ion.rangeSlider.css",
+      "PackagePath": "staticwebassets\\assets\\css\\ion.rangeSlider.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\ion.rangeSlider.skinFlat.css",
+      "PackagePath": "staticwebassets\\assets\\css\\ion.rangeSlider.skinFlat.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\jquery.cookiebar.css",
+      "PackagePath": "staticwebassets\\assets\\css\\jquery.cookiebar.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\assets\\css\\magnific-popup.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\menu.css",
+      "PackagePath": "staticwebassets\\assets\\css\\menu.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\morphext.css",
+      "PackagePath": "staticwebassets\\assets\\css\\morphext.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\pop_up.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pop_up.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\assets\\css\\responsive.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\all.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\all.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\_all.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\_all.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\aero.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\aero.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\aero.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\aero.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\aero@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\aero@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\blue.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\blue.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\blue.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\blue.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\blue@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\blue@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\flat.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\flat.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\flat.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\flat.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\flat@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\flat@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\green.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\green.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\green.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\green.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\green@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\green@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\grey.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\grey.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\grey.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\grey.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\grey@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\grey@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\orange.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\orange.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\orange.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\orange.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\orange@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\orange@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\pink.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\pink.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\pink.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\pink.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\pink@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\pink@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\purple.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\purple.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\purple.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\purple.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\purple@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\purple@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\red.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\red.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\red.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\red.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\red@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\red@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\yellow.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\yellow.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\yellow.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\yellow.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\flat\\yellow@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\flat\\yellow@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\futurico\\futurico.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\futurico\\futurico.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\futurico\\futurico.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\futurico\\futurico.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\futurico\\futurico@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\futurico\\futurico@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\line\\_all.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\line\\_all.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\line\\aero.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\line\\aero.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\line\\blue.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\line\\blue.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\line\\green.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\line\\green.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\line\\grey.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\line\\grey.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\line\\line.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\line\\line.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\line\\line.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\line\\line.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\line\\line@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\line\\line@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\line\\orange.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\line\\orange.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\line\\pink.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\line\\pink.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\line\\purple.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\line\\purple.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\line\\red.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\line\\red.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\line\\yellow.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\line\\yellow.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\_all.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\_all.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\aero.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\aero.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\aero.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\aero.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\aero@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\aero@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\blue.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\blue.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\blue.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\blue.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\blue@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\blue@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\green.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\green.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\green.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\green.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\green@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\green@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\grey.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\grey.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\grey.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\grey.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\grey@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\grey@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\minimal.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\minimal.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\minimal.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\minimal.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\minimal@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\minimal@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\orange.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\orange.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\orange.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\orange.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\orange@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\orange@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\pink.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\pink.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\pink.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\pink.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\pink@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\pink@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\purple.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\purple.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\purple.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\purple.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\purple@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\purple@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\red.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\red.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\red.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\red.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\red@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\red@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\yellow.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\yellow.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\yellow.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\yellow.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\minimal\\yellow@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\minimal\\yellow@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\polaris\\polaris.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\polaris\\polaris.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\polaris\\polaris.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\polaris\\polaris.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\polaris\\polaris@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\polaris\\polaris@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\_all.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\_all.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\aero.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\aero.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\aero.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\aero.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\aero@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\aero@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\blue.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\blue.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\blue.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\blue.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\blue@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\blue@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\green.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\green.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\green.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\green.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\green@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\green@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\grey.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\grey.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\grey.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\grey.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\grey@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\grey@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\orange.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\orange.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\orange.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\orange.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\orange@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\orange@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\pink.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\pink.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\pink.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\pink.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\pink@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\pink@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\purple.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\purple.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\purple.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\purple.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\purple@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\purple@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\red.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\red.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\red.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\red.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\red@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\red@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\square.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\square.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\square.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\square.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\square@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\square@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\yellow.css",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\yellow.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\yellow.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\yellow.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\skins\\square\\yellow@2x.png",
+      "PackagePath": "staticwebassets\\assets\\css\\skins\\square\\yellow@2x.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\slider-pro.css",
+      "PackagePath": "staticwebassets\\assets\\css\\slider-pro.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\slider-pro.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\slider-pro.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular-.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular-.eot"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.eot"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.woff"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.woff2"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\Untitled-3.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\Untitled-3.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\apple-touch-icon-114x114-precomposed.png",
+      "PackagePath": "staticwebassets\\assets\\img\\apple-touch-icon-114x114-precomposed.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\apple-touch-icon-144x144-precomposed.png",
+      "PackagePath": "staticwebassets\\assets\\img\\apple-touch-icon-144x144-precomposed.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\apple-touch-icon-57x57-precomposed.png",
+      "PackagePath": "staticwebassets\\assets\\img\\apple-touch-icon-57x57-precomposed.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\apple-touch-icon-72x72-precomposed.png",
+      "PackagePath": "staticwebassets\\assets\\img\\apple-touch-icon-72x72-precomposed.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\arrow_down.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\arrow_down.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\avatar1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\avatar1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\avatar2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\avatar2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\avatar3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\avatar3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\bg_office.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\bg_office.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\blog-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\blog-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\blog-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\cards.png",
+      "PackagePath": "staticwebassets\\assets\\img\\cards.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\delivery.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\delivery.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\delivery_2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\delivery_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\devices.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\devices.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\dots_vert.png",
+      "PackagePath": "staticwebassets\\assets\\img\\dots_vert.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\favicon.ico",
+      "PackagePath": "staticwebassets\\assets\\img\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\features-intro-01.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\features-intro-01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\filter_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\filter_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\icon_ccv.gif",
+      "PackagePath": "staticwebassets\\assets\\img\\icon_ccv.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\icon_home_1.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon_home_1.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\icon_home_2.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon_home_2.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\icon_home_3.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon_home_3.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\icon_home_4.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon_home_4.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\img_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\img_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\img_2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\img_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\img_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\img_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\img_4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\img_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\logo_mobile.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo_mobile.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mainphoto.png.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mainphoto.png.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-13.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-14.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-15.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-15.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-16.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-16.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-17.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-17.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-18.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-18.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-19.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-19.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-20.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-20.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-21.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-21.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-22.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-22.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-23.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-23.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-24.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-24.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\paypal.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\paypal.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\pins\\American.png",
+      "PackagePath": "staticwebassets\\assets\\img\\pins\\American.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\pins\\Chinese.png",
+      "PackagePath": "staticwebassets\\assets\\img\\pins\\Chinese.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\pins\\Contact.png",
+      "PackagePath": "staticwebassets\\assets\\img\\pins\\Contact.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\pins\\Fish.png",
+      "PackagePath": "staticwebassets\\assets\\img\\pins\\Fish.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\pins\\Hamburger.png",
+      "PackagePath": "staticwebassets\\assets\\img\\pins\\Hamburger.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\pins\\Mexican.png",
+      "PackagePath": "staticwebassets\\assets\\img\\pins\\Mexican.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\pins\\Pizza.png",
+      "PackagePath": "staticwebassets\\assets\\img\\pins\\Pizza.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\pins\\Sushi.png",
+      "PackagePath": "staticwebassets\\assets\\img\\pins\\Sushi.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\popup_img.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\popup_img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\ribbon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\ribbon.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\ribbon_popular.png",
+      "PackagePath": "staticwebassets\\assets\\img\\ribbon_popular.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\search.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\search.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\1_large.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\1_large.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\1_medium.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\1_medium.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\1_small.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\1_small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\1_thumb.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\1_thumb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\2_large.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\2_large.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\2_medium.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\2_medium.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\2_small.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\2_small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\2_thumb.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\2_thumb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\3_large.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\3_large.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\3_medium.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\3_medium.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\3_small.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\3_small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\3_thumb.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\3_thumb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\4_large.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\4_large.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\4_medium.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\4_medium.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\4_small.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\4_small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\4_thumb.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\4_thumb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\5_large.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\5_large.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\5_medium.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\5_medium.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\5_small.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\5_small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\5_thumb.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\5_thumb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\6_large.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\6_large.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\6_medium.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\6_medium.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\6_small.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\6_small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\6_thumb.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\6_thumb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\7_large.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\7_large.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\7_medium.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\7_medium.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\7_small.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\7_small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\7_thumb.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\7_thumb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\8_large.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\8_large.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\8_medium.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\8_medium.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\8_small.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\8_small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\8_thumb.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\8_thumb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\9_large.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\9_large.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\9_medium.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\9_medium.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\9_small.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\9_small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\9_thumb.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider_single_restaurant\\9_thumb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slides\\slide_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slides\\slide_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slides\\slide_2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slides\\slide_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slides\\slide_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slides\\slide_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slides\\slide_4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slides\\slide_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\sprite-skin-flat.png",
+      "PackagePath": "staticwebassets\\assets\\img\\sprite-skin-flat.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\sub_header_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub_header_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\sub_header_2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub_header_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\sub_header_cart.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub_header_cart.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\sub_header_home.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub_header_home.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\sub_header_short.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub_header_short.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\submit_restaurant.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\submit_restaurant.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\thumb_cart_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\thumb_cart_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\thumb_map.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\thumb_map.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\thumb_map_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\thumb_map_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\thumb_restaurant.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\thumb_restaurant.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\thumb_restaurant_2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\thumb_restaurant_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\thumb_restaurant_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\thumb_restaurant_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\thumb_restaurant_4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\thumb_restaurant_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\thumb_restaurant_5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\thumb_restaurant_5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\thumb_restaurant_6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\thumb_restaurant_6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\thumb_restaurant_map.png",
+      "PackagePath": "staticwebassets\\assets\\img\\thumb_restaurant_map.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\time_panel.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\time_panel.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\video_fix.png",
+      "PackagePath": "staticwebassets\\assets\\img\\video_fix.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\ResizeSensor.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ResizeSensor.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\ResizeSensor.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ResizeSensor.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\bootstrap-datepicker.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap-datepicker.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\bootstrap-timepicker.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap-timepicker.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\common_scripts_min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common_scripts_min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\dropzone.js",
+      "PackagePath": "staticwebassets\\assets\\js\\dropzone.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\dropzone.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\dropzone.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\font\\summernote.eot",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\font\\summernote.eot"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\font\\summernote.ttf",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\font\\summernote.ttf"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\font\\summernote.woff",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\font\\summernote.woff"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\summernote-bs4.css",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\summernote-bs4.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\summernote-bs4.js",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\summernote-bs4.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\summernote-bs4.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\summernote-bs4.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\summernote-bs4.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\summernote-bs4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\summernote-lite.css",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\summernote-lite.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\summernote-lite.js",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\summernote-lite.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\summernote-lite.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\summernote-lite.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\summernote.css",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\summernote.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\summernote.js",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\summernote.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\summernote.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\summernote.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\summernote.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\summernote.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\editor\\templates.js",
+      "PackagePath": "staticwebassets\\assets\\js\\editor\\templates.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\functions.js",
+      "PackagePath": "staticwebassets\\assets\\js\\functions.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\icheck.js",
+      "PackagePath": "staticwebassets\\assets\\js\\icheck.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\icheck.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\icheck.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\infobox.js",
+      "PackagePath": "staticwebassets\\assets\\js\\infobox.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\ion.rangeSlider.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ion.rangeSlider.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\jquery-3.7.0.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery-3.7.0.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\jquery-migrate.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery-migrate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\jquery.cookiebar.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.cookiebar.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\jquery.magnific-popup.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.magnific-popup.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\jquery.sliderPro.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.sliderPro.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\jquery.sliderPro.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.sliderPro.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\map.js",
+      "PackagePath": "staticwebassets\\assets\\js\\map.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\map_listing.js",
+      "PackagePath": "staticwebassets\\assets\\js\\map_listing.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\map_single.js",
+      "PackagePath": "staticwebassets\\assets\\js\\map_single.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\modernizr.js",
+      "PackagePath": "staticwebassets\\assets\\js\\modernizr.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\morphext.js",
+      "PackagePath": "staticwebassets\\assets\\js\\morphext.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\morphext.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\morphext.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\parallax.js",
+      "PackagePath": "staticwebassets\\assets\\js\\parallax.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\parallax.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\parallax.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\pop_up.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pop_up.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\pop_up.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pop_up.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\pop_up_func.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pop_up_func.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\pw_strenght.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pw_strenght.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\tabs.js",
+      "PackagePath": "staticwebassets\\assets\\js\\tabs.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\theia-sticky-sidebar.js",
+      "PackagePath": "staticwebassets\\assets\\js\\theia-sticky-sidebar.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\theia-sticky-sidebar.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\theia-sticky-sidebar.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\validate.js",
+      "PackagePath": "staticwebassets\\assets\\js\\validate.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\video_header.js",
+      "PackagePath": "staticwebassets\\assets\\js\\video_header.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\wow.js",
+      "PackagePath": "staticwebassets\\assets\\js\\wow.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\js\\wow.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\wow.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\css\\blank.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\css\\blank.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\css\\layerslider.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\css\\layerslider.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\js\\greensock.js",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\js\\greensock.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\js\\jquery.js",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\js\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\js\\layerslider.kreaturamedia.jquery.js",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\js\\layerslider.kreaturamedia.jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\js\\layerslider.transitions.js",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\js\\layerslider.transitions.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlessdark3d\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlessdark3d\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlessdark3d\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlessdark3d\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlessdark3d\\shadow.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlessdark3d\\shadow.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlessdark3d\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlessdark3d\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlessdark3d\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlessdark3d\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlessdark\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlessdark\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlessdark\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlessdark\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlessdark\\shadow.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlessdark\\shadow.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlessdark\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlessdark\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlessdark\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlessdark\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlesslight3d\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlesslight3d\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlesslight3d\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlesslight3d\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlesslight3d\\shadow.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlesslight3d\\shadow.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlesslight3d\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlesslight3d\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlesslight3d\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlesslight3d\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlesslight\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlesslight\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlesslight\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlesslight\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlesslight\\shadow.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlesslight\\shadow.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlesslight\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlesslight\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\borderlesslight\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\borderlesslight\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\carousel\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\carousel\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\carousel\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\carousel\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\carousel\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\carousel\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\carousel\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\carousel\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\darkskin\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\darkskin\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\darkskin\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\darkskin\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\darkskin\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\darkskin\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\darkskin\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\darkskin\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\defaultskin\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\defaultskin\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\defaultskin\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\defaultskin\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\defaultskin\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\defaultskin\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\defaultskin\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\defaultskin\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\fullwidth\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\fullwidth\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\fullwidth\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\fullwidth\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\fullwidth\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\fullwidth\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\fullwidth\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\fullwidth\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\fullwidthdark\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\fullwidthdark\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\fullwidthdark\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\fullwidthdark\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\fullwidthdark\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\fullwidthdark\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\fullwidthdark\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\fullwidthdark\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\glass\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\glass\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\glass\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\glass\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\glass\\shadow.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\glass\\shadow.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\glass\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\glass\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\glass\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\glass\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\lightskin\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\lightskin\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\lightskin\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\lightskin\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\lightskin\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\lightskin\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\lightskin\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\lightskin\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\minimal\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\minimal\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\minimal\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\minimal\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\minimal\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\minimal\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\minimal\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\minimal\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\noskin\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\noskin\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\noskin\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\noskin\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\noskin\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\noskin\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\noskin\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\noskin\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\v5\\loading.gif",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\v5\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\v5\\nothumb.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\v5\\nothumb.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\v5\\skin.css",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\v5\\skin.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\layerslider\\skins\\v5\\skin.png",
+      "PackagePath": "staticwebassets\\assets\\layerslider\\skins\\v5\\skin.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\video\\intro.mp4",
+      "PackagePath": "staticwebassets\\assets\\video\\intro.mp4"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\video\\intro.ogv",
+      "PackagePath": "staticwebassets\\assets\\video\\intro.ogv"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.QuickFoodDelivery.Mvc.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.QuickFoodDelivery.Mvc.props",
+      "PackagePath": "build\\QuickFoodDelivery.Mvc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.QuickFoodDelivery.Mvc.props",
+      "PackagePath": "buildMultiTargeting\\QuickFoodDelivery.Mvc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.QuickFoodDelivery.Mvc.props",
+      "PackagePath": "buildTransitive\\QuickFoodDelivery.Mvc.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

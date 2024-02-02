@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HQ66OiARB6odo5pgMxFrfjU9DOnJmylu8fuztYk675/7V5eO3XddtpnrvrqiTcBUxuJP68dozG8VVExPtk3PTA==",
+  "dgSpecHash": "AJJL4hsZuPJpljdeuk/5g9TGcdhabLJiSfZKaAp/ug7jvfCpDdagMqWXu3aPgdro7xAW80/uryXADDjvTujmmQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\QuickFoodDelivery\\src\\Infrastructure\\QuickFoodDelivery.Persistence\\QuickFoodDelivery.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\src\\Infrastructure\\QuickFoodDelivery.Persistence\\QuickFoodDelivery.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.25\\microsoft.aspnetcore.cryptography.internal.6.0.25.nupkg.sha512",

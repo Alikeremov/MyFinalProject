@@ -1,0 +1,17 @@
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\bin\Debug\net6.0\QuickFoodDelivery.Infrastructure.deps.json
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\bin\Debug\net6.0\QuickFoodDelivery.Infrastructure.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\bin\Debug\net6.0\QuickFoodDelivery.Infrastructure.pdb
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\bin\Debug\net6.0\QuickFoodDelivery.Application.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\bin\Debug\net6.0\QuickFoodDelivery.Domain.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\bin\Debug\net6.0\QuickFoodDelivery.Application.pdb
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\bin\Debug\net6.0\QuickFoodDelivery.Domain.pdb
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\obj\Debug\net6.0\QuickFoodDelivery.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\obj\Debug\net6.0\QuickFoodDelivery.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\obj\Debug\net6.0\QuickFoodDelivery.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\obj\Debug\net6.0\QuickFoodDelivery.Infrastructure.AssemblyInfo.cs
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\obj\Debug\net6.0\QuickFoodDelivery.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\obj\Debug\net6.0\QuickFoodDelivery.Infrastructure.csproj.CopyComplete
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\obj\Debug\net6.0\QuickFoodDelivery.Infrastructure.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\obj\Debug\net6.0\refint\QuickFoodDelivery.Infrastructure.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\obj\Debug\net6.0\QuickFoodDelivery.Infrastructure.pdb
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\src\Infrastructure\QuickFoodDelivery.Infrastructure\obj\Debug\net6.0\ref\QuickFoodDelivery.Infrastructure.dll

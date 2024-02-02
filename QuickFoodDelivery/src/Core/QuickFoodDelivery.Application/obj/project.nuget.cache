@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QizKl7PNfBpot8N82AvVmv9paB+C1m9Y1roEmiOgo/mlIr9lHYjtOrveUf8RQuqY45l4spK70W2dajcBKOp/Cw==",
+  "dgSpecHash": "BKuIAE4B+0nrPxgJ2qV4REKzBFMpgBKofIXikqftXPzBS+ecIRcnUGilQjkOpru4Pea3D5rtTpPQbkczWIvBYQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\QuickFoodDelivery\\src\\Core\\QuickFoodDelivery.Application\\QuickFoodDelivery.Application.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\src\\Core\\QuickFoodDelivery.Application\\QuickFoodDelivery.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.25\\microsoft.aspnetcore.cryptography.internal.6.0.25.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.25\\microsoft.aspnetcore.cryptography.keyderivation.6.0.25.nupkg.sha512",
