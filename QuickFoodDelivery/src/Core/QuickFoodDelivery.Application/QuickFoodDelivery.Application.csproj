@@ -10,4 +10,8 @@
     <ProjectReference Include="..\QuickFoodDelivery.Domain\QuickFoodDelivery.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstractions\Services\" />
+  </ItemGroup>
+
 </Project>

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace QuickFoodDelivery.Domain.Entities
 {
-    public class Setting:BaseEntity
+    public class Category:BaseEntityNameable
     {
-        public string Key { get; set; } = null!;
-        public string Value { get; set; }=null!;
+        //Relational Properties
+        public ICollection<Restaurant> Restaurants { get; set; }
     }
 }

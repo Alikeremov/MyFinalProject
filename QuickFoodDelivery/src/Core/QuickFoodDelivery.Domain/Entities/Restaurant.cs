@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuickFoodDelivery.Domain.Entities
 {
-    public class Restouran:BaseEntityNameable
+    public class Restaurant:BaseEntityNameable
     {
         public string Address { get; set; } = null!;
         public string CuisineType { get; set; } = null!;
@@ -15,8 +15,16 @@ namespace QuickFoodDelivery.Domain.Entities
         public string? LocationCordinate { get; set; } = null!;
         public int Phone { get; set; }
         public DateTime? OpeningTime { get; set; }
-        public bool OnlineOrderingStatus { get; set; }
+        public DateTime? ClozedTime { get; set; }
+        public bool IsOpening { get; set; }
         public decimal MinimumOrderAmount { get; set; }
         public string Image { get; set; } = null!;
+        //Relational Properties
+        public int CategoryId { get; set; }
+        public Category Category { get; set; } = null!;
+        public int MenuId { get; set; }
+        public Menu Menu { get; set; } = null!;
+        public int ReviewId { get; set; }
+        public Review Reviews { get; set; }
     }
 }

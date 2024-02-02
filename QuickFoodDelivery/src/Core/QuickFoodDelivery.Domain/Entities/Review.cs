@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 
 namespace QuickFoodDelivery.Domain.Entities
 {
-    public class Reviews:BaseEntity
+    public class Review:BaseEntity
     {
         public string Description { get; set; } = null!;
         public int UserId { get; set; }
+        public int FoodQuality { get; set; }
+        public int PriceQuality { get; set; }
+        public int Punctuality { get; set; }
+        public int Courtesy { get; set; }
 
     }
 }
