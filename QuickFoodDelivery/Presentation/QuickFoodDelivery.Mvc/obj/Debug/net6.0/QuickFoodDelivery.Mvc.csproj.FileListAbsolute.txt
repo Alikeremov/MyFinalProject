@@ -77,3 +77,8 @@ C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDel
 C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDelivery.Mvc\obj\Debug\net6.0\QuickFoodDelivery.Mvc.pdb
 C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDelivery.Mvc\obj\Debug\net6.0\QuickFoodDelivery.Mvc.genruntimeconfig.cache
 C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDelivery.Mvc\obj\Debug\net6.0\ref\QuickFoodDelivery.Mvc.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDelivery.Mvc\bin\Debug\net6.0\Humanizer.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDelivery.Mvc\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDelivery.Mvc\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDelivery.Mvc\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDelivery.Mvc\obj\Debug\net6.0\QuickFoodDelivery.Mvc.MvcApplicationPartsAssemblyInfo.cs

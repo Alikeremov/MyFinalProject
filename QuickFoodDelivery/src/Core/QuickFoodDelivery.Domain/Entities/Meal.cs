@@ -12,7 +12,8 @@ namespace QuickFoodDelivery.Domain.Entities
         public decimal Price { get; set; }
         public string Image { get; set; } = null!;
         public string Description { get; set; } = null!;
-        public int MenuId { get; set; }
-        public decimal FinalReview { get; set; }
+        //Reletional Properties
+        public int RestaurantId { get; set; }
+        public Restaurant Restaurant { get; set; }
     }
 }

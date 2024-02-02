@@ -10,7 +10,6 @@ namespace QuickFoodDelivery.Domain.Entities
     public class Restaurant:BaseEntityNameable
     {
         public string Address { get; set; } = null!;
-        public string CuisineType { get; set; } = null!;
         public string RestourantEmail { get; set; } = null!;
         public string? LocationCordinate { get; set; } = null!;
         public int Phone { get; set; }
@@ -22,9 +21,7 @@ namespace QuickFoodDelivery.Domain.Entities
         //Relational Properties
         public int CategoryId { get; set; }
         public Category Category { get; set; } = null!;
-        public int MenuId { get; set; }
-        public Menu Menu { get; set; } = null!;
-        public int ReviewId { get; set; }
-        public Review Reviews { get; set; }
+        public ICollection<Review> Reviews { get; set; }
+        public ICollection<Meal> Meals { get; set; }
     }
 }
