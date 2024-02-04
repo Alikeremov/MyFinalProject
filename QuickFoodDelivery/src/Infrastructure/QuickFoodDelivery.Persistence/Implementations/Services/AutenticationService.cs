@@ -59,8 +59,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 Surname = vm.Surname,
                 Email = vm.Email,
                 BirthDate = vm.BirthDate,
-                Gender = vm.Gender,
-
+                Gender = vm.Gender
             };
 
             if (vm.ProfileImage != null)
@@ -99,8 +98,12 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             if(user == null)
             {
                 user=await _userManager.FindByNameAsync(vm.UserNameOrEmail);
+                if(user == null)
+                {
                 str.Add("Username, Email or Password was wrong");
                 return str;
+
+                }
             }
             var result = await _signInManager.PasswordSignInAsync(user,vm.Password,vm.IsRemembered,true);
             if(result.IsLockedOut)

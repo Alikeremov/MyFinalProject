@@ -3,55 +3,57 @@
 
 <!-- Register modal -->
 
-<div class="modal-content modal-popup">
-    <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-    <form action="#" class="popup-form" method="post" enctype="multipart/form-data" id="myRegister ">
-        <div asp-validation-summary="ModelOnly"></div>
-        <div class="login_icon"><i class="icon_lock_alt"></i></div>
-        <label asp-for="ProfileImage">ProfileImage</label>
-        <input asp-for="ProfileImage" class="form-control form-white" placeholder="ProfileImage">
-        <span asp-validation-for="ProfileImage"></span>
-        <label asp-for="Name">Name</label>
-        <input asp-for="Name" type="text" class="form-control form-white" placeholder="Name">
-        <span asp-validation-for="Name"></span>
-        <label asp-for="Surname">Surname</label>
-        <input asp-for="Surname" type="text" class="form-control form-white" placeholder="Surname">
-        <span asp-validation-for="Surname"></span>
-        <label asp-for="UserName">UserName</label>
-        <input asp-for="UserName" type="text" class="form-control form-white" placeholder="UserName">
-        <span asp-validation-for="UserName"></span>
-        <label asp-for="Email">Email</label>
-        <input asp-for="Email" type="text" class="form-control form-white" placeholder="Email">
-        <span asp-validation-for="Email"></span>
-        <label asp-for="Password">Password</label>
-        <input asp-for="Password" type="text" class="form-control form-white" placeholder="Password">
-        <span asp-validation-for="Password"></span>
-        <label asp-for="ComfirmPassWord">ComfirmPassWord</label>
-        <input asp-for="ComfirmPassWord" type="text" class="form-control form-white" placeholder="ComfirmPassWord">
-        <span asp-validation-for="ComfirmPassWord"></span>
-        <label asp-for="BirthDate">BirthDate</label>
-        <input asp-for="BirthDate" class="form-control form-white" placeholder="BirthDate">
-        <span asp-validation-for="BirthDate"></span>
-        <div class="styled-select">
-            <select name="currency" id="currency">
-                <label asp-for="Gender">Gender</label>
-                @foreach (var item in Html.GetEnumSelectList<Genders>())
-                {
-                    <div class="d-flex form-check">
-                        <input asp-for="Gender" id="@item.Value" class="from-cheeck-input" type="radio" value="@item.Value" />
-                        <label asp-for="Gender" class="from-cheeck-label" for="@item.Value">@item.Text</label>
-                    </div>
+<div>
+    <div class="modal-content modal-popup">
+        <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+        <form action="#" class="popup-form" method="post" enctype="multipart/form-data" id="myRegister ">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="login_icon"><i class="icon_lock_alt"></i></div>
+            <label asp-for="ProfileImage">ProfileImage</label>
+            <input asp-for="ProfileImage" class="form-control form-white" placeholder="ProfileImage">
+            <span asp-validation-for="ProfileImage"></span>
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" type="text" class="form-control form-white" placeholder="Name">
+            <span asp-validation-for="Name"></span>
+            <label asp-for="Surname">Surname</label>
+            <input asp-for="Surname" type="text" class="form-control form-white" placeholder="Surname">
+            <span asp-validation-for="Surname"></span>
+            <label asp-for="UserName">UserName</label>
+            <input asp-for="UserName" type="text" class="form-control form-white" placeholder="UserName">
+            <span asp-validation-for="UserName"></span>
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email" type="text" class="form-control form-white" placeholder="Email">
+            <span asp-validation-for="Email"></span>
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" type="text" class="form-control form-white" placeholder="Password">
+            <span asp-validation-for="Password"></span>
+            <label asp-for="ComfirmPassWord">ComfirmPassWord</label>
+            <input asp-for="ComfirmPassWord" type="text" class="form-control form-white" placeholder="ComfirmPassWord">
+            <span asp-validation-for="ComfirmPassWord"></span>
+            <label asp-for="BirthDate">BirthDate</label>
+            <input asp-for="BirthDate" class="form-control form-white" placeholder="BirthDate">
+            <span asp-validation-for="BirthDate"></span>
+            <div class="styled-select">
+                <select name="currency" id="currency">
+                    <label asp-for="Gender">Gender</label>
+                    @foreach (var item in Html.GetEnumSelectList<Genders>())
+                    {
+                        <div class="d-flex form-check">
+                            <input asp-for="Gender" id="@item.Value" class="from-cheeck-input" type="radio" value="@item.Value" />
+                            <label asp-for="Gender" class="from-cheeck-label" for="@item.Value">@item.Text</label>
+                        </div>
 
-                }
-            </select>
-        </div>
-        <div id="pass-info" class="clearfix"></div>
-        <div class="checkbox-holder text-left">
-            <div class="checkbox">
-                <input type="checkbox" value="accept_2" id="check_2" name="check_2" />
-                <label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+                    }
+                </select>
             </div>
-        </div>
-        <button type="submit" class="btn btn-submit">Register</button>
-    </form>
+            <button type="submit" class="btn btn-submit">Register</button>
+            <div id="pass-info" class="clearfix"></div>
+            <div class="checkbox-holder text-left">
+                <div class="checkbox">
+                    <input type="checkbox" value="accept_2" id="check_2" name="check_2" />
+                    <label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

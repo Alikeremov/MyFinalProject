@@ -110,7 +110,17 @@
                                     <li><a href="icon_pack_2.html">Icon pack 2</a></li>
                                 </ul>
                             </li>
-                            <li><a asp-action="Register" asp-controller="Account" >Login</a></li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
+                                <li><a href="">@User.Identity.Name</a></li>
+                            }
+                            else
+                            {
+                            <li><a asp-action="Register" asp-controller="Account" >Register</a></li>
+                            <li><a asp-action="Login" asp-controller="Account" >Login</a></li>
+                                
+                            }
                             <li><a href="">Purchase this template</a></li>
                         </ul>
                     </div><!-- End main-menu -->
@@ -199,7 +209,7 @@
 
     <div class="layer"></div><!-- Mobile menu overlay mask -->
     <!-- Login modal -->
-    <div class="modal fade" id="login_2" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
+@*    <div class="modal fade" id="login_2" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content modal-popup">
                 <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
@@ -214,10 +224,9 @@
                 </form>
             </div>
         </div>
-    </div><!-- End modal -->
+    </div><!-- End modal -->*@
     <!-- Register modal -->
-    <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myRegister" aria-hidden="true">
-        <div class="modal-dialog">
+    
 @*            <div class="modal-content modal-popup">
                 <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
                 <form action="#" class="popup-form" id="myRegister">
@@ -237,8 +246,7 @@
                     <button type="submit" class="btn btn-submit">Register</button>
                 </form>
             </div>*@
-        </div>
-    </div><!-- End Register modal -->
+<!-- End Register modal -->
     <!-- COMMON SCRIPTS -->
     <script src="~/assets/js/jquery-3.7.0.min.js"></script>
     <script src="~/assets/js/common_scripts_min.js"></script>
