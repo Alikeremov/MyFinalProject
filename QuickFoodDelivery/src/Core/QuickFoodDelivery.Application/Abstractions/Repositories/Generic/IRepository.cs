@@ -26,6 +26,6 @@ namespace QuickFoodDelivery.Application.Abstractions.Repositories
         void SoftDelete(T entity);
         void ReverseDelete(T entity);
         Task SaveChangesAsync();
-        Task<bool> Cheeck(Expression<Func<T, bool>> expression);
+        Task<bool> Cheeck(Expression<Func<T, bool>> expression); 
     }
 }

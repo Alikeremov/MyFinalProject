@@ -20,4 +20,8 @@
     <ProjectReference Include="..\..\Core\QuickFoodDelivery.Application\QuickFoodDelivery.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Implementations\Repositories\" />
+  </ItemGroup>
+
 </Project>

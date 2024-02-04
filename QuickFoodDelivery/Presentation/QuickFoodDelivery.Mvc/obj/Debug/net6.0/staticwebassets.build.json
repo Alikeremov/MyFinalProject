@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iELtXB2UUbHw8ALiMZ9p7ej0tWm3QHIjgslNjXzKV/U=",
+  "Hash": "8se/1sIGsnxynpKE9/Rqd/oqM+MkjC8ofNa2hlH2Pgg=",
   "Source": "QuickFoodDelivery.Mvc",
   "BasePath": "_content/QuickFoodDelivery.Mvc",
   "Mode": "Default",
@@ -3789,6 +3789,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\paypal.svg"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\photo.png.png",
+      "SourceId": "QuickFoodDelivery.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\",
+      "BasePath": "_content/QuickFoodDelivery.Mvc",
+      "RelativePath": "assets/img/photo.png.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\photo.png.png"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\pins\\American.png",
