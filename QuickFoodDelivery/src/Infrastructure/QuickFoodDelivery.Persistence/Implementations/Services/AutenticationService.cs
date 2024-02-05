@@ -46,9 +46,9 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             }
             vm.Name.Capitalize();
             vm.Surname.Capitalize();
-            if (vm.Gender.CheeckGender())
+            if (!vm.Gender.CheeckGender())
             {
-                str.Add("Your Email type is not true");
+                str.Add("Your Gender has not have");
                 return str;
             }
 

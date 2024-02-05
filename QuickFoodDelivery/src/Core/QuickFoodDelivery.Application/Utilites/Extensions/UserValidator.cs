@@ -40,7 +40,8 @@ namespace QuickFoodDelivery.Application.Utilites.Extensions
         {
             foreach (Genders item in Enum.GetValues(typeof(Genders)))
             {
-                if (item.Equals(gender))
+                
+                if ((int)item==gender)
                 {
                     return true;
                 }

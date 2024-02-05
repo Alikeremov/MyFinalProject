@@ -11,12 +11,17 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Core\QuickFoodDelivery.Application\QuickFoodDelivery.Application.csproj" />
     <ProjectReference Include="..\..\src\Infrastructure\QuickFoodDelivery.Infrastructure\QuickFoodDelivery.Infrastructure.csproj" />
     <ProjectReference Include="..\..\src\Infrastructure\QuickFoodDelivery.Persistence\QuickFoodDelivery.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\admin\" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,80 @@
+﻿using Microsoft.EntityFrameworkCore;
+using QuickFoodDelivery.Application.Abstractions.Repositories;
+using QuickFoodDelivery.Application.Abstractions.Services;
+using QuickFoodDelivery.Application.ViewModels;
+using QuickFoodDelivery.Domain.Entities;
+using QuickFoodDelivery.Persistence.DAL;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace QuickFoodDelivery.Persistence.Implementations.Services
+{
+	public class CategoryService : ICategoryService
+	{
+		private readonly ICategoryRepository _repository;
+
+		public CategoryService(ICategoryRepository repository)
+        {
+			_repository = repository;
+		}
+		public async Task<ICollection<CategoryItemVm>> GetAllAsync(int page, int take)
+		{
+			ICollection<Category> categories = await _repository.GetAllWhere(skip: (page - 1) * take, take: take).ToListAsync();
+			return categories.Select(category => new CategoryItemVm { Name = category.Name }).ToList();
+		}
+
+		public async Task<CategoryItemVm> GetAsync(int id)
+		{
+			Category category =await _repository.GetByIdAsync(id);
+			if (category == null) throw new Exception("NotFound");
+			return new CategoryItemVm { Name = category.Name };
+		}
+
+		public async Task Create(CategoryCreateVm categoryVm)
+		{
+			if (await _repository.Cheeck(x => x.Name == categoryVm.Name)) throw new Exception("Bad Request");
+
+			await _repository.AddAsync(new Category { Name=categoryVm.Name});
+			await _repository.SaveChangesAsync();
+		}
+		public async Task Update(CategoryUpdateVm categoryVm, int id)
+		{
+			Category existed = await _repository.GetByIdAsync(id);
+			if (existed == null) throw new Exception("Not Found");
+			if (await _repository.Cheeck(x => x.Name == categoryVm.Name)) throw new Exception("Bad Request");
+			existed.Name = categoryVm.Name;
+			_repository.Update(existed);
+			await _repository.SaveChangesAsync();
+		}
+
+		public async Task Delete(int id)
+		{
+			Category existed = await _repository.GetByIdAsync(id);
+			if (existed == null) throw new Exception("Not Found");
+			_repository.Delete(existed);
+			await _repository.SaveChangesAsync();
+		}
+
+
+		public async Task ReverseDelete(int id)
+		{
+			Category existed = await _repository.GetByIdAsync(id);
+			if (existed == null) throw new Exception("Not Found");
+			_repository.ReverseDelete(existed);
+			await _repository.SaveChangesAsync();
+		}
+
+		public async Task SoftDeleteAsync(int id)
+		{
+			Category existed = await _repository.GetByIdAsync(id);
+			if (existed == null) throw new Exception("Not Found");
+			_repository.SoftDelete(existed);
+			await _repository.SaveChangesAsync();
+		}
+
+	}
+}
