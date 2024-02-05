@@ -9,8 +9,7 @@ namespace QuickFoodDelivery.Application.ViewModels
 {
 	public class CategoryItemVm
 	{
-		[Required]
-		[MaxLength(100)]
 		public string Name { get; set; } = null!;
-	}
+        public int Id { get; set; }
+    }
 }

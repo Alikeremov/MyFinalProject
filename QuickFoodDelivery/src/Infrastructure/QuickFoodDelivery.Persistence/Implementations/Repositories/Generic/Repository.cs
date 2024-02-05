@@ -21,10 +21,11 @@ namespace QuickFoodDelivery.Persistence.Implementations.Repositories.Generic
 			_context = context;
 			_table = context.Set<T>();
 		}
-		public IQueryable<T> GetAll(bool ignoreQuery = false, bool isTracking = false, params string[] includes)
+		public IQueryable<T> GetAll(bool isDeleted = false, bool isTracking = false, params string[] includes)
 		{
 			IQueryable<T> query = _table;
-			if (ignoreQuery) query = query.IgnoreQueryFilters();
+			if (isDeleted) query=query.Where(x => x.IsDeleted==true);
+            else query = query.Where(x => x.IsDeleted == false);
 			if (!isTracking) query = query.AsNoTracking();
 			if (includes != null) query = _addIncludes(query, includes);
 			return query;
@@ -35,7 +36,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Repositories.Generic
 			bool isDescending = false,
 			int skip = 0, int take = 0,
 			bool isTracking = false,
-			bool ignoreQuery = false,
+			bool isDeleted = false,
 			params string[] includes)
 		{
 
@@ -51,24 +52,29 @@ namespace QuickFoodDelivery.Persistence.Implementations.Repositories.Generic
 			if (skip != 0) query = query.Skip(skip);
 			if (take != 0) query = query.Take(take);
 			if (includes != null) query = _addIncludes(query, includes);
-			if (ignoreQuery) query = query.IgnoreQueryFilters();
-			return isTracking ? query : query.AsNoTracking();
+			if (isDeleted) query = query.Where(x => x.IsDeleted == true);
+            else query = query.Where(x => x.IsDeleted == false);
+
+            return isTracking ? query : query.AsNoTracking();
 		}
 
-		public async Task<T> GetByIdAsync(int id, bool isTracking = false, bool ignoreQuery = false, params string[] includes)
+		public async Task<T> GetByIdAsync(int id, bool isTracking = false, bool? isDeleted = null, params string[] includes)
 		{
 			IQueryable<T> query = _table.Where(x => x.Id == id);
-			if (ignoreQuery) query = query.IgnoreQueryFilters();
-			if (!isTracking) query = query.AsNoTracking();
+			if (isDeleted==true) query = query.Where(x => x.IsDeleted == true);
+			else if(isDeleted==false) query =query.Where(x=>x.IsDeleted == false);
+            if (!isTracking) query = query.AsNoTracking();
 			if (includes != null) query = _addIncludes(query, includes);
 			return await query.FirstOrDefaultAsync();
 		}
 
-		public async Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = false, bool ignoreQuery = false, params string[] includes)
+		public async Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = false, bool isDeleted = false, params string[] includes)
 		{
 			IQueryable<T> query = _table.Where(expression);
-			if (ignoreQuery) query = query.IgnoreQueryFilters();
-			if (!isTracking) query = query.AsNoTracking();
+			if (isDeleted) query = query.Where(x => x.IsDeleted == true);
+            else query = query.Where(x => x.IsDeleted == false);
+
+            if (!isTracking) query = query.AsNoTracking();
 			if (includes != null) query = _addIncludes(query, includes);
 			return await query.FirstOrDefaultAsync();
 		}
@@ -90,13 +96,16 @@ namespace QuickFoodDelivery.Persistence.Implementations.Repositories.Generic
 		public void SoftDelete(T entity)
 		{
 			entity.IsDeleted = true;
+			_table.Update(entity);
 		}
 		public void ReverseDelete(T entity)
 		{
 			entity.IsDeleted = false;
-		}
+            _table.Update(entity);
 
-		public async Task SaveChangesAsync()
+        }
+
+        public async Task SaveChangesAsync()
 		{
 			await _context.SaveChangesAsync();
 		}

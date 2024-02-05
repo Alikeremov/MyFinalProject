@@ -2,9 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using QuickFoodDelivery.Application.Abstractions.Repositories;
 using QuickFoodDelivery.Application.Abstractions.Services;
 using QuickFoodDelivery.Domain.Entities;
 using QuickFoodDelivery.Persistence.DAL;
+using QuickFoodDelivery.Persistence.Implementations.Repositories;
 using QuickFoodDelivery.Persistence.Implementations.Services;
 using System;
 using System.Collections.Generic;
@@ -32,7 +34,10 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
                 opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
                 opt.Lockout.AllowedForNewUsers = false;
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+            services.AddScoped<ICategoryRepository,CategoryRepository>();
             services.AddScoped<IAutenticationService, AutenticationService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+
             return services;
         }
     }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace QuickFoodDelivery.Persistence.Implementations.Repositories
 {
-	public class CategoryRepository : Repository<Category>, IRepository<Category>
+	public class CategoryRepository : Repository<Category>, ICategoryRepository
 	{
 		public CategoryRepository(AppDbContext context) : base(context)
 		{

@@ -1,0 +1,27 @@
+﻿@model CategoryCreateVm
+
+<div class="col-xl-6">
+    <div class="card custom-card">
+        <div class="card-header justify-content-between">
+            <div class="card-title">
+                Input border Styles
+            </div>
+            <div class="prism-toggle">
+                <a asp-action="Index" asp-controller="Category" class="btn btn-sm btn-danger">Cancel</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row gy-3">
+                <form class="row gy-3" method="post">
+                <div class="col-xl-12">
+                    <label asp-for="Name" class="form-label">Default</label>
+                    <input asp-for="Name" type="text" class="form-control"  placeholder="Name">
+                    <span asp-validation-for="Name"></span>
+                </div>
+                    <button type="submit" class="btn btn-orange-gradient btn-wave waves-effect waves-light">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -21,17 +21,22 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         {
 			_repository = repository;
 		}
-		public async Task<ICollection<CategoryItemVm>> GetAllAsync(int page, int take)
+		public async Task<ICollection<CategoryItemVm>> GetAllunSoftDeletesAsync(int page, int take)
 		{
 			ICollection<Category> categories = await _repository.GetAllWhere(skip: (page - 1) * take, take: take).ToListAsync();
-			return categories.Select(category => new CategoryItemVm { Name = category.Name }).ToList();
+			return categories.Select(category => new CategoryItemVm {Id=category.Id, Name = category.Name }).ToList();
 		}
+        public async Task<ICollection<CategoryItemVm>> GetAllSoftDeletes(int page, int take)
+        {
+            ICollection<Category> categories = await _repository.GetAllWhere(isDeleted:true ,skip: (page - 1) * take, take: take).ToListAsync();
+            return categories.Select(category => new CategoryItemVm { Id = category.Id, Name = category.Name }).ToList();
+        }
 
-		public async Task<CategoryItemVm> GetAsync(int id)
+        public async Task<CategoryItemVm> GetAsync(int id)
 		{
 			Category category =await _repository.GetByIdAsync(id);
 			if (category == null) throw new Exception("NotFound");
-			return new CategoryItemVm { Name = category.Name };
+			return new CategoryItemVm {Id=category.Id, Name = category.Name };
 		}
 
 		public async Task Create(CategoryCreateVm categoryVm)
@@ -62,7 +67,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
 		public async Task ReverseDelete(int id)
 		{
-			Category existed = await _repository.GetByIdAsync(id);
+			Category existed = await _repository.GetByIdAsync(id, isDeleted:true);
 			if (existed == null) throw new Exception("Not Found");
 			_repository.ReverseDelete(existed);
 			await _repository.SaveChangesAsync();
@@ -70,7 +75,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
 		public async Task SoftDeleteAsync(int id)
 		{
-			Category existed = await _repository.GetByIdAsync(id);
+			Category existed = await _repository.GetByIdAsync(id ,isDeleted:false);
 			if (existed == null) throw new Exception("Not Found");
 			_repository.SoftDelete(existed);
 			await _repository.SaveChangesAsync();

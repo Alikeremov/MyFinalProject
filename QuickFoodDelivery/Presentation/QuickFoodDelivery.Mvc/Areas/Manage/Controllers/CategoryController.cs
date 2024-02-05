@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuickFoodDelivery.Application.Abstractions.Services;
+using QuickFoodDelivery.Application.ViewModels;
 using QuickFoodDelivery.Persistence.DAL;
 
 namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
@@ -7,15 +9,66 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
 	public class CategoryController : Controller
 	{
 		private readonly AppDbContext _context;
+		private readonly ICategoryService _service;
 
-		public CategoryController(AppDbContext context)
+		public CategoryController(AppDbContext context,ICategoryService service)
         {
 			_context = context;
+			_service = service;
 		}
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
 		{
+			
+			return View(await _service.GetAllunSoftDeletesAsync(1, 3));
+		}
+		public async Task<IActionResult> IndexSoftDeletes()
+		{
+            return View(await _service.GetAllSoftDeletes(1, 3));
+        }
 
+        public IActionResult Create()
+		{
 			return View();
 		}
-	}
+		[HttpPost]
+		public async Task<IActionResult> Create(CategoryCreateVm vm)
+		{
+			if (!ModelState.IsValid) return View(vm);
+			await _service.Create(vm);
+			return RedirectToAction(nameof(Index));
+		}
+		public async Task<IActionResult> Update(int id)
+		{
+			if (id < 1) throw new Exception("Bad Request");
+			CategoryItemVm existed=await _service.GetAsync(id);
+			if (existed ==null) throw new Exception("Not Found");
+			return View(new CategoryUpdateVm { Name=existed.Name});
+        }
+		[HttpPost]
+		public async Task<IActionResult> Update(int id, CategoryUpdateVm vm)
+		{
+            if (id < 1) throw new Exception("Bad Request");
+			await _service.Update(vm, id);
+			return RedirectToAction(nameof(Index));
+        }
+		public async Task<IActionResult> SoftDelete(int id)
+		{
+            if (id < 1) throw new Exception("Bad Request");
+			await _service.SoftDeleteAsync(id);
+			return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (id < 1) throw new Exception("Bad Request");
+            await _service.Delete(id);
+            return RedirectToAction(nameof(IndexSoftDeletes));
+        }
+        public async Task<IActionResult> ReverseDelete(int id)
+        {
+            if (id < 1) throw new Exception("Bad Request");
+            await _service.ReverseDelete(id);
+            return RedirectToAction(nameof(IndexSoftDeletes));
+        }
+
+    }
 }

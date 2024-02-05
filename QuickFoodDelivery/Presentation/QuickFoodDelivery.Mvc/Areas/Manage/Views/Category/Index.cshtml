@@ -1,11 +1,17 @@
-﻿<div class="col-xl-6">
+﻿@model ICollection<CategoryItemVm>
+@{
+    int count = 1;
+}
+
+
+<div class="col-xl-6">
     <div class="card custom-card">
         <div class="card-header justify-content-between">
             <div class="card-title">
-                Table Head Primary
+                Categories
             </div>
             <div class="prism-toggle">
-                <button class="btn btn-sm btn-primary-light">Show Code<i class="ri-code-line ms-2 d-inline-block align-middle"></i></button>
+                <a asp-action="Create" asp-controller="Category" class="btn btn-sm btn-primary-light">Create</a>
             </div>
         </div>
         <div class="card-body">
@@ -13,97 +19,25 @@
                 <table class="table text-nowrap">
                     <thead class="table-primary">
                         <tr>
-                            <th scope="col">User Name</th>
-                            <th scope="col">Transaction Id</th>
-                            <th scope="col">Created</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">Count</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Update</th>
+                            <th scope="col">Soft Delete</th>
+                            <th><a asp-action="IndexSoftDeletes" asp-controller="Category" class="btn btn-success"><i class="fa fa-address-book"></i></a></th>
+
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">Harshrath</th>
-                            <td>#5182-3467</td>
-                            <td>24 May 2022</td>
-                            <td>
-                                <div class="hstack gap-2 fs-15">
-                                    <a href="javascript:void(0);"
-                                       class="btn btn-icon btn-sm btn-success-transparent rounded-pill">
-                                        <i class="ri-download-2-line"></i>
-                                    </a>
-                                    <a href="javascript:void(0);"
-                                       class="btn btn-icon btn-sm btn-info-transparent rounded-pill">
-                                        <i class="ri-edit-line"></i>
-                                    </a>
-                                    <a href="javascript:void(0);"
-                                       class="btn btn-icon btn-sm btn-danger-transparent rounded-pill">
-                                        <i class="ri-delete-bin-line"></i>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Zozo Hadid</th>
-                            <td>#5182-3412</td>
-                            <td>02 July 2022</td>
-                            <td>
-                                <div class="hstack gap-2 fs-15">
-                                    <a href="javascript:void(0);"
-                                       class="btn btn-icon btn-sm btn-success-transparent rounded-pill">
-                                        <i class="ri-download-2-line"></i>
-                                    </a>
-                                    <a href="javascript:void(0);"
-                                       class="btn btn-icon btn-sm btn-info-transparent rounded-pill">
-                                        <i class="ri-edit-line"></i>
-                                    </a>
-                                    <a href="javascript:void(0);"
-                                       class="btn btn-icon btn-sm btn-danger-transparent rounded-pill">
-                                        <i class="ri-delete-bin-line"></i>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Martiana</th>
-                            <td>#5182-3423</td>
-                            <td>15 April 2022</td>
-                            <td>
-                                <div class="hstack gap-2 fs-15">
-                                    <a href="javascript:void(0);"
-                                       class="btn btn-icon btn-sm btn-success-transparent rounded-pill">
-                                        <i class="ri-download-2-line"></i>
-                                    </a>
-                                    <a href="javascript:void(0);"
-                                       class="btn btn-icon btn-sm btn-info-transparent rounded-pill">
-                                        <i class="ri-edit-line"></i>
-                                    </a>
-                                    <a href="javascript:void(0);"
-                                       class="btn btn-icon btn-sm btn-danger-transparent rounded-pill">
-                                        <i class="ri-delete-bin-line"></i>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Alex Carey</th>
-                            <td>#5182-3456</td>
-                            <td>17 March 2022</td>
-                            <td>
-                                <div class="hstack gap-2 fs-15">
-                                    <a href="javascript:void(0);"
-                                       class="btn btn-icon btn-sm btn-success-transparent rounded-pill">
-                                        <i class="ri-download-2-line"></i>
-                                    </a>
-                                    <a href="javascript:void(0);"
-                                       class="btn btn-icon btn-sm btn-info-transparent rounded-pill">
-                                        <i class="ri-edit-line"></i>
-                                    </a>
-                                    <a href="javascript:void(0);"
-                                       class="btn btn-icon btn-sm btn-danger-transparent rounded-pill">
-                                        <i class="ri-delete-bin-line"></i>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@(count++)</td>
+                                <td scope="row">@item.Name</td>
+                                <td><a asp-action="Update" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-warning"><i class="ri-edit-line"></i></a></td>
+                                <td><a asp-action="SoftDelete" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-danger"><i class="ti ti-backspace"></i></a></td>
+                                
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
