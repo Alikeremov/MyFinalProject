@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\admin\" />
+    <Folder Include="wwwroot\assets\img\restauratImages\" />
   </ItemGroup>
 
 </Project>

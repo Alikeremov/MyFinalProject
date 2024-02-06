@@ -22,7 +22,6 @@ namespace QuickFoodDelivery.Mvc.Controllers
         {
             if (!ModelState.IsValid)
             {
-
                 return View(vm);
             }
             var result=await _service.Register(vm);

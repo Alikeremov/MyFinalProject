@@ -71,7 +71,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 }
                 if (!vm.ProfileImage.ValidateSize(5 * 1024))
                 {
-                    str.Add("Your Email size must be max 5mb");
+                    str.Add("Your Photo size must be max 5mb");
                     return str;
                 }
                 user.ProfileImage = await vm.ProfileImage.CreateFileAsync(_env.WebRootPath, "assets", "img");

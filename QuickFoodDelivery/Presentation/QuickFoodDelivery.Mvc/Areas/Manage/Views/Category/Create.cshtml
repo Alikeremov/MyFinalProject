@@ -10,15 +10,18 @@
                 <a asp-action="Index" asp-controller="Category" class="btn btn-sm btn-danger">Cancel</a>
             </div>
         </div>
-        <div class="card-body">
-            <div class="row gy-3">
-                <form class="row gy-3" method="post">
+        <div class="card-body d-flex">
+            <div class="row gy-3 ">
+                <form class="row gy-3 " method="post">
                 <div class="col-xl-12">
                     <label asp-for="Name" class="form-label">Default</label>
                     <input asp-for="Name" type="text" class="form-control"  placeholder="Name">
                     <span asp-validation-for="Name"></span>
                 </div>
-                    <button type="submit" class="btn btn-orange-gradient btn-wave waves-effect waves-light">Submit</button>
+                <div class="col-xl-12">
+
+                    <button type="submit" class="btn btn-warning">Submit</button>
+                </div>
 
                 </form>
             </div>

@@ -8,12 +8,10 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
 	[Area("Manage")]
 	public class CategoryController : Controller
 	{
-		private readonly AppDbContext _context;
 		private readonly ICategoryService _service;
 
-		public CategoryController(AppDbContext context,ICategoryService service)
+		public CategoryController(ICategoryService service)
         {
-			_context = context;
 			_service = service;
 		}
         public async Task<IActionResult> Index()
@@ -21,7 +19,7 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
 			
 			return View(await _service.GetAllunSoftDeletesAsync(1, 3));
 		}
-		public async Task<IActionResult> IndexSoftDeletes()
+		public async Task<IActionResult> Arxiv()
 		{
             return View(await _service.GetAllSoftDeletes(1, 3));
         }
@@ -61,13 +59,13 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
         {
             if (id < 1) throw new Exception("Bad Request");
             await _service.Delete(id);
-            return RedirectToAction(nameof(IndexSoftDeletes));
+            return RedirectToAction(nameof(Arxiv));
         }
         public async Task<IActionResult> ReverseDelete(int id)
         {
             if (id < 1) throw new Exception("Bad Request");
             await _service.ReverseDelete(id);
-            return RedirectToAction(nameof(IndexSoftDeletes));
+            return RedirectToAction(nameof(Arxiv));
         }
 
     }

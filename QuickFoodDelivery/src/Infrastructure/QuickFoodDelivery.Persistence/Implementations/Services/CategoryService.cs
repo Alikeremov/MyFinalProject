@@ -60,7 +60,8 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 		{
 			Category existed = await _repository.GetByIdAsync(id);
 			if (existed == null) throw new Exception("Not Found");
-			_repository.Delete(existed);
+			if (existed.Restaurants.Count > 0) throw new Exception($"You cant delete this Category because you have this category some restourant if you need delete this category please update them");
+			_repository.Delete(existed);		
 			await _repository.SaveChangesAsync();
 		}
 

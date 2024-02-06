@@ -35,8 +35,12 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
                 opt.Lockout.AllowedForNewUsers = false;
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
             services.AddScoped<ICategoryRepository,CategoryRepository>();
+            services.AddScoped<IRestaurantRepository,RestaurantRepository>();
+
             services.AddScoped<IAutenticationService, AutenticationService>();
+            services.AddScoped<IRestaurantService, RestaurantService>();
             services.AddScoped<ICategoryService, CategoryService>();
+
 
             return services;
         }

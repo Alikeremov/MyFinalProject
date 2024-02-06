@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDelivery.Mvc
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Areas/Manage/Views/Category/Arxiv.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XEFyeGl2LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Areas/Manage/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -24,16 +28,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Areas/Manage/Views/Category/IndexSoftDeletes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XEluZGV4U29mdERlbGV0ZXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Areas/Manage/Views/Category/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Areas/Manage/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXERhc2hib2FyZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Areas/Manage/Views/Restaurant/Arxiv.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFJlc3RhdXJhbnRcQXJ4aXYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Areas/Manage/Views/Restaurant/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFJlc3RhdXJhbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Areas/Manage/Views/Restaurant/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFJlc3RhdXJhbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Areas/Manage/Views/Restaurant/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFJlc3RhdXJhbnRcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Areas/Manage/Views/Shared/_Layout.cshtml]

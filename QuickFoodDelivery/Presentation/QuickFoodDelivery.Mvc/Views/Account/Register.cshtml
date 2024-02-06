@@ -29,7 +29,7 @@
             <label asp-for="ComfirmPassWord">ComfirmPassWord</label>
             <input asp-for="ComfirmPassWord" type="text" class="form-control form-white" placeholder="ComfirmPassWord">
             <span asp-validation-for="ComfirmPassWord"></span>
-            <label asp-for="BirthDate">BirthDate</label>
+            <label asp-for="BirthDate" max="@DateTime.Now.ToString("yyyy-MM-dd")">BirthDate</label>
             <input asp-for="BirthDate" class="form-control form-white" placeholder="BirthDate">
             <span asp-validation-for="BirthDate"></span>
             <div class="styled-select">

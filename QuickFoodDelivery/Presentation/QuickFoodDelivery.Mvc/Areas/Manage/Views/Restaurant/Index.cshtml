@@ -1,0 +1,58 @@
+﻿@model ICollection<RestaurantItemVm>
+@{
+    int count = 1;
+}
+
+
+<div class="col-xl-6">
+    <div class="card custom-card">
+        <div class="card-header justify-content-between">
+            <div class="card-title">
+                Restaurant
+            </div>
+            <div class="prism-toggle">
+                <a asp-action="Create" asp-controller="Restaurant" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table text-nowrap">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">Count</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Is Opening</th>
+                            <th scope="col">Update</th>
+                            <th scope="col">Soft Delete</th>
+                            <th><a asp-action="Arxiv" asp-controller="Restaurant" class="btn btn-success"><i class="fa fa-address-book"></i></a></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@(count++)</td>
+                                <td>
+                                        <div class="thumb_strip">
+                                            <img src="~/assets/img/thumb_restaurant.jpg" height="100" width="100"  alt="">
+                                        </div>
+                                </td>
+                                <td scope="row">@item.Name</td>
+                                <td>@item.Phone</td>
+                                <td>@item.Address</td>
+                                <td>@item.IsOpening</td>
+                                <td><a asp-action="Update" asp-controller="Restaurant" asp-route-id="@item.Id" class="btn btn-warning"><i class="far fa-edit"></i></a></td>
+                                <td><a asp-action="SoftDelete" asp-controller="Restaurant" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-backspace "></i></a></td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
