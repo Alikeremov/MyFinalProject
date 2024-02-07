@@ -2177,6 +2177,18 @@
       "PackagePath": "staticwebassets\\assets\\img\\mainphoto.png.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\5d76a798-069f-48ca-a1d0-70c435ce2b62mcchicen.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\5d76a798-069f-48ca-a1d0-70c435ce2b62mcchicen.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\814abf5a-8287-4d40-a711-72e76667145ft.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\814abf5a-8287-4d40-a711-72e76667145ft.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\94bd14ee-c288-4fe2-8555-2f6b3feeaac3t.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\94bd14ee-c288-4fe2-8555-2f6b3feeaac3t.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\menu-thumb-1.jpg"
     },
@@ -2315,6 +2327,10 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\popup_img.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\popup_img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\3327c112-c72c-46ca-96ed-14890b4e247amc.png",
+      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\3327c112-c72c-46ca-96ed-14890b4e247amc.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\97519b58-a61e-4e97-90d2-9d4e1061a571download.png",
@@ -3063,6 +3079,70 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\video\\intro.ogv",
       "PackagePath": "staticwebassets\\assets\\video\\intro.ogv"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\css\\style.css",
+      "PackagePath": "staticwebassets\\identity\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\identity\\css\\style.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\css\\style.scss",
+      "PackagePath": "staticwebassets\\identity\\css\\style.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\fonts\\Abril_Fatface\\AbrilFatface-Regular.ttf",
+      "PackagePath": "staticwebassets\\identity\\fonts\\Abril_Fatface\\AbrilFatface-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\fonts\\Abril_Fatface\\OFL.txt",
+      "PackagePath": "staticwebassets\\identity\\fonts\\Abril_Fatface\\OFL.txt"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\fonts\\material-design-iconic-font\\css\\material-design-iconic-font.css",
+      "PackagePath": "staticwebassets\\identity\\fonts\\material-design-iconic-font\\css\\material-design-iconic-font.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\fonts\\material-design-iconic-font\\css\\material-design-iconic-font.min.css",
+      "PackagePath": "staticwebassets\\identity\\fonts\\material-design-iconic-font\\css\\material-design-iconic-font.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\fonts\\material-design-iconic-font\\fonts\\Material-Design-Iconic-Font.eot",
+      "PackagePath": "staticwebassets\\identity\\fonts\\material-design-iconic-font\\fonts\\Material-Design-Iconic-Font.eot"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\fonts\\material-design-iconic-font\\fonts\\Material-Design-Iconic-Font.svg",
+      "PackagePath": "staticwebassets\\identity\\fonts\\material-design-iconic-font\\fonts\\Material-Design-Iconic-Font.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\fonts\\material-design-iconic-font\\fonts\\Material-Design-Iconic-Font.ttf",
+      "PackagePath": "staticwebassets\\identity\\fonts\\material-design-iconic-font\\fonts\\Material-Design-Iconic-Font.ttf"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\fonts\\material-design-iconic-font\\fonts\\Material-Design-Iconic-Font.woff",
+      "PackagePath": "staticwebassets\\identity\\fonts\\material-design-iconic-font\\fonts\\Material-Design-Iconic-Font.woff"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\fonts\\material-design-iconic-font\\fonts\\Material-Design-Iconic-Font.woff2",
+      "PackagePath": "staticwebassets\\identity\\fonts\\material-design-iconic-font\\fonts\\Material-Design-Iconic-Font.woff2"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\fonts\\muli\\Muli-Bold.ttf",
+      "PackagePath": "staticwebassets\\identity\\fonts\\muli\\Muli-Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\fonts\\muli\\Muli-Regular.ttf",
+      "PackagePath": "staticwebassets\\identity\\fonts\\muli\\Muli-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\fonts\\muli\\Muli-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\identity\\fonts\\muli\\Muli-SemiBold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\identity\\images\\bg-registration-form-3.jpg",
+      "PackagePath": "staticwebassets\\identity\\images\\bg-registration-form-3.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.QuickFoodDelivery.Mvc.Microsoft.AspNetCore.StaticWebAssets.props",

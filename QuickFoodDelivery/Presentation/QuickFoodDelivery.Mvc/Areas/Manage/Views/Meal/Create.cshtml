@@ -1,0 +1,59 @@
+﻿@model MealCreateVm
+
+<div class="col-xl-6">
+    <div class="card custom-card">
+        <div class="card-header justify-content-between">
+            <div class="card-title">
+                Input border Styles
+            </div>
+            <div class="prism-toggle">
+                <a asp-action="Index" asp-controller="meal" class="btn btn-sm btn-danger">Cancel</a>
+            </div>
+        </div>
+        <div class="card-body d-flex">
+            <div class="row gy-3 ">
+                <form class="row gy-3 " method="post" enctype="multipart/form-data">
+                    <div class="col-xl-12">
+                        <label asp-for="Photo" class="form-label">Photo</label>
+                        <input asp-for="Photo" class="form-control" placeholder="Photo">
+                        <span asp-validation-for="Photo"></span>
+                    </div>
+                    <div class="col-xl-12">
+                        <label asp-for="Name" class="form-label">Name</label>
+                        <input asp-for="Name" type="text" class="form-control" placeholder="Name">
+                        <span asp-validation-for="Name"></span>
+                    </div>
+                    <div class="col-xl-12">
+                        <label asp-for="Price" class="form-label">Price</label>
+                        <input asp-for="Price" class="form-control" placeholder="Price">
+                        <span asp-validation-for="Price"></span>
+                    </div>
+                    <div class="col-xl-12">
+                        <label asp-for="Description" class="form-label">Description</label>
+                        <input asp-for="Description" type="text" class="form-control" placeholder="Description">
+                        <span asp-validation-for="Description"></span>
+                    </div>
+                    <div class="col-xl-12">
+                        <label asp-for="RestaurantId">Restaurant</label>
+                        <select asp-for="RestaurantId" class="form-control" placeholder="Restaurant" asp-items="new SelectList(Model.Restaurants, nameof(Restaurant.Id), nameof(Restaurant.Name))">
+                            <option selected disabled>Chosee Restaurant</option>
+                        </select>
+                        <span asp-validation-for="RestaurantId" class="text-danger"></span>
+                    </div>
+                    <div class="col-xl-12">
+                        <label asp-for="FoodCategoryId">FoodCategoryId</label>
+                        <select asp-for="FoodCategoryId" class="form-control" placeholder="FoodCategoryId" asp-items="new SelectList(Model.FoodCategories, nameof(FoodCategory.Id), nameof(FoodCategory.Name))">
+                            <option selected disabled>Chosee Food Category</option>
+                        </select>
+                        <span asp-validation-for="FoodCategoryId" class="text-danger"></span>
+                    </div>
+                    <div class="col-xl-12">
+
+                        <button type="submit" class="btn btn-warning">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

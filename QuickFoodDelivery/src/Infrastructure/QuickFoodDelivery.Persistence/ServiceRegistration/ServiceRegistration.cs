@@ -36,10 +36,15 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
             services.AddScoped<ICategoryRepository,CategoryRepository>();
             services.AddScoped<IRestaurantRepository,RestaurantRepository>();
+            services.AddScoped<IFoodCategoryRepository,FoodCategoryRepository>();
+            services.AddScoped<IMealRepository,MealRepository>();
 
             services.AddScoped<IAutenticationService, AutenticationService>();
             services.AddScoped<IRestaurantService, RestaurantService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IFoodCategoryService, FoodCategoryService>();
+            services.AddScoped<IMealService, MealService>();
+
 
 
             return services;

@@ -1,58 +1,117 @@
 ﻿@using QuickFoodDelivery.Domain.Enums;
 @model RegisterVm
 
-<!-- Register modal -->
-<div>
-    <div class="modal-content modal-popup">
-        <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-        <form action="#" class="popup-form" method="post" enctype="multipart/form-data" id="myRegister ">
-            <div asp-validation-summary="ModelOnly"></div>
-            <div class="login_icon"><i class="icon_lock_alt"></i></div>
-            <label asp-for="ProfileImage">ProfileImage</label>
-            <input asp-for="ProfileImage" class="form-control form-white" placeholder="ProfileImage">
-            <span asp-validation-for="ProfileImage"></span>
-            <label asp-for="Name">Name</label>
-            <input asp-for="Name" type="text" class="form-control form-white" placeholder="Name">
-            <span asp-validation-for="Name"></span>
-            <label asp-for="Surname">Surname</label>
-            <input asp-for="Surname" type="text" class="form-control form-white" placeholder="Surname">
-            <span asp-validation-for="Surname"></span>
-            <label asp-for="UserName">UserName</label>
-            <input asp-for="UserName" type="text" class="form-control form-white" placeholder="UserName">
-            <span asp-validation-for="UserName"></span>
-            <label asp-for="Email">Email</label>
-            <input asp-for="Email" type="text" class="form-control form-white" placeholder="Email">
-            <span asp-validation-for="Email"></span>
-            <label asp-for="Password">Password</label>
-            <input asp-for="Password" type="text" class="form-control form-white" placeholder="Password">
-            <span asp-validation-for="Password"></span>
-            <label asp-for="ComfirmPassWord">ComfirmPassWord</label>
-            <input asp-for="ComfirmPassWord" type="text" class="form-control form-white" placeholder="ComfirmPassWord">
-            <span asp-validation-for="ComfirmPassWord"></span>
-            <label asp-for="BirthDate" max="@DateTime.Now.ToString("yyyy-MM-dd")">BirthDate</label>
-            <input asp-for="BirthDate" class="form-control form-white" placeholder="BirthDate">
-            <span asp-validation-for="BirthDate"></span>
-            <div class="styled-select">
-                <select name="currency" id="currency">
-                    <label asp-for="Gender">Gender</label>
-                    @foreach (var item in Html.GetEnumSelectList<Genders>())
-                    {
-                        <div class="d-flex form-check">
-                            <input asp-for="Gender" id="@item.Value" class="from-cheeck-input" type="radio" value="@item.Value" />
-                            <label asp-for="Gender" class="from-cheeck-label" for="@item.Value">@item.Text</label>
-                        </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>RegistrationForm_v3 by Colorlib</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                    }
-                </select>
-            </div>
-            <button type="submit" class="btn btn-submit">Register</button>
-            <div id="pass-info" class="clearfix"></div>
-            <div class="checkbox-holder text-left">
-                <div class="checkbox">
-                    <input type="checkbox" value="accept_2" id="check_2" name="check_2" />
-                    <label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="stylesheet" href="~/identity/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="~/identity/css/style.css">
+</head>
+
+<body>
+
+    <div class="wrapper" style="background-image: url('/identity/images/bg-registration-form-3.jpg');">
+
+        <div class="inner">
+            <form action="" method="post" enctype="application/x-www-form-urlencoded">
+                <div asp-validation-summary="ModelOnly"></div>
+                <h3>Registration Form</h3>
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label asp-for="Name">Name:</label>
+                        <div class="form-holder">
+                            <input asp-for="Name" class="form-control" placeholder="Name">
+                            <span asp-validation-for="Name"></span>
+                        </div>
+                    </div>
+                    <div class="form-wrapper">
+                        <label asp-for="Surname">Surname:</label>
+                        <div class="form-holder">
+                            <input asp-for="Surname" class="form-control" placeholder="Surname">
+                            <span asp-validation-for="Surname"></span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </form>
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label asp-for="Email">Email:</label>
+                        <div class="form-holder">
+                            <input asp-for="Email" class="form-control" placeholder="Email">
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                    </div>
+                    <div class="form-wrapper">
+                        <label asp-for="UserName">UserName:</label>
+                        <div class="form-holder">
+                            <input asp-for="UserName" class="form-control" placeholder="UserName">
+                            <span asp-validation-for="UserName"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label asp-for="Password">Password:</label>
+                        <div class="form-holder">
+                            <input asp-for="Password" class="form-control" placeholder="Password">
+                            <span asp-validation-for="Password"></span>
+                        </div>
+                    </div>
+                    <div class="form-wrapper">
+                        <label asp-for="ComfirmPassWord">ComfirmPassWord:</label>
+                        <div class="form-holder">
+                            <input asp-for="ComfirmPassWord" class="form-control" placeholder="ComfirmPassWord">
+                            <span asp-validation-for="ComfirmPassWord"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label asp-for="BirthDate">BirthDate:</label>
+                        <div class="form-holder">
+                            <input asp-for="BirthDate" class="form-control" max="@DateTime.Now.ToString("yyyy-MM-dd")" required placeholder="BirthDate">
+                            <span asp-validation-for="BirthDate"></span>
+                        </div>
+                    </div>
+                    <div class="form-wrapper">
+                        <label asp-for="ProfileImage">ProfileImage:</label>
+                        <div class="form-holder">
+                            <input asp-for="ProfileImage" class="form-control" placeholder="ProfileImage">
+                            <span asp-validation-for="ProfileImage"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label asp-for="Gender">Gender:</label>
+                        <div class="">
+                            @foreach (var item in Html.GetEnumSelectList<Genders>())
+                            {
+                                <div class="form-check mb-3">
+                                    <input asp-for="Gender" id="@item.Value" class="form-check-input" type="radio" value="@item.Value" />
+                                    <label asp-for="Gender" class="form-check-label" for="@item.Value">@item.Text</label>
+                                </div>
+
+
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="form-end">
+                    <div class="button-holder">
+                        <button>Register Now</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

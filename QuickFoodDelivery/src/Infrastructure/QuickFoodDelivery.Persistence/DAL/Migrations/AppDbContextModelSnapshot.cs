@@ -277,6 +277,40 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.FoodCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ModifiredAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FoodCategories");
+                });
+
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Meal", b =>
                 {
                     b.Property<int>("Id")
@@ -296,6 +330,9 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(750)
                         .HasColumnType("nvarchar(750)");
+
+                    b.Property<int?>("FoodCategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Image")
                         .IsRequired()
@@ -322,6 +359,8 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FoodCategoryId");
 
                     b.HasIndex("RestaurantId");
 
@@ -553,11 +592,17 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Meal", b =>
                 {
+                    b.HasOne("QuickFoodDelivery.Domain.Entities.FoodCategory", "FoodCategory")
+                        .WithMany("Meals")
+                        .HasForeignKey("FoodCategoryId");
+
                     b.HasOne("QuickFoodDelivery.Domain.Entities.Restaurant", "Restaurant")
                         .WithMany("Meals")
                         .HasForeignKey("RestaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("FoodCategory");
 
                     b.Navigation("Restaurant");
                 });
@@ -593,6 +638,11 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Category", b =>
                 {
                     b.Navigation("Restaurants");
+                });
+
+            modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.FoodCategory", b =>
+                {
+                    b.Navigation("Meals");
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Restaurant", b =>

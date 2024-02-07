@@ -15,5 +15,7 @@ namespace QuickFoodDelivery.Domain.Entities
         //Reletional Properties
         public int RestaurantId { get; set; }
         public Restaurant Restaurant { get; set; }
+        public int? FoodCategoryId { get; set; }
+        public FoodCategory? FoodCategory { get; set; }
     }
 }
