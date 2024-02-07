@@ -97,7 +97,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
             if (await _repository.Cheeck(x => x.Name == restaurantvm.Name)) throw new Exception("You have this name product please send other name");
 
-            if (!await _categoryRepository.Cheeck(x => x.Id == restaurantvm.CategoryId) || restaurantvm.CategoryId != 0)
+            if (!await _categoryRepository.Cheeck(x => x.Id == restaurantvm.CategoryId))
             {
                 modelState.AddModelError("CategoryId", "You dont have this category");
                 return false;
@@ -127,6 +127,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                     modelState.AddModelError("Photo", "Your photo size max be 5mb");
                     return false;
                 }
+                
                 restaurant.Image = await restaurantvm.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img", "restaurantImages");
             }
             await _repository.AddAsync(restaurant);
@@ -143,8 +144,13 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             if (!modelState.IsValid) return false;
             Restaurant existed=await _repository.GetByIdAsync(id,isDeleted:false);
             if (existed == null) throw new Exception("Not found");
-            if (await _repository.Cheeck(x => x.Name == restaurantVm.Name)) throw new Exception("Bad Request");
-            if (!await _categoryRepository.Cheeck(x => x.Id == restaurantVm.CategoryId) || restaurantVm.CategoryId != 0)
+            if(restaurantVm.Name!=existed.Name)
+                if (await _repository.Cheeck(x => x.Name == restaurantVm.Name))
+                {
+                    modelState.AddModelError("Name", "You have same name restaurant like this, please change name");
+                    return false;
+                }
+            if (await _categoryRepository.Cheeck(x => x.Id == restaurantVm.CategoryId) == false)
             {
                 modelState.AddModelError("CategoryId", "You dont have this category");
                 return false;
@@ -188,6 +194,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             Restaurant existed=await _repository.GetByIdAsync(id);
             if (existed == null) throw new Exception("Not Found");
             restaurantvm.Categories = await _categoryRepository.GetAll().ToListAsync();
+            restaurantvm.Image=existed.Image;
             restaurantvm.Name = existed.Name;
             restaurantvm.Address = existed.Address;
             restaurantvm.LocationCordinate = existed.LocationCordinate;

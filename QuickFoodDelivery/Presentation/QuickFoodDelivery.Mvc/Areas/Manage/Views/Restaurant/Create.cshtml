@@ -7,7 +7,7 @@
                 Input border Styles
             </div>
             <div class="prism-toggle">
-                <a asp-action="Index" asp-controller="Category" class="btn btn-sm btn-danger">Cancel</a>
+                <a asp-action="Index" asp-controller="Resraurant" class="btn btn-sm btn-danger">Cancel</a>
             </div>
         </div>
         <div class="card-body d-flex">
@@ -64,9 +64,9 @@
                         <span asp-validation-for="MinimumOrderAmount"></span>
                     </div>
                     <div class="col-xl-12">
-                        <label asp-for="CategoryId">category</label>
-                        <select asp-for="CategoryId" class="form-control" placeholder="Category" asp-items="new SelectList(Model.Categories,nameof(Category.Id),nameof(Category.Name))">
-                            <option selected disabled>Choose Category</option>
+                        <label asp-for="CategoryId">Category</label>
+                        <select asp-for="CategoryId" class="form-control" placeholder="Category" asp-items="new SelectList(Model.Categories, nameof(Category.Id), nameof(Category.Name))">
+                            <option selected disabled>Chosee Category</option>
                         </select>
                         <span asp-validation-for="CategoryId" class="text-danger"></span>
                     </div>

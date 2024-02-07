@@ -30,8 +30,8 @@
                                 <td>@(count++)</td>
                                 <td scope="row">@item.Name</td>
 
-                                <td><a asp-action="ReverseDelete" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-info"><i class="fas fa-history"></i></a></td>
-                                <td><a asp-action="Delete" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+                                <td><a asp-action="ReverseDelete" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-info "><i class="fas fa-history"></i></a></td>
+                                <td><a asp-action="Delete" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-danger @(item.Restaurants.FirstOrDefault()!=null? "hidden":"")"><i class="fas fa-trash-alt"></i></a></td>
 
                             </tr>
                         }

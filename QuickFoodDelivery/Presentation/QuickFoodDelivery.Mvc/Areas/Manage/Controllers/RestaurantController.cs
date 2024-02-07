@@ -24,12 +24,15 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
         }
         public async Task<IActionResult> Create()
         {
-            return View(await _service.CreatedAsync(new RestaurantCreateVm()));  
+            RestaurantCreateVm vm = new RestaurantCreateVm();
+            vm=await _service.CreatedAsync(vm);
+            
+            return View(vm);  
         }
         [HttpPost]
         public async Task<IActionResult> Create(RestaurantCreateVm createVm)
-        {
-            if(await _service.CreateAsync(createVm,ModelState)) return RedirectToAction(nameof(Index));
+        { 
+            if (await _service.CreateAsync(createVm,ModelState)) return RedirectToAction(nameof(Index));
             return View(await _service.CreatedAsync(createVm));
         }
         public async Task<IActionResult> Update(int id)

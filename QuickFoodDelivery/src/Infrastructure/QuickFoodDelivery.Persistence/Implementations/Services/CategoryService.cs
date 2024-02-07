@@ -23,13 +23,13 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 		}
 		public async Task<ICollection<CategoryItemVm>> GetAllunSoftDeletesAsync(int page, int take)
 		{
-			ICollection<Category> categories = await _repository.GetAllWhere(skip: (page - 1) * take, take: take).ToListAsync();
-			return categories.Select(category => new CategoryItemVm {Id=category.Id, Name = category.Name }).ToList();
+			ICollection<Category> categories = await _repository.GetAllWhere(includes:new string[] {nameof(Category.Restaurants)},skip: (page - 1) * take, take: take).ToListAsync();
+			return categories.Select(category => new CategoryItemVm {Id=category.Id, Name = category.Name,Restaurants=category.Restaurants }).ToList();
 		}
         public async Task<ICollection<CategoryItemVm>> GetAllSoftDeletes(int page, int take)
         {
-            ICollection<Category> categories = await _repository.GetAllWhere(isDeleted:true ,skip: (page - 1) * take, take: take).ToListAsync();
-            return categories.Select(category => new CategoryItemVm { Id = category.Id, Name = category.Name }).ToList();
+            ICollection<Category> categories = await _repository.GetAllWhere(includes: new string[] { nameof(Category.Restaurants) },isDeleted:true ,skip: (page - 1) * take, take: take).ToListAsync();
+            return categories.Select(category => new CategoryItemVm { Id = category.Id, Name = category.Name, Restaurants = category.Restaurants }).ToList();
         }
 
         public async Task<CategoryItemVm> GetAsync(int id)
@@ -58,9 +58,10 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
 		public async Task Delete(int id)
 		{
-			Category existed = await _repository.GetByIdAsync(id);
+			Category existed = await _repository.GetByIdAsync(id,includes:new string[] {nameof(Category.Restaurants)});
 			if (existed == null) throw new Exception("Not Found");
-			if (existed.Restaurants.Count > 0) throw new Exception($"You cant delete this Category because you have this category some restourant if you need delete this category please update them");
+			
+			if (existed.Restaurants.FirstOrDefault() !=null) throw new Exception($"You cant delete this Category because you have this category some restourant if you need delete this category please update them");
 			_repository.Delete(existed);		
 			await _repository.SaveChangesAsync();
 		}

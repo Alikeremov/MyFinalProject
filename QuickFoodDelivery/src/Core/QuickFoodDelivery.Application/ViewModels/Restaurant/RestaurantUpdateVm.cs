@@ -28,8 +28,7 @@ namespace QuickFoodDelivery.Application.ViewModels
         [MinLength(4, ErrorMessage = "Location Cordinate will be min 4 symbol")]
         public string? LocationCordinate { get; set; } = null!;
         [Required(ErrorMessage = "Your Phone was Required")]
-        [MinLength(9, ErrorMessage = "Your Phone must be min 9 symbol")]
-        [MaxLength(15, ErrorMessage = "Your Phone must be max 15 symbol")]
+
         public int Phone { get; set; }
         public DateTime? OpeningTime { get; set; }
         public DateTime? ClozedTime { get; set; }
@@ -41,6 +40,6 @@ namespace QuickFoodDelivery.Application.ViewModels
         
         public string Image { get; set; } = null!;
         public IFormFile? Photo { get; set; }
-        public ICollection<Category> Categories { get; set; }
+        public ICollection<Category>? Categories { get; set; }
     }
 }
