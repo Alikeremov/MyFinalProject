@@ -15,7 +15,7 @@ namespace QuickFoodDelivery.Domain.Entities
         public int Punctuality { get; set; }
         public int Courtesy { get; set; }
         //Reletional properties
-        public int AppUserId { get; set; }
+        public string AppUserId { get; set; }
         public AppUser AppUser { get; set; }
         public int RestaurantId { get; set; }
         public Restaurant Restaurant { get; set; }

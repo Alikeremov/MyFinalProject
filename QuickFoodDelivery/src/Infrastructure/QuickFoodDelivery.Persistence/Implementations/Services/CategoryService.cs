@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using QuickFoodDelivery.Application.Abstractions.Repositories;
 using QuickFoodDelivery.Application.Abstractions.Services;
 using QuickFoodDelivery.Application.ViewModels;
@@ -29,6 +30,11 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         public async Task<ICollection<CategoryItemVm>> GetAllSoftDeletes(int page, int take)
         {
             ICollection<Category> categories = await _repository.GetAllWhere(includes: new string[] { nameof(Category.Restaurants) },isDeleted:true ,skip: (page - 1) * take, take: take).ToListAsync();
+            return categories.Select(category => new CategoryItemVm { Id = category.Id, Name = category.Name, Restaurants = category.Restaurants }).ToList();
+        }
+        public async Task<ICollection<CategoryItemVm>> GetAllActive()
+        {
+            ICollection<Category> categories = await _repository.GetAllWhere(includes: new string[] { nameof(Category.Restaurants) }).ToListAsync();
             return categories.Select(category => new CategoryItemVm { Id = category.Id, Name = category.Name, Restaurants = category.Restaurants }).ToList();
         }
 
@@ -83,5 +89,5 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 			await _repository.SaveChangesAsync();
 		}
 
-	}
+    }
 }

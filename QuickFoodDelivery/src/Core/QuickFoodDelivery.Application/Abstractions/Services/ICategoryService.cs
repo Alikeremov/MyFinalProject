@@ -10,7 +10,8 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
 	public interface ICategoryService
 	{
 		Task<ICollection<CategoryItemVm>> GetAllunSoftDeletesAsync(int page, int take);
-		Task<ICollection<CategoryItemVm>> GetAllSoftDeletes(int page, int take);
+		Task<ICollection<CategoryItemVm>> GetAllActive();
+        Task<ICollection<CategoryItemVm>> GetAllSoftDeletes(int page, int take);
 		Task<CategoryItemVm> GetAsync(int id);
 		Task Create(CategoryCreateVm categoryVm);
 		Task Update(CategoryUpdateVm categoryVm, int id);

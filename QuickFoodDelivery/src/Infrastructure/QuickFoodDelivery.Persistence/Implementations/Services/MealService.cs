@@ -138,14 +138,6 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             if (!modelState.IsValid) return false;
             Meal existed = await _repository.GetByIdAsync(id, isDeleted: false);
             if (existed == null) throw new Exception("Not found");
-            //if (mealVm.Name != existed.Name)
-            //{
-            //    if (await _repository.Cheeck(x => x.Name == mealVm.Name))
-            //    {
-            //        modelState.AddModelError("Name", "You have same name like this, please change name");
-            //        return false;
-            //    }
-            //}
             if (await _restaurantRepository.Cheeck(x => x.Id == mealVm.RestaurantId) == false)
             {
                 modelState.AddModelError("RestaurantId", "You dont have this Restaurant");

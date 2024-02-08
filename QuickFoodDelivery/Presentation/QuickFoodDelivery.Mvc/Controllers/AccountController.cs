@@ -56,7 +56,9 @@ namespace QuickFoodDelivery.Mvc.Controllers
                     return View(vm);
                 }
             }
-            return RedirectToAction("Index","Home");
+            
+            if(User.IsInRole("Admin")) return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Dashboard", new { area = "manage" });
         }
         public async Task<IActionResult> Logout()
         {

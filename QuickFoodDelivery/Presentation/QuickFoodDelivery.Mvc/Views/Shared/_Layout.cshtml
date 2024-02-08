@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using QuickFoodDelivery.Domain.Entities;
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<AppUser> userManager
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -114,6 +119,18 @@
                             {
                                 <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
                                 <li><a href="">@User.Identity.Name</a></li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    var appUser = await userManager.GetUserAsync(User);
+                                    if (appUser != null && appUser.ProfileImage != null)
+                                    {
+                                        <li><img src="~/assets/img/@(appUser.ProfileImage)" style="width:30px; height:30px; border-radius:15px;" /></li>
+                                    }
+                                    else
+                                    {
+                                        <li><img src="~/assets/img/default_profile_image.jpg" style="width:30px; height:30px" /></li>
+                                    }
+                                }
                             }
                             else
                             {
