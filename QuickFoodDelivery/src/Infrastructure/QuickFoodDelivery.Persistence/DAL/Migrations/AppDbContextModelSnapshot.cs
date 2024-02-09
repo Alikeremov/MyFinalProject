@@ -380,6 +380,9 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                         .HasMaxLength(900)
                         .HasColumnType("nvarchar(900)");
 
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -433,6 +436,8 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("CategoryId");
 
@@ -651,11 +656,17 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Restaurant", b =>
                 {
+                    b.HasOne("QuickFoodDelivery.Domain.Entities.AppUser", "AppUser")
+                        .WithMany("Restaurants")
+                        .HasForeignKey("AppUserId");
+
                     b.HasOne("QuickFoodDelivery.Domain.Entities.Category", "Category")
                         .WithMany("Restaurants")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("AppUser");
 
                     b.Navigation("Category");
                 });
@@ -677,6 +688,11 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                     b.Navigation("AppUser");
 
                     b.Navigation("Restaurant");
+                });
+
+            modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.AppUser", b =>
+                {
+                    b.Navigation("Restaurants");
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Category", b =>

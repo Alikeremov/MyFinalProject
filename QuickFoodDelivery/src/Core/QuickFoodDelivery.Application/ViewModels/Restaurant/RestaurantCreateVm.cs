@@ -38,6 +38,8 @@ namespace QuickFoodDelivery.Application.ViewModels
         public int CategoryId { get; set; }
         [Required(ErrorMessage = "Your Photo was Reqiured")]
         public IFormFile Photo { get; set; } = null!;
+        public string? AppUserId { get; set; }
+        public ICollection<AppUser>? Users { get; set; }
         public ICollection<Category>? Categories { get; set; }
     }
 }

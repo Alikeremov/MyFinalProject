@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using QuickFoodDelivery.Application.Abstractions.Services;
 using QuickFoodDelivery.Application.Utilites.Extensions;
@@ -122,6 +123,10 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         {
             await _signInManager.SignOutAsync();
         }
+        public async Task<AppUser> GetUserAsync(string userName)
+        {
+            return await _userManager.Users.Include(x => x.Restaurants).FirstOrDefaultAsync(x=>x.UserName==userName);
+        }
         public async Task CreateRoleAsync()
         {
             foreach (UserRoles role in Enum.GetValues(typeof(UserRoles)))
@@ -135,6 +140,10 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
                 }
             }
+        }
+        public async Task<ICollection<AppUser>> GetAllUsers(string searchTerm)
+        {
+            return await _userManager.Users.Where(x => x.UserName.ToLower().Contains(searchTerm.ToLower()) || x.Name.ToLower().Contains(searchTerm.ToLower()) || x.Surname.ToLower().Contains(searchTerm.ToLower())).ToListAsync();
         }
     }
 }

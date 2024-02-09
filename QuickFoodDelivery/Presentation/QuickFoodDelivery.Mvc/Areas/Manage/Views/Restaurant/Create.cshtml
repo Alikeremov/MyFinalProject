@@ -70,7 +70,13 @@
                         </select>
                         <span asp-validation-for="CategoryId" class="text-danger"></span>
                     </div>
-
+                    <div class="col-xl-12">
+                        <label asp-for="CategoryId">Category</label>
+                        <select asp-for="CategoryId" class="form-control" placeholder="Category" asp-items="new SelectList(Model.Categories, nameof(Category.Id), nameof(Category.Name))">
+                            <option selected disabled>Chosee Category</option>
+                        </select>
+                        <span asp-validation-for="CategoryId" class="text-danger"></span>
+                    </div>
                     <div class="col-xl-12">
 
                         <button type="submit" class="btn btn-warning">Submit</button>

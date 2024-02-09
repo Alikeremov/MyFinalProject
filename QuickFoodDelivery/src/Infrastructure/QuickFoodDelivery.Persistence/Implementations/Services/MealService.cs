@@ -14,6 +14,9 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 using System.Collections.ObjectModel;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
+using System.Security.Claims;
 
 namespace QuickFoodDelivery.Persistence.Implementations.Services
 {
@@ -23,13 +26,17 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         private readonly IRestaurantRepository _restaurantRepository;
         private readonly IFoodCategoryRepository _fdrepository;
         private readonly IWebHostEnvironment _env;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public MealService(IMealRepository repository, IRestaurantRepository restaurantRepository, IFoodCategoryRepository fdrepository, IWebHostEnvironment env)
+        public MealService(IMealRepository repository, IRestaurantRepository restaurantRepository, IFoodCategoryRepository fdrepository, IWebHostEnvironment env,UserManager<AppUser> userManager,IHttpContextAccessor httpContextAccessor)
         {
             _repository = repository;
             _restaurantRepository = restaurantRepository;
             _fdrepository = fdrepository;
             _env = env;
+            _userManager = userManager;
+            _httpContextAccessor = httpContextAccessor;
         }
         public async Task<ICollection<MealItemVm>> GetAllSoftDeletes(int page, int take)
         {
@@ -77,6 +84,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         }
         public async Task<bool> CreateAsync(MealCreateVm mealVm, ModelStateDictionary modelState)
         {
+            
             if (!modelState.IsValid) return false;
             if (!await _restaurantRepository.Cheeck(x => x.Id == mealVm.RestaurantId))
             {
@@ -98,14 +106,16 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 modelState.AddModelError("Name", "You have this meal in your Meals");
                 return false;
             }
+            string userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             Meal meal = new Meal
             {
                 Name = mealVm.Name,
                 Price = mealVm.Price,
                 Description = mealVm.Description,
-                RestaurantId = mealVm.RestaurantId,
                 FoodCategoryId = mealVm.FoodCategoryId,
             };
+            meal.RestaurantId =_restaurantRepository.GetAll().Where(x => x.AppUserId == userId).FirstOrDefaultAsync().Id;
+
             if (mealVm.Photo != null)
             {
                 if (!mealVm.Photo.CheckType("image/"))

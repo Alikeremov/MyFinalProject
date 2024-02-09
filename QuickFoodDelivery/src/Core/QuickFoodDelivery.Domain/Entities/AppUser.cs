@@ -15,6 +15,7 @@ namespace QuickFoodDelivery.Domain.Entities
         public bool IsActive { get; set; }
         public DateTime BirthDate { get; set; }
         public int Gender { get; set; }
+        public List<Restaurant> Restaurants { get; set; }
         public AppUser()
         {
             ProfileImage = "profile.png";

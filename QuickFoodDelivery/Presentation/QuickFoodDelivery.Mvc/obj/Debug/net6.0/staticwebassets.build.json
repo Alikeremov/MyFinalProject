@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "t3RjClxmackfgjNZGFaVE2Bs5Dqh1i84I/dugadX/mQ=",
+  "Hash": "+TLQ+kbSMUtsGp0IYYlk4vRleJFXyBYIU++YuC5VtxI=",
   "Source": "QuickFoodDelivery.Mvc",
   "BasePath": "_content/QuickFoodDelivery.Mvc",
   "Mode": "Default",
@@ -9008,6 +9008,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\dots_vert.png"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\f2a55735-b997-402a-8f03-24bfedaebc2ct.jpg",
+      "SourceId": "QuickFoodDelivery.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\",
+      "BasePath": "_content/QuickFoodDelivery.Mvc",
+      "RelativePath": "assets/img/f2a55735-b997-402a-8f03-24bfedaebc2ct.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\f2a55735-b997-402a-8f03-24bfedaebc2ct.jpg"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\favicon.ico",
