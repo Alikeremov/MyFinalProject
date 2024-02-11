@@ -9,21 +9,24 @@ namespace QuickFoodDelivery.Mvc.Controllers
     {
         private readonly IMealService _mealService;
         private readonly IRestaurantService _restaurantService;
+        private readonly IHttpContextAccessor _accessor;
 
-        public RestaurantAdminController(IMealService mealService,IRestaurantService restaurantService )
+        public RestaurantAdminController(IMealService mealService,IRestaurantService restaurantService,IHttpContextAccessor accessor)
         {
             _mealService = mealService;
             _restaurantService = restaurantService;
+            _accessor = accessor;
         }
         public async Task<IActionResult> Index()
         {
-            if (User.Identity!=null && User.Identity.IsAuthenticated)
+            RestaurantItemVm restaurant=new RestaurantItemVm();
+            if (_accessor.HttpContext.User.Identity!=null && _accessor.HttpContext.User.Identity.IsAuthenticated)
             {
-                
+                restaurant=await _restaurantService.GetbyUserNameAsync(_accessor.HttpContext.User.Identity.Name);
             }
             RestaurantAdminVm vm = new RestaurantAdminVm
             {
-                CreateMealVm = await _mealService.CreatedAsync(new MealCreateVm())
+                RestaurantItem= restaurant,
             };
             return View(vm);
         }
@@ -39,6 +42,16 @@ namespace QuickFoodDelivery.Mvc.Controllers
         {
             if (await _restaurantService.CreateAsync(createVm, ModelState)) return RedirectToAction("Index","Home");
             return View(await _restaurantService.CreatedAsync(createVm));
+        }
+        public async Task<IActionResult> UpdateYourRestaurant(int id)
+        {
+            return View(await _restaurantService.UpdatedAsync(new RestaurantUpdateVm(), id));
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateYourRestaurant(int id, RestaurantUpdateVm updateVm)
+        {
+            if (await _restaurantService.UpdateAsync(updateVm, ModelState, id)) return RedirectToAction(nameof(Index));
+            return View(await _restaurantService.UpdatedAsync(updateVm, id));
         }
         public async Task<IActionResult> CreateMeal()
         {

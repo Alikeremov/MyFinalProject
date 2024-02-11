@@ -8,7 +8,6 @@ namespace QuickFoodDelivery.Application.ViewModels
 {
     public class RestaurantAdminVm
     {
-        public MealCreateVm? CreateMealVm { get; set; }
-        public RestaurantUpdateVm? RestaurantUpdateVm { get; set; }
+        public RestaurantItemVm? RestaurantItem { get; set; }
     }
 }

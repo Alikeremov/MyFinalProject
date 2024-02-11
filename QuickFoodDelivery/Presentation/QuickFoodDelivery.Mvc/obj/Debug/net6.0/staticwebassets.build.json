@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8djaCVpmHo3CuXuXNofXKna0Xbfj9767XhuIwgJc/EM=",
+  "Hash": "l0LwPM//KR3buN3NQ7u+LrvtUS39Fv641bn+C7FA5ek=",
   "Source": "QuickFoodDelivery.Mvc",
   "BasePath": "_content/QuickFoodDelivery.Mvc",
   "Mode": "Default",
@@ -9350,6 +9350,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\mainphoto.png.jpg"
     },
     {
+      "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\06e21448-16de-4906-b4bf-97260ea53cbct.jpg",
+      "SourceId": "QuickFoodDelivery.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\",
+      "BasePath": "_content/QuickFoodDelivery.Mvc",
+      "RelativePath": "assets/img/mealImages/06e21448-16de-4906-b4bf-97260ea53cbct.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\mealImages\\06e21448-16de-4906-b4bf-97260ea53cbct.jpg"
+    },
+    {
       "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\0bf1e3ba-8521-445c-858d-72f2144cc8bat.jpg",
       "SourceId": "QuickFoodDelivery.Mvc",
       "SourceType": "Discovered",
@@ -9365,40 +9382,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\mealImages\\0bf1e3ba-8521-445c-858d-72f2144cc8bat.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\1d927377-0fb0-4546-874a-21d7ccf6490amcchicen.jpg",
-      "SourceId": "QuickFoodDelivery.Mvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\",
-      "BasePath": "_content/QuickFoodDelivery.Mvc",
-      "RelativePath": "assets/img/mealImages/1d927377-0fb0-4546-874a-21d7ccf6490amcchicen.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\mealImages\\1d927377-0fb0-4546-874a-21d7ccf6490amcchicen.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\48b4cbc2-0025-4d76-abab-cbdd8d7769d1t.jpg",
-      "SourceId": "QuickFoodDelivery.Mvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\",
-      "BasePath": "_content/QuickFoodDelivery.Mvc",
-      "RelativePath": "assets/img/mealImages/48b4cbc2-0025-4d76-abab-cbdd8d7769d1t.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\mealImages\\48b4cbc2-0025-4d76-abab-cbdd8d7769d1t.jpg"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\5d76a798-069f-48ca-a1d0-70c435ce2b62mcchicen.jpg",
@@ -9520,12 +9503,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\mealImages\\94bd14ee-c288-4fe2-8555-2f6b3feeaac3t.jpg"
     },
     {
-      "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\aa784bcd-5e92-4392-b402-10707490631ct.jpg",
+      "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\9dc82f17-a104-405d-aabc-729f6afe2861t.jpg",
       "SourceId": "QuickFoodDelivery.Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\",
       "BasePath": "_content/QuickFoodDelivery.Mvc",
-      "RelativePath": "assets/img/mealImages/aa784bcd-5e92-4392-b402-10707490631ct.jpg",
+      "RelativePath": "assets/img/mealImages/9dc82f17-a104-405d-aabc-729f6afe2861t.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -9534,7 +9517,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\mealImages\\aa784bcd-5e92-4392-b402-10707490631ct.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\mealImages\\9dc82f17-a104-405d-aabc-729f6afe2861t.jpg"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\b488f2b6-c418-4155-886e-9276ac24766et.jpg",
@@ -9569,23 +9552,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\mealImages\\ca6ee64b-4dd4-4d7a-9cd5-7a35b175edf1t.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\e95975ee-d078-4685-ae7c-261fe20c26d8t.jpg",
-      "SourceId": "QuickFoodDelivery.Mvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\",
-      "BasePath": "_content/QuickFoodDelivery.Mvc",
-      "RelativePath": "assets/img/mealImages/e95975ee-d078-4685-ae7c-261fe20c26d8t.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\mealImages\\e95975ee-d078-4685-ae7c-261fe20c26d8t.jpg"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-1.jpg",

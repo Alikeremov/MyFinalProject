@@ -10,7 +10,9 @@ namespace QuickFoodDelivery.Application.Abstractions.Repositories
 {
     public interface IRepository<T> where T : BaseEntity , new()
     {
+
         IQueryable<T> GetAll(bool? isDeleted = false, bool isTracking = false, params string[] includes);
+        IQueryable<T> GetAllnotDeleted( bool isTracking = false, params string[] includes);
         IQueryable<T> GetAllWhere(Expression<Func<T, bool>>? expression = null,
             Expression<Func<T, object>>? orderExpression = null,
             bool isDescending = false,
@@ -19,6 +21,7 @@ namespace QuickFoodDelivery.Application.Abstractions.Repositories
             bool? isDeleted = false,
             params string[] includes);
         Task<T> GetByIdnotDeletedAsync(int id, bool isTracking = false, params string[] includes);
+        Task<T> GetByExpressionnonDeletedAsync(Expression<Func<T, bool>> expression, bool isTracking = false, params string[] includes);
 
         Task<T> GetByIdAsync(int id, bool isTracking = false, bool? isDeleted = null, params string[] includes);
         Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = false, bool? isDeleted = false, params string[] includes);

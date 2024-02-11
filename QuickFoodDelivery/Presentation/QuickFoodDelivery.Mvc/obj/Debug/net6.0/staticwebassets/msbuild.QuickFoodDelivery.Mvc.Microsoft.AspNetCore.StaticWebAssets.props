@@ -8752,6 +8752,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mainphoto.png.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\06e21448-16de-4906-b4bf-97260ea53cbct.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>QuickFoodDelivery.Mvc</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/QuickFoodDelivery.Mvc</BasePath>
+      <RelativePath>assets/img/mealImages/06e21448-16de-4906-b4bf-97260ea53cbct.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\06e21448-16de-4906-b4bf-97260ea53cbct.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\0bf1e3ba-8521-445c-858d-72f2144cc8bat.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>QuickFoodDelivery.Mvc</SourceId>
@@ -8767,38 +8783,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\0bf1e3ba-8521-445c-858d-72f2144cc8bat.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\1d927377-0fb0-4546-874a-21d7ccf6490amcchicen.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>QuickFoodDelivery.Mvc</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/QuickFoodDelivery.Mvc</BasePath>
-      <RelativePath>assets/img/mealImages/1d927377-0fb0-4546-874a-21d7ccf6490amcchicen.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\1d927377-0fb0-4546-874a-21d7ccf6490amcchicen.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\48b4cbc2-0025-4d76-abab-cbdd8d7769d1t.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>QuickFoodDelivery.Mvc</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/QuickFoodDelivery.Mvc</BasePath>
-      <RelativePath>assets/img/mealImages/48b4cbc2-0025-4d76-abab-cbdd8d7769d1t.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\48b4cbc2-0025-4d76-abab-cbdd8d7769d1t.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\5d76a798-069f-48ca-a1d0-70c435ce2b62mcchicen.jpg))">
       <SourceType>Package</SourceType>
@@ -8912,12 +8896,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\94bd14ee-c288-4fe2-8555-2f6b3feeaac3t.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\aa784bcd-5e92-4392-b402-10707490631ct.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\9dc82f17-a104-405d-aabc-729f6afe2861t.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>QuickFoodDelivery.Mvc</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/QuickFoodDelivery.Mvc</BasePath>
-      <RelativePath>assets/img/mealImages/aa784bcd-5e92-4392-b402-10707490631ct.jpg</RelativePath>
+      <RelativePath>assets/img/mealImages/9dc82f17-a104-405d-aabc-729f6afe2861t.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -8926,7 +8910,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\aa784bcd-5e92-4392-b402-10707490631ct.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\9dc82f17-a104-405d-aabc-729f6afe2861t.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\b488f2b6-c418-4155-886e-9276ac24766et.jpg))">
       <SourceType>Package</SourceType>
@@ -8959,22 +8943,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\ca6ee64b-4dd4-4d7a-9cd5-7a35b175edf1t.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\e95975ee-d078-4685-ae7c-261fe20c26d8t.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>QuickFoodDelivery.Mvc</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/QuickFoodDelivery.Mvc</BasePath>
-      <RelativePath>assets/img/mealImages/e95975ee-d078-4685-ae7c-261fe20c26d8t.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\mealImages\e95975ee-d078-4685-ae7c-261fe20c26d8t.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\menu-thumb-1.jpg))">
       <SourceType>Package</SourceType>

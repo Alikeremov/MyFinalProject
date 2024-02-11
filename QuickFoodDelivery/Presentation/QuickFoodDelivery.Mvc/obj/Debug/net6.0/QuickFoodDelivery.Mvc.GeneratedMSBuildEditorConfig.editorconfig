@@ -64,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE1lYWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Areas/Manage/Views/Meal/UnConfirments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE1lYWxcVW5Db25maXJtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Areas/Manage/Views/Meal/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE1lYWxcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -122,6 +126,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Views/RestaurantAdmin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudEFkbWluXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Views/RestaurantAdmin/UpdateYourRestaurant.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudEFkbWluXFVwZGF0ZVlvdXJSZXN0YXVyYW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Views/_ViewImports.cshtml]

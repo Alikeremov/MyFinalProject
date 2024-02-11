@@ -31,7 +31,14 @@ namespace QuickFoodDelivery.Persistence.Implementations.Repositories.Generic
 			if (includes != null) query = _addIncludes(query, includes);
 			return query;
 		}
-		public IQueryable<T> GetAllWhere(
+        public IQueryable<T> GetAllnotDeleted( bool isTracking = false, params string[] includes)
+        {
+            IQueryable<T> query = _table;
+            if (!isTracking) query = query.AsNoTracking();
+            if (includes != null) query = _addIncludes(query, includes);
+            return query;
+        }
+        public IQueryable<T> GetAllWhere(
 			Expression<Func<T, bool>>? expression = null,
 			Expression<Func<T, object>>? orderExpression = null,
 			bool isDescending = false,
@@ -88,8 +95,15 @@ namespace QuickFoodDelivery.Persistence.Implementations.Repositories.Generic
 			if (includes != null) query = _addIncludes(query, includes);
 			return await query.FirstOrDefaultAsync();
 		}
+        public async Task<T> GetByExpressionnonDeletedAsync(Expression<Func<T, bool>> expression, bool isTracking = false, params string[] includes)
+        {
+            IQueryable<T> query = _table.Where(expression);
+            if (!isTracking) query = query.AsNoTracking();
+            if (includes != null) query = _addIncludes(query, includes);
+            return await query.FirstOrDefaultAsync();
+        }
 
-		public async Task AddAsync(T entity)
+        public async Task AddAsync(T entity)
 		{
 			await _table.AddAsync(entity);
 		}

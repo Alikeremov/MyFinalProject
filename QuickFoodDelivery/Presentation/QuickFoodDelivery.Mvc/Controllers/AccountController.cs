@@ -6,7 +6,7 @@ using QuickFoodDelivery.Domain.Enums;
 
 namespace QuickFoodDelivery.Mvc.Controllers
 {
-    public class AccountController : BaseController
+    public class AccountController : Controller
     {
         private readonly IAutenticationService _service;
 
@@ -49,6 +49,10 @@ namespace QuickFoodDelivery.Mvc.Controllers
                 return View(vm);
             }
             var result = await _service.Login(vm);
+            if (result.Any(x => x == "Admin"))
+            {
+                return RedirectToAction("Index","Dashboard",new {area="manage"});
+            }
             if (result.Any())
             {
                 foreach (var item in result)
@@ -57,7 +61,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
                     return View(vm);
                 }
             }
-            return RedirectToIndexBasedOnRole();
+            return RedirectToAction("Index", "Home");
         }
         public async Task<IActionResult> Logout()
         {
