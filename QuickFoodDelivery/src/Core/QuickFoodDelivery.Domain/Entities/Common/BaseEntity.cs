@@ -11,7 +11,7 @@ namespace QuickFoodDelivery.Domain.Entities.Common
         public int Id { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? ModifiredAt { get; set; }
-        public bool IsDeleted { get; set; }
+        public bool? IsDeleted { get; set; }
         public string CreatedBy { get; set; } = null!;
         public string? ModifiedBy { get; set; }
         public BaseEntity()

@@ -75,7 +75,7 @@
                     <div class="form-wrapper">
                         <label asp-for="BirthDate">BirthDate:</label>
                         <div class="form-holder">
-                            <input asp-for="BirthDate" class="form-control" max="@DateTime.Now.ToString("yyyy-MM-dd")" required placeholder="BirthDate">
+                            <input asp-for="BirthDate" max="@DateTime.UtcNow.ToString(" yyyy-MM-dd")" type="date" id="BirthDate" name="BirthDate" required />
                             <span asp-validation-for="BirthDate"></span>
                         </div>
                     </div>

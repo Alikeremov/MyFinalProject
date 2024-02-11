@@ -115,6 +115,10 @@
                                     <li><a href="icon_pack_2.html">Icon pack 2</a></li>
                                 </ul>
                             </li>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li><a asp-action="Index" asp-controller="DashBoard" asp-area="Manage" class="btn btn-success">Go Admin page</a></li>
+                            }
                             @if (User.Identity.IsAuthenticated)
                             {
                                 <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>

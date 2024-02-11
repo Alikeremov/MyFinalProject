@@ -106,7 +106,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         public async Task DeleteAsync(int id)
         {
             if (id < 1) throw new Exception("Bad Request");
-            FoodCategory existed = await _repository.GetByIdAsync(id);
+            FoodCategory existed = await _repository.GetByIdAsync(id, isDeleted: true);
             if (existed == null) throw new Exception("Not Found");
             _repository.Delete(existed);
             await _repository.SaveChangesAsync();
@@ -115,7 +115,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         public async Task ReverseDeleteAsync(int id)
         {
             if (id < 1) throw new Exception("Bad Request");
-            FoodCategory existed = await _repository.GetByIdAsync(id);
+            FoodCategory existed = await _repository.GetByIdAsync(id, isDeleted: true);
             if (existed == null) throw new Exception("Not Found");
             _repository.ReverseDelete(existed);
             await _repository.SaveChangesAsync();
@@ -124,7 +124,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         public async Task SoftDeleteAsync(int id)
         {
             if (id < 1) throw new Exception("Bad Request");
-            FoodCategory existed = await _repository.GetByIdAsync(id);
+            FoodCategory existed = await _repository.GetByIdAsync(id, isDeleted: false);
             if (existed == null) throw new Exception("Not Found");
             _repository.SoftDelete(existed);
             await _repository.SaveChangesAsync();

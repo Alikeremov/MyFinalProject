@@ -21,8 +21,8 @@ namespace QuickFoodDelivery.Application.ViewModels
         public string Description { get; set; } = null!;
         [Required(ErrorMessage = "Meal must have Price")]
         public decimal Price { get; set; }
-        [Required(ErrorMessage = "Meal must have restaurant Id")]
-        public int RestaurantId { get; set; }
+        //[Required(ErrorMessage = "Meal must have restaurant Id")]
+        //public int RestaurantId { get; set; }
         public int? FoodCategoryId { get; set; }
 
         [Required(ErrorMessage ="Meal must have photo")]

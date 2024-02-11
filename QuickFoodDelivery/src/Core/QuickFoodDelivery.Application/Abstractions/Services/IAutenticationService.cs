@@ -1,4 +1,5 @@
 ﻿using QuickFoodDelivery.Application.ViewModels;
+using QuickFoodDelivery.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
         Task<List<string>> Login(LoginVm vm);
         Task Logout();
         Task CreateRoleAsync();
+        Task<AppUser> GetUserAsync(string userName);
+
     }
 }

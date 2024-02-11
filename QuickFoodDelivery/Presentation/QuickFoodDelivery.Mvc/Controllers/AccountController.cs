@@ -2,10 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using QuickFoodDelivery.Application.Abstractions.Services;
 using QuickFoodDelivery.Application.ViewModels;
+using QuickFoodDelivery.Domain.Enums;
 
 namespace QuickFoodDelivery.Mvc.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly IAutenticationService _service;
 
@@ -56,10 +57,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
                     return View(vm);
                 }
             }
-            
-            if(User.IsInRole("Admin")) return RedirectToAction("Index", "Home");
-
-            return RedirectToAction("Index", "Dashboard", new { area = "manage" });
+            return RedirectToIndexBasedOnRole();
         }
         public async Task<IActionResult> Logout()
         {

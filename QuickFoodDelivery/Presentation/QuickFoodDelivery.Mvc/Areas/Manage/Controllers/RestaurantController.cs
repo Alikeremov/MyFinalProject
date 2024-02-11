@@ -14,13 +14,17 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
         {
             _service = service;
         }
-        public async Task<IActionResult> Index(int page=1,int take=3)
+        public async Task<IActionResult> Index(int page=1,int take=10)
         {
             return View(await _service.GetAllunSoftDeletesAsync(page,take));
         }
-        public async Task<IActionResult> Arxiv(int page=1,int take = 3)
+        public async Task<IActionResult> Arxiv(int page=1,int take = 10)
         {
             return View(await _service.GetAllSoftDeletes(page, take));
+        }
+        public async Task<IActionResult> UnConfirmerds(int page = 1, int take = 10)
+        {
+            return View(await _service.GetAllnonConfirmed(page, take));
         }
         public async Task<IActionResult> Create()
         {
@@ -49,6 +53,11 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
         {
             await _service.DeleteAsync(id); 
             return RedirectToAction(nameof(Arxiv));
+        }
+        public async Task<IActionResult> Sumbit(int id)
+        {
+            await _service.Submit(id);
+            return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> SoftDelete(int id)
         {
