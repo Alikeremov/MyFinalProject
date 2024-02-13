@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuickFoodDelivery.Domain.Enums
 {
-    public enum UserRoles
+    public enum UserRole
     {
         Admin,
         Member,
-
+        RestaurantAdmin,
     }
 }

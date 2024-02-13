@@ -13,11 +13,11 @@ namespace QuickFoodDelivery.Mvc.Controllers
         }
         protected ActionResult RedirectToIndexBasedOnRole()
         {
-            if (_accessor.HttpContext.User.IsInRole(UserRoles.Admin.ToString()))
+            if (_accessor.HttpContext.User.IsInRole(UserRole.Admin.ToString()))
             {
                 return RedirectToAction("Index", "Dashboard",new {area="manage"});
             }
-            else if (_accessor.HttpContext.User.IsInRole(UserRoles.Member.ToString()))
+            else if (_accessor.HttpContext.User.IsInRole(UserRole.Member.ToString()))
             {
                 return RedirectToAction("Index", "RestaurantaAdmin");
             }

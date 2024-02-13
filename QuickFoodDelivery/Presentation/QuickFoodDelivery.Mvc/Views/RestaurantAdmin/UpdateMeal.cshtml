@@ -1,0 +1,80 @@
+﻿@model MealUpdateVm
+<head>
+    <link href="~/assets/css/skins/square/grey.css" rel="stylesheet">
+    <link href="~/assets/css/admin.css" rel="stylesheet">
+    <link href="~/assets/js/editor/summernote-bs4.css" rel="stylesheet">
+    <link href="~/assets/css/dropzone.css" rel="stylesheet">
+</head>
+<section class="parallax-window" id="short" data-parallax="scroll" data-image-src="/assets/img/mealImages/@Model.Image" data-natural-width="1400" data-natural-height="350">
+    <div id="subheader">
+        <div id="sub_content">
+            <h1>Admin section</h1>
+            <p>Qui debitis meliore ex, tollit debitis conclusionemque te eos.</p>
+            <p></p>
+        </div><!-- End sub_content -->
+    </div><!-- End subheader -->
+</section><!-- End section -->
+<div class="container margin_60">
+    <div id="tabs" class="tabs">
+        <div class="content">
+
+
+            <form method="post" enctype="multipart/form-data">
+                <div class="wrapper_indent">
+
+                    <div class="strip_menu_items">
+                        <div class="row">
+
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <img style="width:75px; height:75px" src="~/assets/img/mealImages/@Model.Image" alt="">
+                                            <input asp-for="Image" type="hidden" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label asp-for="Photo">Photo</label>
+                                            <input asp-for="Photo" class="form-control" accept=".jpg, .jpeg, .png">
+                                            <span asp-validation-for="Photo"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label asp-for="Name">Name</label>
+                                            <input asp-for="Name" type="text" class="form-control">
+                                            <span asp-validation-for="Name"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label asp-for="Price">Price</label>
+                                            <input asp-for="Price" class="form-control">
+                                            <span asp-validation-for="Price"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Description">Description</label>
+                                    <input asp-for="Description" class="form-control">
+                                    <span asp-validation-for="Description"></span>
+                                </div>
+
+                                <div class="col-xl-12">
+                                    <label asp-for="FoodCategoryId">FoodCategoryId</label>
+                                    <select asp-for="FoodCategoryId" class="form-control" placeholder="FoodCategoryId" asp-items="new SelectList(Model.FoodCategories, nameof(FoodCategory.Id), nameof(FoodCategory.Name))">
+                                        <option selected disabled>Chosee Food Category</option>
+                                    </select>
+                                    <span asp-validation-for="FoodCategoryId" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div><!-- End row -->
+                    </div><!-- End strip_menu_items -->
+                    <button type="submit"> Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,211 @@
+﻿@model DetailVm 
+@{
+    int count = 1;
+}
+ <head>
+    <link href="~/assets/css/skins/square/grey.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="~/assets/css/custom.css" rel="stylesheet">
+
+ </head>
+<!-- SubHeader =============================================== -->
+<section data-jarallax class="parallax-window" id="short" data-parallax="scroll" data-image-src="/assets/img/restaurantImages/@Model.Restaurant.Image" data-natural-width="1400" data-natural-height="350">
+    <div id="subheader">
+        <div id="sub_content">
+            <div id="thumb"><img src="~/assets/img/restaurantImages/@Model.Restaurant.Image" alt=""></div>
+            <div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i> (<small><a href="">Read 98 reviews</a></small>)</div>
+            <h1>@Model.Restaurant.Name</h1>
+            <div><em>@Model.Restaurant.Category?.Name</em></div>
+            <div><i class="icon_pin"></i> @Model.Restaurant.Address</div>
+        </div><!-- End sub_content -->
+    </div><!-- End subheader -->
+</section><!-- End section -->
+<!-- End SubHeader ============================================ -->
+
+
+<div id="position">
+    <div class="container">
+        <ul>
+            <li><a href="#0">Home</a></li>
+            <li><a href="#0">Category</a></li>
+            <li>Page active</li>
+        </ul>
+        <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
+    </div>
+</div><!-- Position -->
+<!-- Content ================================================== -->
+<div class="container margin_60_35">
+    <div class="row">
+        <div class="col-lg-3" id="col_left">
+            <p><a href="" class="btn_side">Back to search</a></p>
+            <div class="box_style_1">
+                <ul id="cat_nav">
+                    @foreach (var item in Model.FoodCategories)
+                    {
+                        <li><a asp-action="details" asp-controller="Restaurant" asp-route-foodcategoryId="@item.Id" class="active">@item.Name</a></li>
+                    }
+                </ul>
+            </div><!-- End box_style_1 -->
+            <div class="box_style_2 d-none d-sm-block" id="help">
+                <i class="icon_lifesaver"></i>
+                <h4>Need <span>Help?</span></h4>
+                <a href="tel://@Model.Restaurant.Phone" class="phone">@Model.Restaurant.Phone</a>
+                <small><span>Opening Time:@Model.Restaurant.OpeningTime?.ToString("HH:mm")</span></small>
+                <small><span>Clozing Time:@Model.Restaurant.ClozedTime?.ToString("HH:mm")</span></small>
+            </div>
+        </div><!-- End col -->
+        <div class="col-lg-6">
+            <div class="box_style_2" id="main_menu">
+                <h2 class="inner">Menu</h2>
+                <table class="table table-striped cart-list">
+                    <thead>
+                        <tr>
+                            <th>
+                                Item
+                            </th>
+                            <th>
+                                Price
+                            </th>
+                            <th>
+                                Order
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Meals)
+                        {
+                            <tr>
+                                <td>
+                                    <figure class="thumb_menu_list"><img src="~/assets/img/mealImages/@item.Image" alt="thumb"></figure>
+                                    <h5>@(count++). @item.Name</h5>
+                                    <p>
+                                        @item.Description
+                                    </p>
+                                </td>
+                                <td>
+                                    <strong>€ @item.Price</strong>
+                                </td>
+                                <td class="options">
+                                    <div class="dropdown dropdown-options">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="icon_plus_alt2"></i></a>
+                                        <div class="dropdown-menu">
+                                            <a href="#0" class="add_to_basket">Add to cart</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div><!-- End box_style_1 -->
+        </div><!-- End col -->
+        <div class="col-lg-3" id="sidebar">
+            <div class="theiaStickySidebar">
+                <div id="cart_box">
+                    <h3>Your order <i class="icon_cart_alt float-right"></i></h3>
+                    <table class="table table_summary">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> Enchiladas
+                                </td>
+                                <td>
+                                    <strong class="float-right">$11</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Burrito
+                                </td>
+                                <td>
+                                    <strong class="float-right">$14</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> Chicken
+                                </td>
+                                <td>
+                                    <strong class="float-right">$20</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Corona Beer
+                                </td>
+                                <td>
+                                    <strong class="float-right">$9</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Cheese Cake
+                                </td>
+                                <td>
+                                    <strong class="float-right">$12</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <div class="row" id="options_2">
+                        <div class="col-xl-6 col-md-12 col-sm-12 col-6">
+                            <label><input type="radio" value="" checked name="option_2" class="icheck">Delivery</label>
+                        </div>
+                        <div class="col-xl-6 col-md-12 col-sm-12 col-6">
+                            <label><input type="radio" value="" name="option_2" class="icheck">Take Away</label>
+                        </div>
+                    </div><!-- Edn options 2 -->
+                    <hr>
+                    <table class="table table_summary">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Subtotal <span class="float-right">$56</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Delivery fee <span class="float-right">$10</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="total">
+                                    TOTAL <span class="float-right">$66</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <a class="btn_full" href="cart.html">Order now</a>
+                </div><!-- End cart_box -->
+            </div><!-- End theiaStickySidebar -->
+        </div><!-- End col -->
+    </div><!-- End row -->
+</div><!-- End container -->
+<!-- End Content =============================================== -->
+<!-- SPECIFIC SCRIPTS -->
+<script src="~/assets/js/ResizeSensor.min.js"></script>
+<script src="~/assets/js/theia-sticky-sidebar.min.js"></script>
+<script>
+    jQuery('#sidebar,#col_left').theiaStickySidebar({
+      additionalMarginTop: 80
+    });
+</script>
+<!-- SMOOTH SCROLL -->
+<script>
+    $('#cat_nav a[href^="#"]').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+            || location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+               if (target.length) {
+                 $('html,body').animate({
+                     scrollTop: target.offset().top -75
+                }, 600);
+                return false;
+            }
+        }
+    });
+</script>

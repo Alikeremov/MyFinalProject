@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuickFoodDelivery.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,6 @@ namespace QuickFoodDelivery.Application.ViewModels
     public class RestaurantAdminVm
     {
         public RestaurantItemVm? RestaurantItem { get; set; }
+        public ICollection<Meal> Meals { get; set; }
     }
 }

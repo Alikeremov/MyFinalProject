@@ -88,7 +88,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 }
                 return str;
             }
-            await _userManager.AddToRoleAsync(user,UserRoles.Member.ToString());
+            await _userManager.AddToRoleAsync(user,UserRole.Member.ToString());
             await _signInManager.SignInAsync(user, isPersistent: false);
             return str;
 
@@ -130,7 +130,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         }
         public async Task CreateRoleAsync()
         {
-            foreach (UserRoles role in Enum.GetValues(typeof(UserRoles)))
+            foreach (UserRole role in Enum.GetValues(typeof(UserRole)))
             {
                 if (!await _roleManager.RoleExistsAsync(role.ToString()))
                 {
@@ -145,6 +145,21 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         public async Task<ICollection<AppUser>> GetAllUsers(string searchTerm)
         {
             return await _userManager.Users.Where(x => x.UserName.ToLower().Contains(searchTerm.ToLower()) || x.Name.ToLower().Contains(searchTerm.ToLower()) || x.Surname.ToLower().Contains(searchTerm.ToLower())).ToListAsync();
+        }
+        public async Task UpdateUserRole(string userId,string roleName)
+        {
+            AppUser user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                throw new Exception("User Not found");
+            }
+            IList<string> existingRoles = await _userManager.GetRolesAsync(user);
+            foreach (var role in existingRoles)
+            {
+                await _userManager.RemoveFromRoleAsync(user, role);
+            }
+            await _userManager.AddToRoleAsync(user, roleName);
+            await _userManager.UpdateAsync(user);
         }
     }
 }

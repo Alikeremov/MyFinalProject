@@ -21,6 +21,7 @@ namespace QuickFoodDelivery.Persistence.DAL
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<FoodCategory> FoodCategories { get; set; }
+        public DbSet<Employment> Employments { get; set; }
         public DbSet<Service> Services { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {

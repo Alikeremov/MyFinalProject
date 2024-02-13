@@ -1,7 +1,4 @@
-﻿@using QuickFoodDelivery.Domain.Entities;
-@using Microsoft.AspNetCore.Identity
-
-@inject UserManager<AppUser> userManager
+﻿@inject UserManager<AppUser> userManager
 
 <!DOCTYPE html>
 <html>
@@ -117,7 +114,11 @@
                             </li>
                             @if (User.IsInRole("Admin"))
                             {
-                                <li><a asp-action="Index" asp-controller="DashBoard" asp-area="Manage" class="btn btn-success">Go Admin page</a></li>
+                                <li><a asp-action="Index" asp-controller="DashBoard" asp-area="Manage" >Go Admin page</a></li>
+                            }
+                            else if(User.IsInRole("RestaurantAdmin"))
+                            {
+                                <li><a asp-action="Index" asp-controller="RestaurantAdmin" >go</a></li>
                             }
                             @if (User.Identity.IsAuthenticated)
                             {

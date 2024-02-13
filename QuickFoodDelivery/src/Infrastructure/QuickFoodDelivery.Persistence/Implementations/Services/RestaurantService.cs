@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
+using QuickFoodDelivery.Domain.Enums;
 
 namespace QuickFoodDelivery.Persistence.Implementations.Services
 {
@@ -132,7 +133,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
         public async Task<RestaurantItemVm> GetAsync(int id)
         {
-            Restaurant restaurant = await _repository.GetByIdAsync(id, isDeleted: false);
+            Restaurant restaurant = await _repository.GetByIdAsync(id, isDeleted: false,includes:new string[] { nameof(Restaurant.Meals),nameof(Restaurant.Category) });
             if (restaurant == null) throw new Exception("NotFound");
             return new RestaurantItemVm
             {
@@ -151,7 +152,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 Meals = restaurant.Meals,
                 Reviews = restaurant.Reviews,
                 AppUserId = restaurant.AppUserId,
-
+                Category=restaurant.Category,
             };
         }
         public async Task<bool> CreateAsync(RestaurantCreateVm restaurantvm,ModelStateDictionary modelState)
@@ -292,6 +293,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             Restaurant existed = await _repository.GetByIdAsync(id, isDeleted: null);
             if (existed == null) throw new Exception("Not Found");
             _repository.ReverseDelete(existed);
+            await _autentication.UpdateUserRole(existed.AppUserId, UserRole.RestaurantAdmin.ToString());
             await _repository.SaveChangesAsync();
         }
 

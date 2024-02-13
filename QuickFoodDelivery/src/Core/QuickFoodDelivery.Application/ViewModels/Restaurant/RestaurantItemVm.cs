@@ -23,6 +23,7 @@ namespace QuickFoodDelivery.Application.ViewModels
         public int CategoryId { get; set; }
         public string? AppUserId { get; set; }
         public ICollection<Review> Reviews { get; set; }
+        public Category? Category { get; set; }
         public ICollection<Meal> Meals { get; set; }
 
     }

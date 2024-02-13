@@ -64,6 +64,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             FoodCategory meal = new FoodCategory
             {
                 Name = fdVm.Name,
+                IsDeleted=false
             };
             await _repository.AddAsync(meal);
             await _repository.SaveChangesAsync();
@@ -85,6 +86,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             }
 
             existed.Name = fdVm.Name;
+            existed.IsDeleted = false;
             _repository.Update(existed);
             await _repository.SaveChangesAsync();
             return true;

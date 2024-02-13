@@ -49,7 +49,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 		{
 			if (await _repository.Cheeck(x => x.Name == categoryVm.Name)) throw new Exception("Bad Request");
 
-			await _repository.AddAsync(new Category { Name=categoryVm.Name});
+			await _repository.AddAsync(new Category { Name=categoryVm.Name,IsDeleted=false});
 			await _repository.SaveChangesAsync();
 		}
 		public async Task Update(CategoryUpdateVm categoryVm, int id)
@@ -58,6 +58,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 			if (existed == null) throw new Exception("Not Found");
 			if (await _repository.Cheeck(x => x.Name == categoryVm.Name)) throw new Exception("Bad Request");
 			existed.Name = categoryVm.Name;
+			existed.IsDeleted = false;
 			_repository.Update(existed);
 			await _repository.SaveChangesAsync();
 		}

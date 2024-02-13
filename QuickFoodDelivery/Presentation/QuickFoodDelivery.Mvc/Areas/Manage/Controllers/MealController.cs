@@ -64,7 +64,7 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
         public async Task<IActionResult> Sumbit(int id)
         {
             await _service.Submit(id);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(UnConfirments));
         }
     }
 }

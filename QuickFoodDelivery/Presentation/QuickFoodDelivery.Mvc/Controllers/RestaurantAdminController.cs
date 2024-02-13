@@ -27,6 +27,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
             RestaurantAdminVm vm = new RestaurantAdminVm
             {
                 RestaurantItem= restaurant,
+                Meals=restaurant.Meals
             };
             return View(vm);
         }
@@ -62,6 +63,16 @@ namespace QuickFoodDelivery.Mvc.Controllers
         {
             if (await _mealService.CreateAsync(createVm, ModelState)) return RedirectToAction(nameof(Index));
             return View(await _mealService.CreatedAsync(createVm));
+        }
+        public async Task<IActionResult> UpdateMeal(int id)
+        {
+            return View(await _mealService.UpdatedAsync(new MealUpdateVm(), id));
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateMeal(int id, MealUpdateVm updateVm)
+        {
+            if (await _mealService.UpdateAsync(updateVm, ModelState, id)) return RedirectToAction(nameof(Index));
+            return View(await _mealService.UpdatedAsync(updateVm, id));
         }
     }
 }

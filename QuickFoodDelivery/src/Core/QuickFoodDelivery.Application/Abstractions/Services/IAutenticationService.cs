@@ -15,6 +15,8 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
         Task Logout();
         Task CreateRoleAsync();
         Task<AppUser> GetUserAsync(string userName);
+        Task UpdateUserRole(string userId, string roleName);
+
 
     }
 }
