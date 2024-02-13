@@ -84,6 +84,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 Description = employmentvm.Description,
                 Subtittle = employmentvm.Subtittle,
                 ButtonText = employmentvm.ButtonText,
+                IsDeleted=false
             };
             if (employmentvm.Photo != null)
             {
@@ -146,11 +147,11 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             if (id < 1) throw new Exception("Bad Request");
             Employment existed = await _repository.GetByIdAsync(id, isDeleted: false);
             if (existed == null) throw new Exception("Not Found");
-            existed.Tittle = employmentvm.Tittle;
-            existed.Description = employmentvm.Description;
-            existed.Subtittle = employmentvm.Subtittle;
-            existed.ButtonText = employmentvm.ButtonText;
-            existed.Image = employmentvm.Image;
+            employmentvm.Tittle = existed.Tittle;
+            employmentvm.Description = existed.Description;
+            employmentvm.Subtittle = existed.Subtittle;
+            employmentvm.ButtonText = existed.ButtonText;
+            employmentvm.Image = existed.Image;
             return employmentvm;
         }
         public async Task DeleteAsync(int id)

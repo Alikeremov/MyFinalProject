@@ -38,12 +38,16 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
             services.AddScoped<IRestaurantRepository,RestaurantRepository>();
             services.AddScoped<IFoodCategoryRepository,FoodCategoryRepository>();
             services.AddScoped<IMealRepository,MealRepository>();
+            services.AddScoped<IEmploymentRepository,EmploymentRepository>();
+            services.AddScoped<IServiceRepository,ServiceRepository>();
 
             services.AddScoped<IAutenticationService, AutenticationService>();
             services.AddScoped<IRestaurantService, RestaurantService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IFoodCategoryService, FoodCategoryService>();
             services.AddScoped<IMealService, MealService>();
+            services.AddScoped<IServiceService, ServiceService>();
+            services.AddScoped<IEmploymentService, EmploymentService>();
 
 
 

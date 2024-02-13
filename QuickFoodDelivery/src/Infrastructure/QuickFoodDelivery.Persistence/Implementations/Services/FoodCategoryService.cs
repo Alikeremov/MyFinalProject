@@ -45,7 +45,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
         public async Task<FdCategoryItemVm> GetAsync(int id)
         {
-            FoodCategory meal = await _repository.GetByIdAsync(id);
+            FoodCategory meal = await _repository.GetByIdAsync(id,isDeleted: false);
             if (meal == null) throw new Exception("NotFound");
             return new FdCategoryItemVm
             {
@@ -95,7 +95,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         public async Task<FdCategoryUpdateVm> UpdatedAsync(FdCategoryUpdateVm fdVm, int id)
         {
             if (id < 1) throw new Exception("Bad Request");
-            FoodCategory existed = await _repository.GetByIdAsync(id);
+            FoodCategory existed = await _repository.GetByIdAsync(id, isDeleted: false);
             if (existed == null) throw new Exception("Not Found");
             fdVm.Name = existed.Name;
             return fdVm;

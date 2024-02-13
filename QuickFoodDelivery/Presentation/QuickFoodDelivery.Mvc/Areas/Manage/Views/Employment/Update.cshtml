@@ -1,0 +1,54 @@
+﻿@model EmploymentUpdateVm
+
+<div class="col-xl-6">
+    <div class="card custom-card">
+        <div class="card-header justify-content-between">
+            <div class="card-title">
+                Input border Styles
+            </div>
+            <div class="prism-toggle">
+                <a asp-action="Index" asp-controller="Employment" class="btn btn-sm btn-danger">Cancel</a>
+            </div>
+        </div>
+        <div class="card-body d-flex">
+            <div class="row gy-3 ">
+                <form class="row gy-3 " method="post" enctype="multipart/form-data">
+                    <div class="col-xl-12">
+                        <img style="width:75px; height:75px" src="~/assets/img/serviceImages/@Model.Image" alt="">
+                        <input asp-for="Image" type="hidden" />
+                    </div>
+                    <div class="col-xl-12">
+                        <label asp-for="Photo" class="form-label">Photo</label>
+                        <input asp-for="Photo" class="form-control" placeholder="Photo">
+                        <span asp-validation-for="Photo"></span>
+                    </div>
+                    <div class="col-xl-12">
+                        <label asp-for="Tittle" class="form-label">Tittle</label>
+                        <input asp-for="Tittle" type="text" class="form-control" placeholder="Tittle">
+                        <span asp-validation-for="Tittle"></span>
+                    </div>
+                    <div class="col-xl-12">
+                        <label asp-for="Subtittle" class="form-label">Subtittle</label>
+                        <input asp-for="Subtittle" type="text" class="form-control" placeholder="Subtittle">
+                        <span asp-validation-for="Subtittle"></span>
+                    </div>
+                    <div class="col-xl-12">
+                        <label asp-for="Description" class="form-label">Description</label>
+                        <input asp-for="Description" type="text" class="form-control" placeholder="Description">
+                        <span asp-validation-for="Description"></span>
+                    </div>
+                    <div class="col-xl-12">
+                        <label asp-for="ButtonText" class="form-label">ButtonText</label>
+                        <input asp-for="ButtonText" class="form-control" placeholder="ButtonText">
+                        <span asp-validation-for="ButtonText"></span>
+                    </div>
+                    <div class="col-xl-12">
+
+                        <button type="submit" class="btn btn-warning">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

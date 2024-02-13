@@ -61,7 +61,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             if (!modelState.IsValid) return false;
             if(await _repository.Cheeck(x=>x.Tittle==servicevm.Tittle))
             {
-                modelState.AddModelError("Tittle","You have this tittle")
+                modelState.AddModelError("Tittle", "You have this tittle");
             }
 
             Service service = new Service
@@ -97,7 +97,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         public async Task<ServiceUpdateVm> UpdatedAsync(ServiceUpdateVm serviceItemVm, int id)
         {
             if (id < 1) throw new Exception("Bad Request");
-            Service existed = await _repository.GetByIdAsync(id);
+            Service existed = await _repository.GetByIdAsync(id,isDeleted:false);
             if (existed == null) throw new Exception("Not Found");
             serviceItemVm.Tittle = existed.Tittle;
             serviceItemVm.Subtittle= existed.Subtittle;
