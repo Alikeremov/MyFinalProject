@@ -48,6 +48,7 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
             services.AddScoped<IMealService, MealService>();
             services.AddScoped<IServiceService, ServiceService>();
             services.AddScoped<IEmploymentService, EmploymentService>();
+            services.AddScoped<IEmailService, EmailService>();
 
 
 

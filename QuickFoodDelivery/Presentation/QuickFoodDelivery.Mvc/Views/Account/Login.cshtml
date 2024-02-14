@@ -1,59 +1,64 @@
 ﻿@model LoginVm
 
-	<!-- Login modal -->
+<!-- Login modal -->
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>RegistrationForm_v3 by Colorlib</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="utf-8">
+    <title>RegistrationForm_v3 by Colorlib</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- MATERIAL DESIGN ICONIC FONT -->
-		<link rel="stylesheet" href="~/identity/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
-		
-		<!-- STYLE CSS -->
-		<link rel="stylesheet" href="~/identity/css/style.css">
-	</head>
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="stylesheet" href="~/identity/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
 
-	<body>
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="~/identity/css/style.css">
+</head>
 
-	<div class="wrapper" style="background-image: url('/identity/images/bg-registration-form-3.jpg');">
+<body>
 
-			<div class="inner">
-				<form action="" method="post">
-					<div asp-validation-summary="ModelOnly"></div>
-					<h3>Registration Form</h3>
-					<div class="form-group">
-						<div class="form-wrapper">
-							<label asp-for="UserNameOrEmail">Username:</label>
-							<div class="form-holder">
-								<input  asp-for="UserNameOrEmail" class="form-control" placeholder="UsernameOrEmail">
-								<span asp-validation-for="UserNameOrEmail"></span>
-							</div>
-						</div>
-						<div class="form-wrapper">
-							<label asp-for="Password">Password:</label>
-							<div class="form-holder">
-								<input asp-for="Password" class="form-control" placeholder="Password">
-								<span asp-validation-for="Password"></span>
-							</div>
-						</div>
-					</div>
-				<div class="form-group">
-					<div class="form-wrapper">
-						<label asp-for="IsRemembered">Remember me:</label>
-						<input asp-for="IsRemembered"  placeholder="IsRemembered">
-					</div>
-				</div>
-					<div class="form-end">
-						<div class="button-holder">
-							<button>Login Now</button>
-						</div>
-						
-					</div>
-				</form>
-			</div>
-		</div>
-		
-	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+    <div class="wrapper" style="background-image: url('/identity/images/bg-registration-form-3.jpg');">
+
+        <div class="inner">
+            <form action="" method="post">
+                <div asp-validation-summary="ModelOnly"></div>
+                <h3>Registration Form</h3>
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label asp-for="UserNameOrEmail">Username:</label>
+                        <div class="form-holder">
+                            <input asp-for="UserNameOrEmail" class="form-control" placeholder="UsernameOrEmail">
+                            <span asp-validation-for="UserNameOrEmail"></span>
+                        </div>
+                    </div>
+                    <div class="form-wrapper">
+                        <label asp-for="Password">Password:</label>
+                        <div class="form-holder">
+                            <input asp-for="Password" class="form-control" placeholder="Password">
+                            <span asp-validation-for="Password"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label asp-for="IsRemembered">Remember me:</label>
+                        <input asp-for="IsRemembered" placeholder="IsRemembered">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-wrapper">
+                            <a asp-action="ForgotPassword" asp-controller="Account">Forgot password?</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-end">
+                    <div class="button-holder">
+                        <button>Login Now</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
