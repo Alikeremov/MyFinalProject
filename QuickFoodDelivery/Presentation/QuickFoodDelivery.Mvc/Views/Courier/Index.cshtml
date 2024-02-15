@@ -1,0 +1,34 @@
+﻿
+
+@{
+    ViewData["Title"] = "Mevcut Konum";
+}
+
+<h1>Mevcut Konum</h1>
+
+<form asp-controller="Home" asp-action="UpdateLocation" method="post">
+    <button type="button" onclick="getLocation()">Konumumu Al</button>
+    <input type="hidden" id="latitude" name="latitude" />
+    <input type="hidden" id="longitude" name="longitude" />
+</form>
+
+<script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert("Tarayıcınız konum hizmetini desteklemiyor.");
+        }
+    }
+
+    function showPosition(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        document.getElementById("latitude").value = latitude;
+        document.getElementById("longitude").value = longitude;
+
+        // Formu sunucuya gönder
+        document.forms[0].submit();
+    }
+</script>
