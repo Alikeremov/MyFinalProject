@@ -12,6 +12,7 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
     {
         Task<ICollection<ServiceItemVm>> GetAllunSoftDeletesAsync(int page, int take);
         Task<ICollection<ServiceItemVm>> GetAllSoftDeletes(int page, int take);
+        Task<ServiceItemVm> GetWithoutIsdeletedAsync(int id);
         Task<ServiceItemVm> GetAsync(int id);
         Task<bool> CreateAsync(ServiceCreateVm restaurantVm, ModelStateDictionary modelState);
         Task<bool> UpdateAsync(ServiceUpdateVm restaurantVm, ModelStateDictionary modelState, int id);

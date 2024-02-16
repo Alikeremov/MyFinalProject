@@ -8,13 +8,13 @@ using QuickFoodDelivery.Domain.Enums;
 
 namespace QuickFoodDelivery.Mvc.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly IAutenticationService _service;
         private readonly UserManager<AppUser> _usermanager;
         private readonly IEmailService _emailService;
 
-        public AccountController(IAutenticationService service,UserManager<AppUser> usermanager,IEmailService emailService)
+        public AccountController(IAutenticationService service,UserManager<AppUser> usermanager,IEmailService emailService,IHttpContextAccessor accessor):base(accessor)
         {
             _service = service;
             _usermanager = usermanager;
@@ -67,7 +67,8 @@ namespace QuickFoodDelivery.Mvc.Controllers
                     return View(vm);
                 }
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(RedirectToIndexBasedOnRole));
+
         }
         public async Task<IActionResult> Logout()
         {

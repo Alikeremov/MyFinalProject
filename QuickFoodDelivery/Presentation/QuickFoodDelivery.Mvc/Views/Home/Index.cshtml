@@ -148,21 +148,18 @@
         </p>
     </div>
     <div class="row justify-content-center">
-        <div class="col-md-5">
-            <a class="box_work" href="submit_restaurant.html">
-                <img src="~/assets/img/submit_restaurant.jpg" width="848" height="480" alt="" class="img-fluid">
-                <h3>Submit your Restaurant<span>Start to earn customers</span></h3>
-                <p>Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.</p>
-                <div class="btn_1">Read more</div>
-            </a>
-        </div>
-        <div class="col-md-5">
-            <a class="box_work" href="submit_driver.html">
-                <img src="~/assets/img/delivery.jpg" width="848" height="480" alt="" class="img-fluid">
-                <h3>We are looking for a Driver<span>Start to earn money</span></h3>
-                <p>Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.</p>
-                <div class="btn_1">Read more</div>
-            </a>
-        </div>
+        @foreach (var item in Model.Employments)
+        {
+            <div class="col-md-5">
+                <a class="box_work" asp-action="@item.ActionName" asp-controller="@item.ControllerName">
+                    <img src="~/assets/img/serviceImages/@item.Image" width="848" height="480" alt="" class="img-fluid">
+                    <h3>@item.Tittle</h3>
+                    <h5>@item.Subtittle</h5>
+                    <p>@item.Description</p>
+                    <div class="btn_1">@item.ButtonText</div>
+                </a>
+            </div>
+        }
+
     </div><!-- End row -->
 </div><!-- End container -->

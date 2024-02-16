@@ -12,9 +12,15 @@ namespace QuickFoodDelivery.Domain.Entities
     {
         public string PhoneNumber { get; set; } = null!;
         public string Email { get; set; } = null!;
-        public CourierStatus CourierStatus { get; set; }
+        public string Image { get; set; } = null!;
         public decimal Fee { get; set; }
+        public CourierStatus Status { get; set; }
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }
+        public Courier()
+        {
+            Image= "profile.png";
+            Status = CourierStatus.Idle;
+        }
     }
 }

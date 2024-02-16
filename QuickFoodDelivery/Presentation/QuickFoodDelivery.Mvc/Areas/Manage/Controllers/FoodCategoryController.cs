@@ -21,6 +21,10 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
         {
             return View(await _service.GetAllSoftDeletes(page, take));
         }
+        public async Task<IActionResult> Detail(int id)
+        {
+            return View(await _service.GetWithoutIsdeletedAsync(id));
+        }
         public IActionResult Create()
         {
             return View();

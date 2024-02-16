@@ -11,7 +11,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
         {
             _accessor = accessor;
         }
-        protected ActionResult RedirectToIndexBasedOnRole()
+        public ActionResult RedirectToIndexBasedOnRole()
         {
             if (_accessor.HttpContext.User.IsInRole(UserRole.Admin.ToString()))
             {

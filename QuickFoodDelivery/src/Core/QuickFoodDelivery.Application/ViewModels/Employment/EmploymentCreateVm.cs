@@ -23,6 +23,14 @@ namespace QuickFoodDelivery.Application.ViewModels
         [MaxLength(300)]
         public string Description { get; set; } = null!;
         [Required]
+        [MinLength(2)]
+        [MaxLength(60)]
+        public string ControllerName { get; set; } = null!;
+        [Required]
+        [MinLength(2)]
+        [MaxLength(60)]
+        public string ActionName { get; set; } = null!;
+        [Required]
         public IFormFile Photo { get; set; }
         [Required]
         [MinLength(1)]

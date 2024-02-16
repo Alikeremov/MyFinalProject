@@ -14,5 +14,7 @@ namespace QuickFoodDelivery.Domain.Entities
         public string Tittle { get; set; } = null!;
         public string Description { get; set; } = null!;
         public string ButtonText { get; set; } = null!;
+        public string? ActionName { get; set; }
+        public string? ControllerName { get; set; } 
     }
 }

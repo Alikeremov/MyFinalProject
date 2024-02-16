@@ -2057,6 +2057,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\91eb4acc-49ce-4fa5-956d-1848a3101855chef3.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\Delivery_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Delivery_1.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\Untitled-3.svg",
       "PackagePath": "staticwebassets\\assets\\img\\Untitled-3.svg"
     },
@@ -2381,6 +2385,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\3327c112-c72c-46ca-96ed-14890b4e247amc.png"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\4156caee-b31f-4c24-9a25-bb6f7a85860emc.png",
+      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\4156caee-b31f-4c24-9a25-bb6f7a85860emc.png"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\54e640b8-f18d-4db5-9469-b291da70674eejdaha.png",
       "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\54e640b8-f18d-4db5-9469-b291da70674eejdaha.png"
     },
@@ -2419,6 +2427,14 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\search.svg",
       "PackagePath": "staticwebassets\\assets\\img\\search.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\serviceImages\\2919aa40-86e7-47f5-beb9-b0868c3c7597submit_restaurant.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\serviceImages\\2919aa40-86e7-47f5-beb9-b0868c3c7597submit_restaurant.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\serviceImages\\f1736e94-ab71-4df6-9bd1-556807e7fdc0delivery.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\serviceImages\\f1736e94-ab71-4df6-9bd1-556807e7fdc0delivery.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\slider_single_restaurant\\1_large.jpg",

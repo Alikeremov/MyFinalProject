@@ -22,9 +22,14 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
         {
             return View(await _service.GetAllSoftDeletes(page, take));
         }
+
         public async Task<IActionResult> UnConfirmerds(int page = 1, int take = 10)
         {
             return View(await _service.GetAllnonConfirmed(page, take));
+        }
+        public async Task<IActionResult> Detail(int id)
+        {
+            return View(await _service.GetWithoutIsdeletedAsync(id));
         }
         public async Task<IActionResult> Create()
         {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -39,6 +40,8 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 Description=employment.Description,
                 Subtittle=employment.Subtittle,
                 ButtonText=employment.ButtonText,
+                ActionName=employment.ActionName,
+                ControllerName=employment.ControllerName,
                 Image=employment.Image,
             }).ToList();
         }
@@ -52,6 +55,8 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 Description = employment.Description,
                 Subtittle = employment.Subtittle,
                 ButtonText = employment.ButtonText,
+                ActionName = employment.ActionName,
+                ControllerName = employment.ControllerName,
                 Image = employment.Image,
             }).ToList();
         }
@@ -67,6 +72,24 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 Description = employment.Description,
                 Subtittle = employment.Subtittle,
                 ButtonText = employment.ButtonText,
+                ActionName = employment.ActionName,
+                ControllerName = employment.ControllerName,
+                Image = employment.Image,
+            };
+        }
+        public async Task<EmploymentItemVm> GetWithoutIsdeletedAsync(int id)
+        {
+            Employment employment = await _repository.GetByIdnotDeletedAsync(id);
+            if (employment == null) throw new Exception("NotFound");
+            return new EmploymentItemVm
+            {
+                Id = employment.Id,
+                Tittle = employment.Tittle,
+                Description = employment.Description,
+                Subtittle = employment.Subtittle,
+                ButtonText = employment.ButtonText,
+                ActionName = employment.ActionName,
+                ControllerName = employment.ControllerName,
                 Image = employment.Image,
             };
         }
@@ -84,7 +107,9 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 Description = employmentvm.Description,
                 Subtittle = employmentvm.Subtittle,
                 ButtonText = employmentvm.ButtonText,
-                IsDeleted=false
+                ActionName = employmentvm.ActionName,
+                ControllerName = employmentvm.ControllerName,
+                IsDeleted =false
             };
             if (employmentvm.Photo != null)
             {
@@ -118,6 +143,8 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             existed.Description = employmentvm.Description;
             existed.Subtittle = employmentvm.Subtittle;
             existed.ButtonText = employmentvm.ButtonText;
+            existed.ActionName = employmentvm.ActionName;
+            existed.ControllerName = employmentvm.ControllerName;
             existed.Image=employmentvm.Image;
 
             if (employmentvm.Photo != null)
@@ -151,6 +178,8 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             employmentvm.Description = existed.Description;
             employmentvm.Subtittle = existed.Subtittle;
             employmentvm.ButtonText = existed.ButtonText;
+            employmentvm.ActionName=existed.ActionName;
+            employmentvm.ControllerName = existed.ControllerName;
             employmentvm.Image = existed.Image;
             return employmentvm;
         }

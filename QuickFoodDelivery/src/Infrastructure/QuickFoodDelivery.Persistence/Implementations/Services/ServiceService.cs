@@ -46,13 +46,25 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
         public async Task<ServiceItemVm> GetAsync(int id)
         {
-            Service service = await _repository.GetByIdAsync(id);
+            Service service = await _repository.GetByIdAsync(id,isDeleted:false);
             if (service == null) throw new Exception("NotFound");
             return new ServiceItemVm
             {
                 Id = service.Id,
                 Tittle=service.Tittle,
                 Subtittle=service.Subtittle,
+                Icon = service.Icon,
+            };
+        }
+        public async Task<ServiceItemVm> GetWithoutIsdeletedAsync(int id)
+        {
+            Service service = await _repository.GetByIdnotDeletedAsync(id);
+            if (service == null) throw new Exception("NotFound");
+            return new ServiceItemVm
+            {
+                Id = service.Id,
+                Tittle = service.Tittle,
+                Subtittle = service.Subtittle,
                 Icon = service.Icon,
             };
         }

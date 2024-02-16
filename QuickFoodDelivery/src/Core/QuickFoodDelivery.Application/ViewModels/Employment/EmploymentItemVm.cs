@@ -14,6 +14,8 @@ namespace QuickFoodDelivery.Application.ViewModels
         public string Tittle { get; set; } = null!;
         public string Subtittle { get; set; } = null!;
         public string Description { get; set; } = null!;
+        public string ControllerName { get; set; } = null!;
+        public string ActionName { get; set; } = null!;
         public string Image { get; set; }=null!;
         public string ButtonText { get; set; } = null!;
     }

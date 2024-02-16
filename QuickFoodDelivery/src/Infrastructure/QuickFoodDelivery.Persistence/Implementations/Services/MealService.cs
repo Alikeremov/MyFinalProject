@@ -95,6 +95,21 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 FoodCategoryId = meal.FoodCategoryId,
             };
         }
+        public async Task<MealItemVm> GetwithoutDeleteAsync(int id)
+        {
+            Meal meal = await _repository.GetByIdnotDeletedAsync(id);
+            if (meal == null) throw new Exception("NotFound");
+            return new MealItemVm
+            {
+                Id = meal.Id,
+                Name = meal.Name,
+                Price = meal.Price,
+                Description = meal.Description,
+                Image = meal.Image,
+                RestaurantId = meal.RestaurantId,
+                FoodCategoryId = meal.FoodCategoryId,
+            };
+        }
         public async Task<bool> CreateAsync(MealCreateVm mealVm, ModelStateDictionary modelState)
         {
             

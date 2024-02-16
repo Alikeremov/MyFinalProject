@@ -37,7 +37,6 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             ICollection<Category> categories = await _repository.GetAllWhere(includes: new string[] { nameof(Category.Restaurants) }).ToListAsync();
             return categories.Select(category => new CategoryItemVm { Id = category.Id, Name = category.Name, Restaurants = category.Restaurants }).ToList();
         }
-
         public async Task<CategoryItemVm> GetAsync(int id)
 		{
 			Category category =await _repository.GetByIdnotDeletedAsync(id);

@@ -53,6 +53,8 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 LocationCordinate=restaurant.LocationCordinate,
                 Meals=restaurant.Meals,
                 Reviews=restaurant.Reviews,
+                AppUserId = restaurant.AppUserId,
+
             }).ToList();
         }
         public async Task<ICollection<RestaurantItemVm>> GetAllnonConfirmed(int page, int take)
@@ -74,6 +76,8 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 LocationCordinate = restaurant.LocationCordinate,
                 Meals = restaurant.Meals,
                 Reviews = restaurant.Reviews,
+                AppUserId = restaurant.AppUserId,
+
             }).ToList();
         }
         public async Task<ICollection<RestaurantItemVm>> GetAllunSoftDeletesAsync(int page, int take)
@@ -130,7 +134,30 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
             };
         }
-
+        public async Task<RestaurantItemVm> GetWithoutIsdeletedAsync(int id)
+        {
+            Restaurant restaurant = await _repository.GetByIdnotDeletedAsync(id, includes: new string[] { nameof(Restaurant.Meals), nameof(Restaurant.Category) });
+            if (restaurant == null) throw new Exception("NotFound");
+            return new RestaurantItemVm
+            {
+                Id = restaurant.Id,
+                Name = restaurant.Name,
+                Address = restaurant.Address,
+                MinimumOrderAmount = restaurant.MinimumOrderAmount,
+                CategoryId = restaurant.CategoryId,
+                Image = restaurant.Image,
+                RestourantEmail = restaurant.RestourantEmail,
+                Phone = restaurant.Phone,
+                OpeningTime = restaurant.OpeningTime,
+                ClozedTime = restaurant.ClozedTime,
+                IsOpening = restaurant.IsOpening,
+                LocationCordinate = restaurant.LocationCordinate,
+                Meals = restaurant.Meals,
+                Reviews = restaurant.Reviews,
+                AppUserId = restaurant.AppUserId,
+                Category = restaurant.Category,
+            };
+        }
         public async Task<RestaurantItemVm> GetAsync(int id)
         {
             Restaurant restaurant = await _repository.GetByIdAsync(id, isDeleted: false,includes:new string[] { nameof(Restaurant.Meals),nameof(Restaurant.Category) });
@@ -283,6 +310,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             Restaurant existed = await _repository.GetByIdnotDeletedAsync(id);
             if (existed == null) throw new Exception("Not Found");
             existed.Image.DeleteFile(_env.WebRootPath, "assets", "img", "restaurantImages");
+            await _autentication.UpdateUserRole(existed.AppUserId, UserRole.Member.ToString());
             _repository.Delete(existed);
             await _repository.SaveChangesAsync();
         }
