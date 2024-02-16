@@ -1,34 +1,93 @@
-﻿
-
+﻿@model CourierIndexVm
 @{
-    ViewData["Title"] = "Mevcut Konum";
+    int count = 1;
 }
 
-<h1>Mevcut Konum</h1>
-
-<form asp-controller="Home" asp-action="UpdateLocation" method="post">
-    <button type="button" onclick="getLocation()">Konumumu Al</button>
-    <input type="hidden" id="latitude" name="latitude" />
-    <input type="hidden" id="longitude" name="longitude" />
-</form>
-
-<script>
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            alert("Tarayıcınız konum hizmetini desteklemiyor.");
+<head>
+    <!-- SPECIFIC CSS -->
+    <link href="~/assets/css/skins/square/grey.css" rel="stylesheet">
+    <link href="~/assets/css/admin.css" rel="stylesheet">
+    <link href="~/assets/js/editor/summernote-bs4.css" rel="stylesheet">
+    <link href="~/assets/css/dropzone.css" rel="stylesheet">
+    <title>Dönme Animasyonu</title>
+    <!-- Font Awesome CSS dosyasını içeri aktar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* İkonun dönme animasyonu için stil */
+        .rotate {
+            transition: transform 1s linear;
         }
-    }
 
-    function showPosition(position) {
-        var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
+            /* İkonun üzerine gelindiğinde dönme animasyonunu başlat */
+            .rotate:hover {
+                transform: rotate(360deg);
+            }
+    </style>
+</head>
 
-        document.getElementById("latitude").value = latitude;
-        document.getElementById("longitude").value = longitude;
 
-        // Formu sunucuya gönder
-        document.forms[0].submit();
-    }
-</script>
+
+<!-- SubHeader =============================================== -->
+<section class="parallax-window" id="short" data-parallax="scroll" data-image-src="/assets/img/courierImages/@Model.Courier.Image" data-natural-width="1400" data-natural-height="350">
+    <div id="subheader">
+        <div id="sub_content">
+            <h1>Courier section</h1>
+            <p>FullName: @Model.Courier.Name @Model.Courier.Surname</p>
+            <p>Phone Number: @Model.Courier.PhoneNumber</p>
+            <p>Your Fee: $@Model.Courier.Fee</p>
+            <p></p>
+        </div><!-- End sub_content -->
+    </div><!-- End subheader -->
+</section><!-- End section -->
+<!-- End SubHeader ============================================ -->
+
+<div id="position">
+    <div class="container">
+        <ul>
+            <li>
+                <a href="#0">Home</a>
+            </li>
+            <li>
+                <a href="#0">Category</a>
+            </li>
+            <li>Page active</li>
+        </ul>
+        <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
+    </div>
+</div><!-- Position -->
+<!-- Content ================================================== -->
+<div class="container margin_60">
+    <div id="tabs" class="tabs">
+        <nav>
+            <ul>
+                <li>
+                    <a class="icon-profile"><span>Main info</span></a>
+                </li>
+                <li>
+                    <a href="#section-3" class="icon-settings"><span>Settings</span></a>
+                </li>
+            </ul>
+        </nav>
+        <table class="table table-striped cart-list">
+            <thead>
+                <tr>
+                    <th>
+                        Count
+                    </th>
+                    <th>
+                        Order
+                    </th>
+                    <th>
+                        status
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>
+</div><!-- End container  -->

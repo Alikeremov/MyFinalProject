@@ -12,6 +12,7 @@ namespace QuickFoodDelivery.Domain.Entities
     {
         public string PhoneNumber { get; set; } = null!;
         public string Email { get; set; } = null!;
+        public string Surname { get; set; } = null!;
         public string Image { get; set; } = null!;
         public decimal Fee { get; set; }
         public CourierStatus Status { get; set; }

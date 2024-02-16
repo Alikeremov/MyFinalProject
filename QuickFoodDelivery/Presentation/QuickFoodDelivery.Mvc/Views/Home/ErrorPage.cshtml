@@ -1,0 +1,74 @@
+﻿@model string
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Customizations */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Arka plan rengi */
+        }
+
+        .error-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .error-text {
+            text-align: center;
+            color: #dc3545; /* Kırmızı renk */
+        }
+
+        .error-image {
+
+            margin-bottom: 20px; /* Metinden ayrılmak için */
+        }
+
+        .go-back {
+            color: #28a745; /* Normal renk */
+            border-color: #28a745; /* Normal renk */
+        }
+
+            .go-back:hover {
+                color: #dc3545; /* Kırmızı renk üzerine gelince */
+                border-color: #dc3545; /* Kırmızı renk üzerine gelince */
+            }
+
+        .error-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="error-container">
+                    <div class="error-text">
+                        <h1 class="display-4" style="font-weight: 600;">:( Page Not Found</h1> <!-- Başlık -->
+                        <p class="lead" style="font-weight: 500;">Sorry, the page you are looking for could not be found.</p> <!-- Metin -->
+                        <p class="lead" style="font-weight: 500;">@Model</p> <!-- Metin -->
+                        <a asp-action="Index" asp-controller="Home" class="btn go-back">Go Back to Homepage</a> <!-- Buton -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="error-container">
+                    <img src="~/assets/img/error1.jpg" style="width:400; height:200px" alt="Sad Face" class="error-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

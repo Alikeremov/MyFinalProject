@@ -44,6 +44,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             {
                 Id = courier.Id,
                 Name = courier.Name,
+                Surname = courier.Surname,
                 Email = courier.Email,
                 PhoneNumber = courier.PhoneNumber,
                 Fee=courier.Fee,
@@ -59,6 +60,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             {
                 Id = courier.Id,
                 Name = courier.Name,
+                Surname = courier.Surname,
                 Email = courier.Email,
                 PhoneNumber = courier.PhoneNumber,
                 Fee = courier.Fee,
@@ -74,6 +76,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             {
                 Id = courier.Id,
                 Name = courier.Name,
+                Surname = courier.Surname,
                 Email = courier.Email,
                 PhoneNumber = courier.PhoneNumber,
                 Fee = courier.Fee,
@@ -89,6 +92,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             {
                 Id = courier.Id,
                 Name = courier.Name,
+                Surname = courier.Surname,
                 Email = courier.Email,
                 PhoneNumber = courier.PhoneNumber,
                 Fee = courier.Fee,
@@ -104,6 +108,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             {
                 Id = courier.Id,
                 Name = courier.Name,
+                Surname = courier.Surname,
                 Email = courier.Email,
                 PhoneNumber = courier.PhoneNumber,
                 Fee = courier.Fee,
@@ -128,6 +133,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             {
                 Id = courier.Id,
                 Name = courier.Name,
+                Surname = courier.Surname,
                 Email = courier.Email,
                 PhoneNumber = courier.PhoneNumber,
                 Fee = courier.Fee,
@@ -143,15 +149,16 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             {
                 Name = courierCreateVm.Name,
                 IsDeleted = null,
+                Surname = courierCreateVm.Surname,
                 Email = courierCreateVm.Email,
                 PhoneNumber = courierCreateVm.PhoneNumber,
                 Fee = courierCreateVm.Fee,
-                AppUserId = courierCreateVm.AppUserId
             };
             if (_contextAccessor.HttpContext.User.Identity != null)
             {
                 courier.AppUserId = _contextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             }
+            courier.Status = CourierStatus.Idle;
             if (courierCreateVm.Photo != null)
             {
                 if (!courierCreateVm.Photo.CheckType("image/"))
@@ -183,6 +190,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             if (existed == null) throw new Exception("Not found");
             existed.Name = couriervm.Name;
             existed.IsDeleted = null;
+            existed.Surname = couriervm.Surname;
             existed.Email = couriervm.Email;
             existed.PhoneNumber= couriervm.PhoneNumber;
             existed.Fee = couriervm.Fee;
@@ -214,6 +222,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             Courier existed = await _repository.GetByIdAsync(id, isDeleted: false);
             if (existed == null) throw new Exception("Not Found");
             restaurantvm.Image = existed.Image;
+            restaurantvm.Surname = existed.Surname;
             restaurantvm.Name = existed.Name;
             restaurantvm.PhoneNumber = existed.PhoneNumber;
             restaurantvm.CourierStatus = existed.Status;
@@ -256,7 +265,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             Courier existed = await _repository.GetByIdAsync(id, isDeleted: null);
             if (existed == null) throw new Exception("Not Found");
             _repository.ReverseDelete(existed);
-            await _autenticationService.UpdateUserRole(existed.AppUserId, UserRole.RestaurantAdmin.ToString());
+            await _autenticationService.UpdateUserRole(existed.AppUserId, UserRole.Courier.ToString());
             await _repository.SaveChangesAsync();
         }
 

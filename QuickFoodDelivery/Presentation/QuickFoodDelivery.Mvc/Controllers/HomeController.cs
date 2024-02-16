@@ -28,6 +28,9 @@ namespace QuickFoodDelivery.Mvc.Controllers
             };
             return View(vm);
         }
-
+        public IActionResult ErrorPage(string error = "wrong happened")
+        {
+            return View(model: error);
+        }
     }
 }

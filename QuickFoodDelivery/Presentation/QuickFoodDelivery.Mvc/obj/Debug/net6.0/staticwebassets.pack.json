@@ -2117,6 +2117,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\cards.png"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\courierImages\\fd8ce1bc-47f9-4c90-a958-b9f727ba3d2bdownload.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\courierImages\\fd8ce1bc-47f9-4c90-a958-b9f727ba3d2bdownload.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\delivery.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\delivery.jpg"
     },
@@ -2131,6 +2135,14 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\dots_vert.png",
       "PackagePath": "staticwebassets\\assets\\img\\dots_vert.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\error1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\error1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\errorImage.png",
+      "PackagePath": "staticwebassets\\assets\\img\\errorImage.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\f2a55735-b997-402a-8f03-24bfedaebc2ct.jpg",

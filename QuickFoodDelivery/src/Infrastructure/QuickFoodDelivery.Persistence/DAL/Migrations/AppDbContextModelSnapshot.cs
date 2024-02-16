@@ -378,6 +378,11 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasMaxLength(29)
+                        .HasColumnType("nvarchar(29)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");

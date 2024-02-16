@@ -12,9 +12,12 @@ namespace QuickFoodDelivery.Mvc.Controllers
         {
             _courierService = courierService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(new CourierIndexVm
+            {
+                Courier=await _courierService.GetbyUserNameAsync(User.Identity.Name)
+            });
         }
         public IActionResult BeCourier()
         {

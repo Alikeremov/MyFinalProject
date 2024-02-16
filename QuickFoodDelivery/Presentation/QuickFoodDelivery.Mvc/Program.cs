@@ -1,3 +1,4 @@
+using QuickFoodDelivery.Infrastructure.Middleware;
 using QuickFoodDelivery.Persistence.ServiceRegistration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +17,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(

@@ -16,7 +16,11 @@ namespace QuickFoodDelivery.Application.ViewModels
         [MaxLength(27)]
         public string Name { get; set; } = null!;
         [Required]
-        [RegularExpression("^(?:+994|0)(d{2})[- ]?(d{3})[- ]?(d{2})[- ]?(d{2})$")]
+        [MinLength(3)]
+        [MaxLength(29)]
+        public string Surname { get; set; } = null!;
+        [Required]
+        [RegularExpression("^(?:\\+994|0)(\\d{2})[- ]?(\\d{3})[- ]?(\\d{2})[- ]?(\\d{2})$")]
         public string PhoneNumber { get; set; } = null!;
         [Required]
         [MinLength(9, ErrorMessage = "Courier Email will be min 9 symbol")]
@@ -25,10 +29,7 @@ namespace QuickFoodDelivery.Application.ViewModels
         public string Email { get; set; } = null!;
         [Required]  
         public IFormFile Photo { get; set; } = null!;
-        [Required]
-        public CourierStatus CourierStatus { get; set; }
         public decimal Fee { get; set; }
-        [Required]
-        public string AppUserId { get; set; }
+
     }
 }

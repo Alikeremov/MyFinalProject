@@ -14,6 +14,7 @@ namespace QuickFoodDelivery.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Courier> builder)
         {
             builder.Property(x=>x.Name).IsRequired().HasMaxLength(27);
+            builder.Property(x=>x.Surname).IsRequired().HasMaxLength(29);
             builder.Property(x=>x.Fee).IsRequired().HasColumnType("decimal(6,2)");
             builder.Property(x=>x.Email).IsRequired().HasMaxLength(254);
         }

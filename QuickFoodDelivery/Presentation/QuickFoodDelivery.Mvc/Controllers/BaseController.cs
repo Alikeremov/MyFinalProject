@@ -5,25 +5,19 @@ namespace QuickFoodDelivery.Mvc.Controllers
 {
     public class BaseController : Controller
     {
-        private readonly IHttpContextAccessor _accessor;
-
-        public BaseController(IHttpContextAccessor accessor)
-        {
-            _accessor = accessor;
-        }
         public ActionResult RedirectToIndexBasedOnRole()
         {
-            if (_accessor.HttpContext.User.IsInRole(UserRole.Admin.ToString()))
+            if (User.IsInRole(UserRole.Admin.ToString()))
             {
                 return RedirectToAction("Index", "Dashboard",new {area="manage"});
             }
-            else if (_accessor.HttpContext.User.IsInRole(UserRole.Member.ToString()))
+            else if (User.IsInRole(UserRole.RestaurantAdmin.ToString()))
             {
                 return RedirectToAction("Index", "RestaurantaAdmin");
             }
-            else if (_accessor.HttpContext.User.Identity != null && _accessor.HttpContext.User.Identity.Name != null)
+            else if (User.IsInRole(UserRole.Courier.ToString()))
             {
-                return RedirectToAction("Index", "RestaurantaAdmin");
+                return RedirectToAction("Index", "Courier");
             }
             else
             {

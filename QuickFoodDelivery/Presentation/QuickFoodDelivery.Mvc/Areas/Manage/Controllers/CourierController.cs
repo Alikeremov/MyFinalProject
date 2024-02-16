@@ -3,6 +3,7 @@ using QuickFoodDelivery.Application.Abstractions.Services;
 
 namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
 {
+    [Area("Manage")]
     public class CourierController : Controller
     {
         private readonly ICourierService _service;

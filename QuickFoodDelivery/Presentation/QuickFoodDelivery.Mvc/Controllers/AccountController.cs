@@ -14,7 +14,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
         private readonly UserManager<AppUser> _usermanager;
         private readonly IEmailService _emailService;
 
-        public AccountController(IAutenticationService service,UserManager<AppUser> usermanager,IEmailService emailService,IHttpContextAccessor accessor):base(accessor)
+        public AccountController(IAutenticationService service,UserManager<AppUser> usermanager,IEmailService emailService)
         {
             _service = service;
             _usermanager = usermanager;

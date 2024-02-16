@@ -11,5 +11,6 @@ namespace QuickFoodDelivery.Domain.Enums
         Admin,
         Member,
         RestaurantAdmin,
+        Courier
     }
 }
