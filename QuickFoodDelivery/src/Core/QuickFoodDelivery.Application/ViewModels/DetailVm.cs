@@ -11,6 +11,7 @@ namespace QuickFoodDelivery.Application.ViewModels
     {
         public ICollection<FdCategoryItemVm> FoodCategories { get; set; }
         public ICollection<Meal> Meals { get; set; }
+        public ICollection<BasketItemVm> BasketItems { get; set; }
         public RestaurantItemVm Restaurant { get; set; }
     }
 }

@@ -1,6 +1,8 @@
 ﻿@model DetailVm 
 @{
     int count = 1;
+    decimal totalprice = 0;
+    decimal subtotal = 0;
 }
  <head>
     <link href="~/assets/css/skins/square/grey.css" rel="stylesheet">
@@ -90,7 +92,7 @@
                                     <div class="dropdown dropdown-options">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="icon_plus_alt2"></i></a>
                                         <div class="dropdown-menu">
-                                            <a href="#0" class="add_to_basket">Add to cart</a>
+                                            <a asp-action="AddBasket" asp-controller="Basket" asp-route-mealid="@item.Id" asp-route-id="@item.RestaurantId" class="add_to_basket">Add to cart</a>
                                         </div>
                                     </div>
                                 </td>
@@ -100,88 +102,57 @@
                 </table>
             </div><!-- End box_style_1 -->
         </div><!-- End col -->
-        <div class="col-lg-3" id="sidebar">
-            <div class="theiaStickySidebar">
-                <div id="cart_box">
-                    <h3>Your order <i class="icon_cart_alt float-right"></i></h3>
-                    <table class="table table_summary">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> Enchiladas
-                                </td>
-                                <td>
-                                    <strong class="float-right">$11</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Burrito
-                                </td>
-                                <td>
-                                    <strong class="float-right">$14</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> Chicken
-                                </td>
-                                <td>
-                                    <strong class="float-right">$20</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Corona Beer
-                                </td>
-                                <td>
-                                    <strong class="float-right">$9</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Cheese Cake
-                                </td>
-                                <td>
-                                    <strong class="float-right">$12</strong>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <hr>
-                    <div class="row" id="options_2">
-                        <div class="col-xl-6 col-md-12 col-sm-12 col-6">
-                            <label><input type="radio" value="" checked name="option_2" class="icheck">Delivery</label>
-                        </div>
-                        <div class="col-xl-6 col-md-12 col-sm-12 col-6">
-                            <label><input type="radio" value="" name="option_2" class="icheck">Take Away</label>
-                        </div>
-                    </div><!-- Edn options 2 -->
-                    <hr>
-                    <table class="table table_summary">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Subtotal <span class="float-right">$56</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Delivery fee <span class="float-right">$10</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="total">
-                                    TOTAL <span class="float-right">$66</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <hr>
-                    <a class="btn_full" href="cart.html">Order now</a>
-                </div><!-- End cart_box -->
-            </div><!-- End theiaStickySidebar -->
-        </div><!-- End col -->
+            <div class="col-lg-3" id="sidebar">
+                <div class="theiaStickySidebar">
+                    <div id="cart_box">
+                        <h3>Your order <i class="icon_cart_alt float-right"></i></h3>
+        @foreach (var item in Model.BasketItems)
+        {
+                        totalprice += item.Count * item.Price;
+                        <table class="table table_summary">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a asp-action="Remove" asp-controller="Basket" asp-route-mealid="@item.MealId" asp-route-id="@Model.Meals.FirstOrDefault(x=>x.Id==item.MealId)?.RestaurantId" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>@item.Count x</strong> @Model.Meals.FirstOrDefault(x=>x.Id==item.MealId)?.Name
+                                    </td>
+                                    <td>
+                                        <strong class="float-right">$@(item.Count*item.Price)</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+        }
+                        <div class="row" id="options_2">
+                            <div class="col-xl-6 col-md-12 col-sm-12 col-6">
+                                <label><input type="radio" value="" checked name="option_2" class="icheck">Delivery</label>
+                            </div>
+                            <div class="col-xl-6 col-md-12 col-sm-12 col-6">
+                                <label><input type="radio" value="" name="option_2" class="icheck">Take Away</label>
+                            </div>
+                        </div><!-- Edn options 2 -->
+                        <hr>
+                        <table class="table table_summary">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Delivery fee <span class="float-right">$10</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="total">
+                                        TOTAL <span class="float-right">$@totalprice</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+                        <a class="btn_full" href="cart.html">Order now</a>
+                    </div><!-- End cart_box -->
+                </div><!-- End theiaStickySidebar -->
+            </div>
+
+            <!-- End col -->
     </div><!-- End row -->
 </div><!-- End container -->
 <!-- End Content =============================================== -->

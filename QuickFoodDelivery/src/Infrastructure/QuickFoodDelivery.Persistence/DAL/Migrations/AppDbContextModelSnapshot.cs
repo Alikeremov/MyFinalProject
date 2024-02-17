@@ -554,6 +554,9 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                     b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int?>("CourierId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -582,6 +585,8 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
+
+                    b.HasIndex("CourierId");
 
                     b.ToTable("Order");
                 });
@@ -859,7 +864,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.BasketItem", b =>
                 {
                     b.HasOne("QuickFoodDelivery.Domain.Entities.AppUser", "User")
-                        .WithMany()
+                        .WithMany("BasketItems")
                         .HasForeignKey("AppUserId");
 
                     b.HasOne("QuickFoodDelivery.Domain.Entities.Meal", "Meal")
@@ -882,7 +887,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Courier", b =>
                 {
                     b.HasOne("QuickFoodDelivery.Domain.Entities.AppUser", "AppUser")
-                        .WithMany()
+                        .WithMany("Couriers")
                         .HasForeignKey("AppUserId");
 
                     b.Navigation("AppUser");
@@ -908,10 +913,16 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Order", b =>
                 {
                     b.HasOne("QuickFoodDelivery.Domain.Entities.AppUser", "AppUser")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("AppUserId");
 
+                    b.HasOne("QuickFoodDelivery.Domain.Entities.Courier", "Courier")
+                        .WithMany()
+                        .HasForeignKey("CourierId");
+
                     b.Navigation("AppUser");
+
+                    b.Navigation("Courier");
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Restaurant", b =>
@@ -952,6 +963,12 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.AppUser", b =>
                 {
+                    b.Navigation("BasketItems");
+
+                    b.Navigation("Couriers");
+
+                    b.Navigation("Orders");
+
                     b.Navigation("Restaurants");
                 });
 

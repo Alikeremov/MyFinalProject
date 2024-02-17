@@ -13,9 +13,12 @@ namespace QuickFoodDelivery.Domain.Entities
         public string Address { get; set; }
         public OrderStatus Status { get; set; }
         public decimal TotalPrice { get; set; }
-        public List<BasketItem> BasketItems { get; set; }
         public DateTime PurchasedAt { get; set; }
+        //Relation properties
+        public int? CourierId { get; set; }
+        public Courier? Courier { get; set; }
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }
+        public List<BasketItem> BasketItems { get; set; }
     }
 }

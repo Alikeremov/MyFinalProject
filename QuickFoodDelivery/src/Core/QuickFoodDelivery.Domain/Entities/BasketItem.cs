@@ -11,6 +11,8 @@ namespace QuickFoodDelivery.Domain.Entities
     {
         public int Count { get; set; }
         public decimal Price { get; set; }
+
+        //Relation properties
         public int MealId { get; set; }
         public Meal Meal { get; set; }
         public string? AppUserId { get; set; }

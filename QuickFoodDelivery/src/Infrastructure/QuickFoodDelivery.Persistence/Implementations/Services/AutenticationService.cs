@@ -126,7 +126,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         }
         public async Task<AppUser> GetUserAsync(string userName)
         {
-            return await _userManager.Users.Include(x => x.Restaurants).FirstOrDefaultAsync(x=>x.UserName==userName);
+            return await _userManager.Users.Include(x => x.Restaurants).Include(x=>x.BasketItems).Include(x=>x.Orders).Include(x=>x.Couriers).FirstOrDefaultAsync(x=>x.UserName==userName);
         }
         public async Task CreateRoleAsync()
         {
