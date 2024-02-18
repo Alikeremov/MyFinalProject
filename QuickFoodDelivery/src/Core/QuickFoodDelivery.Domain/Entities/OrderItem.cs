@@ -10,11 +10,12 @@ namespace QuickFoodDelivery.Domain.Entities
     public class OrderItem:BaseEntity
     {
         public decimal Price { get; set; }
-        public decimal Count { get; set; }
+        public int Count { get; set; }
+        public string MealName { get; set; }
         //Relation properties
         public int MealId { get; set; }
-        public Meal Meal { get; set; }
+        public Meal Meal { get; set; } = null!;
         public int OrderId { get; set; }
-        public Order Order { get; set; }
-    }
+        public Order Order { get; set; } = null!;
+	}
 }

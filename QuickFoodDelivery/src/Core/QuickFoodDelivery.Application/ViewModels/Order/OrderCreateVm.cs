@@ -27,9 +27,7 @@ namespace QuickFoodDelivery.Application.ViewModels
         [MaxLength(254)]
         public string UserEmail { get; set; }
         [Required]
-        [MinLength(9, ErrorMessage = "Courier Email will be min 9 symbol")]
-        [MaxLength(254, ErrorMessage = "Courier Email will be max 254 symbol")]
-        [RegularExpression("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$")]
+        [RegularExpression("^(?:\\+994|0)(\\d{2})[- ]?(\\d{3})[- ]?(\\d{2})[- ]?(\\d{2})$")]
         public string UserPhoneNumber { get; set; }
         [Required]
         [MinLength(5)]

@@ -1,4 +1,10 @@
-﻿@model OrderCreateVm
+﻿@using Microsoft.Extensions.Options;
+@using QuickFoodDelivery.Persistence.DAL;
+@model OrderCreateVm
+@inject IOptions<StripeSettings> Stripe
+@{
+	decimal totalprice = 0;
+}
 
 <head>
 	<link href="~/assets/css/skins/square/grey.css" rel="stylesheet">
@@ -26,7 +32,7 @@
 			</div>
 		</div><!-- End col -->
 		<div class="col-lg-6">
-			<form method="post">
+			<form method="post" onchange="this.form.submit()">
 				<div class="box_style_2" id="order_process">
 					<h2 class="inner">Your order details</h2>
 					<div class="form-group">
@@ -62,59 +68,41 @@
 							<span asp-validation-for="NotesForRestaurant"></span>
 						</div>
 					</div>
+					<script src="//checkout.stripe.com/v2/checkout.js"
+							class="stripe-button"
+							data-key="@Stripe.Value.Publishablekey"
+							data-amount="@ViewBag.Total"
+							data-name="Your project name"
+							data-locale="en"
+							data-discription="Sample charge"
+							data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+							data-zip-code="true">
+					</script>
 				</div><!-- End box_style_1 -->
-				<button type="submit">submit</button>
+				
 			</form>
 		</div><!-- End col -->
 		<div class="col-lg-3" id="sidebar">
 			<div class="theiaStickySidebar">
 				<div id="cart_box">
 					<h3>Your order <i class="icon_cart_alt float-right"></i></h3>
-					<table class="table table_summary">
-						<tbody>
-							<tr>
-								<td>
-									<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> Enchiladas
-								</td>
-								<td>
-									<strong class="float-right">$11</strong>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Burrito
-								</td>
-								<td>
-									<strong class="float-right">$14</strong>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> Chicken
-								</td>
-								<td>
-									<strong class="float-right">$20</strong>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Corona Beer
-								</td>
-								<td>
-									<strong class="float-right">$9</strong>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Cheese Cake
-								</td>
-								<td>
-									<strong class="float-right">$12</strong>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<hr>
+					@foreach (var item in Model.OrderItemVms)
+					{
+						totalprice += item.Count * item.Price;
+						<table class="table table_summary">
+							<tbody>
+								<tr>
+									<td>
+										 <strong>@item.Count x</strong> @item.MealName
+									</td>
+									<td>
+										<strong class="float-right">$@(item.Count * item.Price)</strong>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<hr>
+					}
 					<div class="row" id="options_2">
 						<div class="col-xl-6 col-md-12 col-sm-12 col-6">
 							<label><input type="radio" value="" checked name="option_2" class="icheck">Delivery</label>
@@ -128,23 +116,18 @@
 						<tbody>
 							<tr>
 								<td>
-									Subtotal <span class="float-right">$56</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
 									Delivery fee <span class="float-right">$10</span>
 								</td>
 							</tr>
 							<tr>
 								<td class="total">
-									TOTAL <span class="float-right">$66</span>
+									TOTAL <span class="float-right">$@(totalprice + 10)</span>
 								</td>
 							</tr>
 						</tbody>
 					</table>
 					<hr>
-					<a class="btn_full" href="cart.html">Order now</a>
+					<a class="btn_full" asp-action="Checkout" asp-controller="order">Order now</a>
 				</div><!-- End cart_box -->
 			</div><!-- End theiaStickySidebar -->
 		</div><!-- End col -->

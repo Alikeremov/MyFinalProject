@@ -1,5 +1,6 @@
 using QuickFoodDelivery.Infrastructure.Middleware;
 using QuickFoodDelivery.Persistence.ServiceRegistration;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
-
+StripeConfiguration.ApiKey = builder.Configuration["Stripe:Secretkey"];
 //app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 app.UseEndpoints(endpoints =>
 {

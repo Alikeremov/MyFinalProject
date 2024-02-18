@@ -40,6 +40,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                     Id = basketItem.Id,
                     Price=basketItem.Price,
                     Count=basketItem.Count,
+                    Name=basketItem.MealName,
                     AppUserId=basketItem.AppUserId,
                     MealId=basketItem.MealId,
                     }).ToList();
@@ -61,9 +62,11 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 {
                     item = new BasketItem
                     {
+
                         IsDeleted = false,
                         AppUserId = user.Id,
                         MealId = meal.Id,
+                        MealName=meal.Name,
                         Count = 1,
                         Price = meal.Price,
                     };

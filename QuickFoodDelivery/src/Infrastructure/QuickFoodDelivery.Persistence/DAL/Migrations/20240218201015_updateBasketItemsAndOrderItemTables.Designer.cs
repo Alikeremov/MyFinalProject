@@ -12,8 +12,8 @@ using QuickFoodDelivery.Persistence.DAL;
 namespace QuickFoodDelivery.Persistence.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240218153314_updatebasketItemTable")]
-    partial class updatebasketItemTable
+    [Migration("20240218201015_updateBasketItemsAndOrderItemTables")]
+    partial class updateBasketItemsAndOrderItemTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -272,6 +272,10 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.Property<int>("MealId")
                         .HasColumnType("int");
+
+                    b.Property<string>("MealName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(max)");
@@ -621,8 +625,8 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<decimal>("Count")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -636,6 +640,10 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.Property<int>("MealId")
                         .HasColumnType("int");
+
+                    b.Property<string>("MealName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(max)");

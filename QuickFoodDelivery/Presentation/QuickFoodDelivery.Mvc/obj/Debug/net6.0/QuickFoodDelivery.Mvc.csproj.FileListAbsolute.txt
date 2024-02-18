@@ -263,3 +263,4 @@ C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDel
 C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDelivery.Mvc\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDelivery.Mvc\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDelivery.Mvc\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\user\Desktop\MyFinalProject\QuickFoodDelivery\Presentation\QuickFoodDelivery.Mvc\bin\Debug\net6.0\Stripe.net.dll

@@ -34,6 +34,9 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
                 opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
                 opt.Lockout.AllowedForNewUsers = false;
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+
+            services.Configure<StripeSettings>(configuration.GetSection("Stripe"));
+
             services.AddScoped<ICategoryRepository,CategoryRepository>();
             services.AddScoped<IRestaurantRepository,RestaurantRepository>();
             services.AddScoped<IFoodCategoryRepository,FoodCategoryRepository>();
@@ -42,6 +45,7 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
             services.AddScoped<IServiceRepository,ServiceRepository>();
             services.AddScoped<ICourierRepository,CourierRepository>(); 
             services.AddScoped<IBasketItemRepository,BasketItemRepository>();
+            services.AddScoped<IOrderRepository,OrderRepository>();
 
             services.AddScoped<IAutenticationService, AutenticationService>();
             services.AddScoped<IRestaurantService, RestaurantService>();
@@ -53,6 +57,8 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<ICourierService,CourierService>();
             services.AddScoped<IBasketService,BasketService>();
+            services.AddScoped<IBasketService,BasketService>();
+            services.AddScoped<IOrderService,OrderService>();
 
 
 

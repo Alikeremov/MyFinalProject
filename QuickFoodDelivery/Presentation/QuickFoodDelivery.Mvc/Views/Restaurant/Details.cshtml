@@ -141,13 +141,13 @@
                                 </tr>
                                 <tr>
                                     <td class="total">
-                                        TOTAL <span class="float-right">$@totalprice</span>
+                                        TOTAL <span class="float-right">$@(totalprice+10)</span>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                         <hr>
-                        <a class="btn_full" href="cart.html">Order now</a>
+                        <a class="btn_full" asp-action="Checkout" asp-controller="order">Order now</a>
                     </div><!-- End cart_box -->
                 </div><!-- End theiaStickySidebar -->
             </div>

@@ -12,5 +12,6 @@ namespace QuickFoodDelivery.Application.ViewModels
         public decimal Price { get; set; }
         public decimal Count { get; set; }
         public int MealId { get; set; }
+        public string MealName { get; set; }
     }
 }
