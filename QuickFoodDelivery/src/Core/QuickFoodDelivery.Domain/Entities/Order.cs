@@ -11,6 +11,11 @@ namespace QuickFoodDelivery.Domain.Entities
     public class Order:BaseEntity
     {
         public string Address { get; set; }
+        public string UserName { get; set; }
+        public string UserSurname { get; set; }
+        public string UserPhone { get; set; }
+        public string UserEmail { get; set; }
+        public string NoteForRestaurant { get; set; }
         public OrderStatus Status { get; set; }
         public decimal TotalPrice { get; set; }
         public DateTime PurchasedAt { get; set; }
@@ -19,6 +24,6 @@ namespace QuickFoodDelivery.Domain.Entities
         public Courier? Courier { get; set; }
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }
-        public List<BasketItem> BasketItems { get; set; }
+        public List<OrderItem> OrderItems { get; set; }
     }
 }

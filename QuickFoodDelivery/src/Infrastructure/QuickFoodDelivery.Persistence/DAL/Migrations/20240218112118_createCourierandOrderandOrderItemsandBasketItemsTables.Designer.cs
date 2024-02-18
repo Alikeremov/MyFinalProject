@@ -12,8 +12,8 @@ using QuickFoodDelivery.Persistence.DAL;
 namespace QuickFoodDelivery.Persistence.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240216111531_CourierTablewasUpdated")]
-    partial class CourierTablewasUpdated
+    [Migration("20240218112118_createCourierandOrderandOrderItemsandBasketItemsTables")]
+    partial class createCourierandOrderandOrderItemsandBasketItemsTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -278,9 +278,6 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                     b.Property<DateTime?>("ModifiredAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("OrderId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(6,2)");
 
@@ -290,9 +287,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.HasIndex("MealId");
 
-                    b.HasIndex("OrderId");
-
-                    b.ToTable("BasketItem");
+                    b.ToTable("BasketItems");
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Category", b =>
@@ -380,11 +375,16 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasMaxLength(29)
+                        .HasColumnType("nvarchar(29)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Courier");
+                    b.ToTable("Couriers");
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Employment", b =>
@@ -551,6 +551,9 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                     b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int?>("CourierId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -580,7 +583,43 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Order");
+                    b.HasIndex("CourierId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ModifiredAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Restaurant", b =>
@@ -856,7 +895,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.BasketItem", b =>
                 {
                     b.HasOne("QuickFoodDelivery.Domain.Entities.AppUser", "User")
-                        .WithMany()
+                        .WithMany("BasketItems")
                         .HasForeignKey("AppUserId");
 
                     b.HasOne("QuickFoodDelivery.Domain.Entities.Meal", "Meal")
@@ -865,13 +904,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("QuickFoodDelivery.Domain.Entities.Order", "Order")
-                        .WithMany("BasketItems")
-                        .HasForeignKey("OrderId");
-
                     b.Navigation("Meal");
-
-                    b.Navigation("Order");
 
                     b.Navigation("User");
                 });
@@ -879,7 +912,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Courier", b =>
                 {
                     b.HasOne("QuickFoodDelivery.Domain.Entities.AppUser", "AppUser")
-                        .WithMany()
+                        .WithMany("Couriers")
                         .HasForeignKey("AppUserId");
 
                     b.Navigation("AppUser");
@@ -905,10 +938,27 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Order", b =>
                 {
                     b.HasOne("QuickFoodDelivery.Domain.Entities.AppUser", "AppUser")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("AppUserId");
 
+                    b.HasOne("QuickFoodDelivery.Domain.Entities.Courier", "Courier")
+                        .WithMany()
+                        .HasForeignKey("CourierId");
+
                     b.Navigation("AppUser");
+
+                    b.Navigation("Courier");
+                });
+
+            modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.OrderItem", b =>
+                {
+                    b.HasOne("QuickFoodDelivery.Domain.Entities.Order", "Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Restaurant", b =>
@@ -949,6 +999,12 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.AppUser", b =>
                 {
+                    b.Navigation("BasketItems");
+
+                    b.Navigation("Couriers");
+
+                    b.Navigation("Orders");
+
                     b.Navigation("Restaurants");
                 });
 
@@ -964,7 +1020,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Order", b =>
                 {
-                    b.Navigation("BasketItems");
+                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Restaurant", b =>

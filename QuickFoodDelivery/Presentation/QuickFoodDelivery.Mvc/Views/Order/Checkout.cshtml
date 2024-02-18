@@ -1,0 +1,165 @@
+﻿@model OrderCreateVm
+
+<head>
+	<link href="~/assets/css/skins/square/grey.css" rel="stylesheet">
+</head>
+
+<div class="container margin_60_35">
+	<div class="row">
+		<div class="col-lg-3">
+			<div class="box_style_2 info d-none d-sm-block">
+				<h4 class="nomargin_top">Delivery time <i class="icon_clock_alt float-right"></i></h4>
+				<p>
+					Lorem ipsum dolor sit amet, in pri partem essent. Qui debitis meliore ex, tollit debitis conclusionemque te eos.
+				</p>
+				<hr>
+				<h4>Secure payment <i class="icon_creditcard float-right"></i></h4>
+				<p>
+					Lorem ipsum dolor sit amet, in pri partem essent. Qui debitis meliore ex, tollit debitis conclusionemque te eos.
+				</p>
+			</div><!-- End box_style_1 -->
+			<div class="box_style_2 d-none d-sm-block" id="help">
+				<i class="icon_lifesaver"></i>
+				<h4>Need <span>Help?</span></h4>
+				<a href="tel://004542344599" class="phone">+45 423 445 99</a>
+				<small>Monday to Friday 9.00am - 7.30pm</small>
+			</div>
+		</div><!-- End col -->
+		<div class="col-lg-6">
+			<form method="post">
+				<div class="box_style_2" id="order_process">
+					<h2 class="inner">Your order details</h2>
+					<div class="form-group">
+						<label asp-for="UserName">UserName</label>
+						<input asp-for="UserName" class="form-control" placeholder="UserName">
+						<span asp-validation-for="UserName"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="UserSurname">UserSurname</label>
+						<input asp-for="UserSurname" class="form-control" placeholder="UserSurname">
+						<span asp-validation-for="UserSurname"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="UserEmail">UserEmail</label>
+						<input asp-for="UserEmail" class="form-control" placeholder="UserEmail">
+						<span asp-validation-for="UserEmail"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="UserPhoneNumber">UserPhoneNumber</label>
+						<input asp-for="UserPhoneNumber" class="form-control" placeholder="UserPhoneNumber">
+						<span asp-validation-for="UserPhoneNumber"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="UserAddress">UserAddress</label>
+						<input asp-for="UserAddress" class="form-control" placeholder="UserAddress">
+						<span asp-validation-for="UserAddress"></span>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="form-group">
+							<label asp-for="NotesForRestaurant">Notes For Restaurant</label>
+							<input asp-for="NotesForRestaurant" class="form-control" placeholder="NotesForRestaurant">
+							<span asp-validation-for="NotesForRestaurant"></span>
+						</div>
+					</div>
+				</div><!-- End box_style_1 -->
+				<button type="submit">submit</button>
+			</form>
+		</div><!-- End col -->
+		<div class="col-lg-3" id="sidebar">
+			<div class="theiaStickySidebar">
+				<div id="cart_box">
+					<h3>Your order <i class="icon_cart_alt float-right"></i></h3>
+					<table class="table table_summary">
+						<tbody>
+							<tr>
+								<td>
+									<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> Enchiladas
+								</td>
+								<td>
+									<strong class="float-right">$11</strong>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Burrito
+								</td>
+								<td>
+									<strong class="float-right">$14</strong>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> Chicken
+								</td>
+								<td>
+									<strong class="float-right">$20</strong>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Corona Beer
+								</td>
+								<td>
+									<strong class="float-right">$9</strong>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Cheese Cake
+								</td>
+								<td>
+									<strong class="float-right">$12</strong>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+					<div class="row" id="options_2">
+						<div class="col-xl-6 col-md-12 col-sm-12 col-6">
+							<label><input type="radio" value="" checked name="option_2" class="icheck">Delivery</label>
+						</div>
+						<div class="col-xl-6 col-md-12 col-sm-12 col-6">
+							<label><input type="radio" value="" name="option_2" class="icheck">Take Away</label>
+						</div>
+					</div><!-- Edn options 2 -->
+					<hr>
+					<table class="table table_summary">
+						<tbody>
+							<tr>
+								<td>
+									Subtotal <span class="float-right">$56</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Delivery fee <span class="float-right">$10</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="total">
+									TOTAL <span class="float-right">$66</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+					<a class="btn_full" href="cart.html">Order now</a>
+				</div><!-- End cart_box -->
+			</div><!-- End theiaStickySidebar -->
+		</div><!-- End col -->
+	</div><!-- End row -->
+</div><!-- End container -->
+<script src="~/assets/js/jquery-3.7.0.min.js"></script>
+<script src="~/assets/js/common_scripts_min.js"></script>
+<script src="~/assets/js/functions.js"></script>
+<script src="assets/validate.js"></script>
+
+<!-- SPECIFIC SCRIPTS -->
+<script src="~/assets/js/ResizeSensor.min.js"></script>
+<script src="~/assets/js/theia-sticky-sidebar.min.js"></script>
+<script>
+	jQuery('#sidebar').theiaStickySidebar({
+		additionalMarginTop: 80
+	});
+</script>

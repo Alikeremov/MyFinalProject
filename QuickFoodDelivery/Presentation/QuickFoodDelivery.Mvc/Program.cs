@@ -17,7 +17,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+//app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(

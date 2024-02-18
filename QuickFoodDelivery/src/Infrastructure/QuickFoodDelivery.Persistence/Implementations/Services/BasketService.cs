@@ -42,7 +42,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                     Count=basketItem.Count,
                     AppUserId=basketItem.AppUserId,
                     MealId=basketItem.MealId,
-                    OrderId=basketItem.OrderId}).ToList();
+                    }).ToList();
             }
             return basketItemsVm;
         }

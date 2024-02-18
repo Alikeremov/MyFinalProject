@@ -16,6 +16,5 @@ namespace QuickFoodDelivery.Application.ViewModels
         //Relation properties
         public int MealId { get; set; }
         public string? AppUserId { get; set; }
-        public int? OrderId { get; set; }
     }
 }

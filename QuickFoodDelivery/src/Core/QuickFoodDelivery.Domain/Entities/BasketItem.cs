@@ -15,9 +15,8 @@ namespace QuickFoodDelivery.Domain.Entities
         //Relation properties
         public int MealId { get; set; }
         public Meal Meal { get; set; }
-        public string? AppUserId { get; set; }
-        public AppUser? User { get; set; }
-        public int? OrderId { get; set; }
-        public Order? Order { get; set; }
+        public string AppUserId { get; set; }
+        public AppUser User { get; set; }
+
     }
 }
