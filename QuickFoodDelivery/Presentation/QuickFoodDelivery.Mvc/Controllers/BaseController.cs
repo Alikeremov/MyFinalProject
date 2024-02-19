@@ -13,7 +13,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
             }
             else if (User.IsInRole(UserRole.RestaurantAdmin.ToString()))
             {
-                return RedirectToAction("Index", "RestaurantaAdmin");
+                return RedirectToAction("Index", "RestaurantAdmin");
             }
             else if (User.IsInRole(UserRole.Courier.ToString()))
             {

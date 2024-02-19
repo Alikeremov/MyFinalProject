@@ -146,5 +146,30 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             }
                 return true;
         }
+        public async Task<ICollection<OrderGetVm>> AcceptOrders()
+        {
+            AppUser user = await _autentication.GetUserAsync(_accessor.HttpContext.User.Identity.Name);
+            if (user == null) throw new Exception("Not Found");
+            Courier courier=await _courierRepository.GetByExpressionAsync(x=>x.AppUserId== user.Id,isDeleted:false);
+            if (courier == null) throw new Exception("Not Found");
+            ICollection<Order> orders=_repository.GetAllWhere(x=>x.CourierId== courier.Id,isDeleted:false,includes:new string[] {nameof(Order.OrderItems)}).ToList();
+            return orders.Select(order => new OrderGetVm
+            {
+                UserName = order.UserName,
+                UserAddress = order.Address,
+                UserEmail = order.UserEmail,
+                UserPhoneNumber = order.UserPhone,
+                UserSurname = order.UserSurname,
+                NotesForRestaurant = order.NoteForRestaurant,
+                CourierId = (int)order.CourierId,
+                OrderItemVms = order.OrderItems.Select(orderItem => new OrderItemVm
+                {
+                    Price = orderItem.Price,
+                    Count = orderItem.Count,
+                    MealId = orderItem.MealId,
+                    MealName = orderItem.MealName,
+                }).ToList()
+            }).ToList();
+        }
     }
 }

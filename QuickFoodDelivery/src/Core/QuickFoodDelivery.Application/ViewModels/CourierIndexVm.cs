@@ -9,5 +9,6 @@ namespace QuickFoodDelivery.Application.ViewModels
     public class CourierIndexVm
     {
         public CourierItemVm Courier { get; set; }
+        public ICollection<OrderGetVm> Orders { get; set; }
     }
 }
