@@ -188,6 +188,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Views/Order/FindCourier.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRmluZENvdXJpZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/user/Desktop/MyFinalProject/QuickFoodDelivery/Presentation/QuickFoodDelivery.Mvc/Views/RestaurantAdmin/CreateMeal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudEFkbWluXENyZWF0ZU1lYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -18,26 +18,57 @@ using System.Text;
 using System.Threading.Tasks;
 using QuickFoodDelivery.Domain.Enums;
 using System.Runtime.CompilerServices;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace QuickFoodDelivery.Persistence.Implementations.Services
 {
     public class CourierService : ICourierService
     {
         private readonly ICourierRepository _repository;
-        private readonly IAutenticationService _autenticationService;
+		private readonly IOrderRepository _orderRepository;
+		private readonly IAutenticationService _autenticationService;
         private readonly IWebHostEnvironment _env;
         private readonly IHttpContextAccessor _contextAccessor;
 
-        public CourierService(ICourierRepository repository,IAutenticationService autenticationService,IWebHostEnvironment env,IHttpContextAccessor contextAccessor)
+        public CourierService(ICourierRepository repository,IOrderRepository orderRepository,IAutenticationService autenticationService,IWebHostEnvironment env,IHttpContextAccessor contextAccessor)
         {
             _repository = repository;
-            _autenticationService = autenticationService;
+			_orderRepository = orderRepository;
+			_autenticationService = autenticationService;
             _env = env;
             _contextAccessor = contextAccessor;
         }
 
+		public async Task<ICollection<CourierItemVm>> GetCourierForOrder(ITempDataDictionary tempdata)
+		{
+			int orderId = 0;
+            if (_contextAccessor.HttpContext.User.Identity.IsAuthenticated)
+            {
+                orderId = (int)_contextAccessor.HttpContext.Session.GetInt32("OrderId");
+            }
+            //orderId=(int)tempdata["OrderId"];
+			Order order = await _orderRepository.GetByIdAsync(orderId, isDeleted: false);
+			if (order == null) throw new Exception("Order Not Found");
+            //tempdata.Remove("OrderId");
+			ICollection<Courier> couriers= await _repository.GetAll(isDeleted: false, includes: new string[] { nameof(Courier.Orders)}).Take(1).ToListAsync();
+			order.CourierId = couriers.FirstOrDefault()?.Id;
+            _orderRepository.Update(order);
+            await _orderRepository.SaveChangesAsync();
+			return couriers.Select(courier => new CourierItemVm
+			{
+				Id = courier.Id,			
+				Name = courier.Name,
+				Surname = courier.Surname,
+				Email = courier.Email,
+				PhoneNumber = courier.PhoneNumber,
+				Fee = courier.Fee,
+				Image = courier.Image,
+				AppUserId = courier.AppUserId,
 
-        public async Task<ICollection<CourierItemVm>> GetAllnonConfirmed(int page, int take)
+			}).ToList();
+            
+		}
+		public async Task<ICollection<CourierItemVm>> GetAllnonConfirmed(int page, int take)
         {
             ICollection<Courier> couriers = await _repository.GetAllWhere(isDeleted: null, skip: (page - 1) * take, take: take).ToListAsync();
             return couriers.Select(courier => new CourierItemVm

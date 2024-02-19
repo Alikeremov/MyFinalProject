@@ -15,6 +15,6 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
     public interface IOrderService
     {
         Task<OrderCreateVm> CheckOuted(OrderCreateVm orderVM);
-        Task<bool> CheckOut(OrderCreateVm orderVM, ModelStateDictionary modelstate, ITempDataDictionary keys);
+        Task<bool> CheckOut(OrderCreateVm orderVM, ModelStateDictionary modelstate, ITempDataDictionary keys, string stripeEmail, string stripeToken);
     }
 }

@@ -18,6 +18,7 @@ namespace QuickFoodDelivery.Domain.Entities
         public CourierStatus Status { get; set; }
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }
+        public List<Order> Orders { get; set; }
         public Courier()
         {
             Image= "profile.png";

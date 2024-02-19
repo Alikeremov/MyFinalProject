@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using QuickFoodDelivery.Application.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,9 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
         Task<CourierItemVm> GetbyUserNameAsync(string userName);
         Task<CourierItemVm> GetWithoutIsdeletedAsync(int id);
         Task<CourierItemVm> GetAsync(int id);
-        Task<bool> CreateAsync(CourierCreateVm restaurantVm, ModelStateDictionary modelState);
+        Task<ICollection<CourierItemVm>> GetCourierForOrder(ITempDataDictionary tempdata);
+
+		Task<bool> CreateAsync(CourierCreateVm restaurantVm, ModelStateDictionary modelState);
         Task<CourierCreateVm> CreatedAsync(CourierCreateVm vm);
         Task<bool> UpdateAsync(CourierUpdateVm restaurantVm, ModelStateDictionary modelState, int id);
         Task<CourierUpdateVm> UpdatedAsync(CourierUpdateVm restaurantvm, int id);

@@ -290,7 +290,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.HasIndex("MealId");
 
-                    b.ToTable("BasketItems");
+                    b.ToTable("BasketItems", (string)null);
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Category", b =>
@@ -324,7 +324,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Courier", b =>
@@ -387,7 +387,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Couriers");
+                    b.ToTable("Couriers", (string)null);
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Employment", b =>
@@ -446,7 +446,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employments");
+                    b.ToTable("Employments", (string)null);
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.FoodCategory", b =>
@@ -480,7 +480,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FoodCategories");
+                    b.ToTable("FoodCategories", (string)null);
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Meal", b =>
@@ -536,7 +536,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.HasIndex("RestaurantId");
 
-                    b.ToTable("Meals");
+                    b.ToTable("Meals", (string)null);
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Order", b =>
@@ -612,7 +612,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.HasIndex("CourierId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.OrderItem", b =>
@@ -661,7 +661,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Restaurant", b =>
@@ -741,7 +741,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                     b.HasIndex("RestourantEmail")
                         .IsUnique();
 
-                    b.ToTable("Restaurants");
+                    b.ToTable("Restaurants", (string)null);
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Review", b =>
@@ -798,7 +798,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.HasIndex("RestaurantId");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", (string)null);
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Service", b =>
@@ -842,7 +842,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Services");
+                    b.ToTable("Services", (string)null);
                 });
 
             modelBuilder.Entity("QuickFoodDelivery.Domain.Entities.Setting", b =>
@@ -880,7 +880,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Settings");
+                    b.ToTable("Settings", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
