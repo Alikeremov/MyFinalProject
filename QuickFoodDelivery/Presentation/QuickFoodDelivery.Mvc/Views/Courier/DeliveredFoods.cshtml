@@ -1,0 +1,123 @@
+﻿@model CourierIndexVm
+@{
+    int count = 1;
+}
+
+<head>
+    <!-- SPECIFIC CSS -->
+    <link href="~/assets/css/skins/square/grey.css" rel="stylesheet">
+    <link href="~/assets/css/admin.css" rel="stylesheet">
+    <link href="~/assets/js/editor/summernote-bs4.css" rel="stylesheet">
+    <link href="~/assets/css/dropzone.css" rel="stylesheet">
+    <title>Dönme Animasyonu</title>
+    <!-- Font Awesome CSS dosyasını içeri aktar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* İkonun dönme animasyonu için stil */
+        .rotate {
+            transition: transform 1s linear;
+        }
+
+            /* İkonun üzerine gelindiğinde dönme animasyonunu başlat */
+            .rotate:hover {
+                transform: rotate(360deg);
+            }
+    </style>
+</head>
+
+
+
+<!-- SubHeader =============================================== -->
+<section class="parallax-window" id="short" data-parallax="scroll" data-image-src="/assets/img/courierImages/@Model.Courier.Image" data-natural-width="1400" data-natural-height="350">
+    <div id="subheader">
+        <div id="sub_content">
+            <h1>Courier section</h1>
+            <p>FullName: @Model.Courier.Name @Model.Courier.Surname</p>
+            <p>Phone Number: @Model.Courier.PhoneNumber</p>
+            <p>Your Fee: $@Model.Courier.Fee</p>
+            <p></p>
+        </div><!-- End sub_content -->
+    </div><!-- End subheader -->
+</section><!-- End section -->
+<!-- End SubHeader ============================================ -->
+
+<div id="position">
+    <div class="container">
+        <ul>
+            
+            <li>Page active</li>
+        </ul>
+        <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
+    </div>
+</div><!-- Position -->
+<!-- Content ================================================== -->
+<div class="container margin_60">
+    <div id="tabs" class="tabs">
+        <nav>
+            <ul>
+                <li>
+                    <a asp-action="Index" asp-controller="Courier">Food To Be Delivered</a>
+                </li>
+                <li>
+                    <a asp-action="DeliveredFoods" asp-controller="Courier"> Delivered Foods</a>
+                </li>
+            </ul>
+        </nav>
+        <br />
+        <table class="table table-striped cart-list">
+            <thead>
+                <tr>
+                    <th>
+                        Count
+                    </th>
+                    <th>
+                        User Address
+                    </th>
+                    <th>
+                        User PhoneNumber
+                    </th>
+                    <th>
+                        Note For Restaurant
+                    </th>
+                    <th>
+                        Order Status
+                    </th>
+                    <th>
+                        OrderDetails
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Orders)
+                {
+                    <tr>
+                        <td>
+                            <h5>@(count++).User FullName:@item.UserName @item.UserSurname</h5>
+
+                        </td>
+                        <td>
+                            <p>
+                                @item.UserAddress
+                            </p>
+                        </td>
+                        <td>
+                            <p>@item.UserPhoneNumber</p>
+                        </td>
+                        <td>
+                            <p>@item.NotesForRestaurant</p>
+                        </td>
+                        <td>
+                            <p>@item.Status</p>
+                        </td>
+                        <td class="options">
+                            <div class="dropdown dropdown-options">
+                                <a asp-action="Detail" asp-controller="Courier" asp-route-id="@item.Id" class="dropdown-toggle"><i class="fas fa-compass rotate" id="rotate-icon" onclick="startRotation()"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div><!-- End container  -->

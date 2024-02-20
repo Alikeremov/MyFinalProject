@@ -22,7 +22,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 StripeConfiguration.ApiKey = builder.Configuration["Stripe:Secretkey"];
-//app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(

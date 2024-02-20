@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Humanizer;
+using Microsoft.AspNetCore.Mvc;
 using QuickFoodDelivery.Application.Abstractions.Services;
 using QuickFoodDelivery.Application.ViewModels;
 
@@ -19,7 +20,15 @@ namespace QuickFoodDelivery.Mvc.Controllers
             return View(new CourierIndexVm
             {
                 Courier=await _courierService.GetbyUserNameAsync(User.Identity.Name),
-                Orders=await _orderService.AcceptOrders()
+                Orders=await _orderService.AcceptOrders(User.Identity.Name)
+            });
+        }
+        public async Task<IActionResult> DeliveredFoods()
+        {
+            return View(new CourierIndexVm
+            {
+                Courier = await _courierService.GetbyUserNameAsync(User.Identity.Name),
+                Orders = await _orderService.DeliveredOrders(User.Identity.Name)
             });
         }
         public IActionResult BeCourier()

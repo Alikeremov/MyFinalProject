@@ -9,18 +9,18 @@
             <h1>Place your order</h1>
             <div class="bs-wizard row">
                 <div class="col-4 bs-wizard-step complete">
-                    <div class="text-center bs-wizard-stepnum"><strong>1.</strong> Your details and Payments</div>
+                    <div class="text-center bs-wizard-stepnum"><strong>1.</strong> Your details and Payment</div>
                     <div class="progress">
                         <div class="progress-bar"></div>
                     </div>
                     <a href="cart.html" class="bs-wizard-dot"></a>
                 </div>
-                <div class="col-4 bs-wizard-step disabled">
-                    <div class="text-center bs-wizard-stepnum"><strong>2.</strong> Finish!</div>
+                <div class="col-4 bs-wizard-step complete">
+                    <div class="text-center bs-wizard-stepnum"><strong>3.</strong> Finish!</div>
                     <div class="progress">
                         <div class="progress-bar"></div>
                     </div>
-                    <a href="cart_3.html" class="bs-wizard-dot"></a>
+                    <a href="#0" class="bs-wizard-dot"></a>
                 </div>
             </div><!-- End bs-wizard -->
         </div><!-- End sub_content -->
@@ -38,14 +38,14 @@
 
                             <div class="desc">
                                 <div class="thumb_strip">
-                                    <img src="~/assets/img/courierImages/@item.Image" alt="">
+                                    <img src="~/assets/img/courierImages/@item.Image" style="width:100px; height:100px; border-radius:50px;" alt="">
                                 </div>
                                 <div class="rating">
                                     <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
                                 </div>
-                                <h3>Name:@item.Name Surname:@item.Surname</h3>
+                                <h3>Courier FullName:@item.Name @item.Surname</h3>
                                 <div class="type">
-                                    @item.PhoneNumber
+                                    <a href="tel://@item.PhoneNumber" class="phone">@item.PhoneNumber</a>                                   
                                 </div>
                                 <div class="">
                                     @item.Email
@@ -56,6 +56,8 @@
                     }
 
                 </div>
+                <br />
+                <br />              
                 @if (Model.Count > 0)
                 {
                     <a asp-action="Index" asp-controller="Home" class="btn btn-success">Back to home</a>

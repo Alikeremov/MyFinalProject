@@ -2045,6 +2045,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\05dee196-bc3e-4071-8088-cab966a0367dejdaha.png"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\4fa9cf54-997b-404b-a90b-98971e918b5biStock-476085198.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\4fa9cf54-997b-404b-a90b-98971e918b5biStock-476085198.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\67e91c94-df72-464a-84aa-582ae82eefc1ejdaha.png",
       "PackagePath": "staticwebassets\\assets\\img\\67e91c94-df72-464a-84aa-582ae82eefc1ejdaha.png"
     },
@@ -2119,6 +2123,10 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\cards.png",
       "PackagePath": "staticwebassets\\assets\\img\\cards.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\courierImages\\06b717f1-a688-4ba2-90e2-457d74c93478Courier2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\courierImages\\06b717f1-a688-4ba2-90e2-457d74c93478Courier2.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\courierImages\\8c2345e4-3fab-44bb-a080-ed1f8af37870iStock-476085198.jpg",
@@ -2395,10 +2403,6 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\popup_img.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\popup_img.jpg"
-    },
-    {
-      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\profile.png",
-      "PackagePath": "staticwebassets\\assets\\img\\profile.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\3327c112-c72c-46ca-96ed-14890b4e247amc.png",

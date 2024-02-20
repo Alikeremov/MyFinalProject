@@ -34,7 +34,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
         public async Task<IActionResult> FindCourier(int id)
         {
             if (id ==2) return View(new List<CourierItemVm>());
-            return View(await _courierService.GetCourierForOrder(TempData));
+            return View(await _courierService.GetCourierForOrder());
         }
     }
 }

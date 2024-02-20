@@ -17,7 +17,7 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
         Task<CourierItemVm> GetbyUserNameAsync(string userName);
         Task<CourierItemVm> GetWithoutIsdeletedAsync(int id);
         Task<CourierItemVm> GetAsync(int id);
-        Task<ICollection<CourierItemVm>> GetCourierForOrder(ITempDataDictionary tempdata);
+        Task<ICollection<CourierItemVm>> GetCourierForOrder();
 
 		Task<bool> CreateAsync(CourierCreateVm restaurantVm, ModelStateDictionary modelState);
         Task<CourierCreateVm> CreatedAsync(CourierCreateVm vm);

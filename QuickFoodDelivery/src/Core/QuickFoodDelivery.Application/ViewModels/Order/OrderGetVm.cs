@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuickFoodDelivery.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,7 +17,9 @@ namespace QuickFoodDelivery.Application.ViewModels
         public string UserEmail { get; set; }
         public string UserPhoneNumber { get; set; }
         public string NotesForRestaurant { get; set; }
-        public int CourierId { get; set; }
+        public int? CourierId { get; set; }
+        public OrderStatus Status { get; set; }
+        public decimal TotalPrice { get; set; }
         public ICollection<string>? RestaurantAddreses { get; set; }
         public ICollection<OrderItemVm> OrderItemVms { get; set; } = new List<OrderItemVm>();
     }

@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace QuickFoodDelivery.Persistence.Implementations.Services
 {
@@ -23,13 +24,15 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IWebHostEnvironment _env;
+        private readonly IHttpContextAccessor _http;
 
-        public AutenticationService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager, IWebHostEnvironment env)
+        public AutenticationService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager, IWebHostEnvironment env,IHttpContextAccessor http)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _env = env;
+            _http = http;
         }
 
 
@@ -122,6 +125,10 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         }
         public async Task Logout()
         {
+            foreach (var cookie in _http.HttpContext.Request.Cookies.Keys)
+            {
+                _http.HttpContext.Response.Cookies.Delete(cookie);
+            }
             await _signInManager.SignOutAsync();
         }
         public async Task<AppUser> GetUserAsync(string userName)
@@ -165,15 +172,72 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         {
             if (username == null) throw new Exception("Bad Request");
             AppUser user = await GetUserAsync(username);
+            if (user == null) throw new Exception("Not Found");
             vm.Name=user.Name;
             vm.Surname=user.Surname;
             vm.ProfileImage=user.ProfileImage;
+            vm.UserName=user.UserName;
             return vm;
+        }
+        public async Task<bool> LoginNoPass(string userName,ModelStateDictionary modelState)
+        {
+            AppUser user = await _userManager.FindByEmailAsync(userName);
+            if (user is null)
+            {
+                user = await _userManager.FindByNameAsync(userName);
+                if (user is null)
+                {
+                    modelState.AddModelError(string.Empty, "UserName , email or password was wrong");
+                }
+
+            }
+            await _signInManager.SignInAsync(user, true);
+            return true;
         }
         public async Task<bool> Update(string username,ProfileUpdateVm vm,ModelStateDictionary modelState)
         {
             if(!modelState.IsValid) return false;
+            if (username == null) throw new Exception("Bad Request");
+            AppUser existed = await GetUserAsync(username);
+            if (existed == null) throw new Exception("Not Found");
+            if (existed.UserName != vm.UserName)
+            {
+            if (await _userManager.Users.AnyAsync(x => x.UserName == vm.UserName))
+            {
+                modelState.AddModelError("UserName", "This username is exis");
+                return false;
+            }
 
+            }
+            if (vm.ProfilePhoto != null)
+            {
+                if (!vm.ProfilePhoto.CheckType("image/"))
+                {
+                    modelState.AddModelError("Photo", "Your photo type is not true.Please use only image");
+                    return false;
+                }
+                if (!vm.ProfilePhoto.ValidateSize(5 * 1024))
+                {
+                    modelState.AddModelError("Photo", "Your photo size max be 5mb");
+                    return false;
+                }
+                string fileName = await vm.ProfilePhoto.CreateFileAsync(_env.WebRootPath, "assets", "img");
+                existed.ProfileImage.DeleteFile(_env.WebRootPath, "assets", "img");
+                existed.ProfileImage = fileName;
+            }
+            existed.Name = vm.Name;
+            existed.Surname=vm.Surname;
+            existed.UserName=vm.UserName;
+            var result =await _userManager.UpdateAsync(existed);
+            if (!result.Succeeded)
+            {
+                foreach (var item in result.Errors)
+                {
+                    modelState.AddModelError(string.Empty, item.Description);
+                }
+                return false;
+            }
+            return true;
         }
     }
 }

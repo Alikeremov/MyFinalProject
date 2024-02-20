@@ -120,7 +120,11 @@
                             }
                             else if(User.IsInRole("RestaurantAdmin"))
                             {
-                                <li><a asp-action="Index" asp-controller="RestaurantAdmin" >go</a></li>
+                                <li><a asp-action="Index" asp-controller="RestaurantAdmin" >Go R.Admin </a></li>
+                            }
+                            else if (User.IsInRole("Courier"))
+                            {
+                                <li><a asp-action="Index" asp-controller="Courier">Go Courier</a></li>
                             }
                             @if (User.Identity.IsAuthenticated)
                             {
@@ -131,7 +135,7 @@
                                     var appUser = await userManager.GetUserAsync(User);
                                     if (appUser != null && appUser.ProfileImage != null)
                                     {
-                                        <li><img src="~/assets/img/@(appUser.ProfileImage)" style="width:30px; height:30px; border-radius:15px;" /></li>
+                                        <li><a asp-action="Index" asp-controller="Profile"><img src="~/assets/img/@(appUser.ProfileImage)" style="width:30px; height:30px; border-radius:15px;" /></a></li>
                                     }
                                     else
                                     {

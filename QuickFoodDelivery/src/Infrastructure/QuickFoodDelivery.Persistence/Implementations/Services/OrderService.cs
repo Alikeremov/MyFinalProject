@@ -17,24 +17,24 @@ using System.Threading.Tasks;
 
 namespace QuickFoodDelivery.Persistence.Implementations.Services
 {
-    public class OrderService:IOrderService
+    public class OrderService : IOrderService
     {
         private readonly IOrderRepository _repository;
-		private readonly ICourierRepository _courierRepository;
-		private readonly IHttpContextAccessor _accessor;
+        private readonly ICourierRepository _courierRepository;
+        private readonly IHttpContextAccessor _accessor;
         private readonly IAutenticationService _autentication;
         private readonly IMealRepository _mealRepository;
 
-        public OrderService(IOrderRepository repository,ICourierRepository courierRepository,IHttpContextAccessor accessor,IAutenticationService autentication,IMealRepository mealRepository)
+        public OrderService(IOrderRepository repository, ICourierRepository courierRepository, IHttpContextAccessor accessor, IAutenticationService autentication, IMealRepository mealRepository)
         {
             _repository = repository;
-			_courierRepository = courierRepository;
-			_accessor = accessor;
+            _courierRepository = courierRepository;
+            _accessor = accessor;
             _autentication = autentication;
             _mealRepository = mealRepository;
         }
-        
-		public async Task<OrderCreateVm> CheckOuted(OrderCreateVm orderVM)
+
+        public async Task<OrderCreateVm> CheckOuted(OrderCreateVm orderVM)
         {
             if (_accessor.HttpContext.User.Identity.IsAuthenticated)
             {
@@ -42,14 +42,14 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
                 foreach (var item in user.BasketItems)
                 {
-                    Meal meal = await _mealRepository.GetByIdAsync(item.MealId,isDeleted:false);
+                    Meal meal = await _mealRepository.GetByIdAsync(item.MealId, isDeleted: false);
                     if (meal is not null)
                     {
                         orderVM.OrderItemVms.Add(new OrderItemVm
                         {
                             Price = meal.Price,
                             Count = item.Count,
-                            MealName=meal.Name,
+                            MealName = meal.Name,
                             MealId = meal.Id
                         });
 
@@ -59,7 +59,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             }
             return orderVM;
         }
-        public async Task<bool> CheckOut(OrderCreateVm orderVM,ModelStateDictionary modelstate,ITempDataDictionary tempdata,string stripeEmail,string stripeToken)
+        public async Task<bool> CheckOut(OrderCreateVm orderVM, ModelStateDictionary modelstate, ITempDataDictionary tempdata, string stripeEmail, string stripeToken)
         {
             if (_accessor.HttpContext.User.Identity.IsAuthenticated)
             {
@@ -100,7 +100,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                         {
                             Count = item.Count,
                             Price = meal.Price,
-                            MealName=meal.Name,
+                            MealName = meal.Name,
                             MealId = meal.Id,
                             OrderId = order.Id
                         });
@@ -144,15 +144,15 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 _accessor.HttpContext.Session.SetInt32("OrderId", order.Id);
                 //tempdata["OrderId"]=order.Id;
             }
-                return true;
+            return true;
         }
-        public async Task<ICollection<OrderGetVm>> AcceptOrders()
+        public async Task<ICollection<OrderGetVm>> AcceptOrders(string userName)
         {
-            AppUser user = await _autentication.GetUserAsync(_accessor.HttpContext.User.Identity.Name);
+            AppUser user = await _autentication.GetUserAsync(userName);
             if (user == null) throw new Exception("Not Found");
-            Courier courier=await _courierRepository.GetByExpressionAsync(x=>x.AppUserId== user.Id,isDeleted:false);
+            Courier courier = await _courierRepository.GetByExpressionAsync(x => x.AppUserId == user.Id, isDeleted: false);
             if (courier == null) throw new Exception("Not Found");
-            ICollection<Order> orders=_repository.GetAllWhere(x=>x.CourierId== courier.Id,isDeleted:false,includes:new string[] {nameof(Order.OrderItems)}).ToList();
+            ICollection<Order> orders = _repository.GetAllWhere(x => x.CourierId == courier.Id && x.Status != OrderStatus.Delivered, isDeleted: false, includes: new string[] { nameof(Order.OrderItems) }).ToList();
             return orders.Select(order => new OrderGetVm
             {
                 UserName = order.UserName,
@@ -162,7 +162,65 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 UserSurname = order.UserSurname,
                 NotesForRestaurant = order.NoteForRestaurant,
                 CourierId = (int)order.CourierId,
-                Id=order.Id,
+                Status=order.Status,
+                TotalPrice=order.TotalPrice,
+                Id = order.Id,
+                OrderItemVms = order.OrderItems.Select(orderItem => new OrderItemVm
+                {
+                    Price = orderItem.Price,
+                    Count = orderItem.Count,
+                    MealId = orderItem.MealId,
+                    MealName = orderItem.MealName,
+                }).ToList(),
+
+            }).ToList();
+        }
+        public async Task<ICollection<OrderGetVm>> DeliveredOrders(string userName)
+        {
+            AppUser user = await _autentication.GetUserAsync(userName);
+            if (user == null) throw new Exception("Not Found");
+            Courier courier = await _courierRepository.GetByExpressionAsync(x => x.AppUserId == user.Id, isDeleted: false);
+            if (courier == null) throw new Exception("Not Found");
+            ICollection<Order> orders = _repository.GetAllWhere(x => x.CourierId == courier.Id && x.Status == OrderStatus.Delivered, isDeleted: false, includes: new string[] { nameof(Order.OrderItems) }).ToList();
+            return orders.Select(order => new OrderGetVm
+            {
+                UserName = order.UserName,
+                UserAddress = order.Address,
+                UserEmail = order.UserEmail,
+                UserPhoneNumber = order.UserPhone,
+                UserSurname = order.UserSurname,
+                NotesForRestaurant = order.NoteForRestaurant,
+                CourierId = (int)order.CourierId,
+                Status = order.Status,
+                TotalPrice = order.TotalPrice,
+                Id = order.Id,
+                OrderItemVms = order.OrderItems.Select(orderItem => new OrderItemVm
+                {
+                    Price = orderItem.Price,
+                    Count = orderItem.Count,
+                    MealId = orderItem.MealId,
+                    MealName = orderItem.MealName,
+                }).ToList(),
+
+            }).ToList();
+        }
+        public async Task<ICollection<OrderGetVm>> GetAllOrdersByUserName(string username)
+        {
+            AppUser user = await _autentication.GetUserAsync(username);
+            if (user == null) throw new Exception("Not Found");
+            ICollection<Order> orders = _repository.GetAllWhere(x => x.AppUserId == user.Id, isDeleted: false, includes: new string[] { nameof(Order.OrderItems), nameof(Order.Courier) }).ToList();
+            return orders.Select(order => new OrderGetVm
+            {
+                UserName = order.UserName,
+                UserAddress = order.Address,
+                UserEmail = order.UserEmail,
+                UserPhoneNumber = order.UserPhone,
+                UserSurname = order.UserSurname,
+                NotesForRestaurant = order.NoteForRestaurant,
+                CourierId = order.CourierId,
+                Id = order.Id,
+                Status = order.Status,
+                TotalPrice = order.TotalPrice,
                 OrderItemVms = order.OrderItems.Select(orderItem => new OrderItemVm
                 {
                     Price = orderItem.Price,
@@ -172,25 +230,35 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 }).ToList()
             }).ToList();
         }
-        public async Task<OrderUpdateVm> Updated(int id,OrderUpdateVm vm)
+        public async Task<OrderUpdateVm> Updated(int id, OrderUpdateVm vm)
         {
             if (id < 1) throw new Exception("Bad Request");
             Order existed = await _repository.GetByIdAsync(id, isDeleted: false);
             if (existed == null) throw new Exception("Not Found");
             vm.OrderStatus = existed.Status;
-            vm.UserSurname=existed.UserSurname;
-            vm.UserName=existed.UserName;
-            vm.Address=existed.Address;
+            vm.UserSurname = existed.UserSurname;
+            vm.UserName = existed.UserName;
+            vm.Address = existed.Address;
             return vm;
         }
-        public async Task<bool> Update(int id,OrderUpdateVm ordervm,ModelStateDictionary modelState)
+        public async Task<bool> Update(int id, OrderUpdateVm ordervm, ModelStateDictionary modelState)
         {
-            if(!modelState.IsValid) return false;    
-            Order existed=await _repository.GetByIdAsync(id,isDeleted:false);
+            if (!modelState.IsValid) return false;
+            Order existed = await _repository.GetByIdAsync(id, isDeleted: false);
             if (existed == null) throw new Exception("Not Found");
             existed.Status = ordervm.OrderStatus;
             _repository.Update(existed);
             await _repository.SaveChangesAsync();
+            if (existed.Status == OrderStatus.Delivered && existed.CourierId != null)
+            {
+                Courier courier = await _courierRepository.GetByIdAsync((int)existed.CourierId, isDeleted: false, includes: new string[] { nameof(Courier.Orders) });
+                if (courier.Orders.Count == 0)
+                {
+                    courier.Status = CourierStatus.Idle;
+                    _courierRepository.Update(courier);
+                    await _courierRepository.SaveChangesAsync();
+                }
+            }
             return true;
         }
     }

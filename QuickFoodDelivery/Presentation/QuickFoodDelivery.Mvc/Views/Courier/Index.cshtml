@@ -44,12 +44,7 @@
 <div id="position">
     <div class="container">
         <ul>
-            <li>
-                <a href="#0">Home</a>
-            </li>
-            <li>
-                <a href="#0">Category</a>
-            </li>
+            
             <li>Page active</li>
         </ul>
         <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
@@ -61,10 +56,10 @@
         <nav>
             <ul>
                 <li>
-                    <a class="icon-profile"><span>Main info</span></a>
+                    <a asp-action="Index" asp-controller="Courier">Food To Be Delivered</a>
                 </li>
                 <li>
-                    <a href="#section-3" class="icon-settings"><span>Settings</span></a>
+                    <a asp-action="DeliveredFoods" asp-controller="Courier"> Delivered Foods</a>
                 </li>
             </ul>
         </nav>
@@ -84,6 +79,15 @@
                     <th>
                         Note For Restaurant
                     </th>
+                    <th>
+                        Order Status
+                    </th>
+                    <th>
+                        Change OrderStatus
+                    </th> 
+                    <th>
+                        OrderDetails
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -92,7 +96,7 @@
                     <tr>
                         <td>
                             <h5>@(count++).User FullName:@item.UserName @item.UserSurname</h5>
-                            
+
                         </td>
                         <td>
                             <p>
@@ -105,9 +109,18 @@
                         <td>
                             <p>@item.NotesForRestaurant</p>
                         </td>
+                        <td>
+                            <p>@item.Status</p>
+                        </td>
                         <td class="options">
                             <div class="dropdown dropdown-options">
                                 <a asp-action="ChangeOrderStatus" asp-controller="Courier" asp-route-id="@item.Id" class="dropdown-toggle"><i class="fas fa-sync rotate" id="rotate-icon" onclick="startRotation()"></i></a>
+
+                            </div>
+                        </td>
+                        <td class="options">
+                            <div class="dropdown dropdown-options">
+                                <a asp-action="Detail" asp-controller="Courier" asp-route-id="@item.Id" class="dropdown-toggle"><i class="fas fa-compass rotate" id="rotate-icon" onclick="startRotation()"></i></a>
                             </div>
                         </td>
                     </tr>
