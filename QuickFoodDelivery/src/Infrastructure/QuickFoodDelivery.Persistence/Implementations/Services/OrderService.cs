@@ -162,6 +162,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 UserSurname = order.UserSurname,
                 NotesForRestaurant = order.NoteForRestaurant,
                 CourierId = (int)order.CourierId,
+                Id=order.Id,
                 OrderItemVms = order.OrderItems.Select(orderItem => new OrderItemVm
                 {
                     Price = orderItem.Price,
@@ -170,6 +171,27 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                     MealName = orderItem.MealName,
                 }).ToList()
             }).ToList();
+        }
+        public async Task<OrderUpdateVm> Updated(int id,OrderUpdateVm vm)
+        {
+            if (id < 1) throw new Exception("Bad Request");
+            Order existed = await _repository.GetByIdAsync(id, isDeleted: false);
+            if (existed == null) throw new Exception("Not Found");
+            vm.OrderStatus = existed.Status;
+            vm.UserSurname=existed.UserSurname;
+            vm.UserName=existed.UserName;
+            vm.Address=existed.Address;
+            return vm;
+        }
+        public async Task<bool> Update(int id,OrderUpdateVm ordervm,ModelStateDictionary modelState)
+        {
+            if(!modelState.IsValid) return false;    
+            Order existed=await _repository.GetByIdAsync(id,isDeleted:false);
+            if (existed == null) throw new Exception("Not Found");
+            existed.Status = ordervm.OrderStatus;
+            _repository.Update(existed);
+            await _repository.SaveChangesAsync();
+            return true;
         }
     }
 }

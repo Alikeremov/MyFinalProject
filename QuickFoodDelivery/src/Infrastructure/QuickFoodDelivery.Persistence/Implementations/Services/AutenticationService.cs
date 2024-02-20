@@ -161,5 +161,19 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             await _userManager.AddToRoleAsync(user, roleName);
             await _userManager.UpdateAsync(user);
         }
+        public async Task<ProfileUpdateVm> Updated(string username,ProfileUpdateVm vm)
+        {
+            if (username == null) throw new Exception("Bad Request");
+            AppUser user = await GetUserAsync(username);
+            vm.Name=user.Name;
+            vm.Surname=user.Surname;
+            vm.ProfileImage=user.ProfileImage;
+            return vm;
+        }
+        public async Task<bool> Update(string username,ProfileUpdateVm vm,ModelStateDictionary modelState)
+        {
+            if(!modelState.IsValid) return false;
+
+        }
     }
 }

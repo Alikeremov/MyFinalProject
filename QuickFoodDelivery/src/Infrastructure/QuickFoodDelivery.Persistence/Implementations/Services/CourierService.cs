@@ -50,11 +50,15 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 			Order order = await _orderRepository.GetByIdAsync(orderId, isDeleted: false);
 			if (order == null) throw new Exception("Order Not Found");
             //tempdata.Remove("OrderId");
-			ICollection<Courier> couriers= await _repository.GetAll(isDeleted: false, includes: new string[] { nameof(Courier.Orders)}).Take(1).ToListAsync();
+			ICollection<Courier> couriers= await _repository.GetAllWhere(expression:x=>x.Status==CourierStatus.Idle, isDeleted: false, includes: new string[] { nameof(Courier.Orders)}).Take(1).ToListAsync();
 			order.CourierId = couriers.FirstOrDefault()?.Id;
+            Courier courier = couriers.FirstOrDefault();
             _orderRepository.Update(order);
             await _orderRepository.SaveChangesAsync();
-			return couriers.Select(courier => new CourierItemVm
+            courier.Status = CourierStatus.Deliveryisbeingmade;
+            _repository.Update(courier);
+            await _repository.SaveChangesAsync();
+            return couriers.Select(courier => new CourierItemVm
 			{
 				Id = courier.Id,			
 				Name = courier.Name,
@@ -296,7 +300,9 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             Courier existed = await _repository.GetByIdAsync(id, isDeleted: null);
             if (existed == null) throw new Exception("Not Found");
             _repository.ReverseDelete(existed);
+            existed.Status = CourierStatus.Idle;
             await _autenticationService.UpdateUserRole(existed.AppUserId, UserRole.Courier.ToString());
+            _repository.Update(existed);
             await _repository.SaveChangesAsync();
         }
 

@@ -1,0 +1,53 @@
+﻿@model OrderUpdateVm
+
+
+<div class="container margin_60">
+    <div class="main_title margin_mobile">
+        <h2 class="nomargin_top">Please submit the form below</h2>
+        <p>
+            Cum doctus civibus efficiantur in imperdiet deterruisset.
+        </p>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="Address">Name</label>
+                            <input asp-for="Address" class="form-control" disabled placeholder="Jhon">
+                            <span asp-validation-for="Address"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <label asp-for="UserName">User Name</label>
+                        <input asp-for="UserName" class="form-control" disabled placeholder="UserName">
+                        <span asp-validation-for="UserName"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="UserSurname">UserSurname</label>
+                            <input asp-for="UserSurname" class="form-control" disabled placeholder="UserSurname">
+                            <span asp-validation-for="UserSurname"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <label asp-for="OrderStatus">OrderStatus</label>
+                        <select asp-for="OrderStatus" class="form-control select">
+                            <option disabled selected>Choose Status</option>
+                            @foreach (var item in Enum.GetValues(typeof(OrderStatus)))
+                            {
+                                <option value="@item">@item</option>
+                                <span asp-validation-for="OrderStatus" class="text-danger"></span>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <hr style="border-color:#ddd;">
+                <div class="text-center"><button class="btn_full_outline">Submit</button></div>
+            </form>
+        </div><!-- End col  -->
+    </div><!-- End row  -->
+</div><!-- End container  -->

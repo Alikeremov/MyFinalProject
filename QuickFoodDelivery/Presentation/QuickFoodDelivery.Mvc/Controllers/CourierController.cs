@@ -32,5 +32,15 @@ namespace QuickFoodDelivery.Mvc.Controllers
             if (await _courierService.CreateAsync(vm, ModelState)) return RedirectToAction("Index", "Home");
             return View(vm);
         }
+        public async Task<IActionResult> ChangeOrderStatus(int id)
+        {
+            return View(await _orderService.Updated(id, new OrderUpdateVm()));
+        }
+        [HttpPost]
+        public async Task<IActionResult> ChangeOrderStatus(int id, OrderUpdateVm vm)
+        {
+            if(await _orderService.Update(id, vm,ModelState)) return RedirectToAction(nameof(Index));
+            return View(await _orderService.Updated(id,vm));    
+        }
     }
 }
