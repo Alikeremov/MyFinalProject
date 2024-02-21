@@ -18,6 +18,7 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
         Task<ICollection<OrderGetVm>> AcceptOrders(string username);
         Task<ICollection<OrderGetVm>> DeliveredOrders(string userName);
         Task<ICollection<OrderGetVm>> GetAllOrdersByUserName(string username);
+        Task<OrderGetVm> GetOrderById(int id);
         Task<bool> CheckOut(OrderCreateVm orderVM, ModelStateDictionary modelstate, ITempDataDictionary keys, string stripeEmail, string stripeToken);
         Task<OrderUpdateVm> Updated(int id, OrderUpdateVm vm);
         Task<bool> Update(int id, OrderUpdateVm ordervm, ModelStateDictionary modelState);
