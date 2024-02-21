@@ -37,6 +37,7 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
 
             services.Configure<StripeSettings>(configuration.GetSection("Stripe"));
 
+            services.AddScoped<LayoutService>();
             services.AddScoped<ICategoryRepository,CategoryRepository>();
             services.AddScoped<IRestaurantRepository,RestaurantRepository>();
             services.AddScoped<IFoodCategoryRepository,FoodCategoryRepository>();
@@ -46,6 +47,8 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
             services.AddScoped<ICourierRepository,CourierRepository>(); 
             services.AddScoped<IBasketItemRepository,BasketItemRepository>();
             services.AddScoped<IOrderRepository,OrderRepository>();
+            services.AddScoped<ISettingRepository,SettingRepository>();
+
 
             services.AddScoped<IAutenticationService, AutenticationService>();
             services.AddScoped<IRestaurantService, RestaurantService>();
@@ -57,8 +60,8 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<ICourierService,CourierService>();
             services.AddScoped<IBasketService,BasketService>();
-            services.AddScoped<IBasketService,BasketService>();
             services.AddScoped<IOrderService,OrderService>();
+            services.AddScoped<ISettingService,SettingService>();
 
 
 

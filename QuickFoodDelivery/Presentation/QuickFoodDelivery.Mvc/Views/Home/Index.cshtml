@@ -122,9 +122,9 @@
 </div><!-- End white_bg -->
 <div class="high_light">
     <div class="container">
-        <h3>Choose from over 2,000 Restaurants</h3>
+        <h3>Choose from over @Model.RestaurantItems.Count Restaurants</h3>
         <p>Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.</p>
-        <a href="list_page.html">View all Restaurants</a>
+        <a asp-action="Index" asp-controller="Restaurant">View all Restaurants</a>
     </div><!-- End container -->
 </div><!-- End hight_light -->
 <section class="parallax-window" data-parallax="scroll" data-image-src="/assets/img/bg_office.jpg" data-natural-width="1200" data-natural-height="600">

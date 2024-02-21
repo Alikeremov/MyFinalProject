@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using QuickFoodDelivery.Application.Abstractions.Repositories;
 using QuickFoodDelivery.Application.Abstractions.Services;
 using QuickFoodDelivery.Application.ViewModels;
@@ -46,6 +47,19 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                     }).ToList();
             }
             return basketItemsVm;
+        }
+        public async Task<int> GetRestaurantCountofBasketItems(ICollection<BasketItemVm> basketItems)
+        {
+            ICollection<int> restaurantscount = new List<int>();
+            foreach (var item in basketItems)
+            {
+                Meal meal = await _mealRepository.GetByIdAsync(item.MealId, isDeleted: false);
+                if (!restaurantscount.Any(x => x == meal.RestaurantId))
+                {
+                    restaurantscount.Add(meal.RestaurantId);
+                }
+            }
+            return restaurantscount.Count;
         }
         public async Task AddBasket(int id)
         {

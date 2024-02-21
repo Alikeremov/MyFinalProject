@@ -10,6 +10,7 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
     public interface IBasketService
     {
         Task<ICollection<BasketItemVm>> GetBasketItems();
+        Task<int> GetRestaurantCountofBasketItems(ICollection<BasketItemVm> basketItems);
         Task AddBasket(int id);
         Task Remove(int id);
         Task Minus(int id);

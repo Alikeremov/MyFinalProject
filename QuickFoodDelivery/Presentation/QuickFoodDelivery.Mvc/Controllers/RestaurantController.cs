@@ -9,12 +9,14 @@ namespace QuickFoodDelivery.Mvc.Controllers
     public class RestaurantController : Controller
     {
         private readonly IRestaurantService _restaurantservice;
+        private readonly IMealService _mealService;
         private readonly IFoodCategoryService _foodCategoryService;
         private readonly IBasketService _basketService;
 
-        public RestaurantController(IRestaurantService restaurantservice, IFoodCategoryService foodCategoryService,IBasketService basketService)
+        public RestaurantController(IRestaurantService restaurantservice,IMealService mealService, IFoodCategoryService foodCategoryService,IBasketService basketService)
         {
             _restaurantservice = restaurantservice;
+            _mealService = mealService;
             _foodCategoryService = foodCategoryService;
             _basketService = basketService;
         }
@@ -32,7 +34,9 @@ namespace QuickFoodDelivery.Mvc.Controllers
                     BasketItems = await _basketService.GetBasketItems(),
                     FoodCategories = await _foodCategoryService.GetAllunSoftDeletesAsync(1, 20),
                     Restaurant = restaurant,
-                    Meals = restaurant.Meals.Where(x => x.FoodCategoryId == foodcategoryId && x.IsDeleted == false).ToList()
+                    Meals = restaurant.Meals.Where(x => x.FoodCategoryId == foodcategoryId && x.IsDeleted == false).ToList(),
+                    AllMeals = await _mealService.GetAllunSoftDeletesAsync(1, 100),
+                    OrderOfRestaurantCount = await _basketService.GetRestaurantCountofBasketItems(await _basketService.GetBasketItems())
                 });
             }
             return View(new DetailVm
@@ -40,7 +44,9 @@ namespace QuickFoodDelivery.Mvc.Controllers
                 BasketItems = await _basketService.GetBasketItems(),
                 FoodCategories = await _foodCategoryService.GetAllunSoftDeletesAsync(1, 20),
                 Restaurant = restaurant,
-                Meals = restaurant.Meals.Where(x => x.IsDeleted == false).ToList()
+                Meals = restaurant.Meals.Where(x => x.IsDeleted == false).ToList(),
+                AllMeals = await _mealService.GetAllunSoftDeletesAsync(1, 100),
+                OrderOfRestaurantCount = await _basketService.GetRestaurantCountofBasketItems(await _basketService.GetBasketItems())
             });
         }
     }

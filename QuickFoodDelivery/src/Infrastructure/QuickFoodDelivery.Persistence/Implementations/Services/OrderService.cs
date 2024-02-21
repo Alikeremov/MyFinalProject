@@ -8,12 +8,7 @@ using QuickFoodDelivery.Application.ViewModels;
 using QuickFoodDelivery.Domain.Entities;
 using QuickFoodDelivery.Domain.Enums;
 using Stripe;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace QuickFoodDelivery.Persistence.Implementations.Services
 {
@@ -57,6 +52,21 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
                     }
 
+                }
+                ICollection<string> addresses = new List<string>();
+                if (orderVM.OrderItemVms.Count != 0)
+                {
+                    foreach (var item in orderVM.OrderItemVms)
+                    {
+                        Meal meal = await _mealRepository.GetByIdAsync(item.MealId, isDeleted: false);
+                        if (meal == null) throw new Exception("Meal not Found");
+                        Restaurant restaurant = await _restaurantRepository.GetByIdAsync(meal.RestaurantId, isDeleted: false);
+                        if (!addresses.Any(x => x == restaurant.Address))
+                        {
+                            addresses.Add(restaurant.Address);
+                        }
+                    }
+                    orderVM.RestaurantAddreses=addresses;
                 }
             }
             return orderVM;
@@ -109,6 +119,20 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                         });
                     }
                 }
+                ICollection<int> restaurantcount = new List<int>();
+                if (order.OrderItems.Count != 0)
+                {
+                    for (int i = 0; i < order.OrderItems.Count; i++)
+                    {
+                        Meal meal = await _mealRepository.GetByIdAsync(order.OrderItems[i].MealId, isDeleted: false);
+                        if (meal == null) throw new Exception("Meal not Found");
+                        if (!restaurantcount.Any(x => x == meal.RestaurantId))
+                        {
+                            restaurantcount.Add(meal.RestaurantId);
+                        }
+                    }
+                }
+                total = restaurantcount.Count * 10 + total;
                 var optionCust = new CustomerCreateOptions
                 {
                     Email = stripeEmail,

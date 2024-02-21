@@ -27,14 +27,16 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         private readonly ICourierRepository _repository;
         private readonly IOrderRepository _orderRepository;
         private readonly IAutenticationService _autenticationService;
+        private readonly IMealRepository _mealRepository;
         private readonly IWebHostEnvironment _env;
         private readonly IHttpContextAccessor _contextAccessor;
 
-        public CourierService(ICourierRepository repository, IOrderRepository orderRepository, IAutenticationService autenticationService, IWebHostEnvironment env, IHttpContextAccessor contextAccessor)
+        public CourierService(ICourierRepository repository, IOrderRepository orderRepository, IAutenticationService autenticationService,IMealRepository mealRepository, IWebHostEnvironment env, IHttpContextAccessor contextAccessor)
         {
             _repository = repository;
             _orderRepository = orderRepository;
             _autenticationService = autenticationService;
+            _mealRepository = mealRepository;
             _env = env;
             _contextAccessor = contextAccessor;
         }
@@ -57,7 +59,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
         public async Task<ICollection<CourierItemVm>> GetAllSoftDeletes(int page, int take)
         {
-            ICollection<Courier> couriers = await _repository.GetAllWhere(isDeleted: false, skip: (page - 1) * take, take: take).ToListAsync();
+            ICollection<Courier> couriers = await _repository.GetAllWhere(isDeleted: true, skip: (page - 1) * take, take: take).ToListAsync();
             return couriers.Select(courier => new CourierItemVm
             {
                 Id = courier.Id,
@@ -73,7 +75,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
         public async Task<ICollection<CourierItemVm>> GetAllunSoftDeletesAsync(int page, int take)
         {
-            ICollection<Courier> couriers = await _repository.GetAllWhere(isDeleted: true, skip: (page - 1) * take, take: take).ToListAsync();
+            ICollection<Courier> couriers = await _repository.GetAllWhere(isDeleted: false, skip: (page - 1) * take, take: take).ToListAsync();
             return couriers.Select(courier => new CourierItemVm
             {
                 Id = courier.Id,
@@ -109,10 +111,21 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             {
                 orderId = (int)_contextAccessor.HttpContext.Session.GetInt32("OrderId");
             }
-            //orderId=(int)tempdata["OrderId"];
-            Order order = await _orderRepository.GetByIdAsync(orderId, isDeleted: false);
+            Order order = await _orderRepository.GetByIdAsync(orderId, isDeleted: false,includes:new string[] {nameof(Order.OrderItems)});
             if (order == null) throw new Exception("Order Not Found");
-            //tempdata.Remove("OrderId");
+            ICollection<int> restaurantcount = new List<int>();
+            if (order.OrderItems.Count != 0)
+            {
+                for (int i = 0; i < order.OrderItems.Count; i++)
+                {
+                    Meal meal = await _mealRepository.GetByIdAsync(order.OrderItems[i].MealId, isDeleted: false);
+                    if (meal == null) throw new Exception("Meal not Found");
+                    if (!restaurantcount.Any(x => x == meal.RestaurantId))
+                    {
+                        restaurantcount.Add(meal.RestaurantId);
+                    }
+                }
+            }
             ICollection<Courier> couriers;
             if (order.CourierId == null)
             {
@@ -129,12 +142,13 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 await _orderRepository.SaveChangesAsync();
                 if (courier != null)
                 {
+                    courier.Fee = courier.Fee+ restaurantcount.Count * 10;
                     if (courier.Status != CourierStatus.Deliveryisbeingmade)
                     {
                         courier.Status = CourierStatus.Deliveryisbeingmade;
-                        _repository.Update(courier);
-                        await _repository.SaveChangesAsync();
                     }
+                    _repository.Update(courier);
+                    await _repository.SaveChangesAsync();
                 }
             }
             else

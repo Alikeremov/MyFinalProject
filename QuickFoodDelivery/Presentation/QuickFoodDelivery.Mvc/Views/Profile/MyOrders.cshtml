@@ -63,7 +63,7 @@
                         User PhoneNumber
                     </th>
                     <th>
-                        Note For Restaurant
+                        Order Price
                     </th>
                 </tr>
             </thead>
@@ -84,11 +84,11 @@
                             <p>@item.Status</p>
                         </td>
                         <td>
-                            <p>@item.TotalPrice</p>
+                            <p>$@(item.TotalPrice/100)</p>
                         </td>
                         <td class="options">
                             <div class="dropdown dropdown-options">
-                                <a asp-action="ChangeOrderStatus" asp-controller="Courier" asp-route-id="@item.Id" class="dropdown-toggle"><i class="fas fa-compass rotate" id="rotate-icon" onclick="startRotation()"></i></a>
+                                <a asp-action="OrderDetail" asp-controller="Order" asp-route-id="@item.Id" class="dropdown-toggle"><i class="fas fa-compass rotate" id="rotate-icon" onclick="startRotation()"></i></a>
                             </div>
                         </td>
                     </tr>

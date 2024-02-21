@@ -125,25 +125,17 @@
 						</table>
 						<hr>
 					}
-					<div class="row" id="options_2">
-						<div class="col-xl-6 col-md-12 col-sm-12 col-6">
-							<label><input type="radio" value="" checked name="option_2" class="icheck">Delivery</label>
-						</div>
-						<div class="col-xl-6 col-md-12 col-sm-12 col-6">
-							<label><input type="radio" value="" name="option_2" class="icheck">Take Away</label>
-						</div>
-					</div><!-- Edn options 2 -->
 					<hr>
 					<table class="table table_summary">
 						<tbody>
 							<tr>
 								<td>
-									Delivery fee <span class="float-right">$10</span>
+									Delivery fee <span class="float-right">$@(Model.RestaurantAddreses?.Count * 10)</span>
 								</td>
 							</tr>
 							<tr>
 								<td class="total">
-									TOTAL <span class="float-right">$@(totalprice + 10)</span>
+									TOTAL <span class="float-right">$@(totalprice +Model.RestaurantAddreses?.Count * 10)</span>
 								</td>
 							</tr>
 						</tbody>

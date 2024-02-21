@@ -18,21 +18,25 @@ namespace QuickFoodDelivery.Mvc.Controllers
         }
         public async Task<IActionResult> AddBasket(int mealid,int id)
         {
+            if(!User.Identity.IsAuthenticated) return RedirectToAction("Login", "Account");
             await _service.AddBasket(mealid);
             return RedirectToAction("Details", "Restaurant", new {id=id});
         }
         public async Task<IActionResult> Remove(int mealid, int id)
         {
+            if (!User.Identity.IsAuthenticated) return RedirectToAction("Login", "Account");
             await _service.Remove(mealid);
             return RedirectToAction("Details", "Restaurant", new { id = id });
         }
         public async Task<IActionResult> Minus(int mealid, int id)
         {
+            if (!User.Identity.IsAuthenticated) return RedirectToAction("Login", "Account");
             await _service.Minus(mealid);
             return RedirectToAction("Details", "Restaurant", new { id = id });
         }
         public async Task<IActionResult> Plus(int mealid, int id)
         {
+            if (!User.Identity.IsAuthenticated) return RedirectToAction("Login", "Account");
             await _service.Plus(mealid);
             return RedirectToAction("Details", "Restaurant", new { id = id });
         }

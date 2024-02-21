@@ -3,6 +3,7 @@
     int count = 1;
     decimal totalprice = 0;
     decimal subtotal = 0;
+    int restaurantCount = 1;
 }
  <head>
     <link href="~/assets/css/skins/square/grey.css" rel="stylesheet">
@@ -15,7 +16,7 @@
 <section data-jarallax class="parallax-window" id="short" data-parallax="scroll" data-image-src="/assets/img/restaurantImages/@Model.Restaurant.Image" data-natural-width="1400" data-natural-height="350">
     <div id="subheader">
         <div id="sub_content">
-            <div id="thumb"><img src="~/assets/img/restaurantImages/@Model.Restaurant.Image" alt=""></div>
+            <div id="thumb"><img src="~/assets/img/restaurantImages/@Model.Restaurant.Image" style="width:150px; height:150px" alt=""></div>
             <div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i> (<small><a href="">Read 98 reviews</a></small>)</div>
             <h1>@Model.Restaurant.Name</h1>
             <div><em>@Model.Restaurant.Category?.Name</em></div>
@@ -108,40 +109,37 @@
                         <h3>Your order <i class="icon_cart_alt float-right"></i></h3>
         @foreach (var item in Model.BasketItems)
         {
-                        totalprice += item.Count * item.Price;
+                        totalprice += item.Count * item.Price ;
                         <table class="table table_summary">
                             <tbody>
                                 <tr>
                                     <td>
-                                        <a asp-action="Remove" asp-controller="Basket" asp-route-mealid="@item.MealId" asp-route-id="@Model.Meals.FirstOrDefault(x=>x.Id==item.MealId)?.RestaurantId" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>@item.Count x</strong> @Model.Meals.FirstOrDefault(x=>x.Id==item.MealId)?.Name
+                                        <a asp-action="Remove" asp-controller="Basket" asp-route-mealid="@item.MealId" asp-route-id="@Model.AllMeals.FirstOrDefault(x=>x.Id==item.MealId)?.RestaurantId" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>@item.Count x</strong> @Model.AllMeals.FirstOrDefault(x=>x.Id==item.MealId)?.Name
                                     </td>
                                     <td>
-                                        <strong class="float-right">$@(item.Count*item.Price)</strong>
+                                        @if (Model.Meals.Any(x => x.RestaurantId != Model.AllMeals.FirstOrDefault(x => x.Id == item.MealId)?.RestaurantId))
+                                        {
+                                            restaurantCount++;                                          
+                                        }
+                                        <strong class="float-right">$@(item.Count * item.Price)</strong>
+                                       
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                         <hr>
         }
-                        <div class="row" id="options_2">
-                            <div class="col-xl-6 col-md-12 col-sm-12 col-6">
-                                <label><input type="radio" value="" checked name="option_2" class="icheck">Delivery</label>
-                            </div>
-                            <div class="col-xl-6 col-md-12 col-sm-12 col-6">
-                                <label><input type="radio" value="" name="option_2" class="icheck">Take Away</label>
-                            </div>
-                        </div><!-- Edn options 2 -->
                         <hr>
                         <table class="table table_summary">
                             <tbody>
                                 <tr>
                                     <td>
-                                        Delivery fee <span class="float-right">$10</span>
+                                    Delivery fee <span class="float-right">$@(Model.OrderOfRestaurantCount * 10)</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="total">
-                                        TOTAL <span class="float-right">$@(totalprice+10)</span>
+                                    TOTAL <span class="float-right">$@(totalprice + Model.OrderOfRestaurantCount * 10)</span>
                                     </td>
                                 </tr>
                             </tbody>
