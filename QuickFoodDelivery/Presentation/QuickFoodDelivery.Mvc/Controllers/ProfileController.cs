@@ -36,5 +36,9 @@ namespace QuickFoodDelivery.Mvc.Controllers
         {
             return View(await _orderService.GetAllOrdersByUserName(User.Identity.Name));
         }
+        public async Task<IActionResult> MyDeliveredOrders()
+        {
+            return View(await _orderService.GetAllDeliveredOrdersByUserName(User.Identity.Name));
+        }
     }
 }

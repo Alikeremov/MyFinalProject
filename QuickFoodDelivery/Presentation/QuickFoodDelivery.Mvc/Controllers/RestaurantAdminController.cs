@@ -8,12 +8,14 @@ namespace QuickFoodDelivery.Mvc.Controllers
     public class RestaurantAdminController : Controller
     {
         private readonly IMealService _mealService;
+        private readonly IOrderItemService _orderItemService;
         private readonly IRestaurantService _restaurantService;
         private readonly IHttpContextAccessor _accessor;
 
-        public RestaurantAdminController(IMealService mealService,IRestaurantService restaurantService,IHttpContextAccessor accessor)
+        public RestaurantAdminController(IMealService mealService,IOrderItemService orderItemService,IRestaurantService restaurantService,IHttpContextAccessor accessor)
         {
             _mealService = mealService;
+            _orderItemService = orderItemService;
             _restaurantService = restaurantService;
             _accessor = accessor;
         }
@@ -30,6 +32,16 @@ namespace QuickFoodDelivery.Mvc.Controllers
                 Meals=restaurant.Meals
             };
             return View(vm);
+        }
+        public async Task<IActionResult> GetAllOrderItems()
+        {
+            RestaurantItemVm restaurant = new RestaurantItemVm();
+            if (_accessor.HttpContext.User.Identity != null && _accessor.HttpContext.User.Identity.IsAuthenticated)
+            {
+                restaurant = await _restaurantService.GetbyUserNameAsync(_accessor.HttpContext.User.Identity.Name);
+            }
+            
+            return View(await _orderItemService.GetAllByRestaurantId(restaurant.Id));
         }
         public async Task<IActionResult> CreateYourRestaurant()
         {

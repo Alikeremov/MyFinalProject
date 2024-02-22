@@ -1,9 +1,9 @@
 ﻿@using QuickFoodDelivery.Persistence.Implementations.Services;
-@inject UserManager<AppUser> userManager
 @inject LayoutService servise
 @{
     Dictionary<string, string> settings = await servise.GetSettingAsync();
 }
+@inject UserManager<AppUser> userManager
 <!DOCTYPE html>
 <html>
 <head>
@@ -229,6 +229,7 @@
 
         });
     </script>
+
 
 
 </body>

@@ -105,8 +105,8 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                     Meal meal = await _mealRepository.GetByIdAsync(item.MealId, isDeleted: false);
 
                     total += item.Count * meal.Price;
-
-
+                    Restaurant restaurant =await _restaurantRepository.GetByIdnotDeletedAsync(meal.RestaurantId);
+                   
                     if (meal is not null)
                     {
                         order.OrderItems.Add(new OrderItem
@@ -115,8 +115,9 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                             Price = meal.Price,
                             MealName = meal.Name,
                             MealId = meal.Id,
-                            OrderId = order.Id
-                        });
+                            OrderId = order.Id,
+                            RestaurantId = restaurant.Id,
+                        }) ;
                     }
                 }
                 ICollection<int> restaurantcount = new List<int>();
@@ -257,6 +258,32 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 }).ToList()
             }).ToList();
         }
+        public async Task<ICollection<OrderGetVm>> GetAllDeliveredOrdersByUserName(string username)
+        {
+            AppUser user = await _autentication.GetUserAsync(username);
+            if (user == null) throw new Exception("Not Found");
+            ICollection<Order> orders = _repository.GetAllWhere(x => x.AppUserId == user.Id && x.Status==OrderStatus.Delivered, isDeleted: false, includes: new string[] { nameof(Order.OrderItems), nameof(Order.Courier) }).ToList();
+            return orders.Select(order => new OrderGetVm
+            {
+                UserName = order.UserName,
+                UserAddress = order.Address,
+                UserEmail = order.UserEmail,
+                UserPhoneNumber = order.UserPhone,
+                UserSurname = order.UserSurname,
+                NotesForRestaurant = order.NoteForRestaurant,
+                CourierId = order.CourierId,
+                Id = order.Id,
+                Status = order.Status,
+                TotalPrice = order.TotalPrice,
+                OrderItemVms = order.OrderItems.Select(orderItem => new OrderItemVm
+                {
+                    Price = orderItem.Price,
+                    Count = orderItem.Count,
+                    MealId = orderItem.MealId,
+                    MealName = orderItem.MealName,
+                }).ToList()
+            }).ToList();
+        }
         public async Task<OrderGetVm> GetOrderById(int id)
         {
             if (id < 1) throw new Exception("Bad Request");
@@ -330,5 +357,6 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             }
             return true;
         }
+        
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wuz1YekgUTLDUjUYOFpfqHq5unYTpOREFFUzMSJt6tk=",
+  "Hash": "g+BxKVDN8L9qkn/gxbAq6knMnCh41Tzb46HkUVLAOCE=",
   "Source": "QuickFoodDelivery.Mvc",
   "BasePath": "_content/QuickFoodDelivery.Mvc",
   "Mode": "Default",
@@ -10064,23 +10064,6 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\paypal.svg"
     },
     {
-      "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\photo.png.png",
-      "SourceId": "QuickFoodDelivery.Mvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\",
-      "BasePath": "_content/QuickFoodDelivery.Mvc",
-      "RelativePath": "assets/img/photo.png.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\photo.png.png"
-    },
-    {
       "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\pins\\American.png",
       "SourceId": "QuickFoodDelivery.Mvc",
       "SourceType": "Discovered",
@@ -10232,6 +10215,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\popup_img.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\profile.png",
+      "SourceId": "QuickFoodDelivery.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\",
+      "BasePath": "_content/QuickFoodDelivery.Mvc",
+      "RelativePath": "assets/img/profile.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\profile.png"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\3327c112-c72c-46ca-96ed-14890b4e247amc.png",

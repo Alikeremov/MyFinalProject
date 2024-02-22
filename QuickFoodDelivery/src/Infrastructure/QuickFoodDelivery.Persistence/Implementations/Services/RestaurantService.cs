@@ -82,7 +82,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         }
         public async Task<ICollection<RestaurantItemVm>> GetAllunSoftDeletesAsync(int page, int take)
         {
-            ICollection<Restaurant> restaurants = await _repository.GetAllWhere(isDeleted:false, skip: (page - 1) * take, take: take).ToListAsync();
+            ICollection<Restaurant> restaurants = await _repository.GetAllWhere(isDeleted:false, skip: (page - 1) * take, take: take,includes:new string[] {nameof(Restaurant.Category)}).ToListAsync();
             return restaurants.Select(restaurant => new RestaurantItemVm
             {
                 Id = restaurant.Id,
@@ -182,6 +182,49 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 Category=restaurant.Category,
             };
         }
+        public async Task<ICollection<RestaurantItemVm>> SearchRestaurants(string? searchItem,int? order,int? categoryId)
+        {
+            IQueryable<Restaurant> query= _repository.GetAllnotDeleted(includes:new string[] {nameof(Restaurant.Category),nameof(Restaurant.Reviews)});
+            switch (order)
+            {
+                case 1:
+                    query.OrderBy(x => x.Name);
+                    break;
+                case 2:
+                    query.OrderBy(x=>x.Reviews.Count());
+                    break;
+                default:
+                    break;
+            }
+            if(!String.IsNullOrEmpty(searchItem))
+            {
+                query=query.Where(x=>x.Name.ToLower().Contains(searchItem.ToLower()));
+            }
+            if (categoryId != null)
+            {
+                query=query.Where(x=>x.CategoryId==categoryId); 
+            }
+            ICollection<Restaurant> restaurants=await query.ToListAsync();
+            return restaurants.Select(restaurant => new RestaurantItemVm
+			{
+				Id = restaurant.Id,
+				Name = restaurant.Name,
+				Address = restaurant.Address,
+				MinimumOrderAmount = restaurant.MinimumOrderAmount,
+				CategoryId = restaurant.CategoryId,
+				Image = restaurant.Image,
+				RestourantEmail = restaurant.RestourantEmail,
+				Phone = restaurant.Phone,
+				OpeningTime = restaurant.OpeningTime,
+				ClozedTime = restaurant.ClozedTime,
+				IsOpening = restaurant.IsOpening,
+				LocationCordinate = restaurant.LocationCordinate,
+				Meals = restaurant.Meals,
+				Reviews = restaurant.Reviews,
+				AppUserId = restaurant.AppUserId,
+
+			}).ToList();
+		}
         public async Task<bool> CreateAsync(RestaurantCreateVm restaurantvm,ModelStateDictionary modelState)
         {
             if (!modelState.IsValid) return false;

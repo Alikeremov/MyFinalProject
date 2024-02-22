@@ -2365,10 +2365,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\paypal.svg"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\photo.png.png",
-      "PackagePath": "staticwebassets\\assets\\img\\photo.png.png"
-    },
-    {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\pins\\American.png",
       "PackagePath": "staticwebassets\\assets\\img\\pins\\American.png"
     },
@@ -2403,6 +2399,10 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\popup_img.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\popup_img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\profile.png",
+      "PackagePath": "staticwebassets\\assets\\img\\profile.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\3327c112-c72c-46ca-96ed-14890b4e247amc.png",

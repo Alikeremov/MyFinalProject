@@ -20,8 +20,12 @@ namespace QuickFoodDelivery.Mvc.Controllers
             _foodCategoryService = foodCategoryService;
             _basketService = basketService;
         }
-        public async Task<IActionResult> Index(int page=1,int take=20)
+        public async Task<IActionResult> Index(int page = 1, int take = 20, string? searchitem=null, int? order=null,int? categoryId=null)
         {
+            if(searchitem!=null || order!=null|| categoryId!=null)
+            {
+                return View(await _restaurantservice.SearchRestaurants(searchitem,order,categoryId));
+            }
             return View(await _restaurantservice.GetAllunSoftDeletesAsync(page, take));
         }
         public async Task<IActionResult> Details(int id, int? foodcategoryId)

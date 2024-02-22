@@ -1,0 +1,99 @@
+﻿@model ICollection<OrderGetVm>
+@{
+    int count = 1;
+}
+
+<head>
+    <!-- SPECIFIC CSS -->
+    <link href="~/assets/css/skins/square/grey.css" rel="stylesheet">
+    <link href="~/assets/css/admin.css" rel="stylesheet">
+    <link href="~/assets/js/editor/summernote-bs4.css" rel="stylesheet">
+    <link href="~/assets/css/dropzone.css" rel="stylesheet">
+    <title>Dönme Animasyonu</title>
+    <!-- Font Awesome CSS dosyasını içeri aktar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* İkonun dönme animasyonu için stil */
+        .rotate {
+            transition: transform 1s linear;
+        }
+
+            /* İkonun üzerine gelindiğinde dönme animasyonunu başlat */
+            .rotate:hover {
+                transform: rotate(360deg);
+            }
+    </style>
+</head>
+
+
+
+<!-- SubHeader =============================================== -->
+<section class="parallax-window" id="short" data-parallax="scroll" data-image-src="/assets/img/sub_header_cart.jpg" data-natural-width="1400" data-natural-height="350">
+    <div id="subheader">
+        <div id="sub_content">
+        </div><!-- End sub_content -->
+    </div><!-- End subheader -->
+</section><!-- End section -->
+<!-- End SubHeader ============================================ -->
+<!-- Content ================================================== -->
+<div class="container margin_60">
+    <div id="tabs" class="tabs">
+        <nav>
+            <ul>
+                <li>
+                    <a class="icon-profile"><span>Main info</span></a>
+                </li>
+                <li>
+                    <a href="#section-3" class="icon-settings"><span>Settings</span></a>
+                </li>
+            </ul>
+        </nav>
+        <br />
+        <table class="table table-striped cart-list">
+            <thead>
+                <tr>
+                    <th>
+                        Count
+                    </th>
+                    <th>
+                        Order
+                    </th>
+                    <th>
+                        User PhoneNumber
+                    </th>
+                    <th>
+                        Order Price
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <h5>@(count++).User FullName:@item.UserName @item.UserSurname</h5>
+
+                        </td>
+                        <td>
+                            <p>
+                                @item.UserAddress
+                            </p>
+                        </td>
+                        <td>
+                            <p>@item.Status</p>
+                        </td>
+                        <td>
+                            <p>$@(item.TotalPrice / 100)</p>
+                        </td>
+                        <td class="options">
+                            <div class="dropdown dropdown-options">
+                                <a asp-action="OrderDetail" asp-controller="Order" asp-route-id="@item.Id" class="dropdown-toggle"><i class="fas fa-compass rotate" id="rotate-icon" onclick="startRotation()"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div><!-- End container  -->

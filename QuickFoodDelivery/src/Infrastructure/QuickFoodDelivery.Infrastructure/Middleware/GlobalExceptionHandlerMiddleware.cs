@@ -23,8 +23,9 @@ namespace QuickFoodDelivery.Infrastructure.Middleware
             }
             catch (Exception e)
             {
-
-                string errorpage = Path.Combine("/home", $"ErrorPage?error={e.Message}");
+                string errorpage = Path.Combine("/home", $"ErrorPage?error={e}");
+                string errorMessage = e.Message;
+                errorpage = Path.Combine("/home", $"ErrorPage?error={Uri.EscapeDataString(errorMessage)}");
                 context.Response.Redirect(errorpage);
             }
         }
