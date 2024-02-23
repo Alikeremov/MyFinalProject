@@ -18,7 +18,7 @@
         <div id="sub_content">
             <div id="thumb"><img src="~/assets/img/restaurantImages/@Model.Restaurant.Image" style="width:150px; height:150px" alt=""></div>
             <div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i> (<small><a href="">Read 98 reviews</a></small>)</div>
-            <h1>@Model.Restaurant.Name</h1>
+            <a asp-action="About" asp-controller="Restaurant" asp-route-id="@Model.Restaurant.Id"><h1>@Model.Restaurant.Name</h1></a>
             <div><em>@Model.Restaurant.Category?.Name</em></div>
             <div><i class="icon_pin"></i> @Model.Restaurant.Address</div>
         </div><!-- End sub_content -->

@@ -23,14 +23,16 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         private readonly IRestaurantRepository _repository;
         private readonly ICategoryRepository _categoryRepository;
         private readonly IWebHostEnvironment _env;
+        private readonly IReviewRepository _reviewRepository;
         private readonly IHttpContextAccessor _httpContext;
         private readonly IAutenticationService _autentication;
 
-        public RestaurantService(IRestaurantRepository repository,ICategoryRepository categoryRepository,IWebHostEnvironment env,IHttpContextAccessor httpContext,IAutenticationService autentication)
+        public RestaurantService(IRestaurantRepository repository,ICategoryRepository categoryRepository,IWebHostEnvironment env,IReviewRepository reviewRepository,IHttpContextAccessor httpContext,IAutenticationService autentication)
         {
             _repository = repository;
             _categoryRepository = categoryRepository;
             _env = env;
+            _reviewRepository = reviewRepository;
             _httpContext = httpContext;
             _autentication = autentication;
         }
@@ -193,10 +195,20 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 Category = restaurant.Category,
             };
         }
-        public async Task<RestaurantItemVm> GetAsync(int id)
+        public async Task<RestaurantItemVm> GetRestaurantAndReviewVithPaginationAsync(int id,int page=1,int take=10)
         {
-            Restaurant restaurant = await _repository.GetByIdAsync(id, isDeleted: false,includes:new string[] { nameof(Restaurant.Meals),nameof(Restaurant.Category), nameof(Restaurant.Reviews) });
-            if (restaurant == null) throw new Exception("NotFound");
+            Restaurant restaurant = await _repository.GetByIdAsync(id, isDeleted: false, includes: new string[] { nameof(Restaurant.Meals), nameof(Restaurant.Category), nameof(Restaurant.Reviews) });
+            int count = await _reviewRepository.GetAllWhere(x=>x.RestaurantId==restaurant.Id,isDeleted:false).CountAsync();
+
+            double totalPage = Math.Ceiling((double)count / take);
+            if (totalPage <= page - 1) throw new Exception("Wrong querry");
+            ICollection<Review> reviews = await _reviewRepository.GetAllWhere(x => x.RestaurantId == restaurant.Id, skip: (page - 1) * take, take: take, includes: new string[] { nameof(Review.AppUser) }).ToListAsync();
+            PaginateVm<Review> paginateVm = new PaginateVm<Review>
+            {
+                Items = reviews,
+                TotalPage = totalPage,
+                CurrentPage= page,
+            };
             return new RestaurantItemVm
             {
                 Id = restaurant.Id,
@@ -212,7 +224,33 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 IsOpening = restaurant.IsOpening,
                 LocationCordinate = restaurant.LocationCordinate,
                 Meals = restaurant.Meals,
-                Reviews = restaurant.Reviews,
+                Reviews = reviews,
+                ReviewVithPagination=paginateVm,
+                AppUserId = restaurant.AppUserId,
+                Category = restaurant.Category,
+            };
+        }
+        public async Task<RestaurantItemVm> GetAsync(int id)
+        {
+            Restaurant restaurant = await _repository.GetByIdAsync(id, isDeleted: false,includes:new string[] { nameof(Restaurant.Meals),nameof(Restaurant.Category), nameof(Restaurant.Reviews) });
+            if (restaurant == null) throw new Exception("NotFound");
+            ICollection<Review> reviews = await _reviewRepository.GetAllWhere(x=>x.RestaurantId==restaurant.Id,includes:new string[] {nameof(Review.AppUser)}).ToListAsync();
+            return new RestaurantItemVm
+            {
+                Id = restaurant.Id,
+                Name = restaurant.Name,
+                Address = restaurant.Address,
+                MinimumOrderAmount = restaurant.MinimumOrderAmount,
+                CategoryId = restaurant.CategoryId,
+                Image = restaurant.Image,
+                RestourantEmail = restaurant.RestourantEmail,
+                Phone = restaurant.Phone,
+                OpeningTime = restaurant.OpeningTime,
+                ClozedTime = restaurant.ClozedTime,
+                IsOpening = restaurant.IsOpening,
+                LocationCordinate = restaurant.LocationCordinate,
+                Meals = restaurant.Meals,
+                Reviews = reviews,
                 AppUserId = restaurant.AppUserId,
                 Category=restaurant.Category,
             };

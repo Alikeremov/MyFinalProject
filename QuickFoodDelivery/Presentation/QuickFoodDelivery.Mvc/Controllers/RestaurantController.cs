@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NuGet.Protocol;
 using QuickFoodDelivery.Application.Abstractions.Services;
 using QuickFoodDelivery.Application.ViewModels;
@@ -66,9 +67,15 @@ namespace QuickFoodDelivery.Mvc.Controllers
                 OrderOfRestaurantCount = await _basketService.GetRestaurantCountofBasketItems(await _basketService.GetBasketItems())
             });
         }
-        public async Task<IActionResult> About(int id)
+        [Authorize(Roles ="Member,Admin,RestaurantAdmin,Courier")]
+        public async Task<IActionResult> About(int id,int page=1,int take=10)
         {
+
             RestaurantItemVm restaurant = await _restaurantservice.GetAsync(id);
+            if(restaurant.Reviews.Count>0)
+            {
+                restaurant= await _restaurantservice.GetRestaurantAndReviewVithPaginationAsync(id,page,take);
+            }
             return View(new AboutVm
             {
                 Restaurant = restaurant,

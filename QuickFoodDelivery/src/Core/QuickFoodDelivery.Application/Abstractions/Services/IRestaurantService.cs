@@ -17,8 +17,9 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
         Task<RestaurantItemVm> GetbyUserNameAsync(string userName);
         Task<RestaurantItemVm> GetWithoutIsdeletedAsync(int id);
         Task<ICollection<RestaurantItemVm>> SearchRestaurants(string? searchItem, int? order, int? categoryId);
+        Task<RestaurantItemVm> GetRestaurantAndReviewVithPaginationAsync(int id, int page = 1, int take = 10);
 
-		Task<RestaurantItemVm> GetAsync(int id);
+        Task<RestaurantItemVm> GetAsync(int id);
         Task<bool> CreateAsync(RestaurantCreateVm restaurantVm, ModelStateDictionary modelState);
         Task<RestaurantCreateVm> CreatedAsync(RestaurantCreateVm vm);
         Task<bool> UpdateAsync(RestaurantUpdateVm restaurantVm, ModelStateDictionary modelState, int id);

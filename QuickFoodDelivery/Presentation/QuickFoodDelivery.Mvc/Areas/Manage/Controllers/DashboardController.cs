@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
 {
 	[Area("Manage")]
-	public class DashboardController : Controller
+    [Authorize(Roles = "Admin")]
+    public class DashboardController : Controller
 	{
 
 		public IActionResult Index()

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QuickFoodDelivery.Application.Abstractions.Services;
 using QuickFoodDelivery.Application.ViewModels;
@@ -6,6 +7,7 @@ using QuickFoodDelivery.Application.ViewModels;
 namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
 {
     [Area("Manage")]
+    [Authorize(Roles = "Admin")]
     public class RestaurantController : Controller
     {
         private readonly IRestaurantService _service;

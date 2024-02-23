@@ -1,4 +1,5 @@
 ﻿using Humanizer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using QuickFoodDelivery.Application.Abstractions.Services;
 using QuickFoodDelivery.Application.ViewModels;
@@ -15,6 +16,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
             _courierService = courierService;
             _orderService = orderService;
         }
+        [Authorize(Roles = "Courier")]
         public async Task<IActionResult> Index()
         {
             return View(new CourierIndexVm
@@ -23,6 +25,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
                 Orders=await _orderService.AcceptOrders(User.Identity.Name)
             });
         }
+        [Authorize(Roles = "Courier")]
         public async Task<IActionResult> DeliveredFoods()
         {
             return View(new CourierIndexVm
@@ -31,25 +34,32 @@ namespace QuickFoodDelivery.Mvc.Controllers
                 Orders = await _orderService.DeliveredOrders(User.Identity.Name)
             });
         }
+        [Authorize(Roles = "Courier")]
         public async Task<IActionResult> OrderDetail(int id)
         {
             return View(await _orderService.GetOrderById(id));
         }
+        [Authorize(Roles ="Member")]
         public IActionResult BeCourier()
         {
+            if (!User.Identity.IsAuthenticated) RedirectToAction("Login", "Account");
             return View();
         }
         [HttpPost]
+        [Authorize(Roles = "Member")]
         public async Task<IActionResult> BeCourier(CourierCreateVm vm)
         {
+            if (!User.Identity.IsAuthenticated) RedirectToAction("Login", "Account");
             if (await _courierService.CreateAsync(vm, ModelState)) return RedirectToAction("Index", "Home");
             return View(vm);
         }
+        [Authorize(Roles = "Courier")]
         public async Task<IActionResult> ChangeOrderStatus(int id)
         {
             return View(await _orderService.Updated(id, new OrderUpdateVm()));
         }
         [HttpPost]
+        [Authorize(Roles = "Courier")]
         public async Task<IActionResult> ChangeOrderStatus(int id, OrderUpdateVm vm)
         {
             if(await _orderService.Update(id, vm,ModelState)) return RedirectToAction(nameof(Index));

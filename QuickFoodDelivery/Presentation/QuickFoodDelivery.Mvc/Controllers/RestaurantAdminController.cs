@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using QuickFoodDelivery.Application.Abstractions.Services;
 using QuickFoodDelivery.Application.ViewModels;
 using QuickFoodDelivery.Domain.Entities;
@@ -19,6 +20,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
             _restaurantService = restaurantService;
             _accessor = accessor;
         }
+        [Authorize(Roles = "RestaurantAdmin")]
         public async Task<IActionResult> Index()
         {
             RestaurantItemVm restaurant=new RestaurantItemVm();
@@ -33,6 +35,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
             };
             return View(vm);
         }
+        [Authorize(Roles = "RestaurantAdmin")]
         public async Task<IActionResult> GetAllOrderItems()
         {
             RestaurantItemVm restaurant = new RestaurantItemVm();
@@ -50,37 +53,45 @@ namespace QuickFoodDelivery.Mvc.Controllers
 
             return View(vm);
         }
+        
         [HttpPost]
         public async Task<IActionResult> CreateYourRestaurant(RestaurantCreateVm createVm)
         {
             if (await _restaurantService.CreateAsync(createVm, ModelState)) return RedirectToAction("Index","Home");
             return View(await _restaurantService.CreatedAsync(createVm));
         }
+        [Authorize(Roles = "RestaurantAdmin")]
         public async Task<IActionResult> UpdateYourRestaurant(int id)
         {
             return View(await _restaurantService.UpdatedAsync(new RestaurantUpdateVm(), id));
         }
         [HttpPost]
+        [Authorize(Roles = "RestaurantAdmin")]
         public async Task<IActionResult> UpdateYourRestaurant(int id, RestaurantUpdateVm updateVm)
         {
             if (await _restaurantService.UpdateAsync(updateVm, ModelState, id)) return RedirectToAction(nameof(Index));
             return View(await _restaurantService.UpdatedAsync(updateVm, id));
         }
+        [Authorize(Roles = "RestaurantAdmin")]
         public async Task<IActionResult> CreateMeal()
         {
             return View(await _mealService.CreatedAsync(new MealCreateVm()));
         }
         [HttpPost]
+        [Authorize(Roles = "RestaurantAdmin")]
         public async Task<IActionResult> CreateMeal(MealCreateVm createVm)
         {
+            if (!User.Identity.IsAuthenticated) RedirectToAction("Login", "Account");
             if (await _mealService.CreateAsync(createVm, ModelState)) return RedirectToAction(nameof(Index));
             return View(await _mealService.CreatedAsync(createVm));
         }
+        [Authorize(Roles = "RestaurantAdmin")]
         public async Task<IActionResult> UpdateMeal(int id)
         {
             return View(await _mealService.UpdatedAsync(new MealUpdateVm(), id));
         }
         [HttpPost]
+        [Authorize(Roles = "RestaurantAdmin")]
         public async Task<IActionResult> UpdateMeal(int id, MealUpdateVm updateVm)
         {
             if (await _mealService.UpdateAsync(updateVm, ModelState, id)) return RedirectToAction(nameof(Index));

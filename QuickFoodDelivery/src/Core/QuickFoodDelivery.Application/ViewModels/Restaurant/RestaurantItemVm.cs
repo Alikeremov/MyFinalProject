@@ -22,7 +22,8 @@ namespace QuickFoodDelivery.Application.ViewModels
         public string Image { get; set; } = null!;
         public int CategoryId { get; set; }
         public string? AppUserId { get; set; }
-        public ICollection<Review> Reviews { get; set; }
+        public PaginateVm<Review>? ReviewVithPagination { get; set; }
+        public ICollection<Review>? Reviews { get; set; }
         public Category? Category { get; set; }
         public ICollection<Meal> Meals { get; set; }
 

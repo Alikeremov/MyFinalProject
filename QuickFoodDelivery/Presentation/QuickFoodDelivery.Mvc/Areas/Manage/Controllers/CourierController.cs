@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using QuickFoodDelivery.Application.Abstractions.Services;
 
 namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
 {
     [Area("Manage")]
+    [Authorize(Roles = "Admin")]
     public class CourierController : Controller
     {
         private readonly ICourierService _service;

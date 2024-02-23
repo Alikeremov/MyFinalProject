@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using QuickFoodDelivery.Application.Abstractions.Services;
 using QuickFoodDelivery.Persistence.Implementations.Services;
 
 namespace QuickFoodDelivery.Mvc.Controllers
 {
+    [Authorize(Roles ="Member")]
     public class BasketController : Controller
     {
         private readonly IBasketService _service;

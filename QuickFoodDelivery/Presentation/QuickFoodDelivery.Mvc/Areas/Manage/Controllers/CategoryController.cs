@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using QuickFoodDelivery.Application.Abstractions.Services;
 using QuickFoodDelivery.Application.ViewModels;
 using QuickFoodDelivery.Persistence.DAL;
@@ -6,6 +7,7 @@ using QuickFoodDelivery.Persistence.DAL;
 namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
 {
 	[Area("Manage")]
+	[Authorize(Roles ="Admin")]
 	public class CategoryController : Controller
 	{
 		private readonly ICategoryService _service;
