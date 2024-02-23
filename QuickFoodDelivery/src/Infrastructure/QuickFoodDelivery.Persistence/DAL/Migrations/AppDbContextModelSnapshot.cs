@@ -761,9 +761,6 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Courtesy")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -776,9 +773,6 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                         .HasMaxLength(750)
                         .HasColumnType("nvarchar(750)");
 
-                    b.Property<int>("FoodQuality")
-                        .HasColumnType("int");
-
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -788,10 +782,7 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                     b.Property<DateTime?>("ModifiredAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PriceQuality")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Punctuality")
+                    b.Property<int>("Quality")
                         .HasColumnType("int");
 
                     b.Property<int>("RestaurantId")

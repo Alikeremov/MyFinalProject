@@ -10,6 +10,7 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
 {
     public interface IMealService
     {
+        Task<PaginateVm<MealItemVm>> GetAllWithPagination(int page, int take);
         Task<ICollection<MealItemVm>> GetAllunSoftDeletesAsync(int page, int take);
         Task<ICollection<MealItemVm>> GetAllSoftDeletes(int page, int take);
         Task<ICollection<MealItemVm>> GetAllUnConfirments(int page, int take);

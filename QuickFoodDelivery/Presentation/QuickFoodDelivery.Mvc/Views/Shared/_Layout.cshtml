@@ -1,9 +1,9 @@
 ﻿@using QuickFoodDelivery.Persistence.Implementations.Services;
+@inject UserManager<AppUser> userManager
 @inject LayoutService servise
 @{
     Dictionary<string, string> settings = await servise.GetSettingAsync();
 }
-@inject UserManager<AppUser> userManager
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,15 +62,15 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-4">
                     <a asp-action="Index" asp-controller="home" id="logo">
-                        <img src="~/assets/img/logo.png" width="190" height="23" alt="" class="d-none d-sm-block">
-                        <img src="~/assets/img/logo_mobile.png" width="59" height="23" alt="" class="d-block d-sm-none">
+                        <img src="~/assets/img/@settings["Logo"]" width="190" height="23" alt="" class="d-none d-sm-block">
+                        <img src="~/assets/img/@settings["logoIcon"]" width="59" height="23" alt="" class="d-block d-sm-none">
                     </a>
                 </div>
                 <nav class="col-md-8 col-sm-8 col-8">
                     <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
-                            <img src="~/assets/img/logo.png" width="190" height="23" alt="">
+                            <img src="~/assets/img/@settings["Logo"]" width="190" height="23" alt="">
                         </div>
                         <a href="#" class="open_close" id="close_in"><i class="icon_close"></i></a>
                         <ul>
@@ -132,7 +132,7 @@
                 <div class="col-md-4">
                     <h3>Secure payments with</h3>
                     <p>
-                        <img src="~/assets/img/cards.png" alt="" class="img-fluid">
+                        <img src="~/assets/img/@settings["cardimage"]" alt="" class="img-fluid">
                     </p>
                 </div>
                 <div class="col-md-3">
@@ -152,16 +152,16 @@
                 <div class="col-md-12">
                     <div id="social_footer">
                         <ul>
-                            <li><a href="#0"><i class="icon-facebook"></i></a></li>
-                            <li><a href="#0"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#0"><i class="icon-google"></i></a></li>
-                            <li><a href="#0"><i class="icon-instagram"></i></a></li>
-                            <li><a href="#0"><i class="icon-pinterest"></i></a></li>
-                            <li><a href="#0"><i class="icon-vimeo"></i></a></li>
-                            <li><a href="#0"><i class="icon-youtube-play"></i></a></li>
+                            <li><a href="@settings["fblink"]"><i class="@settings["fbicon"]"></i></a></li>
+                            <li><a href="@settings["twlink"]"><i class="@settings["twicon"]"></i></a></li>
+                            <li><a href="@settings["googlelink"]"><i class="@settings["googleicon"]"></i></a></li>
+                            <li><a href="@settings["instagramlink"]"><i class="@settings["instagramicon"]"></i></a></li>
+                            <li><a href="@settings["pinterestlink"]"><i class="@settings["pinteresticon"]"></i></a></li>
+                            <li><a href="@settings["vimeo"]"><i class="@settings["vimeoicon"]"></i></a></li>
+                            <li><a href="@settings["youtubelink"]"><i class="@settings["youtubeicon"]"></i></a></li>
                         </ul>
                         <p>
-                            © Quick Food 2023
+                            @settings["copyright"]
                         </p>
                     </div>
                 </div>

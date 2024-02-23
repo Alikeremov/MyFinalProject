@@ -14,10 +14,7 @@ namespace QuickFoodDelivery.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Review> builder)
         {
             builder.Property(x => x.Description).IsRequired().HasMaxLength(750);
-            builder.Property(x => x.PriceQuality).IsRequired();
-            builder.Property(x => x.FoodQuality).IsRequired();
-            builder.Property(x => x.Courtesy).IsRequired();
-            builder.Property(x => x.Punctuality).IsRequired();
+            builder.Property(x => x.Quality).IsRequired();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ using QuickFoodDelivery.Application.ViewModels;
 using QuickFoodDelivery.Domain.Entities;
 using QuickFoodDelivery.Domain.Enums;
 using Stripe;
+using Stripe.Issuing;
 
 
 namespace QuickFoodDelivery.Persistence.Implementations.Services
@@ -20,8 +22,9 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         private readonly IAutenticationService _autentication;
         private readonly IMealRepository _mealRepository;
         private readonly IRestaurantRepository _restaurantRepository;
+        private readonly IEmailService _service;
 
-        public OrderService(IOrderRepository repository, ICourierRepository courierRepository, IHttpContextAccessor accessor, IAutenticationService autentication, IMealRepository mealRepository,IRestaurantRepository restaurantRepository)
+        public OrderService(IOrderRepository repository, ICourierRepository courierRepository, IHttpContextAccessor accessor, IAutenticationService autentication, IMealRepository mealRepository,IRestaurantRepository restaurantRepository,IEmailService service)
         {
             _repository = repository;
             _courierRepository = courierRepository;
@@ -29,6 +32,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             _autentication = autentication;
             _mealRepository = mealRepository;
             _restaurantRepository = restaurantRepository;
+            _service = service;
         }
 
         public async Task<OrderCreateVm> CheckOuted(OrderCreateVm orderVM)
@@ -160,7 +164,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
                 if (charge.Status != "succeeded")
                 {
-                    modelstate.AddModelError("Address", "Odenishde problem var");
+                    modelstate.AddModelError("Address", "You have problem on Payment");
                     return false;
                 }
 
@@ -170,7 +174,6 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 user.BasketItems = new List<BasketItem>();
                 await _repository.SaveChangesAsync();
                 _accessor.HttpContext.Session.SetInt32("OrderId", order.Id);
-                //tempdata["OrderId"]=order.Id;
             }
             return true;
         }
@@ -287,7 +290,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         public async Task<OrderGetVm> GetOrderById(int id)
         {
             if (id < 1) throw new Exception("Bad Request");
-            Order order = await _repository.GetByIdAsync(id, isDeleted: false, includes: new string[] { nameof(Order.OrderItems) });
+            Order order = await _repository.GetByIdAsync(id, isDeleted: false, includes: new string[] { nameof(Order.OrderItems),nameof(Order.Courier) });
             if (order == null) throw new Exception("Not found");
             ICollection<string> addresses = new List<string>();
             if (order.OrderItems.Count != 0)
@@ -303,6 +306,11 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                     }
                 }
             }
+            Courier courier = new Courier();
+            if (order.Courier != null)
+            {
+                 courier = order.Courier;
+            }
             return new OrderGetVm
             {
                 Id = order.Id,
@@ -316,6 +324,13 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 RestaurantAddreses= addresses,
                 TotalPrice=order.TotalPrice,
                 CourierId=order.CourierId,
+                Courier=new CourierItemVm
+                {
+                    Name=courier.Name,
+                    Surname=courier.Surname,
+                    Email=courier.Email,
+                    Image=courier.Image,           
+                },
                 OrderItemVms= order.OrderItems.Select(orderItem => new OrderItemVm
                 {
                     Price = orderItem.Price,
@@ -346,7 +361,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             _repository.Update(existed);
             await _repository.SaveChangesAsync();
             if (existed.Status == OrderStatus.Delivered && existed.CourierId != null)
-            {
+            {               
                 Courier courier = await _courierRepository.GetByIdAsync((int)existed.CourierId, isDeleted: false, includes: new string[] { nameof(Courier.Orders) });
                 if (courier.Orders.Count == 0)
                 {
@@ -354,6 +369,18 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                     _courierRepository.Update(courier);
                     await _courierRepository.SaveChangesAsync();
                 }
+                
+//                string link = _url.Action("ResetPassword", "Account", new { userId = user.Id, token = token }, HttpContext.Request.Scheme);
+//                string body = $@"<div class=""card"" style=""width: 18rem;"">
+//    <div class=""card-body"">
+//        <h5 class=""card-title"">Hello Mr or Ms{existed.UserName}</h5>
+//        <h6 class=""card-subtitle mb-2 text-body-secondary"">Your Order completed</h6>
+//        <p class=""card-text"">Your</p>
+//        <a href=""{link}"" class=""card-link"">Card link</a>
+//        <a href=""#"" class=""card-link"">link</a>
+//    </div>
+//</div>";
+//                await _service.SendEmailAsync(existed.UserEmail, "Order",body, true);
             }
             return true;
         }

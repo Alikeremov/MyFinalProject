@@ -1,4 +1,4 @@
-﻿@model ICollection<MealItemVm>
+﻿@model PaginateVm<MealItemVm>
 @{
     int count = 1;
 }
@@ -31,7 +31,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
+                        @foreach (var item in Model.Items)
                         {
                             <tr>
                                 <td>@(count++)</td>
@@ -51,5 +51,22 @@
                 </table>
             </div>
         </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item @(Model.CurrentPage<=1? "disabled":"")"><a class="page-link" class="page-link" asp-route-page="@(Model.CurrentPage-1)" asp-action="index" asp-controller="Meal">Previous</a></li>
+                @for (int i = 0; i < Model.TotalPage; i++)
+                {
+                    <li class="page-item @(Model.CurrentPage-1==i? "disabled":"")">
+                        <a class="page-link" asp-route-page="@(i+1)" asp-action="index" asp-controller="Meal">
+                            @(i + 1
+                                )
+                        </a>
+                    </li>
+
+                }
+
+                <li class="page-item @(Model.TotalPage<=Model.CurrentPage? "disabled":"")"><a class="page-link" class="page-link" asp-route-page="@(Model.CurrentPage+1)" asp-action="index" asp-controller="Meal">Next</a></li>
+            </ul>
+        </nav>
     </div>
 </div>

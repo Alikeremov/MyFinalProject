@@ -13,10 +13,12 @@ namespace QuickFoodDelivery.Application.ViewModels
         [Required]
         [MinLength(3)]
         [MaxLength(27)]
+        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = ("You can only use letters in your Name"))]
         public string Name { get; set; } = null!;
         [Required]
         [MinLength(3)]
         [MaxLength(27)]
+        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = ("You can only use letters in your SurName"))]
         public string Surname { get; set; } = null!;
         [Required]
         [MinLength(3)]

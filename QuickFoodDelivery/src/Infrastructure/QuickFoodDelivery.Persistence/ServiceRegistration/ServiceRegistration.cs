@@ -40,6 +40,7 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
             services.AddScoped<LayoutService>();
             services.AddScoped<ICategoryRepository,CategoryRepository>();
             services.AddScoped<IRestaurantRepository,RestaurantRepository>();
+            services.AddScoped<IReviewRepository,ReviewRepository>();
             services.AddScoped<IFoodCategoryRepository,FoodCategoryRepository>();
             services.AddScoped<IMealRepository,MealRepository>();
             services.AddScoped<IEmploymentRepository,EmploymentRepository>();
@@ -54,6 +55,7 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
             services.AddScoped<IAutenticationService, AutenticationService>();
             services.AddScoped<IRestaurantService, RestaurantService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IReviewService, ReviewService>();
             services.AddScoped<IFoodCategoryService, FoodCategoryService>();
             services.AddScoped<IMealService, MealService>();
             services.AddScoped<IServiceService, ServiceService>();

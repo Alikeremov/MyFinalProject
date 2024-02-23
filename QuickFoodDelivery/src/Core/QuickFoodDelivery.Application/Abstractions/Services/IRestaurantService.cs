@@ -11,6 +11,7 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
     public interface IRestaurantService
     {
         Task<ICollection<RestaurantItemVm>> GetAllunSoftDeletesAsync(int page, int take);
+        Task<PaginateVm<RestaurantItemVm>> GetAllWithPagination(int page, int take);
         Task<ICollection<RestaurantItemVm>> GetAllnonConfirmed(int page, int take);
         Task<ICollection<RestaurantItemVm>> GetAllSoftDeletes(int page, int take);
         Task<RestaurantItemVm> GetbyUserNameAsync(string userName);

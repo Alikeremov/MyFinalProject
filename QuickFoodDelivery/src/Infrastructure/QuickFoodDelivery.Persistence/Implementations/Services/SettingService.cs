@@ -26,6 +26,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             ICollection<Setting> settings = await _repository.GetAllWhere(isDeleted: true, skip: (page - 1) * take, take: take).ToListAsync();
             return settings.Select(setting => new SettingItemVm
             {
+                Id=setting.Id,
                 Key = setting.Key,
                 Value = setting.Value,
             }).ToList();
@@ -36,6 +37,8 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             ICollection<Setting> settings = await _repository.GetAllWhere(isDeleted: false, skip: (page - 1) * take, take: take).ToListAsync();
             return settings.Select(setting => new SettingItemVm
             {
+                Id = setting.Id,
+
                 Key = setting.Key,
                 Value = setting.Value,
             }).ToList();
@@ -47,6 +50,8 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             if (setting == null) throw new Exception("NotFound");
             return new SettingItemVm
             {
+                Id = setting.Id,
+
                 Key = setting.Key,
                 Value = setting.Value,
             };
@@ -54,10 +59,12 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
         public async Task<SettingItemVm> GetWithoutIsdeletedAsync(int id)
         {
+
             Setting setting = await _repository.GetByIdnotDeletedAsync(id);
             if (setting == null) throw new Exception("NotFound");
             return new SettingItemVm
             {
+                Id=setting.Id,
                 Key = setting.Key,
                 Value = setting.Value,
             };

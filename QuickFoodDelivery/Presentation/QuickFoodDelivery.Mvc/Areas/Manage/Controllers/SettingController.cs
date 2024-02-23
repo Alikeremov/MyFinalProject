@@ -13,11 +13,11 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
         {
             _service = service;
         }
-        public async Task<IActionResult> Index(int page = 1, int take = 3)
+        public async Task<IActionResult> Index(int page = 1, int take = 20)
         {
             return View(await _service.GetAllunSoftDeletesAsync(page, take));
         }
-        public async Task<IActionResult> Arxiv(int page = 1, int take = 3)
+        public async Task<IActionResult> Arxiv(int page = 1, int take = 20)
         {
             return View(await _service.GetAllSoftDeletes(page, take));
         }

@@ -30,7 +30,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         private readonly IHttpContextAccessor _httpContext;
         private readonly IAutenticationService _autenticationService;
 
-        public MealService(IMealRepository repository, IRestaurantRepository restaurantRepository, IFoodCategoryRepository fdrepository, IWebHostEnvironment env,IHttpContextAccessor httpContext,IAutenticationService autenticationService)
+        public MealService(IMealRepository repository, IRestaurantRepository restaurantRepository, IFoodCategoryRepository fdrepository, IWebHostEnvironment env, IHttpContextAccessor httpContext, IAutenticationService autenticationService)
         {
             _repository = repository;
             _restaurantRepository = restaurantRepository;
@@ -38,6 +38,24 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             _env = env;
             _httpContext = httpContext;
             _autenticationService = autenticationService;
+        }
+        public async Task<PaginateVm<MealItemVm>> GetAllWithPagination(int page, int take)
+        {
+            if (page <= 0) throw new Exception("Wrong querry");
+
+            int count = await _repository.GetAll(isDeleted:false).CountAsync();
+
+            double totalPage = Math.Ceiling((double)count / take);
+            if (totalPage <= page - 1) throw new Exception("Wrong querry");
+            ICollection<Meal> meals = await _repository.GetAllWhere(isDeleted: false, skip: (page - 1) * take, take: take).ToListAsync();
+            ICollection<MealItemVm> mealItemVms = meals.Select(meal => new MealItemVm {Id = meal.Id,Name = meal.Name,Price = meal.Price,Description = meal.Description,Image = meal.Image,RestaurantId = meal.RestaurantId,}).ToList();
+            return new PaginateVm<MealItemVm>
+            {
+                CurrentPage = page,
+                TotalPage = totalPage,
+                Items = mealItemVms
+            };
+
         }
         public async Task<ICollection<MealItemVm>> GetAllSoftDeletes(int page, int take)
         {
@@ -82,7 +100,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
         public async Task<MealItemVm> GetAsync(int id)
         {
-            Meal meal = await _repository.GetByIdAsync(id,isDeleted:false);
+            Meal meal = await _repository.GetByIdAsync(id, isDeleted: false);
             if (meal == null) throw new Exception("NotFound");
             return new MealItemVm
             {
@@ -112,7 +130,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         }
         public async Task<bool> CreateAsync(MealCreateVm mealVm, ModelStateDictionary modelState)
         {
-            
+
             if (!modelState.IsValid) return false;
             //if (!await _restaurantRepository.Cheeck(x => x.Id == mealVm.RestaurantId))
             //{
@@ -128,15 +146,15 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 }
 
             }
-            
-            string username="";
+
+            string username = "";
             if (_httpContext.HttpContext.User.Identity != null)
             {
-               username = _httpContext.HttpContext.User.Identity.Name;
+                username = _httpContext.HttpContext.User.Identity.Name;
             }
-            AppUser user=await _autenticationService.GetUserAsync(username);
-            
-            Restaurant restaurant = await _restaurantRepository.GetByExpressionAsync(x=>x.AppUserId==user.Id,isDeleted:false, includes: new string[] { nameof(Restaurant.Meals) });
+            AppUser user = await _autenticationService.GetUserAsync(username);
+
+            Restaurant restaurant = await _restaurantRepository.GetByExpressionAsync(x => x.AppUserId == user.Id, isDeleted: false, includes: new string[] { nameof(Restaurant.Meals) });
             if (restaurant.Meals.Where(x => x.Name == mealVm.Name && x.RestaurantId == restaurant.Id).Count() >= 1)
             {
                 modelState.AddModelError("Name", "You have this meal in your Meals");
@@ -173,7 +191,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
         public async Task<MealCreateVm> CreatedAsync(MealCreateVm vm)
         {
-            vm.Restaurants = await _restaurantRepository.GetAll(isDeleted:false).ToListAsync();
+            vm.Restaurants = await _restaurantRepository.GetAll(isDeleted: false).ToListAsync();
             vm.FoodCategories = await _fdrepository.GetAll(isDeleted: false).ToListAsync();
             return vm;
         }
@@ -199,9 +217,9 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             }
             if (mealVm.Name != existed.Name)
             {
-                ICollection<Meal> meals=await _repository.GetAllnotDeleted().ToListAsync();
-                
-                if (meals.Where(x => x.Name == mealVm.Name && x.RestaurantId ==mealVm.RestaurantId).Count() >= 1)
+                ICollection<Meal> meals = await _repository.GetAllnotDeleted().ToListAsync();
+
+                if (meals.Where(x => x.Name == mealVm.Name && x.RestaurantId == mealVm.RestaurantId).Count() >= 1)
                 {
                     modelState.AddModelError("Name", "You have this meal in your Meals");
                     return false;
@@ -239,7 +257,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             if (id < 1) throw new Exception("Bad Request");
             Meal existed = await _repository.GetByIdAsync(id, isDeleted: false);
             if (existed == null) throw new Exception("Not Found");
-            mealUpdateVm.Restaurants = await _restaurantRepository.GetAll(isDeleted:false).ToListAsync();
+            mealUpdateVm.Restaurants = await _restaurantRepository.GetAll(isDeleted: false).ToListAsync();
             mealUpdateVm.FoodCategories = await _fdrepository.GetAll(isDeleted: false).ToListAsync();
             mealUpdateVm.Image = existed.Image;
             mealUpdateVm.Name = existed.Name;
@@ -263,7 +281,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         public async Task ReverseDeleteAsync(int id)
         {
             if (id < 1) throw new Exception("Bad Request");
-            Meal existed = await _repository.GetByIdAsync(id,isDeleted:true);
+            Meal existed = await _repository.GetByIdAsync(id, isDeleted: true);
             if (existed == null) throw new Exception("Not Found");
             _repository.ReverseDelete(existed);
             await _repository.SaveChangesAsync();
@@ -280,7 +298,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         public async Task SoftDeleteAsync(int id)
         {
             if (id < 1) throw new Exception("Bad Request");
-            Meal existed = await _repository.GetByIdAsync(id,isDeleted:false);
+            Meal existed = await _repository.GetByIdAsync(id, isDeleted: false);
             if (existed == null) throw new Exception("Not Found");
             _repository.SoftDelete(existed);
             await _repository.SaveChangesAsync();

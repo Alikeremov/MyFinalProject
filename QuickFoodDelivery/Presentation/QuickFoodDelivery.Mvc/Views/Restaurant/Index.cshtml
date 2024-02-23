@@ -1,195 +1,165 @@
-﻿@model ICollection<RestaurantItemVm>
+﻿@model RestaurantIndexVm
 
 <head>
-	<!-- Radio and check inputs -->
-	<link href="~/assets/css/skins/square/grey.css" rel="stylesheet">
-	<link href="~/assets/css/ion.rangeSlider.css" rel="stylesheet">
-	<link href="~/assets/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <!-- Radio and check inputs -->
+    <link href="~/assets/css/skins/square/grey.css" rel="stylesheet">
+    <link href="~/assets/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="~/assets/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
-	<!-- SubHeader =============================================== -->
-	<section class="parallax-window" id="short" data-parallax="scroll" data-image-src="img/sub_header_short.jpg" data-natural-width="1400" data-natural-height="350">
-		<div id="subheader">
-			<div id="sub_content">
-				<h1>24 results in your zone</h1>
-				<div><i class="icon_pin"></i> 135 Newtownards Road, Belfast, BT4 1AB</div>
-			</div><!-- End sub_content -->
-		</div><!-- End subheader -->
-	</section><!-- End section -->
-	<!-- End SubHeader ============================================ -->
+    <!-- SubHeader =============================================== -->
+    <section class="parallax-window" id="short" data-parallax="scroll" data-image-src="/assets/img/sub_header_short.jpg" data-natural-width="1400" data-natural-height="350">
+        <div id="subheader">
+            <div id="sub_content">
+                <h1>24 results in your zone</h1>
+                <div><i class="icon_pin"></i> 135 Newtownards Road, Belfast, BT4 1AB</div>
+            </div><!-- End sub_content -->
+        </div><!-- End subheader -->
+    </section><!-- End section -->
+    <!-- End SubHeader ============================================ -->
 
-	<div id="position">
-		<div class="container">
-			<ul>
-				<li><a href="#0">Home</a></li>
-				<li><a href="#0">Category</a></li>
-				<li>Page active</li>
-			</ul>
-			<a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
-		</div>
-	</div><!-- Position -->
 
-	<div class="collapse" id="collapseMap">
-		<div id="map" class="map"></div>
-	</div><!-- End Map -->
-	<!-- Content ================================================== -->
-	<div class="container margin_60_35">
-		<div class="row">
 
-			<div class="col-lg-3">
-				<p>
-					<a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
-				</p>
-				<div id="filters_col">
-					<a data-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt">Filters <i class="icon-plus-1 float-right"></i></a>
-					<div class="collapse show" id="collapseFilters">
-						<div class="filter_type">
-							<h6>Distance</h6>
-							<input type="text" id="range" value="" name="range">
-							<h6>Type</h6>
-							<ul>
-								<li><label><input type="checkbox" checked class="icheck">All <small>(49)</small></label></li>
-								@foreach (var item in Mo)
-									{
-										
-									}
-								
-							</ul>
-						</div>
-						<div class="filter_type">
-							<h6>Rating</h6>
-							<ul>
-								<li>
-									<label>
-										<input type="checkbox" class="icheck"><span class="rating">
-											<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i>
-										</span>
-									</label>
-								</li>
-								<li>
-									<label>
-										<input type="checkbox" class="icheck"><span class="rating">
-											<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-										</span>
-									</label>
-								</li>
-								<li>
-									<label>
-										<input type="checkbox" class="icheck"><span class="rating">
-											<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i>
-										</span>
-									</label>
-								</li>
-								<li>
-									<label>
-										<input type="checkbox" class="icheck"><span class="rating">
-											<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i>
-										</span>
-									</label>
-								</li>
-								<li>
-									<label>
-										<input type="checkbox" class="icheck"><span class="rating">
-											<i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i>
-										</span>
-									</label>
-								</li>
-							</ul>
-						</div>
-						<div class="filter_type">
-							<h6>Options</h6>
-							<ul class="nomargin">
-								<li><label><input type="checkbox" class="icheck">Delivery</label></li>
-								<li><label><input type="checkbox" class="icheck">Take Away</label></li>
-								<li><label><input type="checkbox" class="icheck">Distance 10Km</label></li>
-								<li><label><input type="checkbox" class="icheck">Distance 5Km</label></li>
-							</ul>
-						</div>
-					</div><!--End collapse -->
-				</div><!--End filters col-->
-			</div><!--End col-md -->
+    <div class="collapse" id="collapseMap">
+        <div id="map" class="map"></div>
+    </div><!-- End Map -->
+    <!-- Content ================================================== -->
+    <div class="container margin_60_35">
+        <div class="row">
 
-			<div class="col-lg-9">
+            <div class="col-lg-3">
+                <p>
+                    <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
+                </p>
+                <div id="filters_col">
+                    <a data-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt">Search <i class="fas fa-search float-left"></i></a>
+                    <div class="collapse show" id="collapseFilters">
 
-				<div id="tools">
-					<div class="row">
-						<div class="col-md-3 col-sm-4 col-5">
-							<div class="styled-select">
-								<select name="sort_rating" id="sort_rating">
-									<option value="" selected>Sort by ranking</option>
-									<option value="lower">Lowest ranking</option>
-									<option value="higher">Highest ranking</option>
-								</select>
-							</div>
-						</div>
-						<div class="col-md-9 col-sm-8 col-7">
-							<a href="grid_list.html" class="bt_filters"><i class="icon-th"></i></a>
-						</div>
-					</div>
-				</div><!--End tools -->
+                        
 
-				@foreach (var item in Model)
-				{
-					<div class="strip_list wow fadeIn" data-wow-delay="0.1s">
-						<div class="row">
-							<div class="col-md-9">
-								<div class="desc">
-									<div class="thumb_strip">
-										<a href="detail_page.html"><img src="~/assets/img/restaurantImages/@item.Image" alt=""></a>
-									</div>
-									<div class="rating">
-										<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i> (<small><a href="#0">98 reviews</a></small>)
-									</div>
-									<h3>@item.Name</h3>
-									<div class="type">
-										@item.Category?.Name
-									</div>
-									<div class="location">
-										@item.Address<span class="opening">Opens at @item.OpeningTime?.ToString("HH:mm");</span> Minimum order: $@item.MinimumOrderAmount
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="go_to">
-									<div>
-										<a asp-action="Details" asp-controller="Restaurant" asp-route-Id="@item.Id" class="btn_1">View Menu</a>
-									</div>
-								</div>
-							</div>
-						</div><!-- End row-->
-					</div>
+                        <div class="input-group">
+                            <form class="input-group" asp-action="Index"
+                                  asp-controller="Restaurant"
+                                  asp-route-categoryid="@Model.CategoryId"
+                                  asp-route-order="@Model.Order">
+                                <input class="form-control"
+                                       name="searchItem"
+                                       type="text"
+                                       placeholder="SearchItem"
+                                       value="@(Model.SearchItem==null?"":Model.SearchItem)" />
 
-					<!-- End strip_list-->
-				}
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                            <h6>Categories</h6>
+                        <div class="box_style_1">
+                            <ul id="cat_nav">
+                                <li id="cat_nav">
+                                    <h4><a asp-action="Index" asp-controller="Restaurant">All<small>(@Model.Restaurants.Count)</small> </a></h4>
+                                </li>
+                                
+                                @foreach (var item in Model.Categories)
+                                {
+                                    <li>
+                                        <h4><a asp-action="Index" asp-controller="Restaurant" asp-route-categoryId="@item.Id">@item.Name<small>(@item.Restaurants.Count)</small> </a></h4>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div><!--End collapse -->
+                </div><!--End filters col-->
+            </div><!--End col-md -->
 
-				<a href="#0" class="load_more_bt wow fadeIn" data-wow-delay="0.2s">Load more...</a>
-			</div><!-- End col-md-9-->
+            <div class="col-lg-9">
 
-		</div><!-- End row -->
-	</div><!-- End container -->
-	<!-- SPECIFIC SCRIPTS -->
-	
-	<script src="http://maps.googleapis.com/maps/api/js"></script>
-	<script src="~/assets/js/map.js"></script>
-	<script src="~/assets/js/infobox.js"></script>
-	<script src="~/assets/js/ion.rangeSlider.js"></script>
-	<script>
-		$(function () {
-			'use strict';
-			$("#range").ionRangeSlider({
-				hide_min_max: true,
-				keyboard: true,
-				min: 0,
-				max: 15,
-				from: 0,
-				to: 5,
-				type: 'double',
-				step: 1,
-				prefix: "Km ",
-				grid: true
-			});
-		});
-	</script>
+                <div id="tools">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4 col-5">
+                            <div class="styled-select">
+                                <form asp-action="Index"
+                                      asp-controller="Restaurant"
+                                      asp-route-categoryid="@Model.CategoryId"
+                                      asp-route-search="@Model.SearchItem">
+
+                                    <select onchange="this.form.submit()" name="Order" class="nice-select">
+                                        <option value=""> Default</option>
+                                        <option value="1">Sort by Name</option>
+                                        <option value="2">Sort by Rewiew</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-8 col-7">
+                            <a href="grid_list.html" class="bt_filters"><i class="icon-th"></i></a>
+                        </div>
+                    </div>
+                </div><!--End tools -->
+                @foreach (var item in Model.Restaurants)
+                {
+                    <div class="strip_list wow fadeIn" data-wow-delay="0.1s">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="desc">
+                                    <div class="thumb_strip">
+                                        <a href="detail_page.html"><img src="~/assets/img/restaurantImages/@item.Image" alt=""></a>
+                                    </div>
+                                    <div class="rating">
+                                        <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i> (<small><a href="#0">98 reviews</a></small>)
+                                    </div>
+                                    <h3>@item.Name</h3>
+                                    <div class="type">
+                                        @item.Category?.Name
+                                    </div>
+                                    <div class="location">
+                                        @item.Address<span class="opening">Opens at @item.OpeningTime?.ToString("HH:mm");</span> Minimum order: $@item.MinimumOrderAmount
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="go_to">
+                                    <div>
+                                        <a asp-action="Details" asp-controller="Restaurant" asp-route-Id="@item.Id" class="btn_1">View Menu</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End row-->
+                    </div>
+
+                    <!-- End strip_list-->
+                }
+
+                <a href="#0" class="load_more_bt wow fadeIn" data-wow-delay="0.2s">Load more...</a>
+            </div><!-- End col-md-9-->
+
+        </div><!-- End row -->
+    </div><!-- End container -->
+    <!-- SPECIFIC SCRIPTS -->
+
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="~/assets/js/map.js"></script>
+    <script src="~/assets/js/infobox.js"></script>
+    <script src="~/assets/js/ion.rangeSlider.js"></script>
+    <script>
+        $(function () {
+            'use strict';
+            $("#range").ionRangeSlider({
+                hide_min_max: true,
+                keyboard: true,
+                min: 0,
+                max: 15,
+                from: 0,
+                to: 5,
+                type: 'double',
+                step: 1,
+                prefix: "Km ",
+                grid: true
+            });
+        });
+    </script>
 </body>
-	

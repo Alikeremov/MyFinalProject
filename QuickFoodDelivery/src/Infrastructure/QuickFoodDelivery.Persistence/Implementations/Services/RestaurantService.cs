@@ -102,6 +102,41 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 AppUserId = restaurant.AppUserId,
             }).ToList();
         }
+        public async Task<PaginateVm<RestaurantItemVm>> GetAllWithPagination(int page, int take)
+        {
+            if (page <= 0) throw new Exception("Wrong querry");
+
+            int count = await _repository.GetAll(isDeleted: false).CountAsync();
+
+            double totalPage = Math.Ceiling((double)count / take);
+            if (totalPage <= page - 1) throw new Exception("Wrong querry");
+            ICollection<Restaurant> restaurants = await _repository.GetAllWhere(isDeleted: false, skip: (page - 1) * take, take: take).ToListAsync();
+            ICollection<RestaurantItemVm> restaurantItemVms = restaurants.Select(restaurant => new RestaurantItemVm
+            {
+                Id = restaurant.Id,
+                Name = restaurant.Name,
+                Address = restaurant.Address,
+                MinimumOrderAmount = restaurant.MinimumOrderAmount,
+                CategoryId = restaurant.CategoryId,
+                Image = restaurant.Image,
+                RestourantEmail = restaurant.RestourantEmail,
+                Phone = restaurant.Phone,
+                OpeningTime = restaurant.OpeningTime,
+                ClozedTime = restaurant.ClozedTime,
+                IsOpening = restaurant.IsOpening,
+                LocationCordinate = restaurant.LocationCordinate,
+                Meals = restaurant.Meals,
+                Reviews = restaurant.Reviews,
+                AppUserId = restaurant.AppUserId,
+            }).ToList();
+            return new PaginateVm<RestaurantItemVm>
+            {
+                CurrentPage = page,
+                TotalPage = totalPage,
+                Items = restaurantItemVms
+            };
+
+        }
         public async Task<RestaurantItemVm> GetbyUserNameAsync(string userName)
         {
             string username = _httpContext.HttpContext.User.Identity.Name;
@@ -160,7 +195,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         }
         public async Task<RestaurantItemVm> GetAsync(int id)
         {
-            Restaurant restaurant = await _repository.GetByIdAsync(id, isDeleted: false,includes:new string[] { nameof(Restaurant.Meals),nameof(Restaurant.Category) });
+            Restaurant restaurant = await _repository.GetByIdAsync(id, isDeleted: false,includes:new string[] { nameof(Restaurant.Meals),nameof(Restaurant.Category), nameof(Restaurant.Reviews) });
             if (restaurant == null) throw new Exception("NotFound");
             return new RestaurantItemVm
             {
@@ -184,14 +219,14 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         }
         public async Task<ICollection<RestaurantItemVm>> SearchRestaurants(string? searchItem,int? order,int? categoryId)
         {
-            IQueryable<Restaurant> query= _repository.GetAllnotDeleted(includes:new string[] {nameof(Restaurant.Category),nameof(Restaurant.Reviews)});
+            IQueryable<Restaurant> query = _repository.GetAll(isDeleted: false, includes:new string[] {nameof(Restaurant.Category),nameof(Restaurant.Reviews)});
             switch (order)
             {
                 case 1:
-                    query.OrderBy(x => x.Name);
+                    query=query.OrderBy(x => x.Name);
                     break;
                 case 2:
-                    query.OrderBy(x=>x.Reviews.Count());
+                    query=query.OrderBy(x=>x.Reviews.Count());
                     break;
                 default:
                     break;

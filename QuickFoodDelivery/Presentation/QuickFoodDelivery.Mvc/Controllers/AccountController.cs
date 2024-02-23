@@ -97,7 +97,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
             }
             string token = await _usermanager.GeneratePasswordResetTokenAsync(user);
             string link = Url.Action("ResetPassword", "Account", new { userId = user.Id, token = token }, HttpContext.Request.Scheme);
-            await _emailService.SendEmailAsync(user.Email, "Reset Password", link, false);
+            await _emailService.SendEmailAsync(user.Email, "Reset Password", link, true);
             return RedirectToAction(nameof(Login));
         }
         public async Task<IActionResult> ResetPassword(string userId,string token)
