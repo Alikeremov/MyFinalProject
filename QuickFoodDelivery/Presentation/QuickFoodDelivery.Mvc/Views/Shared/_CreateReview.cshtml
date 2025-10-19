@@ -2,7 +2,8 @@
 @model ReviewCreateVm
 
 
-<form class="comment-text d-flex align-items-center mt-3" asp-controller="Review" asp-action="Create" asp-route-id="@Model.RestaurantId" method="post">
+<form class="comment-text mt-3 form" asp-controller="Review" asp-action="Create" asp-route-id="@Model.RestaurantId" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
     <div class="comment-attagement d-flex align-items-center">
         <!-- Button ve yıldızları dikey hizalamak için d-flex ve align-items-center sınıflarını ekledik -->
         <div class="rating">
@@ -15,23 +16,37 @@
 
         <input type="hidden" id="quality" name="Quality" value="0" />
     </div>
-    <div class="comment-input ">
-        <label asp-for="Description"></label>
-        <input asp-for="Description" class="form-control rounded" placeholder="Test">
-        <span asp-validation-for="Description"></span>
-    </div>
+    <div class="box-input">
+        <div class="comment-input ">
+            <label asp-for="Description"></label>
+            <input asp-for="Description" class="form-control rounded" placeholder="Test">
+            <span asp-validation-for="Description"></span>
+        </div>
 
-    <button type="submit">Submit</button>
+        <button type="submit" style="border-radius:18px;height:36px;width:36px;background-color:#78cfcf"><i class="far fa-check-circle" style="font-size:20px;"></i></button>
+
+    </div>
 </form>
 
 <style>
     .comment-input {
         margin-bottom: 10px; /* Description inputunun altına bir boşluk ekledik */
     }
-    .rating .icon_star {
-    font-size: 12px; /* İstenilen boyutu buradan ayarlayabilirsiniz */
-}
 
+    .rating .icon_star {
+        font-size: 20px; /* İstenilen boyutu buradan ayarlayabilirsiniz */
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .box-input{
+        display:flex;
+        align-items:center;
+        column-gap:0.5em;
+    }
 </style>
 
 <script>

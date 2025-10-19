@@ -10,9 +10,6 @@
             <div class="card-title">
                 Restaurant
             </div>
-            <div class="prism-toggle">
-                <a asp-action="Create" asp-controller="Restaurant" class="btn btn-primary"><i class="fas fa-plus"></i></a>
-            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -25,7 +22,7 @@
                             <th scope="col">Phone</th>
                             <th scope="col">Address</th>
                             <th scope="col">Is Opening</th>
-                            <th scope="col">Update</th>
+                            <th scope="col">Details</th>
                             <th scope="col">Soft Delete</th>
                             <th><a asp-action="Arxiv" asp-controller="Restaurant" class="btn btn-success"><i class="fa fa-address-book"></i></a></th>
                             <th><a asp-action="UnConfirmerds" asp-controller="Restaurant" class="btn btn-success"><i class="fas fa-file-archive"></i></a></th>
@@ -46,7 +43,7 @@
                                 <td>@item.Phone</td>
                                 <td>@item.Address</td>
                                 <td>@item.IsOpening</td>
-                                <td><a asp-action="Update" asp-controller="Restaurant" asp-route-id="@item.Id" class="btn btn-warning"><i class="far fa-edit"></i></a></td>
+                                <td><a asp-action="Detail" asp-controller="Restaurant" asp-route-id="@item.Id" class="btn btn-primary"><i class="fas fa-info"></i></a></td>
                                 <td><a asp-action="SoftDelete" asp-controller="Restaurant" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-backspace "></i></a></td>
 
                             </tr>
@@ -56,11 +53,11 @@
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                    <li class="page-item @(Model.CurrentPage<=1? "disabled":"")"><a class="page-link" class="page-link" asp-route-page="@(Model.CurrentPage-1)" asp-action="index" asp-controller="Meal">Previous</a></li>
+                    <li class="page-item @(Model.CurrentPage<=1? "disabled":"")"><a class="page-link" class="page-link" asp-route-page="@(Model.CurrentPage-1)" asp-action="index" asp-controller="Restaurant">Previous</a></li>
                     @for (int i = 0; i < Model.TotalPage; i++)
                     {
                         <li class="page-item @(Model.CurrentPage-1==i? "disabled":"")">
-                            <a class="page-link" asp-route-page="@(i+1)" asp-action="index" asp-controller="Meal">
+                            <a class="page-link" asp-route-page="@(i+1)" asp-action="index" asp-controller="Restaurant">
                                 @(i + 1
                                     )
                             </a>
@@ -68,7 +65,7 @@
 
                     }
 
-                    <li class="page-item @(Model.TotalPage<=Model.CurrentPage? "disabled":"")"><a class="page-link" class="page-link" asp-route-page="@(Model.CurrentPage+1)" asp-action="index" asp-controller="Meal">Next</a></li>
+                    <li class="page-item @(Model.TotalPage<=Model.CurrentPage? "disabled":"")"><a class="page-link" class="page-link" asp-route-page="@(Model.CurrentPage+1)" asp-action="index" asp-controller="Restaurant">Next</a></li>
                 </ul>
             </nav>
         </div>

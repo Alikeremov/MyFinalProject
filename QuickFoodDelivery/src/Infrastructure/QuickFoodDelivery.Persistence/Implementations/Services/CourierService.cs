@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using QuickFoodDelivery.Domain.Enums;
 using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Stripe;
 
 namespace QuickFoodDelivery.Persistence.Implementations.Services
 {
@@ -30,8 +31,9 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         private readonly IMealRepository _mealRepository;
         private readonly IWebHostEnvironment _env;
         private readonly IHttpContextAccessor _contextAccessor;
+        private readonly IEmailService _service;
 
-        public CourierService(ICourierRepository repository, IOrderRepository orderRepository, IAutenticationService autenticationService,IMealRepository mealRepository, IWebHostEnvironment env, IHttpContextAccessor contextAccessor)
+        public CourierService(ICourierRepository repository, IOrderRepository orderRepository, IAutenticationService autenticationService,IMealRepository mealRepository, IWebHostEnvironment env, IHttpContextAccessor contextAccessor,IEmailService service)
         {
             _repository = repository;
             _orderRepository = orderRepository;
@@ -39,6 +41,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             _mealRepository = mealRepository;
             _env = env;
             _contextAccessor = contextAccessor;
+            _service = service;
         }
 
         public async Task<ICollection<CourierItemVm>> GetAllnonConfirmed(int page, int take)
@@ -90,7 +93,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         }
         public async Task<CourierItemVm> GetWithoutIsdeletedAsync(int id)
         {
-            Courier courier = await _repository.GetByIdAsync(id, isDeleted: false);
+            Courier courier = await _repository.GetByIdnotDeletedAsync(id);
             if (courier == null) throw new Exception("NotFound");
             return new CourierItemVm
             {
@@ -132,7 +135,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 couriers = await _repository.GetAllWhere(expression: x => x.Status == CourierStatus.Idle, isDeleted: false, includes: new string[] { nameof(Courier.Orders) }).Take(1).ToListAsync();
                 if (couriers.Count == 0)
                 {
-                    couriers = await _repository.GetAll(isDeleted: false, includes: new string[] { nameof(Courier.Orders) }).OrderBy(x => x.Orders.Where(x => x.Status != OrderStatus.Delivered).Count()).Take(1).ToListAsync();
+                    couriers = await _repository.GetAll(isDeleted: false, includes: new string[] { nameof(Courier.Orders) }).OrderByDescending(x => x.Orders.Where(x => x.Status != OrderStatus.Delivered).Count()).Take(1).ToListAsync();
                 }
                 order.CourierId = couriers.FirstOrDefault()?.Id;
 
@@ -194,7 +197,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             if (courier == null)
             {
                 courier = await _repository.GetByExpressionAsync(x => x.AppUserId == user.Id, isDeleted: null);
-                if (courier == null) throw new Exception("Restaurant not found");
+                if (courier == null) throw new Exception("Courier not found");
             }
 
             return new CourierItemVm
@@ -276,7 +279,10 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                     return false;
                 }
                 string fileName = await couriervm.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img", "courierImages");
-                existed.Image.DeleteFile(_env.WebRootPath, "assets", "img", "courierImages");
+                if (existed.Image != null)
+                {
+                    existed.Image.DeleteFile(_env.WebRootPath, "assets", "img", "courierImages");
+                }
                 existed.Image = fileName;
             }
             _repository.Update(existed);
@@ -337,6 +343,14 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             await _autenticationService.UpdateUserRole(existed.AppUserId, UserRole.Courier.ToString());
             _repository.Update(existed);
             await _repository.SaveChangesAsync();
+            string body = $@"<div class=""card"" style=""width: 18rem;"">
+    <div class=""card-body"">
+        <h5 class=""card-title"">Hello and welcome Mr or Ms  {existed.Name}</h5>
+        <h6 class=""card-subtitle mb-2 text-body-secondary"">Yor courier form was submited </h6>
+        <p class=""card-text"">Please go courier page and start the work </p>
+    </div>
+</div>";
+            await _service.SendEmailAsync(existed.Email, "work", body, true);
         }
 
 

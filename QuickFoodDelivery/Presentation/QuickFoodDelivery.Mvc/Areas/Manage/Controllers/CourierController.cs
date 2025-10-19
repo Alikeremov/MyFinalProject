@@ -30,6 +30,16 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
         {
             return View(await _service.GetAllnonConfirmed(page, take));
         }
+        public async Task<IActionResult> Cancel(int id)
+        {
+            await _service.DeleteAsync(id);
+            return RedirectToAction(nameof(UnConfirments));
+        }
+        public async Task<IActionResult> Sumbit(int id)
+        {
+            await _service.Submit(id);
+            return RedirectToAction(nameof(UnConfirments));
+        }
         public async Task<IActionResult> Delete(int id)
         {
             await _service.DeleteAsync(id);
@@ -44,11 +54,6 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
         {
             await _service.ReverseDeleteAsync(id);
             return RedirectToAction(nameof(Arxiv));
-        }
-        public async Task<IActionResult> Sumbit(int id)
-        {
-            await _service.Submit(id);
-            return RedirectToAction(nameof(UnConfirments));
         }
     }
 }

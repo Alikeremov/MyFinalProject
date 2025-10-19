@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
@@ -182,8 +183,12 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             AppUser user = await _autentication.GetUserAsync(userName);
             if (user == null) throw new Exception("Not Found");
             Courier courier = await _courierRepository.GetByExpressionAsync(x => x.AppUserId == user.Id, isDeleted: false);
-            if (courier == null) throw new Exception("Not Found");
-            ICollection<Order> orders = _repository.GetAllWhere(x => x.CourierId == courier.Id && x.Status != OrderStatus.Delivered, isDeleted: false, includes: new string[] { nameof(Order.OrderItems) }).ToList();
+            if (courier == null)
+            {
+                courier = await _courierRepository.GetByExpressionAsync(x => x.AppUserId == user.Id, isDeleted: null);
+                if (courier == null) throw new Exception("Not Found");
+            }
+            ICollection<Order> orders = _repository.GetAllWhere(x => x.CourierId == courier.Id && x.Status != OrderStatus.Delivered, isDeleted: false, includes: new string[] { nameof(Order.OrderItems) }).OrderBy(x=>x.CreatedAt).ToList();
             return orders.Select(order => new OrderGetVm
             {
                 UserName = order.UserName,
@@ -211,7 +216,11 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             AppUser user = await _autentication.GetUserAsync(userName);
             if (user == null) throw new Exception("Not Found");
             Courier courier = await _courierRepository.GetByExpressionAsync(x => x.AppUserId == user.Id, isDeleted: false);
-            if (courier == null) throw new Exception("Not Found");
+            if (courier == null)
+            {
+                courier = await _courierRepository.GetByExpressionAsync(x => x.AppUserId == user.Id, isDeleted: null);
+                if (courier == null) throw new Exception("Not Found");
+            }
             ICollection<Order> orders = _repository.GetAllWhere(x => x.CourierId == courier.Id && x.Status == OrderStatus.Delivered, isDeleted: false, includes: new string[] { nameof(Order.OrderItems) }).ToList();
             return orders.Select(order => new OrderGetVm
             {
@@ -239,7 +248,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         {
             AppUser user = await _autentication.GetUserAsync(username);
             if (user == null) throw new Exception("Not Found");
-            ICollection<Order> orders = _repository.GetAllWhere(x => x.AppUserId == user.Id, isDeleted: false, includes: new string[] { nameof(Order.OrderItems), nameof(Order.Courier) }).ToList();
+            ICollection<Order> orders = _repository.GetAllWhere(x => x.AppUserId == user.Id, isDeleted: false, includes: new string[] { nameof(Order.OrderItems), nameof(Order.Courier) }).OrderByDescending(x => x.Id).ToList();
             return orders.Select(order => new OrderGetVm
             {
                 UserName = order.UserName,
@@ -328,6 +337,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 {
                     Name=courier.Name,
                     Surname=courier.Surname,
+                    PhoneNumber=courier.PhoneNumber,
                     Email=courier.Email,
                     Image=courier.Image,           
                 },
@@ -352,7 +362,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             vm.Address = existed.Address;
             return vm;
         }
-        public async Task<bool> Update(int id, OrderUpdateVm ordervm, ModelStateDictionary modelState)
+        public async Task<bool> Update(int id, OrderUpdateVm ordervm, ModelStateDictionary modelState,IUrlHelper url,HttpRequest request)
         {
             if (!modelState.IsValid) return false;
             Order existed = await _repository.GetByIdAsync(id, isDeleted: false);
@@ -370,17 +380,14 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                     await _courierRepository.SaveChangesAsync();
                 }
                 
-//                string link = _url.Action("ResetPassword", "Account", new { userId = user.Id, token = token }, HttpContext.Request.Scheme);
-//                string body = $@"<div class=""card"" style=""width: 18rem;"">
-//    <div class=""card-body"">
-//        <h5 class=""card-title"">Hello Mr or Ms{existed.UserName}</h5>
-//        <h6 class=""card-subtitle mb-2 text-body-secondary"">Your Order completed</h6>
-//        <p class=""card-text"">Your</p>
-//        <a href=""{link}"" class=""card-link"">Card link</a>
-//        <a href=""#"" class=""card-link"">link</a>
-//    </div>
-//</div>";
-//                await _service.SendEmailAsync(existed.UserEmail, "Order",body, true);
+                string body = $@"<div class=""card"" style=""width: 18rem;"">
+    <div class=""card-body"">
+        <h5 class=""card-title"">Hello Mr or Ms  {existed.UserName}</h5>
+        <h6 class=""card-subtitle mb-2 text-body-secondary"">Your Order completed</h6>
+        <p class=""card-text"">Please call courier and get your order</p>
+    </div>
+</div>";
+                await _service.SendEmailAsync(existed.UserEmail, "Order", body, true);
             }
             return true;
         }

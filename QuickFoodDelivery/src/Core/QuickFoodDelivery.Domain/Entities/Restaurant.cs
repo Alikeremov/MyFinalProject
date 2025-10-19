@@ -18,6 +18,7 @@ namespace QuickFoodDelivery.Domain.Entities
         public bool IsOpening { get; set; }
         public decimal MinimumOrderAmount { get; set; }
         public string Image { get; set; } = null!;
+        public int? Popularity { get; set; }
         //Relational Properties
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }

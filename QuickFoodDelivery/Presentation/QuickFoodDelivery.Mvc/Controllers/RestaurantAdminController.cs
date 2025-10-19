@@ -46,6 +46,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
             
             return View(await _orderItemService.GetAllByRestaurantId(restaurant.Id));
         }
+        [Authorize(Roles = "Member")]
         public async Task<IActionResult> CreateYourRestaurant()
         {
             RestaurantCreateVm vm = new RestaurantCreateVm();

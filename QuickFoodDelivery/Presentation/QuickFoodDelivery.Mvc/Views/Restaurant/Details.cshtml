@@ -10,14 +10,26 @@
 
     <!-- YOUR CUSTOM CSS -->
     <link href="~/assets/css/custom.css" rel="stylesheet">
-
+    <style>
+        .icon_star.active {
+            color: yellow; /* veya istediğiniz başka bir renk */
+        }
+    </style>
  </head>
 <!-- SubHeader =============================================== -->
 <section data-jarallax class="parallax-window" id="short" data-parallax="scroll" data-image-src="/assets/img/restaurantImages/@Model.Restaurant.Image" data-natural-width="1400" data-natural-height="350">
     <div id="subheader">
         <div id="sub_content">
             <div id="thumb"><img src="~/assets/img/restaurantImages/@Model.Restaurant.Image" style="width:150px; height:150px" alt=""></div>
-            <div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i> (<small><a href="">Read 98 reviews</a></small>)</div>
+            <div class="rating" id="rating">
+                <!-- Unikal kimlik için yorumun Id'si kullanılıyor -->
+                <i class="icon_star"></i>
+                <i class="icon_star"></i>
+                <i class="icon_star"></i>
+                <i class="icon_star"></i>
+                <i class="icon_star"></i>
+            </div>
+            (<small><a href="#0">@Model.Restaurant.Reviews?.Count</a></small>)
             <a asp-action="About" asp-controller="Restaurant" asp-route-id="@Model.Restaurant.Id"><h1>@Model.Restaurant.Name</h1></a>
             <div><em>@Model.Restaurant.Category?.Name</em></div>
             <div><i class="icon_pin"></i> @Model.Restaurant.Address</div>
@@ -176,5 +188,22 @@
                 return false;
             }
         }
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function updateStars(popularity) {
+        var stars = $("#rating").find(".icon_star");
+        stars.removeClass("active");
+
+        for (var i = 0; i < popularity; i++) {
+            $(stars[i]).addClass("active");
+        }
+    }
+
+    var popularity = @Model.Restaurant.Popularity;
+
+    $(document).ready(function () {
+        updateStars(popularity);
     });
 </script>

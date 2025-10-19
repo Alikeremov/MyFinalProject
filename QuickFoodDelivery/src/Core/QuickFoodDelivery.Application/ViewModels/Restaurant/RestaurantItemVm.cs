@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,8 +21,10 @@ namespace QuickFoodDelivery.Application.ViewModels
         public bool IsOpening { get; set; }
         public decimal MinimumOrderAmount { get; set; }
         public string Image { get; set; } = null!;
+        public int? Popularity { get; set; }
         public int CategoryId { get; set; }
         public string? AppUserId { get; set; }
+        public AppUser User { get; set; }
         public PaginateVm<Review>? ReviewVithPagination { get; set; }
         public ICollection<Review>? Reviews { get; set; }
         public Category? Category { get; set; }

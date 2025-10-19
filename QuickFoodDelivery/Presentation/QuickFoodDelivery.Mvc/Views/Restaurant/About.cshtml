@@ -1,44 +1,28 @@
 ﻿@model AboutVm
-@{
-    var starRating = 0;
-    var averageQuality = 0;
-    var reviewCount = 0;
-    if (Model.Restaurant.ReviewVithPagination != null)
-    {
-    var qualityTotal = 0;
-    reviewCount = Model.Restaurant.ReviewVithPagination.Items.Count;
-    foreach (var review in Model.Restaurant.ReviewVithPagination.Items)
-    {
-        qualityTotal += review.Quality;
-    }
-    averageQuality = reviewCount > 0 ? qualityTotal / reviewCount : 0;
-
-    // Ortalama kaliteye göre yıldızları oluştur
-    starRating = averageQuality;
-
-    // Yıldızları oluştururken yıldız sayısını 5 ile sınırlandır
-    starRating = Math.Max(Math.Min(starRating, 5), 0);
-        
-    }
-    // Kalite değerlerinin toplamını ve ortalama değerini hesapla
-}
+<head>
+    <style>
+        .icon_star.active {
+            color: yellow; /* veya istediğiniz başka bir renk */
+        }
+    </style>
+</head>
 <section class="parallax-window" data-parallax="scroll" data-image-src="/assets/img/sub_header_2.jpg" data-natural-width="1400" data-natural-height="470">
     <div id="subheader">
         <div id="sub_content">
             <div id="thumb"><img src="~/assets/img/restaurantImages/@Model.Restaurant.Image" alt=""></div>
             <div class="rating">
-                @for (int i = 0; i < starRating; i++)
-                {
-                    <i class="icon_star voted"></i>
-                }
-                @for (int i = 0; i < 5 - starRating; i++)
-                {
+                <div class="rating" id="rating">
+                    <!-- Unikal kimlik için yorumun Id'si kullanılıyor -->
                     <i class="icon_star"></i>
-                }
-                (<small><a href="#0">@reviewCount</a></small>)
+                    <i class="icon_star"></i>
+                    <i class="icon_star"></i>
+                    <i class="icon_star"></i>
+                    <i class="icon_star"></i>
+                </div>
+                (<small><a href="#0">@Model.Restaurant.Reviews?.Count</a></small>)
             </div>
             <h1>@Model.Restaurant.Name</h1>
-            <div><em>@Model.Restaurant.Category.Name</em></div>
+            <div><em>@Model.Restaurant.Category?.Name</em></div>
             <div><i class="icon_pin"></i> @Model.Restaurant.Address </div>
         </div><!-- End sub_content -->
     </div><!-- End subheader -->
@@ -131,18 +115,18 @@
 
                     @await Html.PartialAsync("_CreateReview",new ReviewCreateVm{RestaurantId=Model.Restaurant.Id,Description=null,Quality=0})
                 </div><!-- End summary_review -->
-                @if (Model.Restaurant.Reviews!=null)
+                @if (Model.Restaurant.ReviewVithPagination!=null)
                 {
                     
-                @foreach (var item in Model.Restaurant.Reviews)
+                @foreach (var item in Model.Restaurant.ReviewVithPagination.Items)
                 {
                     <div class="review_strip_single">
                         <img src="~/assets/img/@item.AppUser.ProfileImage" alt="" style="height:90px;width:90px;border-radius:45px" class="rounded-circle">
                         <small> - @item.CreatedAt.ToString("dd/mm/yyyy") -</small>
                         <h4>@item.AppUser.Name @item.AppUser.Surname</h4>
-                        <p>
+                        <h6>
                             @item.Description
-                        </p>
+                        </h6>
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="rating" id="rating_@item.Id">
@@ -171,27 +155,45 @@
                     </script>
                     <!-- End review strip -->
                 }
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item @(Model.Restaurant.ReviewVithPagination?.CurrentPage<=1||Model.Restaurant.ReviewVithPagination?.CurrentPage==null? "disabled":"")"><a class="page-link" class="page-link" asp-route-page="@(Model.Restaurant.ReviewVithPagination?.CurrentPage-1)" asp-action="About" asp-controller="Restaurant" asp-route-id="@Model.Restaurant.Id">Previous</a></li>
+                            @for (int i = 0; i < Model.Restaurant.ReviewVithPagination?.TotalPage; i++)
+                            {
+                                <li class="page-item @(Model.Restaurant.ReviewVithPagination?.CurrentPage-1==i? "disabled":"")">
+                                    <a class="page-link" asp-route-page="@(i+1)" asp-action="About" asp-controller="Restaurant" asp-route-id="@Model.Restaurant.Id">
+                                        @(i + 1
+                                            )
+                                    </a>
+                                </li>
+
+                            }
+
+                            <li class="page-item @(Model.Restaurant.ReviewVithPagination?.TotalPage<=Model.Restaurant.ReviewVithPagination?.CurrentPage||Model.Restaurant.ReviewVithPagination?.CurrentPage==null? "disabled":"")"><a class="page-link" class="page-link" asp-route-page="@(Model.Restaurant.ReviewVithPagination?.CurrentPage+1)" asp-action="About" asp-controller="Restaurant" asp-route-id="@Model.Restaurant.Id">Next</a></li>
+                        </ul>
+                    </nav>
                 }
 
 
                     </div>
             </div><!-- End box_style_1 -->
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item @(Model.Restaurant.ReviewVithPagination?.CurrentPage<=1? "disabled":"")"><a class="page-link" class="page-link" asp-route-page="@(Model.Restaurant.ReviewVithPagination?.CurrentPage-1)" asp-action="About" asp-controller="Restaurant">Previous</a></li>
-                @for (int i = 0; i < Model.Restaurant.ReviewVithPagination?.TotalPage; i++)
-                {
-                    <li class="page-item @(Model.Restaurant.ReviewVithPagination?.CurrentPage-1==i? "disabled":"")">
-                        <a class="page-link" asp-route-page="@(i+1)" asp-action="About" asp-controller="Restaurant">
-                            @(i + 1
-                                )
-                        </a>
-                    </li>
 
-                }
-
-                <li class="page-item @(Model.Restaurant.ReviewVithPagination?.TotalPage<=Model.Restaurant.ReviewVithPagination?.CurrentPage? "disabled":"")"><a class="page-link" class="page-link" asp-route-page="@(Model.Restaurant.ReviewVithPagination?.CurrentPage+1)" asp-action="About" asp-controller="Restaurant">Next</a></li>
-            </ul>
-        </nav>
         </div>
     </div><!-- End row -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function updateStars(popularity) {
+        var stars = $("#rating").find(".icon_star");
+        stars.removeClass("active");
+
+        for (var i = 0; i < popularity; i++) {
+            $(stars[i]).addClass("active");
+        }
+    }
+
+    var popularity = @Model.Restaurant.Popularity;
+
+    $(document).ready(function () {
+        updateStars(popularity);
+    });
+</script>

@@ -33,6 +33,8 @@ namespace QuickFoodDelivery.Persistence.ServiceRegistration
                 opt.Lockout.MaxFailedAccessAttempts = 5;
                 opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
                 opt.Lockout.AllowedForNewUsers = false;
+
+                opt.SignIn.RequireConfirmedEmail = true;
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
 
             services.Configure<StripeSettings>(configuration.GetSection("Stripe"));

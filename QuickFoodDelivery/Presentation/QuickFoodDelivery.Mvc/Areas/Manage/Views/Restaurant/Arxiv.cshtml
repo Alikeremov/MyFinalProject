@@ -22,8 +22,9 @@
                             <th scope="col">Phone</th>
                             <th scope="col">Address</th>
                             <th scope="col">Is Opening</th>
-                            <th scope="col">Update</th>
-                            <th scope="col">Soft Delete</th>
+                            <th scope="col">Reverse</th>
+                            <th scope="col">Details</th>
+                            <th scope="col">Delete</th>
                             <th><a asp-action="Index" asp-controller="Restaurant" class="btn btn-success"><i class="fa fa-address-book"></i></a></th>
 
                         </tr>
@@ -43,6 +44,7 @@
                                 <td>@item.Address</td>
                                 <td>@item.IsOpening</td>
                                 <td><a asp-action="ReverseDelete" asp-controller="Restaurant" asp-route-id="@item.Id" class="btn btn-info"><i class="fas fa-history"></i></a></td>
+                                <td><a asp-action="Detail" asp-controller="Meal" asp-route-id="@item.Id" class="btn btn-primary"><i class="fas fa-info"></i></a></td>
                                 <td><a asp-action="Delete" asp-controller="Restaurant" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
 
                             </tr>

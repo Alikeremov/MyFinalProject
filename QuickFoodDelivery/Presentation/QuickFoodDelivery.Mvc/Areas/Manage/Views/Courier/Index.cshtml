@@ -39,6 +39,7 @@
                                 <td scope="row">@item.Name</td>
                                 <td>@item.Surname</td>
                                 <td><a asp-action="SoftDelete" asp-controller="Courier" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-backspace "></i></a></td>
+                                <td><a asp-action="Detail" asp-controller="Courier" asp-route-id="@item.Id" class="btn btn-primary"><i class="fas fa-info"></i></a></td>
 
                             </tr>
                         }

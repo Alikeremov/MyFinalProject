@@ -41,7 +41,10 @@
             <img src="~/assets/img/devices.jpg" alt="" class="img-fluid">
         </div>
     </div><!-- End row -->
+    @if (count > 1)
+    {
     <hr class="more_margin">
+
     <div class="main_title">
         <h2 class="nomargin_top">Quick food quality feautures</h2>
         <p>
@@ -64,26 +67,7 @@
         }
         
     </div><!-- End row -->
-</div><!-- End container -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-6 nopadding features-intro-img">
-            <div class="features-bg">
-                <div class="features-img">
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 nopadding">
-            <div class="features-content">
-                <h3>"Ex vero mediocrem"</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                </p>
-                <p>
-                    Per ea erant aeque corpora, an agam tibique nec. At recusabo expetendis vim. Tractatos principes mel te, dolor solet viderer usu ad.
-                </p>
-            </div>
-        </div>
-    </div>
-</div><!-- End container-fluid  -->
 <!-- End Content =============================================== -->
+        
+    }
+</div><!-- End container -->

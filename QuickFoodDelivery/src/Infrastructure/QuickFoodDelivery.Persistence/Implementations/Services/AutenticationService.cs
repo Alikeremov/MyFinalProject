@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -12,6 +13,7 @@ using QuickFoodDelivery.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.WebRequestMethods;
@@ -25,18 +27,20 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IWebHostEnvironment _env;
         private readonly IHttpContextAccessor _http;
+        private readonly IEmailService _emailservice;
 
-        public AutenticationService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager, IWebHostEnvironment env,IHttpContextAccessor http)
+        public AutenticationService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager, IWebHostEnvironment env,IHttpContextAccessor http,IEmailService emailservice)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _env = env;
             _http = http;
+            _emailservice = emailservice;
         }
 
 
-        public async Task<List<string>> Register(RegisterVm vm)
+        public async Task<List<string>> Register(RegisterVm vm,IUrlHelper url,HttpRequest request)
         {
             List<string> str = new List<string>();
             if (!vm.Name.IsLetter())
@@ -92,9 +96,24 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 return str;
             }
             await _userManager.AddToRoleAsync(user,UserRole.Member.ToString());
-            await _signInManager.SignInAsync(user, isPersistent: false);
-            return str;
+            //await _signInManager.SignInAsync(user, isPersistent: false);
 
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            var confirmationLink = url.Action("ConfirmEmail", "Account", new { token, Email = user.Email }, request.Scheme);
+            await _emailservice.SendEmailAsync(user.Email, "Email Confirmation", $@"<a href=""{confirmationLink}"">Click there</a>", true);
+            return str;
+        }
+        public async Task<bool> ConfirmEmail(string token, string email)
+        {
+            AppUser user = await _userManager.FindByEmailAsync(email);
+            if (user == null) throw new Exception("User Not Found");
+            var result = await _userManager.ConfirmEmailAsync(user, token);
+            if(!result.Succeeded)
+            {
+                throw new Exception("Somethink was wrong");
+            }
+            await _signInManager.SignInAsync(user, false);
+            return true;
         }
         public async Task<List<string>> Login(LoginVm vm)
         {
@@ -114,6 +133,11 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             if(result.IsLockedOut)
             {
                 str.Add("You have a lot of fail  try that is why you banned please try some minuts late");
+                return str;
+            }
+            if (!user.EmailConfirmed)
+            {
+                str.Add("Please confirm your Email");
                 return str;
             }
             if(!result.Succeeded)

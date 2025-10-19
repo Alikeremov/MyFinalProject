@@ -4,20 +4,74 @@
 }
 <head>
     <link href="~/assets/css/skins/square/grey.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Gallery -->
     <link href="~/assets/css/slider-pro.min.css" rel="stylesheet">
+    <style>
+        .order-status {
+            display: flex;
+            justify-content: space-around;
+            align-items: center; /* Dairelerin dikey hizalamasını ortala */
+            margin-top: 50px;
+        }
+
+        .status-circle {
+            position: relative; /* Göreceli konumlandırma */
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: lightgray;
+            border: 2px solid darkgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* İç dolguyu maskeleyin */
+        }
+
+            .status-circle.active {
+                border-color: green;
+            }
+
+                .status-circle.active::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 128, 0, 0.3); /* Yeşil iç dolgu rengi */
+                    border-radius: 50%;
+                }
+
+        .icon {
+            font-size: 30px;
+        }
+
+        /* Çizgi stili */
+        .line {
+            flex: 1; /* Eşit uzunlukta bir çizgi */
+            border-top: 2px solid darkgray; /* Çizgiyi tanımla */
+            margin: 0 10px; /* Dairelerin yanındaki boşluğu tanımla */
+        }
+
+        .bordered-div {
+            width: 100px; /* Div'in genişliği */
+            height: 125px; /* Div'in yüksekliği */
+            border: 5px solid #78cfcf; /* Border kalınlığı */
+            padding: 5px; /* İçeriği çerçeveden ayırır */
+            margin-bottom: 20px; /* Diğer elemanlarla arasında boşluk bırakır */
+            overflow: hidden; /* İçeriklerin border içinde kalmasını sağlar */
+        }
+    </style>
 </head>
 
 <div class="container margin_60_35">
     <div class="row">
         <div class="col-lg-4">
             <div class="box_style_2">
-                <h4 class="nomargin_top">Opening time <i class="icon_clock_alt float-right"></i></h4>
+                <h4 class="nomargin_top">Order Items</h4>
                 <ul class="opening_list">
                     @foreach (var item in Model.OrderItemVms)
                     {
-                        <li>@(count++):<span>@item.MealName</span> <p>@item.Price </p></li>
+                        <li>@(count++)x @item.MealName x $@item.Price</li>
                     }
                 </ul>
             </div>
@@ -29,38 +83,65 @@
             </div>
         </div>
         <div class="col-lg-8">
+
             <div class="box_style_2">
+                
                 <h2 class="inner">@Model.UserAddress</h2>
-                <h3>@Model @Model.UserSurname</h3>
+
+                <div class="order-status">
+                    <div class="status-circle" id="pending"><i class="fas fa-clock icon"></i></div>
+                    <div class="line"></div> <!-- Düz çizgi -->
+                    <div class="status-circle" id="preparing"><i class="fas fa-tools icon"></i></div>
+                    <div class="line"></div> <!-- Düz çizgi -->
+                    <div class="status-circle" id="ontheway"><i class="fas fa-truck-moving icon"></i></div>
+                    <div class="line"></div> <!-- Düz çizgi -->
+                    <div class="status-circle" id="delivered"><i class="fas fa-check-circle icon"></i></div>
+                </div>
+                <h3>@Model.UserName @Model.UserSurname</h3>
                 <p>
-                    @Model.NotesForRestaurant
+                   Your Note: @Model.NotesForRestaurant
                 </p>
                 <p class="add_bottom_30">
-                    @Model.Status
+                   Order Status: @Model.Status
                 </p>
                 <p class="add_bottom_30">
-                    @Model.TotalPrice
+                  Total Price:  @(Model.TotalPrice/100)
                 </p>
             </div><!-- End box_style_1 -->
         </div>
-        <div class="col-lg-12">
+        
+        <div class="col-lg-12 bordered-div">
 
             <div class="desc">
                 <div class="thumb_strip">
                     <img src="~/assets/img/courierImages/@Model.Courier.Image" style="width:100px; height:100px; border-radius:50px;" alt="">
                 </div>
-                <div class="rating">
-                    <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                </div>
-                <h3>Courier FullName:@Model.Courier.Name @Model.Courier.Surname</h3>
-                <div class="type">
-                    <a href="tel://@Model.Courier.PhoneNumber" class="phone">@Model.Courier.PhoneNumber</a>
+                <h3>Courier FullName: @Model.Courier.Name @Model.Courier.Surname</h3>
+                <div class="">
+                    <a href="https://wa.me/@Model.Courier.PhoneNumber" class="phone">@Model.Courier.PhoneNumber</a>
                 </div>
                 <div class="">
-                    <a href="mail://@Model.Courier.Email" class="phone">@Model.Courier.Email</a>
+                    <a href="mailto:@Model.Courier.Email" class="phone">@Model.Courier.Email</a>
                 </div>
             </div><!-- End desc-->
 
         </div>
     </div><!-- End row -->
 </div><!-- End container -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Sipariş durumu enum'una göre durumları kontrol etmek için bir dizi oluşturun
+        const orderStatuses = ['pending', 'preparing', 'ontheway', 'delivered'];
+
+        // Her bir durum için ilgili daireyi seçin ve etkinleştirin
+        function updateOrderStatus(status) {
+            orderStatuses.forEach(function (status) {
+                document.getElementById(status).classList.remove('active');
+            });
+            document.getElementById(status).classList.add('active');
+        }
+
+        // Örnek bir sipariş durumu ayarlayın (örneğin: Delivered)
+        updateOrderStatus('@Model.Status.ToString().ToLower()');
+    });
+</script>

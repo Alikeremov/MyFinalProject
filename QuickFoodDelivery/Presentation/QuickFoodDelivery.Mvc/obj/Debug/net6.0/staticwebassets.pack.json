@@ -2045,6 +2045,14 @@
       "PackagePath": "staticwebassets\\assets\\img\\05dee196-bc3e-4071-8088-cab966a0367dejdaha.png"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\15907dcf-4140-4035-a1ae-cc9283293e6cdownload.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\15907dcf-4140-4035-a1ae-cc9283293e6cdownload.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\2c0d5dff-e569-4a98-82a9-1ba988409423859166_385795144851044_455600860_o.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\2c0d5dff-e569-4a98-82a9-1ba988409423859166_385795144851044_455600860_o.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\4fa9cf54-997b-404b-a90b-98971e918b5biStock-476085198.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\4fa9cf54-997b-404b-a90b-98971e918b5biStock-476085198.jpg"
     },
@@ -2065,12 +2073,20 @@
       "PackagePath": "staticwebassets\\assets\\img\\91eb4acc-49ce-4fa5-956d-1848a3101855chef3.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\98c85e53-1b44-4f23-9034-bddaeb038551SabieM4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\98c85e53-1b44-4f23-9034-bddaeb038551SabieM4.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\Delivery_1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Delivery_1.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\Untitled-3.svg",
       "PackagePath": "staticwebassets\\assets\\img\\Untitled-3.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\a927b7e5-803f-42f7-8947-2beadbfa3b3e1097908_453117184785506_1949541147_o.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\a927b7e5-803f-42f7-8947-2beadbfa3b3e1097908_453117184785506_1949541147_o.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\apple-touch-icon-114x114-precomposed.png",
@@ -2129,8 +2145,20 @@
       "PackagePath": "staticwebassets\\assets\\img\\courierImages\\06b717f1-a688-4ba2-90e2-457d74c93478Courier2.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\courierImages\\8c2345e4-3fab-44bb-a080-ed1f8af37870iStock-476085198.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\courierImages\\8c2345e4-3fab-44bb-a080-ed1f8af37870iStock-476085198.jpg"
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\courierImages\\2bd5e304-8322-41cd-8e49-cc8ca3e05291407490_359513794145846_100060449_n.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\courierImages\\2bd5e304-8322-41cd-8e49-cc8ca3e05291407490_359513794145846_100060449_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\courierImages\\2cad4ac3-5b17-47a7-96c2-7465ef11830b1097908_453117184785506_1949541147_o.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\courierImages\\2cad4ac3-5b17-47a7-96c2-7465ef11830b1097908_453117184785506_1949541147_o.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\courierImages\\ac10dc36-11f1-4255-bb4f-0ec23e14fe9a11312580_771000352997186_1401427339957680626_o.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\courierImages\\ac10dc36-11f1-4255-bb4f-0ec23e14fe9a11312580_771000352997186_1401427339957680626_o.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\courierImages\\b51ad393-5e54-4c5a-a919-4363bf6c66a6Screenshot 2024-03-27 221349.png",
+      "PackagePath": "staticwebassets\\assets\\img\\courierImages\\b51ad393-5e54-4c5a-a919-4363bf6c66a6Screenshot 2024-03-27 221349.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\courierImages\\fd8ce1bc-47f9-4c90-a958-b9f727ba3d2bdownload.jpg",
@@ -2233,16 +2261,32 @@
       "PackagePath": "staticwebassets\\assets\\img\\mealImages\\00ca687c-8998-42bf-bcc0-847af94f858ft.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\0cdc110e-e21a-45b0-9d7c-ceca213fcccdlouis-hansel-cC0_UO1Obg4-unsplash.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\0cdc110e-e21a-45b0-9d7c-ceca213fcccdlouis-hansel-cC0_UO1Obg4-unsplash.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\15143f04-1408-4128-b538-961a59f75164farhad-ibrahimzade-HU_ubYnwElc-unsplash.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\15143f04-1408-4128-b538-961a59f75164farhad-ibrahimzade-HU_ubYnwElc-unsplash.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\2b66a5a4-6b46-4e3a-9dde-e7837a9c5a9eBurger.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\mealImages\\2b66a5a4-6b46-4e3a-9dde-e7837a9c5a9eBurger.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\2cfadd8c-c60e-4e77-861f-82eb5866475bSogan halqasi.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\2cfadd8c-c60e-4e77-861f-82eb5866475bSogan halqasi.jpg"
-    },
-    {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\344e7454-359b-4bb7-a8ba-16dd9a1fa67aDolma.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\mealImages\\344e7454-359b-4bb7-a8ba-16dd9a1fa67aDolma.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\34c6dee8-52f9-4e66-a155-993f4ae2a760360_F_631078435_bYudze2lWMqxaxTC9UrRUFzGhJqxYkVn.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\34c6dee8-52f9-4e66-a155-993f4ae2a760360_F_631078435_bYudze2lWMqxaxTC9UrRUFzGhJqxYkVn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\3add19e5-56cd-4c2b-82ea-082127f0b94e360_F_271672012_8qzRMwHLV9AyefjVUfLX1JxyoVjP9iS7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\3add19e5-56cd-4c2b-82ea-082127f0b94e360_F_271672012_8qzRMwHLV9AyefjVUfLX1JxyoVjP9iS7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\3eae09f7-e7e0-41f8-b488-58bd1ed95895Cola.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\3eae09f7-e7e0-41f8-b488-58bd1ed95895Cola.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\50651f78-09d3-4c83-865d-4cb267e1496fcola.jpg",
@@ -2253,16 +2297,88 @@
       "PackagePath": "staticwebassets\\assets\\img\\mealImages\\51cc64a7-b288-4de5-aca5-47cc8b2b91e9Fries.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\739a6074-7839-403d-af95-96b6e71b08c9hd-image-burger-dinning-with-beer-ai-generate_505751-3692.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\739a6074-7839-403d-af95-96b6e71b08c9hd-image-burger-dinning-with-beer-ai-generate_505751-3692.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\7d36b5a4-af8e-4d20-9639-e10557ab4d60istockphoto-504832420-612x612.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\7d36b5a4-af8e-4d20-9639-e10557ab4d60istockphoto-504832420-612x612.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\8051deed-02db-4304-8949-096c7b8a997bkevin-kelly-PPneSBqfCCU-unsplash.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\8051deed-02db-4304-8949-096c7b8a997bkevin-kelly-PPneSBqfCCU-unsplash.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\8188acfd-07f8-47f0-8667-6bf985ecb8c2Cola.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\mealImages\\8188acfd-07f8-47f0-8667-6bf985ecb8c2Cola.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\85f8bb11-7e80-4f13-aa8b-6cb02f7af8d3anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\85f8bb11-7e80-4f13-aa8b-6cb02f7af8d3anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\8633111d-6747-44c3-960a-cd1d026c6d33360_F_631078435_bYudze2lWMqxaxTC9UrRUFzGhJqxYkVn.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\8633111d-6747-44c3-960a-cd1d026c6d33360_F_631078435_bYudze2lWMqxaxTC9UrRUFzGhJqxYkVn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\874e9d6c-877a-4457-8733-29284ddbf677kevin-kelly-PPneSBqfCCU-unsplash.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\874e9d6c-877a-4457-8733-29284ddbf677kevin-kelly-PPneSBqfCCU-unsplash.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\8a46d1c2-cb0b-4d4b-8876-4939fcdc07a3louis-hansel-cC0_UO1Obg4-unsplash.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\8a46d1c2-cb0b-4d4b-8876-4939fcdc07a3louis-hansel-cC0_UO1Obg4-unsplash.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\8ae81f44-487a-430d-9828-0b12dadcd039louis-hansel-cC0_UO1Obg4-unsplash.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\8ae81f44-487a-430d-9828-0b12dadcd039louis-hansel-cC0_UO1Obg4-unsplash.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\8ca2ae97-8c86-4436-9bf8-70fffee7bc2ccasey-lee-awj7sRviVXo-unsplash.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\8ca2ae97-8c86-4436-9bf8-70fffee7bc2ccasey-lee-awj7sRviVXo-unsplash.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\8ddf9d26-71f9-413c-87b9-4f184e7ba152240_F_615475331_Q12P3SUXB9PrZRzIHJ0MKY0bjPZI0Ksg.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\8ddf9d26-71f9-413c-87b9-4f184e7ba152240_F_615475331_Q12P3SUXB9PrZRzIHJ0MKY0bjPZI0Ksg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\9aeb0267-1bc1-4650-bc79-2e61d254bd9dCola.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\9aeb0267-1bc1-4650-bc79-2e61d254bd9dCola.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\a0d262e0-9e19-45f4-96ae-3894b922d1a1Cola.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\a0d262e0-9e19-45f4-96ae-3894b922d1a1Cola.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\b0eb651d-5ba7-4d80-b271-3d36987dd1daroasting.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\mealImages\\b0eb651d-5ba7-4d80-b271-3d36987dd1daroasting.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\b928264a-71ff-4244-b438-d4bf19f68e10anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\b928264a-71ff-4244-b438-d4bf19f68e10anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\c200684e-58c8-4f37-8935-1cda0cb30388eiliv-aceron-ZuIDLSz3XLg-unsplash.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\c200684e-58c8-4f37-8935-1cda0cb30388eiliv-aceron-ZuIDLSz3XLg-unsplash.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\c3cd86f5-b1c1-42ed-b9b4-6b6c6271b33eplov.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\mealImages\\c3cd86f5-b1c1-42ed-b9b4-6b6c6271b33eplov.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\cfdf0e6a-dad0-4b07-892f-5792f82da7a9louis-hansel-jZjIAjz_AHE-unsplash.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\cfdf0e6a-dad0-4b07-892f-5792f82da7a9louis-hansel-jZjIAjz_AHE-unsplash.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\d29dc1f7-88c1-4750-9aeb-b3eaa3b10c3bfarhad-ibrahimzade-HU_ubYnwElc-unsplash.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\d29dc1f7-88c1-4750-9aeb-b3eaa3b10c3bfarhad-ibrahimzade-HU_ubYnwElc-unsplash.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\d49030af-2989-425e-8671-81cbd23b18bbCola.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\d49030af-2989-425e-8671-81cbd23b18bbCola.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\mealImages\\fc17238c-2c11-4600-b3f6-df41de0833a3istockphoto-504832420-612x612.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mealImages\\fc17238c-2c11-4600-b3f6-df41de0833a3istockphoto-504832420-612x612.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\menu-thumb-1.jpg",
@@ -2401,44 +2517,40 @@
       "PackagePath": "staticwebassets\\assets\\img\\popup_img.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\profile.png",
-      "PackagePath": "staticwebassets\\assets\\img\\profile.png"
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\025e3f1b-1225-4dea-8386-296b22a96293145.png",
+      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\025e3f1b-1225-4dea-8386-296b22a96293145.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\3327c112-c72c-46ca-96ed-14890b4e247amc.png",
       "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\3327c112-c72c-46ca-96ed-14890b4e247amc.png"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\4156caee-b31f-4c24-9a25-bb6f7a85860emc.png",
-      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\4156caee-b31f-4c24-9a25-bb6f7a85860emc.png"
-    },
-    {
-      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\54e640b8-f18d-4db5-9469-b291da70674eejdaha.png",
-      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\54e640b8-f18d-4db5-9469-b291da70674eejdaha.png"
-    },
-    {
-      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\6daf2284-71db-4a55-880d-c92574e3c083Elegant.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\6daf2284-71db-4a55-880d-c92574e3c083Elegant.jpg"
-    },
-    {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\97519b58-a61e-4e97-90d2-9d4e1061a571download.png",
       "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\97519b58-a61e-4e97-90d2-9d4e1061a571download.png"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\dbeb9080-64ff-4d6b-9cb4-f82d663ac76fkfc.png",
-      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\dbeb9080-64ff-4d6b-9cb4-f82d663ac76fkfc.png"
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\a7f5fcb2-8dd9-43e9-aee8-6fddad6ae785images.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\a7f5fcb2-8dd9-43e9-aee8-6fddad6ae785images.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\eaa4f033-8bf4-4f61-acfa-ba2be2da8000mc.png",
-      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\eaa4f033-8bf4-4f61-acfa-ba2be2da8000mc.png"
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\ab58da99-bcda-43fb-b3aa-1be95a7cf3ebimages.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\ab58da99-bcda-43fb-b3aa-1be95a7cf3ebimages.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\d911b2df-2d28-4fa2-b873-4409e79a79faPpCons.png",
+      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\d911b2df-2d28-4fa2-b873-4409e79a79faPpCons.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\ee828761-09fc-4121-8666-5f88d0123ffdKfc.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\ee828761-09fc-4121-8666-5f88d0123ffdKfc.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\f20dd916-cdb1-42f1-b985-886bf4136a93burgerKing.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\f20dd916-cdb1-42f1-b985-886bf4136a93burgerKing.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\ff5d1183-9039-4cac-9c4c-5ff607cd0fc3t.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\ff5d1183-9039-4cac-9c4c-5ff607cd0fc3t.jpg"
+      "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\restaurantImages\\ffe8a336-c594-4d0f-b8f6-21f71942313bDomino's.png",
+      "PackagePath": "staticwebassets\\assets\\img\\restaurantImages\\ffe8a336-c594-4d0f-b8f6-21f71942313bDomino's.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\MyFinalProject\\QuickFoodDelivery\\Presentation\\QuickFoodDelivery.Mvc\\wwwroot\\assets\\img\\ribbon.png",

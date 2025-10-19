@@ -31,7 +31,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
             {
                 return View(vm);
             }
-            var result=await _service.Register(vm);
+            var result=await _service.Register(vm,Url,Request);
             if(result.Any())
             {
                 foreach (var item in result)
@@ -40,7 +40,15 @@ namespace QuickFoodDelivery.Mvc.Controllers
                     return View(vm);
                 }
             }
-            return RedirectToAction("Index","Home");
+            return RedirectToAction(nameof(SuccessfullyRegistered));
+        }
+        public IActionResult SuccessfullyRegistered()
+        {
+            return View();
+        }
+        public async Task<IActionResult> ConfirmEmail(string token,string email)
+        {
+            return View(await _service.ConfirmEmail(token, email));
         }
         public IActionResult Login()
         {

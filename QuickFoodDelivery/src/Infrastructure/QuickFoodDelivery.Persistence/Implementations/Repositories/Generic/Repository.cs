@@ -49,6 +49,9 @@ namespace QuickFoodDelivery.Persistence.Implementations.Repositories.Generic
 		{
 
 			IQueryable<T> query = _table;
+            if (isDeleted == null) query = query.Where(x => x.IsDeleted == null);
+            else if (isDeleted == false) query = query.Where(x => x.IsDeleted == false);
+            else if (isDeleted == true) query = query.Where(x => x.IsDeleted == true);
 			if (expression != null) query = query.Where(expression);
 
 
@@ -60,9 +63,6 @@ namespace QuickFoodDelivery.Persistence.Implementations.Repositories.Generic
 			if (skip != 0) query = query.Skip(skip);
 			if (take != 0) query = query.Take(take);
 			if (includes != null) query = _addIncludes(query, includes);
-            if (isDeleted == null) query = query.Where(x => x.IsDeleted == null);
-            else if (isDeleted == false) query = query.Where(x => x.IsDeleted == false);
-            else if (isDeleted == true) query = query.Where(x => x.IsDeleted == true);
 
             return isTracking ? query : query.AsNoTracking();
 		}

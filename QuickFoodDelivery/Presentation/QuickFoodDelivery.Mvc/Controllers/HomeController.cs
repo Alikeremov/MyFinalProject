@@ -24,9 +24,10 @@ namespace QuickFoodDelivery.Mvc.Controllers
         {
             HomeVm vm = new HomeVm
             {
-                RestaurantItems=await _restaurantService.GetAllunSoftDeletesAsync(page,take),
+                RestaurantItems=await _restaurantService.GetAllunSoftDeletesAsync(page,take,isOrdered:true),
                 CategoryItems=await _categoryService.GetAllActive(),
                 Employments=await _employmentService.GetAllunSoftDeletesAsync(page, take),
+                Count=await _restaurantService.GetRestaurantCount()
             };
             return View(vm);
         }

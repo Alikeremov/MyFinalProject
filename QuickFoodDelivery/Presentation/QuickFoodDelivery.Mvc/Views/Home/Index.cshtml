@@ -1,5 +1,12 @@
 ﻿ @model HomeVm
   <!-- SubHeader =============================================== -->
+<head>
+    <style>
+        .icon_star.active {
+            color: yellow; /* veya istediğiniz başka bir renk */
+        }
+    </style>
+</head>
 <section class="header-video">
     <div id="hero_video">
         <div id="sub_content">
@@ -7,24 +14,12 @@
             <p>
                 Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
             </p>
-            <form method="post" action="list_page.html">
-                <div id="custom-search-input">
-                    <div class="input-group">
-                        <input type="text" class=" search-query" placeholder="Your Address or postal code">
-                        <span class="input-group-btn">
-                            <input type="submit" class="btn_search" value="">
-                        </span>
-                    </div>
-                </div>
-            </form>
         </div><!-- End sub_content -->
     </div>
     <img src="~/assets/img/video_fix.png" alt="" class="header-video--media" data-video-src="" data-teaser-source="assets/video/intro" data-provider="" data-video-width="1920" data-video-height="960">
     <div id="count" class="d-none d-md-block">
         <ul>
-            <li><span class="number">2650</span> Restaurant</li>
-            <li><span class="number">5350</span> People Served</li>
-            <li><span class="number">12350</span> Registered Users</li>
+            <li><span class="number">@Model.Count</span> Restaurant</li>
         </ul>
     </div>
 </section><!-- End Header video -->
@@ -48,8 +43,12 @@
                             <div class="thumb_strip">
                                 <img src="~/assets/img/restaurantImages/@item.Image" alt="">
                             </div>
-                            <div class="rating">
-                                <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
+                            <div class="rating" id="rating_@item.Id" data-popularity="@item.Popularity">
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
                             </div>
                             <h3>@item.Name</h3>
                             <div class="type">
@@ -66,13 +65,14 @@
                     </a><!-- End strip_list-->
                 </div>
             }
+
             <!-- End col-md-6-->
         </div><!-- End row -->
     </div><!-- End container -->
 </div><!-- End white_bg -->
 <div class="high_light">
     <div class="container">
-        <h3>Choose from over @Model.RestaurantItems.Count Restaurants</h3>
+        <h3>Choose from over @Model.Count Restaurants</h3>
         <p>Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.</p>
         <a asp-action="Index" asp-controller="Restaurant">View all Restaurants</a>
     </div><!-- End container -->
@@ -113,4 +113,24 @@
 
     </div><!-- End row -->
 </div><!-- End container -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Tüm restoran öğeleri için yıldızları güncelleyen fonksiyon
+    function updateStars(ratingElement) {
+        var popularity = $(ratingElement).data("popularity");
+        var stars = $(ratingElement).find(".icon_star");
+        stars.removeClass("active");
+
+        for (var i = 0; i < popularity; i++) {
+            $(stars[i]).addClass("active");
+        }
+    }
+
+    $(document).ready(function () {
+        $(".rating").each(function () {
+            updateStars(this);
+        });
+    });
+</script>
+
 

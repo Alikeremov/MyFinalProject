@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using QuickFoodDelivery.Application.Abstractions.Services;
 using QuickFoodDelivery.Application.ViewModels;
+using QuickFoodDelivery.Persistence.Implementations.Services;
 
 namespace QuickFoodDelivery.Mvc.Controllers
 {
@@ -54,6 +55,18 @@ namespace QuickFoodDelivery.Mvc.Controllers
             return View(vm);
         }
         [Authorize(Roles = "Courier")]
+        public async Task<IActionResult> Update(int id)
+        {
+            return View(await _courierService.UpdatedAsync(new CourierUpdateVm(), id));
+        }
+        [HttpPost]
+        [Authorize(Roles = "Courier")]
+        public async Task<IActionResult> Update(int id, CourierUpdateVm updateVm)
+        {
+            if (await _courierService.UpdateAsync(updateVm, ModelState, id)) return RedirectToAction(nameof(Index));
+            return View(await _courierService.UpdatedAsync(updateVm, id));
+        }
+        [Authorize(Roles = "Courier")]
         public async Task<IActionResult> ChangeOrderStatus(int id)
         {
             return View(await _orderService.Updated(id, new OrderUpdateVm()));
@@ -62,7 +75,7 @@ namespace QuickFoodDelivery.Mvc.Controllers
         [Authorize(Roles = "Courier")]
         public async Task<IActionResult> ChangeOrderStatus(int id, OrderUpdateVm vm)
         {
-            if(await _orderService.Update(id, vm,ModelState)) return RedirectToAction(nameof(Index));
+            if(await _orderService.Update(id, vm,ModelState,Url,Request)) return RedirectToAction(nameof(Index));
             return View(await _orderService.Updated(id,vm));    
         }
     }

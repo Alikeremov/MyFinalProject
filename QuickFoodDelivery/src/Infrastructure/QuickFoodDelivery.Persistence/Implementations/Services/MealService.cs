@@ -12,7 +12,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 using System.Collections.ObjectModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
@@ -46,7 +45,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             int count = await _repository.GetAll(isDeleted:false).CountAsync();
 
             double totalPage = Math.Ceiling((double)count / take);
-            if (totalPage <= page - 1) throw new Exception("Wrong querry");
+            if (totalPage < page - 1) throw new Exception("Wrong querry");
             ICollection<Meal> meals = await _repository.GetAllWhere(isDeleted: false, skip: (page - 1) * take, take: take).ToListAsync();
             ICollection<MealItemVm> mealItemVms = meals.Select(meal => new MealItemVm {Id = meal.Id,Name = meal.Name,Price = meal.Price,Description = meal.Description,Image = meal.Image,RestaurantId = meal.RestaurantId,}).ToList();
             return new PaginateVm<MealItemVm>
@@ -100,7 +99,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
         public async Task<MealItemVm> GetAsync(int id)
         {
-            Meal meal = await _repository.GetByIdAsync(id, isDeleted: false);
+            Meal meal = await _repository.GetByIdAsync(id, isDeleted: false );
             if (meal == null) throw new Exception("NotFound");
             return new MealItemVm
             {
@@ -115,18 +114,33 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         }
         public async Task<MealItemVm> GetwithoutDeleteAsync(int id)
         {
-            Meal meal = await _repository.GetByIdnotDeletedAsync(id);
+            Meal meal = await _repository.GetByIdnotDeletedAsync(id, includes: new string[] { nameof(Meal.Restaurant), nameof(Meal.FoodCategory) });
             if (meal == null) throw new Exception("NotFound");
-            return new MealItemVm
+            MealItemVm mealItem= new MealItemVm
             {
                 Id = meal.Id,
                 Name = meal.Name,
                 Price = meal.Price,
+                Restaurant = new RestaurantItemVm
+                {
+                    Name = meal.Restaurant.Name,
+                    Id = meal.Restaurant.Id,
+                },
+
                 Description = meal.Description,
                 Image = meal.Image,
                 RestaurantId = meal.RestaurantId,
                 FoodCategoryId = meal.FoodCategoryId,
             };
+            if(meal.FoodCategory != null)
+            {
+                mealItem.Category = new FdCategoryItemVm
+                {
+                    Name = meal.FoodCategory.Name,
+                    Id = meal.FoodCategory.Id,
+                };
+            }
+            return mealItem;
         }
         public async Task<bool> CreateAsync(MealCreateVm mealVm, ModelStateDictionary modelState)
         {

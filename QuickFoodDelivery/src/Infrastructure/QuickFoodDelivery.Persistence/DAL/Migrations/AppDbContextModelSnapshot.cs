@@ -732,6 +732,9 @@ namespace QuickFoodDelivery.Persistence.DAL.Migrations
                     b.Property<int>("Phone")
                         .HasColumnType("int");
 
+                    b.Property<int?>("Popularity")
+                        .HasColumnType("int");
+
                     b.Property<string>("RestourantEmail")
                         .IsRequired()
                         .HasMaxLength(500)

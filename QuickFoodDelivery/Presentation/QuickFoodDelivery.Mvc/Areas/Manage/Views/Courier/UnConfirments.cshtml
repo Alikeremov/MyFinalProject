@@ -39,7 +39,8 @@
                                 <td scope="row">@item.Name</td>
                                 <td>@item.Surname</td>
                                 <td><a asp-action="Sumbit" asp-controller="Courier" asp-route-id="@item.Id" class="btn btn-info"><i class="fas fa-check"></i></a></td>
-                                <td><a asp-action="Delete" asp-controller="Courier" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-times"></i></a></td>
+                                <td><a asp-action="Detail" asp-controller="Courier" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-backspace "></i></a></td>
+                                <td><a asp-action="Cancel" asp-controller="Courier" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-times"></i></a></td>
 
                             </tr>
                         }

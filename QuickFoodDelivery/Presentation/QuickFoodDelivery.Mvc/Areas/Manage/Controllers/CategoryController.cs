@@ -19,7 +19,7 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
         public async Task<IActionResult> Index()
 		{
 			
-			return View(await _service.GetAllunSoftDeletesAsync(1, 3));
+			return View(await _service.GetAllunSoftDeletesAsync(1, 100));
 		}
 		public async Task<IActionResult> Detail(int id)
 		{
@@ -27,7 +27,7 @@ namespace QuickFoodDelivery.Mvc.Areas.Manage.Controllers
 		}
 		public async Task<IActionResult> Arxiv()
 		{
-            return View(await _service.GetAllSoftDeletes(1, 3));
+            return View(await _service.GetAllSoftDeletes(1, 100));
         }
 
         public IActionResult Create()

@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using QuickFoodDelivery.Application.ViewModels;
 using QuickFoodDelivery.Domain.Entities;
 using System;
@@ -11,8 +14,9 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
 {
     public interface IAutenticationService
     {
-        Task<List<string>> Register(RegisterVm vm);   
+        Task<List<string>> Register(RegisterVm vm,IUrlHelper url, HttpRequest request);   
         Task<List<string>> Login(LoginVm vm);
+        Task<bool> ConfirmEmail(string token, string email);
         Task<bool> LoginNoPass(string userName, ModelStateDictionary modelState);
         Task Logout();
         Task CreateRoleAsync();

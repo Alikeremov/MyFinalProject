@@ -1,0 +1,83 @@
+﻿@model CourierUpdateVm
+
+<head>
+    <link href="~/assets/css/skins/square/grey.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="~/assets/css/custom.css" rel="stylesheet">
+</head>
+
+
+<section class="parallax-window" id="short" data-parallax="scroll" data-image-src="/assets/img/sub_header_cart.jpg" data-natural-width="1400" data-natural-height="350">
+    <div id="subheader">
+        <div id="sub_content">
+            <h1>Work with us</h1>
+            <p>Qui debitis meliore ex, tollit debitis conclusionemque te eos.</p>
+            <p></p>
+        </div><!-- End sub_content -->
+    </div><!-- End subheader -->
+</section><!-- End section -->
+<!-- End SubHeader ============================================ -->
+
+<div class="container margin_60">
+    <div class="main_title margin_mobile">
+        <h2 class="nomargin_top">Please submit the form below</h2>
+        <p>
+            Cum doctus civibus efficiantur in imperdiet deterruisset.
+        </p>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <form method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <img style="width:75px; height:75px" src="~/assets/img/courierImages/@Model.Image" alt="">
+                            <input asp-for="Image" type="hidden" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="Name">Name</label>
+                            <input asp-for="Name" class="form-control" placeholder="Jhon">
+                            <span asp-validation-for="Name"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <label asp-for="Surname">Surname</label>
+                        <input asp-for="Surname" class="form-control" placeholder="Surname">
+                        <span asp-validation-for="Surname"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="Photo">Photo</label>
+                            <input asp-for="Photo" class="form-control" placeholder="Photo">
+                            <span asp-validation-for="Photo"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <label asp-for="PhoneNumber">PhoneNumber</label>
+                        <input asp-for="PhoneNumber" class="form-control" placeholder="PhoneNumber">
+                        <span asp-validation-for="PhoneNumber"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="Email">Email</label>
+                            <input asp-for="Email" class="form-control" placeholder="Email">
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                    </div>
+                </div>
+                <hr style="border-color:#ddd;">
+                <div class="text-center"><button class="btn_full_outline">Submit</button></div>
+            </form>
+        </div><!-- End col  -->
+    </div><!-- End row  -->
+</div><!-- End container  -->
+<!-- End Content =============================================== -->

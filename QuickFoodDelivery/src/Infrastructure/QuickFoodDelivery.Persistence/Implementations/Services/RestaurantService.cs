@@ -26,8 +26,9 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         private readonly IReviewRepository _reviewRepository;
         private readonly IHttpContextAccessor _httpContext;
         private readonly IAutenticationService _autentication;
+        private readonly IEmailService _service;
 
-        public RestaurantService(IRestaurantRepository repository,ICategoryRepository categoryRepository,IWebHostEnvironment env,IReviewRepository reviewRepository,IHttpContextAccessor httpContext,IAutenticationService autentication)
+        public RestaurantService(IRestaurantRepository repository,ICategoryRepository categoryRepository,IWebHostEnvironment env,IReviewRepository reviewRepository,IHttpContextAccessor httpContext,IAutenticationService autentication,IEmailService service)
         {
             _repository = repository;
             _categoryRepository = categoryRepository;
@@ -35,6 +36,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             _reviewRepository = reviewRepository;
             _httpContext = httpContext;
             _autentication = autentication;
+            _service = service;
         }
         public async Task<ICollection<RestaurantItemVm>> GetAllSoftDeletes(int page, int take)
         {
@@ -59,6 +61,10 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
             }).ToList();
         }
+        public async Task<int> GetRestaurantCount()
+        {
+            return await _repository.GetAll(isDeleted: false).CountAsync();
+        }
         public async Task<ICollection<RestaurantItemVm>> GetAllnonConfirmed(int page, int take)
         {
             ICollection<Restaurant> restaurants = await _repository.GetAllWhere(isDeleted: null, skip: (page - 1) * take, take: take).ToListAsync();
@@ -66,6 +72,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             {
                 Id = restaurant.Id,
                 Name = restaurant.Name,
+                Popularity=restaurant.Popularity,
                 Address = restaurant.Address,
                 MinimumOrderAmount = restaurant.MinimumOrderAmount,
                 CategoryId = restaurant.CategoryId,
@@ -82,13 +89,19 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 
             }).ToList();
         }
-        public async Task<ICollection<RestaurantItemVm>> GetAllunSoftDeletesAsync(int page, int take)
+        public async Task<ICollection<RestaurantItemVm>> GetAllunSoftDeletesAsync(int page, int take,bool isOrdered=false)
         {
-            ICollection<Restaurant> restaurants = await _repository.GetAllWhere(isDeleted:false, skip: (page - 1) * take, take: take,includes:new string[] {nameof(Restaurant.Category)}).ToListAsync();
+            IQueryable<Restaurant> restaurantsqueryable =_repository.GetAll(isDeleted: false,  includes: new string[] { nameof(Restaurant.Category) });
+            if (isOrdered)
+            {
+                restaurantsqueryable= restaurantsqueryable.OrderByDescending(x => x.Popularity);
+            }
+            ICollection<Restaurant> restaurants=await restaurantsqueryable.Take(take).Skip((page - 1) * take).ToListAsync();
             return restaurants.Select(restaurant => new RestaurantItemVm
             {
                 Id = restaurant.Id,
                 Name = restaurant.Name,
+                Popularity = restaurant.Popularity,
                 Address = restaurant.Address,
                 MinimumOrderAmount = restaurant.MinimumOrderAmount,
                 CategoryId = restaurant.CategoryId,
@@ -108,16 +121,17 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         {
             if (page <= 0) throw new Exception("Wrong querry");
 
-            int count = await _repository.GetAll(isDeleted: false).CountAsync();
+            int count = await _repository.GetAllWhere(isDeleted: false).CountAsync();
 
             double totalPage = Math.Ceiling((double)count / take);
-            if (totalPage <= page - 1) throw new Exception("Wrong querry");
+            if (totalPage < page - 1) throw new Exception("Wrong querry");
             ICollection<Restaurant> restaurants = await _repository.GetAllWhere(isDeleted: false, skip: (page - 1) * take, take: take).ToListAsync();
             ICollection<RestaurantItemVm> restaurantItemVms = restaurants.Select(restaurant => new RestaurantItemVm
             {
                 Id = restaurant.Id,
                 Name = restaurant.Name,
                 Address = restaurant.Address,
+                Popularity = restaurant.Popularity,
                 MinimumOrderAmount = restaurant.MinimumOrderAmount,
                 CategoryId = restaurant.CategoryId,
                 Image = restaurant.Image,
@@ -156,6 +170,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 Id = restaurant.Id,
                 Name = restaurant.Name,
                 Address = restaurant.Address,
+                Popularity = restaurant.Popularity,
                 MinimumOrderAmount = restaurant.MinimumOrderAmount,
                 CategoryId = restaurant.CategoryId,
                 Image = restaurant.Image,
@@ -173,13 +188,14 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
         }
         public async Task<RestaurantItemVm> GetWithoutIsdeletedAsync(int id)
         {
-            Restaurant restaurant = await _repository.GetByIdnotDeletedAsync(id, includes: new string[] { nameof(Restaurant.Meals), nameof(Restaurant.Category) });
+            Restaurant restaurant = await _repository.GetByIdnotDeletedAsync(id, includes: new string[] { nameof(Restaurant.Meals), nameof(Restaurant.Category),nameof(Restaurant.AppUser)});
             if (restaurant == null) throw new Exception("NotFound");
             return new RestaurantItemVm
             {
                 Id = restaurant.Id,
                 Name = restaurant.Name,
                 Address = restaurant.Address,
+                Popularity = restaurant.Popularity,
                 MinimumOrderAmount = restaurant.MinimumOrderAmount,
                 CategoryId = restaurant.CategoryId,
                 Image = restaurant.Image,
@@ -191,6 +207,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 LocationCordinate = restaurant.LocationCordinate,
                 Meals = restaurant.Meals,
                 Reviews = restaurant.Reviews,
+                User = restaurant.AppUser,
                 AppUserId = restaurant.AppUserId,
                 Category = restaurant.Category,
             };
@@ -214,6 +231,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 Id = restaurant.Id,
                 Name = restaurant.Name,
                 Address = restaurant.Address,
+                Popularity = restaurant.Popularity,
                 MinimumOrderAmount = restaurant.MinimumOrderAmount,
                 CategoryId = restaurant.CategoryId,
                 Image = restaurant.Image,
@@ -224,7 +242,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 IsOpening = restaurant.IsOpening,
                 LocationCordinate = restaurant.LocationCordinate,
                 Meals = restaurant.Meals,
-                Reviews = reviews,
+                Reviews = restaurant.Reviews,
                 ReviewVithPagination=paginateVm,
                 AppUserId = restaurant.AppUserId,
                 Category = restaurant.Category,
@@ -240,6 +258,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 Id = restaurant.Id,
                 Name = restaurant.Name,
                 Address = restaurant.Address,
+                Popularity = restaurant.Popularity,
                 MinimumOrderAmount = restaurant.MinimumOrderAmount,
                 CategoryId = restaurant.CategoryId,
                 Image = restaurant.Image,
@@ -250,7 +269,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                 IsOpening = restaurant.IsOpening,
                 LocationCordinate = restaurant.LocationCordinate,
                 Meals = restaurant.Meals,
-                Reviews = reviews,
+                Reviews = restaurant.Reviews,
                 AppUserId = restaurant.AppUserId,
                 Category=restaurant.Category,
             };
@@ -264,7 +283,7 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
                     query=query.OrderBy(x => x.Name);
                     break;
                 case 2:
-                    query=query.OrderBy(x=>x.Reviews.Count());
+                    query=query.OrderBy(x=>x.Popularity);
                     break;
                 default:
                     break;
@@ -283,7 +302,8 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
 				Id = restaurant.Id,
 				Name = restaurant.Name,
 				Address = restaurant.Address,
-				MinimumOrderAmount = restaurant.MinimumOrderAmount,
+                Popularity = restaurant.Popularity,
+                MinimumOrderAmount = restaurant.MinimumOrderAmount,
 				CategoryId = restaurant.CategoryId,
 				Image = restaurant.Image,
 				RestourantEmail = restaurant.RestourantEmail,
@@ -439,6 +459,14 @@ namespace QuickFoodDelivery.Persistence.Implementations.Services
             _repository.ReverseDelete(existed);
             await _autentication.UpdateUserRole(existed.AppUserId, UserRole.RestaurantAdmin.ToString());
             await _repository.SaveChangesAsync();
+            string body = $@"<div class=""card"" style=""width: 18rem;"">
+    <div class=""card-body"">
+        <h5 class=""card-title"">Hello  {existed.Name}</h5>
+        <h6 class=""card-subtitle mb-2 text-body-secondary"">Your Restaurant was created</h6>
+        <p class=""card-text"">Please Checck your restaurant and created new meals</p>
+    </div>
+</div>";
+            await _service.SendEmailAsync(existed.RestourantEmail, "Work", body, true);
         }
 
         public async Task ReverseDeleteAsync(int id)

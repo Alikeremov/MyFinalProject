@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +23,7 @@ namespace QuickFoodDelivery.Application.Abstractions.Services
         Task<OrderGetVm> GetOrderById(int id);
         Task<bool> CheckOut(OrderCreateVm orderVM, ModelStateDictionary modelstate, ITempDataDictionary keys, string stripeEmail, string stripeToken);
         Task<OrderUpdateVm> Updated(int id, OrderUpdateVm vm);
-        Task<bool> Update(int id, OrderUpdateVm ordervm, ModelStateDictionary modelState);
+        Task<bool> Update(int id, OrderUpdateVm ordervm, ModelStateDictionary modelState,IUrlHelper url,HttpRequest request);
 
     }
 }

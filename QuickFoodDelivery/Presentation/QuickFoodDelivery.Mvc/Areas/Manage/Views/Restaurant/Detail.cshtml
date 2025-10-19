@@ -1,5 +1,17 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model RestaurantItemVm
+<div class="card" style="width: 27rem;">
+    <img src="~/assets/img/restaurantImages/@Model.Image" class="card-img-top" alt="~/assets/img/mealImages/@Model.Image">
+    <div class="card-body">
+        <h2>@Model.Name</h2>
+        <h4>MinimumOrderAmount: @Model.MinimumOrderAmount</h4>
+        <h4>Address: @Model.Address</h4>
+        <h4>ClozedTime: @Model.ClozedTime?.ToString("HH:mm")</h4>
+        <h4>OpeningTime: @Model.OpeningTime?.ToString("HH:mm")</h4>
+        <h4>Popularity: @Model.Popularity</h4>
+        <h4>RestourantEmail: @Model.RestourantEmail</h4>
+        <h5>RestaurantAdmin :@Model.User.UserName</h5>
+        <h5>RestaurantAdmin fullname:@Model.User.Name @Model.User.Surname</h5>
+        <h6 class="card-text">Category: @Model.Category?.Name</h6>
+
+    </div>
+</div>

@@ -39,17 +39,6 @@
         </div><!-- End sub_content -->
     </div><!-- End subheader -->
 </section><!-- End section -->
-<!-- End SubHeader ============================================ -->
-
-<div id="position">
-    <div class="container">
-        <ul>
-            
-            <li>Page active</li>
-        </ul>
-        <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
-    </div>
-</div><!-- Position -->
 <!-- Content ================================================== -->
 <div class="container margin_60">
     <div id="tabs" class="tabs">
@@ -60,6 +49,9 @@
                 </li>
                 <li>
                     <a asp-action="DeliveredFoods" asp-controller="Courier"> Delivered Foods</a>
+                </li>
+                <li>
+                    <a asp-action="Update" asp-controller="Courier" asp-route-id="@Model.Courier.Id"> Update Your Profile</a>
                 </li>
             </ul>
         </nav>
